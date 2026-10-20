@@ -406,3 +406,7 @@ code { font-size: 13px; background: var(--primary-soft); color: var(--primary-da
   .cmp-linha { grid-template-columns: 28px 70px 1fr 58px; gap: 8px; font-size: 13px; }
   .cmp-mini { width: 28px; height: 28px; }
 }
+
+/* Manchete do topo: multiplicador gigante e subtítulo com os dois números de seguidores */
+.hero-escuro h1 .titulo-x { display: inline-block; font-size: 1.9em; line-height: .85; color: #ff2525; text-shadow: 0 0 40px rgba(255, 37, 37, .35); letter-spacing: -.04em; vertical-align: -.08em; }
+.hero-sub .hero-sub-destaque { display: block; margin-bottom: 6px; font-size: 1.15em; font-weight: 700; color: #fff; }

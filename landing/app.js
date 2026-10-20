@@ -45,11 +45,16 @@
   const rankEng = porEng.findIndex(p => p.perfil === NIK) + 1;
   const lider = porEng[0];
 
-  document.getElementById('titulo').innerHTML =
-    `Como <em>${fmtMi(nik.seguidores, 'cinza')}</em> de seguidores viram <em>${fmtMi(nik.medianaViews)}</em> de views por reel?`;
-  document.getElementById('heroSub').textContent =
-    `Mediana de views ÷ seguidores dos ${R.perfis.find(p => p.perfil === NIK).reels} reels mais recentes com 3 dias ou mais de cada perfil · ` +
-    `${comp.length} perfis comparados · coleta em ${new Date(R.geradoEm).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })}`;
+  // Manchete: alcance por seguidor comparado à pessoa mais seguida do Instagram (Cristiano Ronaldo).
+  const cr7 = R.perfis.find(p => p.perfil === 'cristiano' && p.comparavel);
+  document.getElementById('titulo').innerHTML = cr7
+    ? `Alcance por seguidor <em class="titulo-x">${Math.floor(nik.medianaViewsPorSeguidor / cr7.medianaViewsPorSeguidor)}×</em> maior que o da pessoa mais seguida do Instagram.`
+    : `Como <em>${fmtMi(nik.seguidores)}</em> de seguidores viram <em>${fmtMi(nik.medianaViews)}</em> de views por reel?`;
+  const milhoesExt = n => (n / 1e6).toLocaleString('pt-BR', { maximumFractionDigits: n >= 1e8 ? 0 : 1 }) + ' milhões';
+  document.getElementById('heroSub').innerHTML = (cr7
+    ? `<span class="hero-sub-destaque">Cristiano Ronaldo, ${milhoesExt(cr7.seguidores)} de seguidores · Nikolas Ferreira, ${milhoesExt(nik.seguidores)}</span>`
+    : '') +
+    `Views de um vídeo típico ÷ seguidores · ${comp.length + R.perfis.filter(p => grupoDe(p) !== 'politicos' && p.comparavel).length} perfis comparados · coleta em ${new Date(R.geradoEm).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })}`;
   const credito = document.getElementById('creditoFoto');
   if (credito) credito.innerHTML =
     'Foto: Pablo Valadares/Câmara dos Deputados, via Wikimedia Commons, <a href="https://creativecommons.org/licenses/by/3.0/deed.pt-br" target="_blank" rel="noopener">CC BY 3.0</a> ' +
