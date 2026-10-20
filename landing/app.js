@@ -46,7 +46,7 @@
   const lider = porEng[0];
 
   document.getElementById('titulo').innerHTML =
-    `Como <em>${fmtMi(nik.seguidores)}</em> de seguidores viram <em>${fmtMi(nik.medianaViews)}</em> de views por reel?`;
+    `Como <em>${fmtMi(nik.seguidores, 'cinza')}</em> de seguidores viram <em>${fmtMi(nik.medianaViews)}</em> de views por reel?`;
   document.getElementById('heroSub').textContent =
     `Mediana de views ÷ seguidores dos ${R.perfis.find(p => p.perfil === NIK).reels} reels mais recentes com 3 dias ou mais de cada perfil · ` +
     `${comp.length} perfis comparados · coleta em ${new Date(R.geradoEm).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })}`;
@@ -290,31 +290,46 @@
   const trilho = document.getElementById('carrTrilho');
   const fmtPctInt = n => Math.round(n * 100) + '%';
   const famososOrd = [...famososComp].sort((x, y) => y.seguidores - x.seguidores);
-  const lado = (p, ehNik) => `<div class="cmp-lado${ehNik ? ' nik' : ''}">
-      <div class="cmp-foto${ehNik ? ' duotone' : ''}">${foto(p)}</div>
-      <p class="cmp-nome">${nome(p.perfil)}</p>
-      <dl class="cmp-dados">
-        <div><dt>Seguidores</dt><dd>${fmtMi(p.seguidores)}</dd></div>
-        <div><dt>Views por reel</dt><dd>${fmtMi(p.medianaViews)}</dd></div>
-        <div class="cmp-taxa"><dt>Views ÷ seguidores</dt><dd>${fmtDec(p.medianaViewsPorSeguidor)}</dd></div>
-      </dl>
-    </div>`;
+  // Cada slide: frase curta, três números grandes (o alcance por seguidor é o maior destaque)
+  // e barras comparando seguidores e views, com as fotos como rótulo das linhas.
+  const pron = p => ['virginia', 'anitta'].includes(p) ? 'dela' : 'dele';
+  const linhaBarra = (p, valor, max, fmt) => `<div class="cmp-linha${p.perfil === NIK ? ' nik' : ''}">
+      <span class="cmp-mini${p.perfil === NIK ? ' duotone' : ''}">${foto(p)}</span>
+      <span class="cmp-linha-nome">${p.perfil === NIK ? 'Nikolas' : nome(p.perfil)}</span>
+      <span class="cmp-trilho"><i style="--w:${Math.max(1.5, valor / max * 100).toFixed(1)}%"></i></span>
+      <span class="cmp-linha-valor">${fmt(valor)}</span></div>`;
+  const grupoBarras = (titulo, f, chave, fmt) => {
+    const max = Math.max(nik[chave], f[chave]);
+    return `<div class="cmp-grupo"><p class="cmp-grupo-titulo">${titulo}</p>${linhaBarra(nik, nik[chave], max, fmt)}${linhaBarra(f, f[chave], max, fmt)}</div>`;
+  };
+  const stat = (num, rot, cls = '') => `<div class="big-stat ${cls}"><span class="big-num">${num}</span><span class="big-rot">${rot}</span></div>`;
   const slides = famososOrd.map(f => {
     const rSeg = f.seguidores / nik.seguidores, rV = nik.medianaViews / f.medianaViews;
-    const frase = `${nome(f.perfil)} tem <em>${fmtX(rSeg)}</em> mais seguidores. ` + (rV >= 1
-      ? `Mesmo assim, um reel típico do Nikolas tem <em>${rV >= 1.15 ? fmtX(rV) + ' as views' : 'as mesmas views'}</em> de um reel ${['virginia', 'anitta'].includes(f.perfil) ? 'dela' : 'dele'}.`
-      : `O Nikolas tem <em>${fmtPctInt(rV)}</em> das views ${['virginia', 'anitta'].includes(f.perfil) ? 'dela' : 'dele'} por reel.`);
-    return { rotulo: nome(f.perfil), html: `<p class="cmp-frase">${frase}</p>
-      <div class="cmp-duelo">${lado(nik, true)}<span class="cmp-x" aria-hidden="true">×</span>${lado(f, false)}</div>
-      <p class="cmp-rodape">Por seguidor, o alcance do Nikolas é <strong>${fmtX(nik.medianaViewsPorSeguidor / f.medianaViewsPorSeguidor)}</strong> o de ${nome(f.perfil)}. <span class="cmp-credito">${creditoCurto(f.perfil)}</span></p>` };
+    const rVps = nik.medianaViewsPorSeguidor / f.medianaViewsPorSeguidor;
+    const viewsStat = rV >= 1.15 ? stat(fmtX(rV), `as views ${pron(f.perfil)} por vídeo`)
+      : rV >= 0.9 ? stat('=', `mesmas views ${pron(f.perfil) === 'dela' ? 'dela' : 'dele'} por vídeo`)
+      : stat(fmtPctInt(rV), `das views ${pron(f.perfil)} por vídeo`);
+    return { rotulo: nome(f.perfil), html: `<p class="cmp-frase">Nikolas × <em>${nome(f.perfil)}</em></p>
+      <div class="big-stats">
+        ${stat(fmtX(rSeg), `mais seguidores tem ${nome(f.perfil).split(' ')[0]}`, 'cinza')}
+        ${viewsStat}
+        ${stat(fmtX(rVps), 'o alcance do Nikolas por seguidor', 'destaque')}
+      </div>
+      <div class="cmp-grupos">
+        ${grupoBarras('Seguidores', f, 'seguidores', fmtMi)}
+        ${grupoBarras('Views por vídeo', f, 'medianaViews', fmtMi)}
+      </div>
+      <p class="cmp-rodape"><span class="cmp-credito">${creditoCurto(f.perfil)}</span></p>` };
   });
   const maxVps = Math.max(...comp.map(p => p.medianaViewsPorSeguidor));
-  slides.push({ rotulo: 'Políticos', html: `<p class="cmp-frase">Entre políticos, o Nikolas tem <em>${fmtX(razaoVps)}</em> as views por seguidor da média dos outros ${outros.length}.</p>
-    <div class="cmp-politicos">
-      <div class="cmp-foto duotone pequena">${foto(nik)}</div>
-      <ol class="cmp-barras">${[...comp].sort((x, y) => y.medianaViewsPorSeguidor - x.medianaViewsPorSeguidor).map(p => `<li class="${p.perfil === NIK ? 'nik' : ''}"><span class="cmp-barra-nome">${nome(p.perfil)}</span><span class="cmp-barra"><i style="--w:${(p.medianaViewsPorSeguidor / maxVps * 100).toFixed(1)}%"></i></span><span class="cmp-barra-valor">${fmtDec(p.medianaViewsPorSeguidor)}</span></li>`).join('')}</ol>
+  slides.push({ rotulo: 'Políticos', html: `<p class="cmp-frase">Nikolas × <em>outros políticos</em></p>
+    <div class="big-stats">
+      ${stat(fmtPctInt(nik.medianaViewsPorSeguidor), 'views por vídeo em relação aos seguidores do Nikolas')}
+      ${stat(fmtPctInt(mediaOutrosVps), `a média dos outros ${outros.length} políticos`, 'cinza')}
+      ${stat(fmtX(razaoVps), 'o alcance do Nikolas por seguidor', 'destaque')}
     </div>
-    <p class="cmp-rodape">Mediana de views ÷ seguidores dos 12 reels mais recentes com 3 dias ou mais de cada perfil.</p>` });
+    <ol class="cmp-barras">${[...comp].sort((x, y) => y.medianaViewsPorSeguidor - x.medianaViewsPorSeguidor).map(p => `<li class="${p.perfil === NIK ? 'nik' : ''}"><span class="cmp-barra-nome">${nome(p.perfil)}</span><span class="cmp-barra"><i style="--w:${(p.medianaViewsPorSeguidor / maxVps * 100).toFixed(1)}%"></i></span><span class="cmp-barra-valor">${fmtPctInt(p.medianaViewsPorSeguidor)}</span></li>`).join('')}</ol>
+    <p class="cmp-rodape">Views de um vídeo típico em % dos seguidores (mediana dos 12 reels mais recentes com 3 dias ou mais).</p>` });
   trilho.innerHTML = slides.map((s, i) => `<article class="slide" role="group" aria-roledescription="slide" aria-label="${i + 1} de ${slides.length}: ${s.rotulo}">${s.html}</article>`).join('');
   const pontosCarr = document.getElementById('carrPontos');
   pontosCarr.innerHTML = slides.map((s, i) => `<button type="button" role="tab" aria-label="${s.rotulo}" aria-selected="${i === 0}"><span>${s.rotulo}</span></button>`).join('');
