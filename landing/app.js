@@ -323,8 +323,7 @@
       <div class="cmp-grupos">
         ${grupoBarras('Seguidores', f, 'seguidores', fmtMi)}
         ${grupoBarras('Views por vídeo', f, 'medianaViews', fmtMi)}
-      </div>
-      <p class="cmp-rodape"><span class="cmp-credito">${creditoCurto(f.perfil)}</span></p>` };
+      </div>` };
   });
   const maxVps = Math.max(...comp.map(p => p.medianaViewsPorSeguidor));
   slides.push({ rotulo: 'Políticos', html: `<p class="cmp-frase">Nikolas × <em>outros políticos</em></p>
