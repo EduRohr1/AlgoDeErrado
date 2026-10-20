@@ -1,0 +1,20 @@
+# Cópias locais de versões anteriores
+backups/
+
+# Configuração local do Claude e do editor
+.claude/
+.vscode/
+
+# Dependências e temporários
+node_modules/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Segredos (o token do Apify nunca vai para o repositório)
+.env
+.env.*
+
+# Dados brutos completos (com comentários de terceiros): só locais
+dados/brutos/

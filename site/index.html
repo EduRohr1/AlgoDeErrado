@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reels do Nikolas Ferreira</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Nikolas Ferreira · Análise de Reels</h1>
+    <p class="sub">Desempenho de cada reel de <a href="https://www.instagram.com/nikolasferreiradm/" target="_blank" rel="noopener">@nikolasferreiradm</a> em relação ao número de seguidores do perfil.</p>
+  </header>
+
+  <section class="painel">
+    <div class="campo">
+      <label for="token">Token do Apify</label>
+      <input id="token" type="password" placeholder="apify_api_..." autocomplete="off">
+    </div>
+    <div class="campo">
+      <label for="limite">Quantos reels</label>
+      <input id="limite" type="number" min="1" max="500" value="50">
+    </div>
+    <button id="atualizar" type="button">Atualizar dados agora</button>
+  </section>
+  <p id="status" class="dica"></p>
+
+  <section class="painel">
+    <div class="campo">
+      <label for="perfil">Perfil</label>
+      <input id="perfil" type="text" placeholder="@usuario">
+    </div>
+    <div class="campo">
+      <label for="seguidores">Seguidores atuais</label>
+      <input id="seguidores" type="number" min="1" step="1">
+    </div>
+    <div class="campo">
+      <label for="arquivo">Carregar dados (JSON do Apify ou CSV)</label>
+      <input id="arquivo" type="file" accept=".json,.csv">
+    </div>
+    <button id="exemplo" type="button">Ver com dados fictícios</button>
+  </section>
+
+  <p id="aviso" class="aviso"></p>
+
+  <section id="sem-dados" class="cartao" hidden>
+    <h2>Conecte o Apify para buscar os dados automaticamente</h2>
+    <ol>
+      <li>Crie uma conta grátis em <a href="https://apify.com" target="_blank" rel="noopener">apify.com</a>.</li>
+      <li>Copie seu token em <a href="https://console.apify.com/settings/integrations" target="_blank" rel="noopener">Settings → API &amp; Integrations</a>.</li>
+      <li>Cole no campo <strong>Token do Apify</strong> acima e clique em <strong>Atualizar dados agora</strong>. Leva de 1 a 3 minutos.</li>
+    </ol>
+    <p class="dica">Depois disso, o site se atualiza sozinho sempre que você abrir e os dados tiverem mais de 12 horas. O token fica salvo só neste navegador.</p>
+  </section>
+
+  <section class="kpis">
+    <div class="kpi"><span class="rotulo">Reels analisados</span><span id="k-total" class="valor">–</span></div>
+    <div class="kpi"><span class="rotulo">Média de views</span><span id="k-media" class="valor">–</span></div>
+    <div class="kpi"><span class="rotulo">Mediana views ÷ seguidores</span><span id="k-razao" class="valor">–</span></div>
+    <div class="kpi"><span class="rotulo">Engajamento médio</span><span id="k-eng" class="valor">–</span></div>
+  </section>
+
+  <section class="graficos">
+    <div class="cartao">
+      <h2>Views por reel ao longo do tempo</h2>
+      <div class="grafico"><canvas id="g-tempo"></canvas></div>
+    </div>
+    <div class="cartao">
+      <h2>Duração do vídeo × views</h2>
+      <div class="grafico"><canvas id="g-duracao"></canvas></div>
+    </div>
+  </section>
+
+  <section class="cartao">
+    <h2>Todos os reels</h2>
+    <p class="dica">Clique no cabeçalho para ordenar. Reels com menos de 7 dias ainda estão crescendo e aparecem marcados.</p>
+    <div class="tabela-wrap">
+      <table id="tabela">
+        <thead>
+          <tr>
+            <th data-col="data">Postado em</th>
+            <th data-col="idade">Idade (dias)</th>
+            <th data-col="views">Views</th>
+            <th data-col="razao">Views ÷ seguidores</th>
+            <th data-col="curtidas">Curtidas</th>
+            <th data-col="comentarios">Comentários</th>
+            <th data-col="engajamento">Engajamento</th>
+            <th data-col="duracao">Duração</th>
+            <th>Legenda</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Views ÷ seguidores</strong>: 1,0 = o reel teve tantas views quanto o perfil tem seguidores.
+      <strong>Engajamento</strong> = (curtidas + comentários) ÷ views.
+      Se o arquivo tiver uma coluna <code>seguidores</code> por reel (ex.: histórico do Social Blade), ela é usada no lugar do número atual.</p>
+  </footer>
+
+  <script src="dados-exemplo.js"></script>
+  <script src="dados.js" onerror="window.DADOS_REAIS = null"></script>
+  <script src="app.js"></script>
+</body>
+</html>
