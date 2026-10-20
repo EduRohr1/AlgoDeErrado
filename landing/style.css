@@ -410,3 +410,4 @@ code { font-size: 13px; background: var(--primary-soft); color: var(--primary-da
 /* Manchete do topo: multiplicador gigante e subtítulo com os dois números de seguidores */
 .hero-escuro h1 .titulo-x { display: inline-block; font-size: 1.9em; line-height: .85; color: #ff2525; text-shadow: 0 0 40px rgba(255, 37, 37, .35); letter-spacing: -.04em; vertical-align: -.08em; }
 .hero-sub .hero-sub-destaque { display: block; margin-bottom: 6px; font-size: 1.15em; font-weight: 700; color: #fff; }
+.hero-escuro h1 .titulo-menor { font-size: .62em; color: #d0d0d0; font-weight: 800; white-space: nowrap; }

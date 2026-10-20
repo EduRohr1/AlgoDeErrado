@@ -48,11 +48,11 @@
   // Manchete: alcance por seguidor comparado à pessoa mais seguida do Instagram (Cristiano Ronaldo).
   const cr7 = R.perfis.find(p => p.perfil === 'cristiano' && p.comparavel);
   document.getElementById('titulo').innerHTML = cr7
-    ? `Alcance por seguidor <em class="titulo-x">${Math.floor(nik.medianaViewsPorSeguidor / cr7.medianaViewsPorSeguidor)}×</em> maior que o da pessoa mais seguida do Instagram.`
+    ? `<em class="titulo-x">${Math.floor(nik.medianaViewsPorSeguidor / cr7.medianaViewsPorSeguidor)}×</em> mais alcance <span class="titulo-menor">por seguidor</span> que o mais seguido do mundo.`
     : `Como <em>${fmtMi(nik.seguidores)}</em> de seguidores viram <em>${fmtMi(nik.medianaViews)}</em> de views por reel?`;
   const milhoesExt = n => (n / 1e6).toLocaleString('pt-BR', { maximumFractionDigits: n >= 1e8 ? 0 : 1 }) + ' milhões';
   document.getElementById('heroSub').innerHTML = (cr7
-    ? `<span class="hero-sub-destaque">Cristiano Ronaldo, ${milhoesExt(cr7.seguidores)} de seguidores · Nikolas Ferreira, ${milhoesExt(nik.seguidores)}</span>`
+    ? `<span class="hero-sub-destaque">Cristiano Ronaldo, a pessoa mais seguida do Instagram: ${milhoesExt(cr7.seguidores)} de seguidores · Nikolas Ferreira: ${milhoesExt(nik.seguidores)}</span>`
     : '') +
     `Views de um vídeo típico ÷ seguidores · ${comp.length + R.perfis.filter(p => grupoDe(p) !== 'politicos' && p.comparavel).length} perfis comparados · coleta em ${new Date(R.geradoEm).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })}`;
   const credito = document.getElementById('creditoFoto');
