@@ -254,7 +254,7 @@ code { font-size: 13px; background: var(--primary-soft); color: var(--primary-da
 .cabecalho-aviso .wrap::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #e3121b; margin-right: 8px; vertical-align: 1px; }
 .menu-botao { display: none; }
 
-@media (max-width: 1330px) {
+@media (max-width: 1432px) {
   .menu-botao { display: inline-flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; background: none; border: 0; cursor: pointer; padding: 10px; margin-right: -10px; position: relative; z-index: 61; }
   .menu-botao span { display: block; height: 2px; width: 100%; background: #fff; transition: transform .25s, opacity .2s; }
   .menu-aberto .menu-botao span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -275,7 +275,7 @@ code { font-size: 13px; background: var(--primary-soft); color: var(--primary-da
   .menu, .menu a::after, .menu-botao span { transition: none; }
 }
 .achados { scroll-margin-top: 90px; }
-@media (min-width: 1331px) {
+@media (min-width: 1433px) {
   .cabecalho-in { max-width: 1160px; }
   .menu a { padding: 20px 7px; }
   .menu a::after { left: 7px; right: 7px; }
@@ -597,3 +597,17 @@ button.info:hover, button.info:focus-visible, button.info[aria-expanded="true"] 
 /* Introdução da seção de idade */
 .idade-intro { font-size: 1.05rem; line-height: 1.55; margin: 0 0 .6rem; max-width: 72ch; }
 .idade-intro.idade-fato { font-size: .98rem; border-left: 3px solid var(--accent); padding-left: .75rem; }
+
+/* Seção "Ele paga para aparecer?" */
+.anuncios { border-left: 4px solid var(--accent); }
+.anuncios-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 18px 0; }
+.anuncio-card { background: var(--bg-alt); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; min-width: 0; }
+.anuncio-num { margin: 0 0 6px; font-family: Raleway, Inter, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.15; color: var(--accent); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.anuncio-tit { margin: 0 0 6px; font-weight: 700; font-size: 15px; line-height: 1.35; }
+.anuncio-det { margin: 0; font-size: 14px; line-height: 1.5; color: var(--muted, #555); }
+.anuncios-nota, .anuncios-fontes { max-width: 75ch; line-height: 1.6; }
+.anuncios-fontes { font-size: 14px; }
+.anuncios .passos { padding-left: 20px; line-height: 1.6; max-width: 75ch; }
+.anuncios .passos li { margin-bottom: 6px; }
+@media (max-width: 900px) { .anuncios-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .anuncios-grid { grid-template-columns: 1fr; } }
