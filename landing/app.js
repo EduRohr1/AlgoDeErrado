@@ -226,7 +226,7 @@
   // Tabela de faixas de idade.
   const faixas = R.faixasIdade || [];
   function tabelaFaixas(grupo) {
-    const lista = R.perfis.filter(p => p.encontrado && p.faixas && grupoDe(p) === grupo);
+    const lista = R.perfis.filter(p => p.encontrado && p.faixas && (grupo === 'todos' || grupoDe(p) === grupo));
     document.getElementById('tabelaFaixas').innerHTML =
       '<thead><tr><th>Perfil</th>' + faixas.map(f => `<th>${f}</th>`).join('') + '</tr></thead><tbody>' +
       lista.map(p => `<tr class="${p.perfil === NIK ? 'nikolas' : ''}">${celulaPerfil(p)}` +
@@ -468,15 +468,15 @@
 
   // Dispersão idade × views ÷ seguidores, uma série por perfil.
   // Demais perfis em tons de cinza, diferenciados também pelo formato do ponto.
-  const PALETA = ['#1a1a1a', '#5c5c5c', '#8c8c8c', '#3d3d3d', '#a8a8a8', '#707070', '#2b2b2b', '#999999', '#4d4d4d', '#b8b8b8'];
-  const FORMAS = ['circle', 'rect', 'triangle', 'rectRot', 'crossRot', 'star', 'rectRounded', 'circle', 'rect', 'triangle'];
+  const PALETA = ['#1a1a1a', '#5c5c5c', '#8c8c8c', '#3d3d3d', '#a8a8a8', '#707070', '#2b2b2b', '#999999', '#4d4d4d', '#b8b8b8', '#636363', '#262626'];
+  const FORMAS = ['circle', 'rect', 'triangle', 'rectRot', 'crossRot', 'star', 'rectRounded', 'cross', 'triangle', 'rect', 'rectRot', 'circle'];
   const pontos = R.pontos || [];
   const grupoPerfil = Object.fromEntries(R.perfis.map(p => [p.perfil, grupoDe(p)]));
   const potencia10 = v => Math.abs(Math.log10(v) - Math.round(Math.log10(v))) < 1e-9;
   let grafIdade;
 
   function desenharIdade(grupo) {
-    const perfisG = R.perfis.filter(p => grupoDe(p) === grupo && pontos.some(x => x.perfil === p.perfil));
+    const perfisG = R.perfis.filter(p => (grupo === 'todos' || grupoDe(p) === grupo) && pontos.some(x => x.perfil === p.perfil));
     let i = 0;
     const datasets = perfisG.map(p => {
       const ehNik = p.perfil === NIK;
@@ -500,7 +500,7 @@
       options: {
         maintainAspectRatio: false,
         plugins: {
-          legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: 8, color: cor('--text') } },
+          legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: innerWidth < 600 ? 6 : 8, padding: innerWidth < 600 ? 8 : 12, font: { size: innerWidth < 600 ? 10 : 12 }, color: cor('--text') } },
           tooltip: { callbacks: { label: c => ` ${c.dataset.label}: ${fmtDec(c.raw.x, 1)} dias, ${fmtDec(c.raw.y, 2)} views/seguidor` } },
         },
         scales: {
@@ -527,7 +527,8 @@
   if (gruposComPontos.length > 1) {
     const box = document.getElementById('filtrosIdade');
     box.hidden = false;
-    box.innerHTML = gruposComPontos.map((g, k) => `<button type="button" data-g="${g}" aria-pressed="${k === 0}">${GRUPOS[g]}</button>`).join('');
+    // 'Todos' vem primeiro e começa selecionado.
+    box.innerHTML = ['todos', ...gruposComPontos].map((g, k) => `<button type="button" data-g="${g}" aria-pressed="${k === 0}">${g === 'todos' ? 'Todos' : GRUPOS[g]}</button>`).join('');
     box.addEventListener('click', e => {
       const b = e.target.closest('button');
       if (!b) return;
@@ -535,5 +536,5 @@
       desenharIdade(b.dataset.g);
     });
   }
-  quandoVisivel(document.getElementById('gIdade'), () => desenharIdade(gruposComPontos[0] || 'politicos'));
+  quandoVisivel(document.getElementById('gIdade'), () => desenharIdade(gruposComPontos.length > 1 ? 'todos' : (gruposComPontos[0] || 'politicos')));
 });

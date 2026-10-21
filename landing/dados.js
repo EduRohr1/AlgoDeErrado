@@ -2526,63 +2526,6 @@ window.RESUMO = {
       ]
     },
     {
-      "perfil": "erikakhilton",
-      "grupo": "politicos",
-      "idioma": "pt",
-      "coletadoEm": "2026-10-20T18:32:05.172Z",
-      "encontrado": false,
-      "seguidores": null,
-      "reelsColetados": 0,
-      "reels": 0,
-      "medianaViews": null,
-      "mediaViews": null,
-      "medianaViewsPorSeguidor": null,
-      "medianaCurtidasPorSeguidor": null,
-      "medianaComentariosPorSeguidor": null,
-      "engajamentoMedio": null,
-      "mediaCurtidas": null,
-      "mediaComentarios": null,
-      "curtidasOcultas": 0,
-      "reelsAcimaSeguidores": null,
-      "maiorReel": null,
-      "medianaComentariosPorCurtida": null,
-      "regularidade": {
-        "amostra12": null,
-        "todosMaduros": null
-      },
-      "foraDaCurva": null,
-      "pistas": null,
-      "comparavel": false,
-      "faixas": [
-        {
-          "faixa": "0–1d",
-          "n": 0,
-          "medianaViewsPorSeguidor": null
-        },
-        {
-          "faixa": "1–3d",
-          "n": 0,
-          "medianaViewsPorSeguidor": null
-        },
-        {
-          "faixa": "3–7d",
-          "n": 0,
-          "medianaViewsPorSeguidor": null
-        },
-        {
-          "faixa": "7–30d",
-          "n": 0,
-          "medianaViewsPorSeguidor": null
-        },
-        {
-          "faixa": "30d+",
-          "n": 0,
-          "medianaViewsPorSeguidor": null
-        }
-      ],
-      "observacao": "Handle não encontrado no Instagram."
-    },
-    {
       "perfil": "pablomarcal1",
       "grupo": "politicos",
       "idioma": "pt",
@@ -2825,63 +2768,6 @@ window.RESUMO = {
         }
       ],
       "observacao": "Amostra insuficiente: 1 de 78 reels coletados com >= 3 dias. Excluído da comparação."
-    },
-    {
-      "perfil": "andrejanonesoficial",
-      "grupo": "politicos",
-      "idioma": "pt",
-      "coletadoEm": "2026-10-20T18:32:05.172Z",
-      "encontrado": false,
-      "seguidores": null,
-      "reelsColetados": 0,
-      "reels": 0,
-      "medianaViews": null,
-      "mediaViews": null,
-      "medianaViewsPorSeguidor": null,
-      "medianaCurtidasPorSeguidor": null,
-      "medianaComentariosPorSeguidor": null,
-      "engajamentoMedio": null,
-      "mediaCurtidas": null,
-      "mediaComentarios": null,
-      "curtidasOcultas": 0,
-      "reelsAcimaSeguidores": null,
-      "maiorReel": null,
-      "medianaComentariosPorCurtida": null,
-      "regularidade": {
-        "amostra12": null,
-        "todosMaduros": null
-      },
-      "foraDaCurva": null,
-      "pistas": null,
-      "comparavel": false,
-      "faixas": [
-        {
-          "faixa": "0–1d",
-          "n": 0,
-          "medianaViewsPorSeguidor": null
-        },
-        {
-          "faixa": "1–3d",
-          "n": 0,
-          "medianaViewsPorSeguidor": null
-        },
-        {
-          "faixa": "3–7d",
-          "n": 0,
-          "medianaViewsPorSeguidor": null
-        },
-        {
-          "faixa": "7–30d",
-          "n": 0,
-          "medianaViewsPorSeguidor": null
-        },
-        {
-          "faixa": "30d+",
-          "n": 0,
-          "medianaViewsPorSeguidor": null
-        }
-      ],
-      "observacao": "Handle não encontrado no Instagram."
     },
     {
       "perfil": "neymarjr",

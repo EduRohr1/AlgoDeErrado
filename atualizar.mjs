@@ -18,9 +18,7 @@ const PERFIS = [
   'bolsonarosp',
   'tabataamaralsp',
   'guilhermeboulos.oficial',
-  'erikakhilton',
   'pablomarcal1',
-  'andrejanonesoficial',
 ];
 
 // Outros grupos (vazio por enquanto). Cada item: { username, grupo, idioma }.
@@ -98,7 +96,9 @@ function gravarDados(perfis, reels, brutos) {
     fs.writeFileSync(path.join(BRUTOS, 'perfis.json'), JSON.stringify(brutos.perfis, null, 2));
     fs.writeFileSync(path.join(BRUTOS, 'reels.json'), JSON.stringify(brutos.reels, null, 2));
   }
-  gravarJson('perfis.json', perfis.map(limparPerfil));
+  // Só os perfis da lista atual vão para os dados publicados (removidos da lista saem também daqui).
+  const naLista = new Set(TODOS.map(p => p.username));
+  gravarJson('perfis.json', perfis.filter(p => naLista.has((p.username || '').toLowerCase())).map(limparPerfil));
   gravarJson('reels.json', reels.map(limparReel));
 }
 
