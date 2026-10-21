@@ -1,20 +1,19 @@
 // Gerado por atualizar.mjs a partir de dados/resumo.json — dados fixos, sem chamadas externas.
 window.RESUMO = {
-  "geradoEm": "2026-10-20T19:36:47.027Z",
+  "geradoEm": "2026-10-21T00:18:03.971Z",
   "filtro": "até 12 reels mais recentes com >= 3 dias, de autoria do próprio perfil (resultsLimit 30; 100 para quem posta muito)",
   "custoUsd": {
-    "perfis": 0.0234,
-    "reels": 1.5110000000000001,
+    "perfis": 0.026000000000000002,
+    "reels": 1.5822,
     "ultimaColeta": {
       "grupos": [
-        "famosos_br",
-        "famosos_globais"
+        "nikolasferreiradm"
       ],
-      "perfis": 0,
-      "reels": 0.3806,
-      "total": 0.3806
+      "perfis": 0.0026,
+      "reels": 0.0712,
+      "total": 0.0738
     },
-    "total": 1.5344000000000002
+    "total": 1.6082
   },
   "grupos": {
     "politicos": "Políticos",
@@ -145,37 +144,38 @@ window.RESUMO = {
       "perfil": "nikolasferreiradm",
       "grupo": "politicos",
       "idioma": "pt",
+      "coletadoEm": "2026-10-21T00:18:03.974Z",
       "encontrado": true,
-      "seguidores": 24480979,
+      "seguidores": 24685097,
       "reelsColetados": 30,
       "reels": 12,
-      "medianaViews": 35628689,
-      "mediaViews": 38033337.166666664,
-      "medianaViewsPorSeguidor": 1.4553620996938073,
-      "medianaCurtidasPorSeguidor": 0.11953035048149013,
-      "medianaComentariosPorSeguidor": 0.005143360484072145,
-      "engajamentoMedio": 0.08117942842085342,
-      "mediaCurtidas": 2915565,
-      "mediaComentarios": 160558.33333333334,
+      "medianaViews": 38245917.5,
+      "mediaViews": 38777916.75,
+      "medianaViewsPorSeguidor": 1.5493525303951612,
+      "medianaCurtidasPorSeguidor": 0.12029928421994857,
+      "medianaComentariosPorSeguidor": 0.005122301119578343,
+      "engajamentoMedio": 0.08095196227602995,
+      "mediaCurtidas": 2956495.1666666665,
+      "mediaComentarios": 161680.66666666666,
       "curtidasOcultas": 0,
       "reelsAcimaSeguidores": 11,
-      "medianaComentariosPorCurtida": 0.046500729493595946,
+      "medianaComentariosPorCurtida": 0.046229004843203206,
       "regularidade": {
         "amostra12": {
           "n": 12,
-          "cv": 0.2677379822877145,
-          "p90p10": 1.9909508114324397
+          "cv": 0.2605602399126429,
+          "p90p10": 1.9778243778022928
         },
         "todosMaduros": {
           "n": 24,
-          "cv": 0.3774002727270164,
-          "p90p10": 2.240596975562647
+          "cv": 0.3751746979839791,
+          "p90p10": 2.236966378278201
         }
       },
       "foraDaCurva": {
         "avaliados": 24,
-        "medianaCurtidasPorView": 0.0740381334291513,
-        "medianaComentariosPorView": 0.0033759059597404982,
+        "medianaCurtidasPorView": 0.0741623934133152,
+        "medianaComentariosPorView": 0.0033652087351776186,
         "curtidasBaixas": 0,
         "comentariosBaixos": 3,
         "reels": []
@@ -190,105 +190,105 @@ window.RESUMO = {
           "n": 24,
           "medianaSegundos": 115,
           "acima60s": 0.75,
-          "correlacao": 0.21,
-          "vpsLongos": 1.4635871384065156,
-          "vpsCurtos": 1.3472519420077114,
+          "correlacao": 0.2,
+          "vpsLongos": 1.4604559990183552,
+          "vpsCurtos": 1.345712435320793,
           "pontos": [
             {
               "s": 159,
-              "v": 1.9624
-            },
-            {
-              "s": 115,
-              "v": 1.7058
+              "v": 1.9768
             },
             {
               "s": 113,
-              "v": 1.3588
+              "v": 1.5758
             },
             {
-              "s": 71,
-              "v": 1.8876
-            },
-            {
-              "s": 167,
-              "v": 1.5197
-            },
-            {
-              "s": 17,
-              "v": 1.0436
-            },
-            {
-              "s": 80,
-              "v": 1.3911
-            },
-            {
-              "s": 117,
-              "v": 0.9246
-            },
-            {
-              "s": 174,
-              "v": 1.2113
+              "s": 115,
+              "v": 1.7139
             },
             {
               "s": 114,
-              "v": 1.3357
+              "v": 1.3291
             },
             {
               "s": 39,
-              "v": 2.1749
+              "v": 2.1595
             },
             {
-              "s": 540,
-              "v": 1.1263
+              "s": 167,
+              "v": 1.5229
             },
             {
-              "s": 143,
-              "v": 1.8278
+              "s": 174,
+              "v": 1.2107
             },
             {
-              "s": 190,
-              "v": 1.2576
+              "s": 71,
+              "v": 1.8854
             },
             {
-              "s": 94,
-              "v": 1.8121
+              "s": 17,
+              "v": 1.0471
             },
             {
-              "s": 6,
-              "v": 0.9341
+              "s": 80,
+              "v": 1.3849
             },
             {
-              "s": 280,
-              "v": 2.8692
-            },
-            {
-              "s": 62,
-              "v": 0.4289
-            },
-            {
-              "s": 358,
-              "v": 1.1175
+              "s": 117,
+              "v": 0.9274
             },
             {
               "s": 128,
-              "v": 2.1276
+              "v": 2.1174
+            },
+            {
+              "s": 6,
+              "v": 0.9284
+            },
+            {
+              "s": 190,
+              "v": 1.2495
+            },
+            {
+              "s": 94,
+              "v": 1.7971
+            },
+            {
+              "s": 280,
+              "v": 2.8522
+            },
+            {
+              "s": 62,
+              "v": 0.4259
+            },
+            {
+              "s": 540,
+              "v": 1.1214
+            },
+            {
+              "s": 143,
+              "v": 1.8176
+            },
+            {
+              "s": 358,
+              "v": 1.1099
             },
             {
               "s": 34,
-              "v": 1.3715
-            },
-            {
-              "s": 42,
-              "v": 0.563
-            },
-            {
-              "s": 42,
-              "v": 1.1392
+              "v": 1.3623
             },
             {
               "s": 180,
-              "v": 1.4075
+              "v": 1.398
+            },
+            {
+              "s": 42,
+              "v": 1.1306
+            },
+            {
+              "s": 42,
+              "v": 0.5589
             }
           ]
         },
@@ -304,19 +304,19 @@ window.RESUMO = {
               "periodo": "manhã",
               "pctPosts": 0.067,
               "n": 1,
-              "medianaVps": 1.8120920736053898
+              "medianaVps": 1.797143920479632
             },
             {
               "periodo": "tarde",
               "pctPosts": 0.4,
               "n": 10,
-              "medianaVps": 1.273532851770348
+              "medianaVps": 1.2698958606482282
             },
             {
               "periodo": "noite",
               "pctPosts": 0.533,
               "n": 13,
-              "medianaVps": 1.4075098467263094
+              "medianaVps": 1.397968255907603
             }
           ],
           "dias": [
@@ -405,7 +405,7 @@ window.RESUMO = {
               "tema": "religião e família",
               "n": 1,
               "pct": 0.042,
-              "medianaVps": 0.42891385185208486
+              "medianaVps": 0.42588955595353745
             },
             {
               "tema": "segurança",
@@ -423,7 +423,7 @@ window.RESUMO = {
               "tema": "adversários e governo",
               "n": 8,
               "pct": 0.333,
-              "medianaVps": 1.8199487242728325
+              "medianaVps": 1.807367092784768
             },
             {
               "tema": "eleição e voto",
@@ -435,49 +435,49 @@ window.RESUMO = {
               "tema": "sem tema identificado",
               "n": 16,
               "pct": 0.667,
-              "medianaVps": 1.3472519420077114
+              "medianaVps": 1.345712435320793
             }
           ]
         },
         "tom": {
-          "n": 430,
+          "n": 435,
           "pct": {
-            "apoio": 0.491,
-            "crítica": 0.028,
-            "pergunta": 0.035,
-            "neutro": 0.367,
-            "repetitivo": 0.079
+            "apoio": 0.602,
+            "crítica": 0.018,
+            "pergunta": 0.021,
+            "neutro": 0.347,
+            "repetitivo": 0.011
           },
-          "textosRepetidos": 9,
-          "comentariosRepetidos": 34
+          "textosRepetidos": 2,
+          "comentariosRepetidos": 5
         }
       },
       "comparavel": true,
       "faixas": [
         {
           "faixa": "0–1d",
-          "n": 2,
-          "medianaViewsPorSeguidor": 1.6117744719277771
+          "n": 1,
+          "medianaViewsPorSeguidor": 4.388883462762978
         },
         {
           "faixa": "1–3d",
-          "n": 4,
-          "medianaViewsPorSeguidor": 1.742212821635932
+          "n": 5,
+          "medianaViewsPorSeguidor": 1.4322368269405625
         },
         {
           "faixa": "3–7d",
           "n": 4,
-          "medianaViewsPorSeguidor": 1.5322900076831076
+          "medianaViewsPorSeguidor": 1.644835302854998
         },
         {
           "faixa": "7–30d",
           "n": 18,
-          "medianaViewsPorSeguidor": 1.3536146777463434
+          "medianaViewsPorSeguidor": 1.345712435320793
         },
         {
           "faixa": "30d+",
           "n": 2,
-          "medianaViewsPorSeguidor": 0.9852635999565214
+          "medianaViewsPorSeguidor": 0.9784331412592788
         }
       ]
     },
@@ -485,6 +485,7 @@ window.RESUMO = {
       "perfil": "lulaoficial",
       "grupo": "politicos",
       "idioma": "pt",
+      "coletadoEm": "2026-10-20T18:32:05.172Z",
       "encontrado": true,
       "seguidores": 18166647,
       "reelsColetados": 64,
@@ -841,6 +842,7 @@ window.RESUMO = {
       "perfil": "jairmessiasbolsonaro",
       "grupo": "politicos",
       "idioma": "pt",
+      "coletadoEm": "2026-10-20T18:32:05.172Z",
       "encontrado": true,
       "seguidores": 26619836,
       "reelsColetados": 28,
@@ -1199,6 +1201,7 @@ window.RESUMO = {
       "perfil": "bolsonarosp",
       "grupo": "politicos",
       "idioma": "pt",
+      "coletadoEm": "2026-10-20T18:32:05.172Z",
       "encontrado": true,
       "seguidores": 7854012,
       "reelsColetados": 26,
@@ -1559,6 +1562,7 @@ window.RESUMO = {
       "perfil": "tabataamaralsp",
       "grupo": "politicos",
       "idioma": "pt",
+      "coletadoEm": "2026-10-20T18:32:05.172Z",
       "encontrado": true,
       "seguidores": 2378892,
       "reelsColetados": 28,
@@ -1936,6 +1940,7 @@ window.RESUMO = {
       "perfil": "guilhermeboulos.oficial",
       "grupo": "politicos",
       "idioma": "pt",
+      "coletadoEm": "2026-10-20T18:32:05.172Z",
       "encontrado": true,
       "seguidores": 3504536,
       "reelsColetados": 76,
@@ -2468,6 +2473,7 @@ window.RESUMO = {
       "perfil": "erikakhilton",
       "grupo": "politicos",
       "idioma": "pt",
+      "coletadoEm": "2026-10-20T18:32:05.172Z",
       "encontrado": false,
       "seguidores": null,
       "reelsColetados": 0,
@@ -2523,6 +2529,7 @@ window.RESUMO = {
       "perfil": "pablomarcal1",
       "grupo": "politicos",
       "idioma": "pt",
+      "coletadoEm": "2026-10-20T18:32:05.172Z",
       "encontrado": true,
       "seguidores": 14320503,
       "reelsColetados": 78,
@@ -2757,6 +2764,7 @@ window.RESUMO = {
       "perfil": "andrejanonesoficial",
       "grupo": "politicos",
       "idioma": "pt",
+      "coletadoEm": "2026-10-20T18:32:05.172Z",
       "encontrado": false,
       "seguidores": null,
       "reelsColetados": 0,
@@ -2812,6 +2820,7 @@ window.RESUMO = {
       "perfil": "neymarjr",
       "grupo": "famosos_br",
       "idioma": "pt",
+      "coletadoEm": "2026-10-20T19:36:47.030Z",
       "encontrado": true,
       "seguidores": 241751801,
       "reelsColetados": 5,
@@ -3041,6 +3050,7 @@ window.RESUMO = {
       "perfil": "anitta",
       "grupo": "famosos_br",
       "idioma": "pt",
+      "coletadoEm": "2026-10-20T19:36:47.030Z",
       "encontrado": true,
       "seguidores": 61144174,
       "reelsColetados": 29,
@@ -3370,6 +3380,7 @@ window.RESUMO = {
       "perfil": "virginia",
       "grupo": "famosos_br",
       "idioma": "pt",
+      "coletadoEm": "2026-10-20T19:36:47.030Z",
       "encontrado": true,
       "seguidores": 56759748,
       "reelsColetados": 23,
@@ -3693,6 +3704,7 @@ window.RESUMO = {
       "perfil": "cristiano",
       "grupo": "famosos_globais",
       "idioma": "pt",
+      "coletadoEm": "2026-10-20T19:36:47.030Z",
       "encontrado": true,
       "seguidores": 679908339,
       "reelsColetados": 17,
@@ -3967,6 +3979,7 @@ window.RESUMO = {
       "perfil": "leomessi",
       "grupo": "famosos_globais",
       "idioma": "es",
+      "coletadoEm": "2026-10-20T19:36:47.030Z",
       "encontrado": true,
       "seguidores": 517779940,
       "reelsColetados": 24,
@@ -4543,11 +4556,6 @@ window.RESUMO = {
       "viewsPorSeguidor": 0.0798
     },
     {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 1.147,
-      "viewsPorSeguidor": 1.38063
-    },
-    {
       "perfil": "guilhermeboulos.oficial",
       "idadeDias": 1.026,
       "viewsPorSeguidor": 0.59342
@@ -4556,31 +4564,6 @@ window.RESUMO = {
       "perfil": "jairmessiasbolsonaro",
       "idadeDias": 465.116,
       "viewsPorSeguidor": 0.16966
-    },
-    {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 1.815,
-      "viewsPorSeguidor": 0.71852
-    },
-    {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 4.814,
-      "viewsPorSeguidor": 1.9624
-    },
-    {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 0.77,
-      "viewsPorSeguidor": 0.91429
-    },
-    {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 1.689,
-      "viewsPorSeguidor": 2.16178
-    },
-    {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 4.139,
-      "viewsPorSeguidor": 1.70581
     },
     {
       "perfil": "guilhermeboulos.oficial",
@@ -4603,11 +4586,6 @@ window.RESUMO = {
       "viewsPorSeguidor": 0.30293
     },
     {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 3.123,
-      "viewsPorSeguidor": 1.35877
-    },
-    {
       "perfil": "tabataamaralsp",
       "idadeDias": 16.721,
       "viewsPorSeguidor": 0.0792
@@ -4623,11 +4601,6 @@ window.RESUMO = {
       "viewsPorSeguidor": 0.21518
     },
     {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 0.147,
-      "viewsPorSeguidor": 2.30925
-    },
-    {
       "perfil": "jairmessiasbolsonaro",
       "idadeDias": 467.055,
       "viewsPorSeguidor": 0.15079
@@ -4636,11 +4609,6 @@ window.RESUMO = {
       "perfil": "tabataamaralsp",
       "idadeDias": 16.751,
       "viewsPorSeguidor": 0.12545
-    },
-    {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 12.781,
-      "viewsPorSeguidor": 1.88759
     },
     {
       "perfil": "jairmessiasbolsonaro",
@@ -4668,19 +4636,9 @@ window.RESUMO = {
       "viewsPorSeguidor": 0.54621
     },
     {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 2.051,
-      "viewsPorSeguidor": 2.1038
-    },
-    {
       "perfil": "pablomarcal1",
       "idadeDias": 0.93,
       "viewsPorSeguidor": 0.2284
-    },
-    {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 7.107,
-      "viewsPorSeguidor": 1.51966
     },
     {
       "perfil": "pablomarcal1",
@@ -4698,11 +4656,6 @@ window.RESUMO = {
       "viewsPorSeguidor": 0.40881
     },
     {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 8.798,
-      "viewsPorSeguidor": 1.04357
-    },
-    {
       "perfil": "tabataamaralsp",
       "idadeDias": 6.866,
       "viewsPorSeguidor": 1.68569
@@ -4716,11 +4669,6 @@ window.RESUMO = {
       "perfil": "tabataamaralsp",
       "idadeDias": 7.938,
       "viewsPorSeguidor": 0.33114
-    },
-    {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 11.146,
-      "viewsPorSeguidor": 1.39106
     },
     {
       "perfil": "pablomarcal1",
@@ -4738,11 +4686,6 @@ window.RESUMO = {
       "viewsPorSeguidor": 0.14035
     },
     {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 6.095,
-      "viewsPorSeguidor": 0.92462
-    },
-    {
       "perfil": "tabataamaralsp",
       "idadeDias": 5.875,
       "viewsPorSeguidor": 0.3636
@@ -4758,11 +4701,6 @@ window.RESUMO = {
       "viewsPorSeguidor": 0.08974
     },
     {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 10.147,
-      "viewsPorSeguidor": 1.21133
-    },
-    {
       "perfil": "guilhermeboulos.oficial",
       "idadeDias": 0.044,
       "viewsPorSeguidor": 0.01198
@@ -4771,16 +4709,6 @@ window.RESUMO = {
       "perfil": "lulaoficial",
       "idadeDias": 0.85,
       "viewsPorSeguidor": 1.44017
-    },
-    {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 15.123,
-      "viewsPorSeguidor": 1.33574
-    },
-    {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 15.654,
-      "viewsPorSeguidor": 2.17487
     },
     {
       "perfil": "lulaoficial",
@@ -4798,29 +4726,14 @@ window.RESUMO = {
       "viewsPorSeguidor": 0.10774
     },
     {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 16.945,
-      "viewsPorSeguidor": 1.12626
-    },
-    {
       "perfil": "lulaoficial",
       "idadeDias": 0.792,
       "viewsPorSeguidor": 0.14211
     },
     {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 20.742,
-      "viewsPorSeguidor": 1.82781
-    },
-    {
       "perfil": "lulaoficial",
       "idadeDias": 0.663,
       "viewsPorSeguidor": 0.20343
-    },
-    {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 18.81,
-      "viewsPorSeguidor": 1.25761
     },
     {
       "perfil": "jairmessiasbolsonaro",
@@ -4833,29 +4746,14 @@ window.RESUMO = {
       "viewsPorSeguidor": 0.06452
     },
     {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 21.215,
-      "viewsPorSeguidor": 1.81209
-    },
-    {
       "perfil": "jairmessiasbolsonaro",
       "idadeDias": 472.031,
       "viewsPorSeguidor": 0.09612
     },
     {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 21.851,
-      "viewsPorSeguidor": 0.93406
-    },
-    {
       "perfil": "jairmessiasbolsonaro",
       "idadeDias": 470.241,
       "viewsPorSeguidor": 0.17343
-    },
-    {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 19.814,
-      "viewsPorSeguidor": 2.86916
     },
     {
       "perfil": "jairmessiasbolsonaro",
@@ -4866,11 +4764,6 @@ window.RESUMO = {
       "perfil": "pablomarcal1",
       "idadeDias": 1.027,
       "viewsPorSeguidor": 0.11203
-    },
-    {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 24.826,
-      "viewsPorSeguidor": 0.42891
     },
     {
       "perfil": "pablomarcal1",
@@ -4918,21 +4811,6 @@ window.RESUMO = {
       "viewsPorSeguidor": 0.30112
     },
     {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 24.099,
-      "viewsPorSeguidor": 1.11754
-    },
-    {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 13.786,
-      "viewsPorSeguidor": 2.12762
-    },
-    {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 17.722,
-      "viewsPorSeguidor": 1.37149
-    },
-    {
       "perfil": "tabataamaralsp",
       "idadeDias": 17.894,
       "viewsPorSeguidor": 0.12993
@@ -4968,11 +4846,6 @@ window.RESUMO = {
       "viewsPorSeguidor": 0.05294
     },
     {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 35.095,
-      "viewsPorSeguidor": 0.56302
-    },
-    {
       "perfil": "jairmessiasbolsonaro",
       "idadeDias": 473.114,
       "viewsPorSeguidor": 0.06783
@@ -5003,19 +4876,9 @@ window.RESUMO = {
       "viewsPorSeguidor": 0.0435
     },
     {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 25.807,
-      "viewsPorSeguidor": 1.13921
-    },
-    {
       "perfil": "guilhermeboulos.oficial",
       "idadeDias": 1.942,
       "viewsPorSeguidor": 0.32935
-    },
-    {
-      "perfil": "nikolasferreiradm",
-      "idadeDias": 34.866,
-      "viewsPorSeguidor": 1.40751
     },
     {
       "perfil": "lulaoficial",
@@ -6406,6 +6269,156 @@ window.RESUMO = {
       "perfil": "virginia",
       "idadeDias": 167.946,
       "viewsPorSeguidor": 0.74228
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 2.055,
+      "viewsPorSeguidor": 0.73144
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 5.054,
+      "viewsPorSeguidor": 1.97684
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 1.01,
+      "viewsPorSeguidor": 1.0969
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 3.363,
+      "viewsPorSeguidor": 1.57576
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 2.291,
+      "viewsPorSeguidor": 2.10612
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 0.388,
+      "viewsPorSeguidor": 4.38888
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 4.38,
+      "viewsPorSeguidor": 1.71391
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 1.387,
+      "viewsPorSeguidor": 1.43224
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 1.93,
+      "viewsPorSeguidor": 2.18334
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 15.363,
+      "viewsPorSeguidor": 1.32911
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 15.894,
+      "viewsPorSeguidor": 2.15954
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 7.347,
+      "viewsPorSeguidor": 1.52294
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 10.387,
+      "viewsPorSeguidor": 1.21068
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 13.021,
+      "viewsPorSeguidor": 1.8854
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 9.038,
+      "viewsPorSeguidor": 1.04709
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 11.387,
+      "viewsPorSeguidor": 1.38487
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 6.335,
+      "viewsPorSeguidor": 0.92736
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 14.027,
+      "viewsPorSeguidor": 2.11736
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 22.091,
+      "viewsPorSeguidor": 0.92844
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 19.05,
+      "viewsPorSeguidor": 1.2495
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 21.455,
+      "viewsPorSeguidor": 1.79714
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 20.054,
+      "viewsPorSeguidor": 2.85218
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 25.066,
+      "viewsPorSeguidor": 0.42589
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 17.185,
+      "viewsPorSeguidor": 1.12136
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 20.982,
+      "viewsPorSeguidor": 1.81759
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 24.34,
+      "viewsPorSeguidor": 1.10989
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 17.963,
+      "viewsPorSeguidor": 1.36232
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 35.106,
+      "viewsPorSeguidor": 1.39797
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 26.047,
+      "viewsPorSeguidor": 1.13061
+    },
+    {
+      "perfil": "nikolasferreiradm",
+      "idadeDias": 35.336,
+      "viewsPorSeguidor": 0.5589
     }
   ]
 };

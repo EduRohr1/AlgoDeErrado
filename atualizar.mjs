@@ -1,7 +1,7 @@
 // Atualiza os dados de reels via Apify e regenera a landing page.
 // Uso:   node atualizar.mjs            (coleta nova no Apify; precisa de APIFY_TOKEN)
 //        node atualizar.mjs --offline  (recalcula resumo e landing a partir de dados/*.json já salvos)
-//        node atualizar.mjs --apenas=famosos [--teto=1]
+//        node atualizar.mjs --apenas=famosos [--teto=1]   (ou --apenas=nikolasferreiradm para um perfil só)
 //            coleta só os grupos indicados (politicos, famosos_br, famosos_globais ou "famosos")
 //            e junta aos dados já salvos dos outros grupos; --teto (US$) evita a 2ª busca se o custo passar do limite
 import fs from 'node:fs';
@@ -64,7 +64,8 @@ const LANDING = path.join(RAIZ, 'landing');
 const BASE = 'https://api.apify.com/v2';
 const OFFLINE = process.argv.includes('--offline');
 const arg = nome => process.argv.find(a => a.startsWith(`--${nome}=`))?.split('=')[1];
-const APENAS = (arg('apenas')?.split(',') ?? []).flatMap(g => g === 'famosos' ? ['famosos_br', 'famosos_globais'] : [g]);
+// --apenas aceita grupos (politicos, famosos_br, famosos_globais, famosos) ou nomes de usuário.
+const APENAS = (arg('apenas')?.split(',') ?? []).flatMap(g => g === 'famosos' ? ['famosos_br', 'famosos_globais'] : [g.toLowerCase()]);
 const TETO = arg('teto') ? +arg('teto') : Infinity;
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -143,7 +144,7 @@ async function coletar() {
   }
   headers = { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' };
   const custo = { perfis: 0, reels: 0 };
-  const alvo = APENAS.length ? TODOS.filter(p => APENAS.includes(p.grupo)) : TODOS;
+  const alvo = APENAS.length ? TODOS.filter(p => APENAS.includes(p.grupo) || APENAS.includes(p.username)) : TODOS;
   if (!alvo.length) throw new Error(`Nenhum perfil nos grupos: ${APENAS.join(', ')}`);
   console.log(`Coletando ${alvo.length} perfis: ${alvo.map(p => p.username).join(', ')}`);
   const agora = new Date().toISOString();
@@ -273,6 +274,7 @@ function resumir(perfis, reels) {
       perfil: u,
       grupo,
       idioma,
+      coletadoEm: p?._coletadoEm || COLETA_ANTERIOR, // data da coleta deste perfil
       encontrado,
       seguidores: seg,
       reelsColetados: todos.length,

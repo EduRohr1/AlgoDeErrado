@@ -32,22 +32,6 @@
     "_coletadoEm": "2026-10-20T18:32:05.172Z"
   },
   {
-    "inputUrl": "https://www.instagram.com/nikolasferreiradm",
-    "id": "359409201",
-    "username": "nikolasferreiradm",
-    "url": "https://www.instagram.com/nikolasferreiradm",
-    "fullName": "Nikolas Ferreira",
-    "biography": "- Deputado Federal mais votado da história do Brasil com 3.119.318 votos 🇧🇷",
-    "followersCount": 24480979,
-    "followsCount": 2232,
-    "postsCount": 252,
-    "isBusinessAccount": true,
-    "businessCategoryName": "Politician",
-    "private": false,
-    "verified": true,
-    "_coletadoEm": "2026-10-20T18:32:05.172Z"
-  },
-  {
     "inputUrl": "https://www.instagram.com/guilhermeboulos.oficial",
     "id": "6906581719",
     "username": "guilhermeboulos.oficial",
@@ -204,5 +188,20 @@
     "private": false,
     "verified": true,
     "_coletadoEm": "2026-10-20T19:36:47.030Z"
+  },
+  {
+    "inputUrl": "https://www.instagram.com/nikolasferreiradm",
+    "id": "359409201",
+    "username": "nikolasferreiradm",
+    "url": "https://www.instagram.com/nikolasferreiradm",
+    "fullName": "Nikolas Ferreira",
+    "biography": "- Deputado Federal mais votado da história do Brasil com 3.119.318 votos 🇧🇷",
+    "followersCount": 24685097,
+    "followsCount": 2232,
+    "isBusinessAccount": true,
+    "businessCategoryName": "Politician",
+    "private": false,
+    "verified": true,
+    "_coletadoEm": "2026-10-21T00:18:03.974Z"
   }
 ]

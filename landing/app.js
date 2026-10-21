@@ -54,7 +54,7 @@
   document.getElementById('heroSub').innerHTML = (cr7
     ? `<span class="hero-sub-destaque">Cristiano Ronaldo, a pessoa mais seguida do Instagram: ${milhoesExt(cr7.seguidores)} de seguidores · Nikolas Ferreira: ${milhoesExt(nik.seguidores)}</span>`
     : '') +
-    `Views de um vídeo típico ÷ seguidores · ${comp.length + R.perfis.filter(p => grupoDe(p) !== 'politicos' && p.comparavel).length} perfis comparados · coleta em ${new Date(R.geradoEm).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })}`;
+    `Views de um vídeo típico ÷ seguidores · ${comp.length + R.perfis.filter(p => grupoDe(p) !== 'politicos' && p.comparavel).length} perfis comparados · coleta em ${new Date(R.geradoEm).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo', day: 'numeric', month: 'long', year: 'numeric' })}`;
   const credito = document.getElementById('creditoFoto');
   if (credito) credito.innerHTML =
     'Foto: Pablo Valadares/Câmara dos Deputados, via Wikimedia Commons, <a href="https://creativecommons.org/licenses/by/3.0/deed.pt-br" target="_blank" rel="noopener">CC BY 3.0</a> ' +
@@ -80,8 +80,16 @@
   ].filter(Boolean).map(t => `<li>${t}</li>`).join('');
 
   document.getElementById('posEng').textContent = `fica em ${rankEng}º de ${comp.length}`;
-  document.getElementById('dataColeta').textContent =
-    new Date(R.geradoEm).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+  // Datas de coleta por perfil, no horário de Brasília (o Nikolas pode ter sido recoletado depois dos demais).
+  const TZ = { timeZone: 'America/Sao_Paulo' };
+  const diaBr = d => new Date(d).toLocaleDateString('pt-BR', { ...TZ, day: 'numeric', month: 'long', year: 'numeric' });
+  const horaBr = d => new Date(d).toLocaleTimeString('pt-BR', { ...TZ, hour: '2-digit', minute: '2-digit' }).replace(':', 'h');
+  const coletaNik = nik.coletadoEm, coletasOutros = R.perfis.filter(p => p.encontrado && p.perfil !== NIK && p.coletadoEm).map(p => Date.parse(p.coletadoEm));
+  const minOutros = Math.min(...coletasOutros), maxOutros = Math.max(...coletasOutros);
+  const separado = coletaNik && Math.abs(Date.parse(coletaNik) - maxOutros) > 3600e3;
+  document.getElementById('dataColeta').textContent = separado
+    ? `${diaBr(minOutros)} (demais perfis, entre ${horaBr(minOutros)} e ${horaBr(maxOutros)}). O perfil do Nikolas Ferreira foi recoletado em ${diaBr(coletaNik)}, às ${horaBr(coletaNik)} (horário de Brasília)`
+    : `${diaBr(R.geradoEm)} (horário de Brasília)`;
 
   // ===== Tabelas =====
   const cabecalho = '<thead><tr><th>Perfil</th><th>Seguidores</th><th>Reels</th><th>Mediana de views</th><th>Média de views</th>' +
@@ -125,7 +133,7 @@
       `<td>${pct(p.medianaCurtidasPorSeguidor)}</td><td>${pct(p.medianaComentariosPorSeguidor, 3)}</td><td>${fmtPct(p.engajamentoMedio)}</td></tr>`).join('') + '</tbody>';
 
   // ===== Regularidade, reels fora da curva e comentários por curtida =====
-  const fmtData = d => new Date(d).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
+  const fmtData = d => new Date(d).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit' });
   for (const p of R.perfis) {
     p._cv = p.regularidade?.amostra12?.cv ?? null;
     p._ccRatio = p.medianaComentariosPorCurtida ?? null;
