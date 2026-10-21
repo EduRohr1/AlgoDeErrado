@@ -36,6 +36,7 @@
         <a href="#interacao">Interação</a>
         <a href="#regularidade">Regularidade</a>
         <a href="#famosos">Famosos</a>
+        <a href="#secIdade">Idade dos vídeos</a>
         <a href="#pistas">Pistas</a>
         <a href="#contexto">Contexto</a>
         <a href="#interpretar">Como interpretar</a>
@@ -103,6 +104,16 @@
       <h2 class="secao-titulo revelar" id="tituloAchados">O que os dados mostram</h2>
       <ol class="achados-lista" id="achados"></ol>
       <p class="lede resumo revelar" id="lede"></p>
+    </section>
+
+    <section class="painel" id="secIdade">
+      <h2>Idade da publicação × visualizações</h2>
+      <p class="sub">Cada ponto é <strong>um vídeo diferente</strong>, medido no mesmo momento (a coleta). O gráfico é um retrato: não mostra um mesmo vídeo crescendo ao longo do tempo. Vídeos mais à esquerda são mais novos e ainda podem ganhar visualizações. Aqui entram todos os vídeos coletados, inclusive os com menos de 3 dias. Os dois eixos estão em escala logarítmica.</p>
+      <div class="filtros" id="filtrosIdade" hidden></div>
+      <div class="grafico alto"><canvas id="gIdade" aria-label="Gráfico de dispersão: idade do vídeo em dias versus visualizações por seguidor"></canvas></div>
+      <h3>Mediana de visualizações ÷ seguidores por faixa de idade</h3>
+      <p class="sub">Entre parênteses, quantos vídeos caem em cada faixa. Faixas com poucos vídeos são frágeis; “—” indica que não houve vídeo naquela faixa.</p>
+      <div class="tabela-wrap"><table class="tabela" id="tabelaFaixas"></table></div>
     </section>
 
     <section class="perspectiva" id="perspectiva" aria-labelledby="tituloPerspectiva">
@@ -228,16 +239,6 @@
       <ul class="notas" id="notas"></ul>
     </section>
 
-
-    <section class="painel" id="secIdade">
-      <h2>Idade da publicação × visualizações</h2>
-      <p class="sub">Cada ponto é <strong>um vídeo diferente</strong>, medido no mesmo momento (a coleta). O gráfico é um retrato: não mostra um mesmo vídeo crescendo ao longo do tempo. Vídeos mais à esquerda são mais novos e ainda podem ganhar visualizações. Aqui entram todos os vídeos coletados, inclusive os com menos de 3 dias. Os dois eixos estão em escala logarítmica.</p>
-      <div class="filtros" id="filtrosIdade" hidden></div>
-      <div class="grafico alto"><canvas id="gIdade" aria-label="Gráfico de dispersão: idade do vídeo em dias versus visualizações por seguidor"></canvas></div>
-      <h3>Mediana de visualizações ÷ seguidores por faixa de idade</h3>
-      <p class="sub">Entre parênteses, quantos vídeos caem em cada faixa. Faixas com poucos vídeos são frágeis; “—” indica que não houve vídeo naquela faixa.</p>
-      <div class="tabela-wrap"><table class="tabela" id="tabelaFaixas"></table></div>
-    </section>
 
     <section class="painel metodo" id="metodologia">
       <h2>Metodologia</h2>
