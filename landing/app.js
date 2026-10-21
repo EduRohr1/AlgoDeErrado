@@ -481,7 +481,7 @@
           `Comparação em números absolutos, sem levar em conta o tamanho de cada base. Vídeo típico (mediana dos vídeos analisados): Nikolas ${fmtMi(nik.medianaViews)}, ${quem} ${fmtMi(f.medianaViews)}.`)
       : stat(fmtX(1 / rV), `O vídeo típico de ${quem} tem ${fmtX(1 / rV)} mais visualizações (${fmtMi(f.medianaViews)} contra ${fmtMi(nik.medianaViews)})`, 'cinza', 'Visualizações por vídeo',
           `Comparação em números absolutos, sem levar em conta o tamanho de cada base. Vídeo típico (mediana dos vídeos analisados): ${quem} ${fmtMi(f.medianaViews)}, Nikolas ${fmtMi(nik.medianaViews)}. Em números absolutos, o vídeo ${deQuem} tem mais visualizações.`);
-    return { rotulo: nome(f.perfil), html: `<p class="cmp-frase">Nikolas × <em>${nome(f.perfil)}</em></p>
+    return { perfil: f.perfil, rotulo: nome(f.perfil), html: `<p class="cmp-frase">Nikolas × <em>${nome(f.perfil)}</em></p>
       <p class="cmp-resumo">${resumo}</p>
       <div class="big-stats">
         ${stat(fmtX(rSeg), `${quem} tem ${fmtX(rSeg)} mais seguidores que Nikolas (${fmtMi(f.seguidores)} contra ${fmtMi(nik.seguidores)})`, 'cinza', 'Seguidores',
@@ -512,7 +512,11 @@
     <ol class="cmp-barras">${[...comp].sort((x, y) => y.medianaViewsPorSeguidor - x.medianaViewsPorSeguidor).map(p => `<li class="${p.perfil === NIK ? 'nik' : ''}"><span class="cmp-barra-nome">${nome(p.perfil)}<small>${fmtMi(p.medianaViews)} por vídeo</small></span><span class="cmp-barra"><i style="--w:${(p.medianaViewsPorSeguidor / maxVps * 100).toFixed(1)}%"></i></span><span class="cmp-barra-valor">${dec2(p.medianaViewsPorSeguidor)}</span></li>`).join('')}</ol>` });
   trilho.innerHTML = slides.map((s, i) => `<article class="slide" role="group" aria-roledescription="slide" aria-label="${i + 1} de ${slides.length}: ${s.rotulo}">${s.html}</article>`).join('');
   const pontosCarr = document.getElementById('carrPontos');
-  pontosCarr.innerHTML = slides.map((s, i) => `<button type="button" role="tab" aria-label="${s.rotulo}" aria-selected="${i === 0}"><span>${s.rotulo}</span></button>`).join('');
+  // Abas com foto redonda (as mesmas fotos licenciadas dos slides); Políticos usa um ícone de grupo.
+  const ICONE_GRUPO = '<svg class="aba-icone" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="3.2"/><circle cx="16" cy="9" r="3.2"/><path d="M2.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5zM10.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5z"/></svg>';
+  pontosCarr.innerHTML = slides.map((s, i) => `<button type="button" role="tab" aria-label="${s.rotulo}" aria-selected="${i === 0}">` +
+    (s.perfil && FOTOS[s.perfil] ? `<img class="aba-foto" src="img/${FOTOS[s.perfil].arq}" alt="" width="40" height="40">` : `<span class="aba-foto aba-grupo">${ICONE_GRUPO}</span>`) +
+    `<span class="aba-nome">${s.perfil ? (CURTO_NOME[s.perfil] || s.rotulo) : s.rotulo}</span></button>`).join('');
   const reduzirCarr = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let atual = 0, pausado = reduzirCarr, timer = null;
   const irPara = (i, foco) => {
