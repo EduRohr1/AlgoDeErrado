@@ -53,4 +53,5 @@ Todas as fotos vêm do Wikimedia Commons, com a licença conferida na página de
 - `landing/`: página principal.
 - `dados/`: dados coletados e o resumo calculado.
 - `atualizar.mjs`: coleta e recálculo.
+- `analises.mjs`: análises extras ("pistas"): frequência, duração, horário, legenda, temas e tom dos comentários (este último usa comentários só localmente e publica apenas porcentagens).
 - `site/`: primeira versão (app de coleta no navegador).

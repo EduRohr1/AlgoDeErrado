@@ -7,6 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { frequencia, duracao, horario, legenda, temas, tom, TEMAS } from './analises.mjs';
 
 // ===== Perfis analisados (edite aqui) =====
 // Políticos: grupo "politicos", idioma "pt".
@@ -228,6 +229,10 @@ function foraDaCurva(reelsPerfil) {
 const idadeDias = x => Math.max(0.01, (coletadoEm(x) - Date.parse(x.timestamp)) / 86400e3);
 
 function resumir(perfis, reels) {
+  // Tom dos comentários: só com o bruto local (dados/brutos/). Sem ele (ex.: clone do repositório),
+  // reaproveita os agregados do resumo anterior.
+  const brutosReels = fs.existsSync(path.join(BRUTOS, 'reels.json')) ? JSON.parse(fs.readFileSync(path.join(BRUTOS, 'reels.json'), 'utf8')) : null;
+  const tomAnterior = Object.fromEntries((resumoAnterior?.perfis || []).map(p => [p.perfil, p.pistas?.tom ?? null]));
   return TODOS.map(({ username: u, grupo, idioma }) => {
     const p = perfis.find(x => (x.username || '').toLowerCase() === u);
     const seg = p?.followersCount ?? null;
@@ -286,6 +291,15 @@ function resumir(perfis, reels) {
       medianaComentariosPorCurtida: mediana(rs.filter(x => x.likesCount > 0).map(x => (x.commentsCount ?? 0) / x.likesCount)),
       regularidade: { amostra12: regularidade(views), todosMaduros: regularidade(maduros.map(x => x.videoPlayCount)) },
       foraDaCurva: foraDaCurva(maduros),
+      // Pistas: frequência, duração, horário, legenda, temas (só políticos) e tom dos comentários (perfis em português).
+      pistas: encontrado ? {
+        frequencia: frequencia(todos, coletadoEm),
+        duracao: duracao(maduros, seg),
+        horario: horario(todos, maduros, seg),
+        legenda: legenda(todos),
+        temas: grupo === 'politicos' ? temas(maduros, seg, u) : null,
+        tom: grupo === 'famosos_globais' ? null : (brutosReels ? tom(brutosReels.filter(x => dono(x) === u)) : (tomAnterior[u] ?? null)),
+      } : null,
       comparavel,
       faixas,
       ...(observacao && { observacao }),
@@ -335,6 +349,7 @@ const resumo = {
   ...(custo && { custoUsd: custo }),
   grupos: GRUPOS,
   faixasIdade: FAIXAS.map(f => f.rotulo),
+  regrasTemas: TEMAS,
   perfis: resumir(perfis, reels),
   pontos: pontos(perfis, reels),
 };

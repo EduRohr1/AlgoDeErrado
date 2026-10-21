@@ -9,15 +9,10 @@ Lista combinada com o Eduardo em 20/10/2026. As marcadas com ✅ já estão na l
 - ✅ **Comentários ÷ curtidas por perfil.**
 - ✅ **Famosos como referência:** Cristiano, Messi, Neymar, Anitta e Virginia (coleta de 20/10/2026, US$ 0,38), no carrossel e em seções próprias.
 - ✅ **Vídeos com mais views que seguidores** ("11 de 12"), calculado no resumo.
+- ✅ **Pistas nos dados** (seção "Por que tanto alcance?"): frequência de postagem, duração dos vídeos, horário, estilo de legenda, temas por palavras-chave e tom dos comentários de amostra (só agregados). Código em `analises.mjs`.
 
 ## Com os dados já salvos (sem custo)
 
-1. **Frequência × alcance.** Reels por dia de cada perfil comparados com a mediana de views ÷ seguidores. Pergunta: "postar menos e concentrar" aparece nos dados?
-2. **Duração dos vídeos.** Duração (`videoDuration`) cruzada com views ÷ seguidores, por perfil e por reel.
-3. **Horário e dia da semana.** Em que período do dia cada perfil posta (horário de Brasília) e quais períodos rendem mais views ÷ seguidores. A amostra de dias da semana é curta para quem posta muito.
-4. **Estilo de legenda.** Tamanho da legenda, palavras mais usadas, hashtags e menções (`caption`, `hashtags`, `mentions`).
-5. **Temas.** Classificar cada reel por assunto a partir da legenda (economia, religião, segurança, ataque a adversário, eleição etc.) e comparar o alcance por tema. É uma classificação aproximada.
-6. **Tom dos comentários de amostra:** apoio, crítica ou pergunta. Usa os comentários que ficaram só no bruto local (`dados/brutos/`, fora do git); publicar apenas números agregados, nunca nomes ou textos de terceiros.
 7. **Collabs.** Alcance de reels solo comparado ao de reels em coautoria (campo `coautores`). O Lula tem 22 collabs em 64 reels; o Nikolas, nenhum.
 8. **Consistência (complemento).** Razão média ÷ mediana. A regularidade e o % de vídeos acima de 1× os seguidores já estão feitos.
 9. **Música e parcerias pagas.** Áudio original ou música em alta (`audioOriginal`) e marcação de parceria paga (`paidPartnership`).

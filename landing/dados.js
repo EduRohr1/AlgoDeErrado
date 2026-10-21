@@ -28,6 +28,118 @@ window.RESUMO = {
     "7–30d",
     "30d+"
   ],
+  "regrasTemas": {
+    "economia": [
+      "economia",
+      "imposto",
+      "impostos",
+      "taxa",
+      "taxação",
+      "pix",
+      "inflação",
+      "preço",
+      "preços",
+      "dinheiro",
+      "emprego",
+      "empregos",
+      "desempregados",
+      "desemprego",
+      "salário",
+      "gasolina",
+      "juros",
+      "fiscal",
+      "bolsa família",
+      "tesouraço",
+      "aposentado",
+      "aposentados",
+      "inss",
+      "renda"
+    ],
+    "religião e família": [
+      "deus",
+      "jesus",
+      "cristo",
+      "igreja",
+      "fé",
+      "cristão",
+      "cristãos",
+      "família",
+      "famílias",
+      "aborto",
+      "oração",
+      "bíblia",
+      "amém",
+      "senhor",
+      "livrai"
+    ],
+    "segurança": [
+      "bandido",
+      "bandidos",
+      "crime",
+      "crimes",
+      "polícia",
+      "policial",
+      "segurança",
+      "preso",
+      "presos",
+      "prisão",
+      "facção",
+      "facções",
+      "violência",
+      "droga",
+      "drogas",
+      "tráfico",
+      "traficante"
+    ],
+    "corrupção": [
+      "corrupção",
+      "corrupto",
+      "corruptos",
+      "roubo",
+      "roubar",
+      "roubaram",
+      "desvio",
+      "propina",
+      "escândalo",
+      "cpi",
+      "vorcaro",
+      "sigilo",
+      "investigação"
+    ],
+    "adversários e governo": [
+      "lula",
+      "pt",
+      "petista",
+      "bolsonaro",
+      "flávio",
+      "stf",
+      "moraes",
+      "governo",
+      "esquerda",
+      "direita",
+      "ministro",
+      "ministra",
+      "oposição",
+      "janja",
+      "haddad"
+    ],
+    "eleição e voto": [
+      "eleição",
+      "eleições",
+      "voto",
+      "votos",
+      "votar",
+      "vote",
+      "urna",
+      "urnas",
+      "campanha",
+      "candidato",
+      "candidata",
+      "turno",
+      "debate",
+      "pesquisa"
+    ]
+  },
   "perfis": [
     {
       "perfil": "nikolasferreiradm",
@@ -67,6 +179,278 @@ window.RESUMO = {
         "curtidasBaixas": 0,
         "comentariosBaixos": 3,
         "reels": []
+      },
+      "pistas": {
+        "frequencia": {
+          "reelsPorDia": 0.93,
+          "dias": 30,
+          "reels": 28
+        },
+        "duracao": {
+          "n": 24,
+          "medianaSegundos": 115,
+          "acima60s": 0.75,
+          "correlacao": 0.21,
+          "vpsLongos": 1.4635871384065156,
+          "vpsCurtos": 1.3472519420077114,
+          "pontos": [
+            {
+              "s": 159,
+              "v": 1.9624
+            },
+            {
+              "s": 115,
+              "v": 1.7058
+            },
+            {
+              "s": 113,
+              "v": 1.3588
+            },
+            {
+              "s": 71,
+              "v": 1.8876
+            },
+            {
+              "s": 167,
+              "v": 1.5197
+            },
+            {
+              "s": 17,
+              "v": 1.0436
+            },
+            {
+              "s": 80,
+              "v": 1.3911
+            },
+            {
+              "s": 117,
+              "v": 0.9246
+            },
+            {
+              "s": 174,
+              "v": 1.2113
+            },
+            {
+              "s": 114,
+              "v": 1.3357
+            },
+            {
+              "s": 39,
+              "v": 2.1749
+            },
+            {
+              "s": 540,
+              "v": 1.1263
+            },
+            {
+              "s": 143,
+              "v": 1.8278
+            },
+            {
+              "s": 190,
+              "v": 1.2576
+            },
+            {
+              "s": 94,
+              "v": 1.8121
+            },
+            {
+              "s": 6,
+              "v": 0.9341
+            },
+            {
+              "s": 280,
+              "v": 2.8692
+            },
+            {
+              "s": 62,
+              "v": 0.4289
+            },
+            {
+              "s": 358,
+              "v": 1.1175
+            },
+            {
+              "s": 128,
+              "v": 2.1276
+            },
+            {
+              "s": 34,
+              "v": 1.3715
+            },
+            {
+              "s": 42,
+              "v": 0.563
+            },
+            {
+              "s": 42,
+              "v": 1.1392
+            },
+            {
+              "s": 180,
+              "v": 1.4075
+            }
+          ]
+        },
+        "horario": {
+          "periodos": [
+            {
+              "periodo": "madrugada",
+              "pctPosts": 0,
+              "n": 0,
+              "medianaVps": null
+            },
+            {
+              "periodo": "manhã",
+              "pctPosts": 0.067,
+              "n": 1,
+              "medianaVps": 1.8120920736053898
+            },
+            {
+              "periodo": "tarde",
+              "pctPosts": 0.4,
+              "n": 10,
+              "medianaVps": 1.273532851770348
+            },
+            {
+              "periodo": "noite",
+              "pctPosts": 0.533,
+              "n": 13,
+              "medianaVps": 1.4075098467263094
+            }
+          ],
+          "dias": [
+            {
+              "dia": "dom",
+              "pctPosts": 0.167
+            },
+            {
+              "dia": "seg",
+              "pctPosts": 0.133
+            },
+            {
+              "dia": "ter",
+              "pctPosts": 0.233
+            },
+            {
+              "dia": "qua",
+              "pctPosts": 0.1
+            },
+            {
+              "dia": "qui",
+              "pctPosts": 0.1
+            },
+            {
+              "dia": "sex",
+              "pctPosts": 0.133
+            },
+            {
+              "dia": "sáb",
+              "pctPosts": 0.133
+            }
+          ],
+          "horaMediana": 18.5
+        },
+        "legenda": {
+          "n": 30,
+          "medianaCaracteres": 30,
+          "medianaHashtags": 0,
+          "pctComMencao": 0,
+          "medianaEmojis": 0,
+          "palavras": [
+            {
+              "p": "lula",
+              "n": 6
+            },
+            {
+              "p": "brasil",
+              "n": 4
+            },
+            {
+              "p": "compartilhe",
+              "n": 2
+            },
+            {
+              "p": "conhece",
+              "n": 2
+            },
+            {
+              "p": "final",
+              "n": 2
+            },
+            {
+              "p": "motivo",
+              "n": 2
+            },
+            {
+              "p": "parar",
+              "n": 2
+            },
+            {
+              "p": "piá",
+              "n": 2
+            }
+          ]
+        },
+        "temas": {
+          "n": 24,
+          "temas": [
+            {
+              "tema": "economia",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "religião e família",
+              "n": 1,
+              "pct": 0.042,
+              "medianaVps": 0.42891385185208486
+            },
+            {
+              "tema": "segurança",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "corrupção",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "adversários e governo",
+              "n": 8,
+              "pct": 0.333,
+              "medianaVps": 1.8199487242728325
+            },
+            {
+              "tema": "eleição e voto",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "sem tema identificado",
+              "n": 16,
+              "pct": 0.667,
+              "medianaVps": 1.3472519420077114
+            }
+          ]
+        },
+        "tom": {
+          "n": 430,
+          "pct": {
+            "apoio": 0.491,
+            "crítica": 0.028,
+            "pergunta": 0.035,
+            "neutro": 0.367,
+            "repetitivo": 0.079
+          },
+          "textosRepetidos": 9,
+          "comentariosRepetidos": 34
+        }
       },
       "comparavel": true,
       "faixas": [
@@ -136,6 +520,294 @@ window.RESUMO = {
         "comentariosBaixos": 1,
         "reels": []
       },
+      "pistas": {
+        "frequencia": {
+          "reelsPorDia": 9.59,
+          "dias": 6.7,
+          "reels": 64
+        },
+        "duracao": {
+          "n": 28,
+          "medianaSegundos": 51,
+          "acima60s": 0.393,
+          "correlacao": -0.25,
+          "vpsLongos": 0.3607860878234712,
+          "vpsCurtos": 0.3160952321030953,
+          "pontos": [
+            {
+              "s": 93,
+              "v": 0.228
+            },
+            {
+              "s": 31,
+              "v": 0.3652
+            },
+            {
+              "s": 45,
+              "v": 0.267
+            },
+            {
+              "s": 64,
+              "v": 0.6549
+            },
+            {
+              "s": 89,
+              "v": 0.1524
+            },
+            {
+              "s": 36,
+              "v": 0.4538
+            },
+            {
+              "s": 80,
+              "v": 0.0905
+            },
+            {
+              "s": 31,
+              "v": 0.1462
+            },
+            {
+              "s": 91,
+              "v": 0.2778
+            },
+            {
+              "s": 20,
+              "v": 0.9716
+            },
+            {
+              "s": 46,
+              "v": 0.2024
+            },
+            {
+              "s": 74,
+              "v": 0.5735
+            },
+            {
+              "s": 35,
+              "v": 0.2195
+            },
+            {
+              "s": 50,
+              "v": 0.461
+            },
+            {
+              "s": 50,
+              "v": 0.2217
+            },
+            {
+              "s": 118,
+              "v": 0.1825
+            },
+            {
+              "s": 52,
+              "v": 0.3392
+            },
+            {
+              "s": 60,
+              "v": 0.5885
+            },
+            {
+              "s": 78,
+              "v": 0.3824
+            },
+            {
+              "s": 74,
+              "v": 0.2175
+            },
+            {
+              "s": 52,
+              "v": 0.8834
+            },
+            {
+              "s": 42,
+              "v": 2.0053
+            },
+            {
+              "s": 30,
+              "v": 0.5617
+            },
+            {
+              "s": 49,
+              "v": 0.2369
+            },
+            {
+              "s": 33,
+              "v": 0.2637
+            },
+            {
+              "s": 44,
+              "v": 0.4869
+            },
+            {
+              "s": 82,
+              "v": 0.4382
+            },
+            {
+              "s": 67,
+              "v": 0.3958
+            }
+          ]
+        },
+        "horario": {
+          "periodos": [
+            {
+              "periodo": "madrugada",
+              "pctPosts": 0.031,
+              "n": 1,
+              "medianaVps": 0.2195172284681923
+            },
+            {
+              "periodo": "manhã",
+              "pctPosts": 0.359,
+              "n": 10,
+              "medianaVps": 0.31630638829498914
+            },
+            {
+              "periodo": "tarde",
+              "pctPosts": 0.266,
+              "n": 9,
+              "medianaVps": 0.2778337136181487
+            },
+            {
+              "periodo": "noite",
+              "pctPosts": 0.344,
+              "n": 8,
+              "medianaVps": 0.5113437278766962
+            }
+          ],
+          "dias": [
+            {
+              "dia": "dom",
+              "pctPosts": 0.203
+            },
+            {
+              "dia": "seg",
+              "pctPosts": 0.234
+            },
+            {
+              "dia": "ter",
+              "pctPosts": 0.125
+            },
+            {
+              "dia": "qua",
+              "pctPosts": 0.094
+            },
+            {
+              "dia": "qui",
+              "pctPosts": 0.125
+            },
+            {
+              "dia": "sex",
+              "pctPosts": 0.172
+            },
+            {
+              "dia": "sáb",
+              "pctPosts": 0.047
+            }
+          ],
+          "horaMediana": 13.5
+        },
+        "legenda": {
+          "n": 64,
+          "medianaCaracteres": 290,
+          "medianaHashtags": 0,
+          "pctComMencao": 0.109,
+          "medianaEmojis": 0,
+          "palavras": [
+            {
+              "p": "brasil",
+              "n": 33
+            },
+            {
+              "p": "povo",
+              "n": 28
+            },
+            {
+              "p": "bolsonaro",
+              "n": 20
+            },
+            {
+              "p": "brasileiro",
+              "n": 19
+            },
+            {
+              "p": "vamos",
+              "n": 18
+            },
+            {
+              "p": "flávio",
+              "n": 16
+            },
+            {
+              "p": "família",
+              "n": 14
+            },
+            {
+              "p": "gente",
+              "n": 14
+            }
+          ]
+        },
+        "temas": {
+          "n": 28,
+          "temas": [
+            {
+              "tema": "economia",
+              "n": 2,
+              "pct": 0.071,
+              "medianaVps": 0.35988338959853183
+            },
+            {
+              "tema": "religião e família",
+              "n": 7,
+              "pct": 0.25,
+              "medianaVps": 0.33917370662841634
+            },
+            {
+              "tema": "segurança",
+              "n": 3,
+              "pct": 0.107,
+              "medianaVps": 0.46096904948942974
+            },
+            {
+              "tema": "corrupção",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "adversários e governo",
+              "n": 4,
+              "pct": 0.143,
+              "medianaVps": 0.4634654375130425
+            },
+            {
+              "tema": "eleição e voto",
+              "n": 6,
+              "pct": 0.214,
+              "medianaVps": 0.44956950503854676
+            },
+            {
+              "tema": "sem tema identificado",
+              "n": 10,
+              "pct": 0.357,
+              "medianaVps": 0.2415860230013827
+            }
+          ]
+        },
+        "tom": {
+          "n": 897,
+          "pct": {
+            "apoio": 0.444,
+            "crítica": 0.011,
+            "pergunta": 0.01,
+            "neutro": 0.443,
+            "repetitivo": 0.093
+          },
+          "textosRepetidos": 21,
+          "comentariosRepetidos": 83
+        }
+      },
       "comparavel": true,
       "faixas": [
         {
@@ -203,6 +875,295 @@ window.RESUMO = {
         "curtidasBaixas": 0,
         "comentariosBaixos": 3,
         "reels": []
+      },
+      "pistas": {
+        "frequencia": {
+          "reelsPorDia": 0,
+          "dias": 30,
+          "reels": 0,
+          "inativoHaDias": 460
+        },
+        "duracao": {
+          "n": 28,
+          "medianaSegundos": 62,
+          "acima60s": 0.536,
+          "correlacao": 0,
+          "vpsLongos": 0.16704561966497466,
+          "vpsCurtos": 0.1625620082708248,
+          "pontos": [
+            {
+              "s": 59,
+              "v": 0.432
+            },
+            {
+              "s": 47,
+              "v": 0.1805
+            },
+            {
+              "s": 72,
+              "v": 0.9673
+            },
+            {
+              "s": 94,
+              "v": 0.2294
+            },
+            {
+              "s": 41,
+              "v": 0.2395
+            },
+            {
+              "s": 63,
+              "v": 0.2054
+            },
+            {
+              "s": 290,
+              "v": 0.1721
+            },
+            {
+              "s": 70,
+              "v": 0.2627
+            },
+            {
+              "s": 138,
+              "v": 0.1885
+            },
+            {
+              "s": 78,
+              "v": 0.1697
+            },
+            {
+              "s": 30,
+              "v": 0.1517
+            },
+            {
+              "s": 78,
+              "v": 0.1254
+            },
+            {
+              "s": 52,
+              "v": 0.2152
+            },
+            {
+              "s": 42,
+              "v": 0.1508
+            },
+            {
+              "s": 35,
+              "v": 0.2553
+            },
+            {
+              "s": 122,
+              "v": 0.0902
+            },
+            {
+              "s": 30,
+              "v": 0.1016
+            },
+            {
+              "s": 44,
+              "v": 0.2972
+            },
+            {
+              "s": 24,
+              "v": 0.0961
+            },
+            {
+              "s": 61,
+              "v": 0.1734
+            },
+            {
+              "s": 114,
+              "v": 0.0376
+            },
+            {
+              "s": 87,
+              "v": 0.0624
+            },
+            {
+              "s": 82,
+              "v": 0.048
+            },
+            {
+              "s": 78,
+              "v": 0.1644
+            },
+            {
+              "s": 9,
+              "v": 0.0684
+            },
+            {
+              "s": 10,
+              "v": 0.0678
+            },
+            {
+              "s": 87,
+              "v": 0.0389
+            },
+            {
+              "s": 20,
+              "v": 0.0363
+            }
+          ]
+        },
+        "horario": {
+          "periodos": [
+            {
+              "periodo": "madrugada",
+              "pctPosts": 0,
+              "n": 0,
+              "medianaVps": null
+            },
+            {
+              "periodo": "manhã",
+              "pctPosts": 0.393,
+              "n": 11,
+              "medianaVps": 0.1253531389149054
+            },
+            {
+              "periodo": "tarde",
+              "pctPosts": 0.357,
+              "n": 10,
+              "medianaVps": 0.15761051270188142
+            },
+            {
+              "periodo": "noite",
+              "pctPosts": 0.25,
+              "n": 7,
+              "medianaVps": 0.18049829458002672
+            }
+          ],
+          "dias": [
+            {
+              "dia": "dom",
+              "pctPosts": 0.071
+            },
+            {
+              "dia": "seg",
+              "pctPosts": 0.286
+            },
+            {
+              "dia": "ter",
+              "pctPosts": 0.107
+            },
+            {
+              "dia": "qua",
+              "pctPosts": 0.107
+            },
+            {
+              "dia": "qui",
+              "pctPosts": 0.25
+            },
+            {
+              "dia": "sex",
+              "pctPosts": 0.071
+            },
+            {
+              "dia": "sáb",
+              "pctPosts": 0.107
+            }
+          ],
+          "horaMediana": 12.5
+        },
+        "legenda": {
+          "n": 28,
+          "medianaCaracteres": 104.5,
+          "medianaHashtags": 0,
+          "pctComMencao": 0.357,
+          "medianaEmojis": 0,
+          "palavras": [
+            {
+              "p": "bolsonaro",
+              "n": 10
+            },
+            {
+              "p": "jair",
+              "n": 8
+            },
+            {
+              "p": "apenas",
+              "n": 5
+            },
+            {
+              "p": "estado",
+              "n": 5
+            },
+            {
+              "p": "lula",
+              "n": 5
+            },
+            {
+              "p": "algo",
+              "n": 4
+            },
+            {
+              "p": "brasil",
+              "n": 4
+            },
+            {
+              "p": "coincidência",
+              "n": 4
+            }
+          ]
+        },
+        "temas": {
+          "n": 28,
+          "temas": [
+            {
+              "tema": "economia",
+              "n": 1,
+              "pct": 0.036,
+              "medianaVps": 0.038922253315159416
+            },
+            {
+              "tema": "religião e família",
+              "n": 3,
+              "pct": 0.107,
+              "medianaVps": 0.1253531389149054
+            },
+            {
+              "tema": "segurança",
+              "n": 6,
+              "pct": 0.214,
+              "medianaVps": 0.17088287095382557
+            },
+            {
+              "tema": "corrupção",
+              "n": 4,
+              "pct": 0.143,
+              "medianaVps": 0.19694377531101243
+            },
+            {
+              "tema": "adversários e governo",
+              "n": 8,
+              "pct": 0.286,
+              "medianaVps": 0.17154566617164735
+            },
+            {
+              "tema": "eleição e voto",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "sem tema identificado",
+              "n": 18,
+              "pct": 0.643,
+              "medianaVps": 0.15124167181195255
+            }
+          ]
+        },
+        "tom": {
+          "n": 357,
+          "pct": {
+            "apoio": 0.333,
+            "crítica": 0.008,
+            "pergunta": 0.008,
+            "neutro": 0.249,
+            "repetitivo": 0.401
+          },
+          "textosRepetidos": 21,
+          "comentariosRepetidos": 143
+        }
       },
       "comparavel": true,
       "faixas": [
@@ -300,6 +1261,270 @@ window.RESUMO = {
             "razaoComentarios": 0.275
           }
         ]
+      },
+      "pistas": {
+        "frequencia": {
+          "reelsPorDia": 1.62,
+          "dias": 16.1,
+          "reels": 26
+        },
+        "duracao": {
+          "n": 22,
+          "medianaSegundos": 112,
+          "acima60s": 0.818,
+          "correlacao": -0.22,
+          "vpsLongos": 0.21828232500790679,
+          "vpsCurtos": 0.3002515147672298,
+          "pontos": [
+            {
+              "s": 161,
+              "v": 0.3079
+            },
+            {
+              "s": 144,
+              "v": 0.2183
+            },
+            {
+              "s": 141,
+              "v": 0.0592
+            },
+            {
+              "s": 42,
+              "v": 0.2539
+            },
+            {
+              "s": 144,
+              "v": 0.5204
+            },
+            {
+              "s": 44,
+              "v": 0.9528
+            },
+            {
+              "s": 79,
+              "v": 0.1352
+            },
+            {
+              "s": 79,
+              "v": 0.2672
+            },
+            {
+              "s": 47,
+              "v": 0.419
+            },
+            {
+              "s": 80,
+              "v": 0.1686
+            },
+            {
+              "s": 120,
+              "v": 0.8703
+            },
+            {
+              "s": 173,
+              "v": 0.1077
+            },
+            {
+              "s": 96,
+              "v": 0.8995
+            },
+            {
+              "s": 105,
+              "v": 0.3003
+            },
+            {
+              "s": 179,
+              "v": 0.3369
+            },
+            {
+              "s": 179,
+              "v": 0.079
+            },
+            {
+              "s": 75,
+              "v": 0.4436
+            },
+            {
+              "s": 163,
+              "v": 0.1893
+            },
+            {
+              "s": 125,
+              "v": 0.2136
+            },
+            {
+              "s": 44,
+              "v": 0.1247
+            },
+            {
+              "s": 176,
+              "v": 0.5546
+            },
+            {
+              "s": 71,
+              "v": 0.4438
+            }
+          ]
+        },
+        "horario": {
+          "periodos": [
+            {
+              "periodo": "madrugada",
+              "pctPosts": 0.038,
+              "n": 1,
+              "medianaVps": 0.3002515147672298
+            },
+            {
+              "periodo": "manhã",
+              "pctPosts": 0.154,
+              "n": 4,
+              "medianaVps": 0.36159926926518576
+            },
+            {
+              "periodo": "tarde",
+              "pctPosts": 0.385,
+              "n": 8,
+              "medianaVps": 0.29539718044739427
+            },
+            {
+              "periodo": "noite",
+              "pctPosts": 0.423,
+              "n": 9,
+              "medianaVps": 0.26718039137195104
+            }
+          ],
+          "dias": [
+            {
+              "dia": "dom",
+              "pctPosts": 0.192
+            },
+            {
+              "dia": "seg",
+              "pctPosts": 0.192
+            },
+            {
+              "dia": "ter",
+              "pctPosts": 0.077
+            },
+            {
+              "dia": "qua",
+              "pctPosts": 0.154
+            },
+            {
+              "dia": "qui",
+              "pctPosts": 0.269
+            },
+            {
+              "dia": "sex",
+              "pctPosts": 0.115
+            },
+            {
+              "dia": "sáb",
+              "pctPosts": 0
+            }
+          ],
+          "horaMediana": 14
+        },
+        "legenda": {
+          "n": 26,
+          "medianaCaracteres": 69.5,
+          "medianaHashtags": 0,
+          "pctComMencao": 0.308,
+          "medianaEmojis": 0,
+          "palavras": [
+            {
+              "p": "lula",
+              "n": 5
+            },
+            {
+              "p": "bolsonaro",
+              "n": 3
+            },
+            {
+              "p": "fim",
+              "n": 3
+            },
+            {
+              "p": "maior",
+              "n": 3
+            },
+            {
+              "p": "assista",
+              "n": 2
+            },
+            {
+              "p": "assistam",
+              "n": 2
+            },
+            {
+              "p": "brasil",
+              "n": 2
+            },
+            {
+              "p": "comenta",
+              "n": 2
+            }
+          ]
+        },
+        "temas": {
+          "n": 22,
+          "temas": [
+            {
+              "tema": "economia",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "religião e família",
+              "n": 1,
+              "pct": 0.045,
+              "medianaVps": 0.5546362801584719
+            },
+            {
+              "tema": "segurança",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "corrupção",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "adversários e governo",
+              "n": 6,
+              "pct": 0.273,
+              "medianaVps": 0.31855216162134714
+            },
+            {
+              "tema": "eleição e voto",
+              "n": 3,
+              "pct": 0.136,
+              "medianaVps": 0.3368528084754645
+            },
+            {
+              "tema": "sem tema identificado",
+              "n": 14,
+              "pct": 0.636,
+              "medianaVps": 0.2361119387136154
+            }
+          ]
+        },
+        "tom": {
+          "n": 355,
+          "pct": {
+            "apoio": 0.541,
+            "crítica": 0.02,
+            "pergunta": 0.014,
+            "neutro": 0.341,
+            "repetitivo": 0.085
+          },
+          "textosRepetidos": 5,
+          "comentariosRepetidos": 30
+        }
       },
       "comparavel": true,
       "faixas": [
@@ -405,6 +1630,278 @@ window.RESUMO = {
             "razaoComentarios": 0.209
           }
         ]
+      },
+      "pistas": {
+        "frequencia": {
+          "reelsPorDia": 1.47,
+          "dias": 19,
+          "reels": 28
+        },
+        "duracao": {
+          "n": 24,
+          "medianaSegundos": 65,
+          "acima60s": 0.625,
+          "correlacao": 0.21,
+          "vpsLongos": 0.19934847819909438,
+          "vpsCurtos": 0.1184404336136319,
+          "pontos": [
+            {
+              "s": 37,
+              "v": 0.2877
+            },
+            {
+              "s": 156,
+              "v": 0.3468
+            },
+            {
+              "s": 119,
+              "v": 1.4086
+            },
+            {
+              "s": 96,
+              "v": 0.4905
+            },
+            {
+              "s": 202,
+              "v": 0.1136
+            },
+            {
+              "s": 16,
+              "v": 0.3029
+            },
+            {
+              "s": 23,
+              "v": 0.0792
+            },
+            {
+              "s": 75,
+              "v": 0.1254
+            },
+            {
+              "s": 34,
+              "v": 0.4088
+            },
+            {
+              "s": 37,
+              "v": 1.6857
+            },
+            {
+              "s": 67,
+              "v": 0.3311
+            },
+            {
+              "s": 172,
+              "v": 0.3636
+            },
+            {
+              "s": 97,
+              "v": 0.2082
+            },
+            {
+              "s": 47,
+              "v": 0.9222
+            },
+            {
+              "s": 64,
+              "v": 0.0963
+            },
+            {
+              "s": 60,
+              "v": 0.0746
+            },
+            {
+              "s": 122,
+              "v": 0.1299
+            },
+            {
+              "s": 12,
+              "v": 0.1116
+            },
+            {
+              "s": 38,
+              "v": 0.1253
+            },
+            {
+              "s": 83,
+              "v": 0.1905
+            },
+            {
+              "s": 62,
+              "v": 0.0529
+            },
+            {
+              "s": 15,
+              "v": 0.072
+            },
+            {
+              "s": 67,
+              "v": 0.1381
+            },
+            {
+              "s": 74,
+              "v": 0.0457
+            }
+          ]
+        },
+        "horario": {
+          "periodos": [
+            {
+              "periodo": "madrugada",
+              "pctPosts": 0,
+              "n": 0,
+              "medianaVps": null
+            },
+            {
+              "periodo": "manhã",
+              "pctPosts": 0.107,
+              "n": 2,
+              "medianaVps": 0.2602076933294996
+            },
+            {
+              "periodo": "tarde",
+              "pctPosts": 0.357,
+              "n": 8,
+              "medianaVps": 0.2608222651553749
+            },
+            {
+              "periodo": "noite",
+              "pctPosts": 0.536,
+              "n": 14,
+              "medianaVps": 0.12768633464654974
+            }
+          ],
+          "dias": [
+            {
+              "dia": "dom",
+              "pctPosts": 0.071
+            },
+            {
+              "dia": "seg",
+              "pctPosts": 0.107
+            },
+            {
+              "dia": "ter",
+              "pctPosts": 0.107
+            },
+            {
+              "dia": "qua",
+              "pctPosts": 0.071
+            },
+            {
+              "dia": "qui",
+              "pctPosts": 0.179
+            },
+            {
+              "dia": "sex",
+              "pctPosts": 0.179
+            },
+            {
+              "dia": "sáb",
+              "pctPosts": 0.286
+            }
+          ],
+          "horaMediana": 18
+        },
+        "legenda": {
+          "n": 28,
+          "medianaCaracteres": 123,
+          "medianaHashtags": 0,
+          "pctComMencao": 0.107,
+          "medianaEmojis": 1,
+          "palavras": [
+            {
+              "p": "tabata",
+              "n": 11
+            },
+            {
+              "p": "nesse",
+              "n": 10
+            },
+            {
+              "p": "domingo",
+              "n": 9
+            },
+            {
+              "p": "deputada",
+              "n": 7
+            },
+            {
+              "p": "federal",
+              "n": 7
+            },
+            {
+              "p": "educação",
+              "n": 5
+            },
+            {
+              "p": "gente",
+              "n": 5
+            },
+            {
+              "p": "paulo",
+              "n": 5
+            }
+          ]
+        },
+        "temas": {
+          "n": 24,
+          "temas": [
+            {
+              "tema": "economia",
+              "n": 1,
+              "pct": 0.042,
+              "medianaVps": 0.9221965520082459
+            },
+            {
+              "tema": "religião e família",
+              "n": 4,
+              "pct": 0.167,
+              "medianaVps": 0.37779941249960064
+            },
+            {
+              "tema": "segurança",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "corrupção",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "adversários e governo",
+              "n": 3,
+              "pct": 0.125,
+              "medianaVps": 0.9221965520082459
+            },
+            {
+              "tema": "eleição e voto",
+              "n": 10,
+              "pct": 0.417,
+              "medianaVps": 0.1184404336136319
+            },
+            {
+              "tema": "sem tema identificado",
+              "n": 10,
+              "pct": 0.417,
+              "medianaVps": 0.2953129019728512
+            }
+          ]
+        },
+        "tom": {
+          "n": 344,
+          "pct": {
+            "apoio": 0.541,
+            "crítica": 0.029,
+            "pergunta": 0.017,
+            "neutro": 0.378,
+            "repetitivo": 0.035
+          },
+          "textosRepetidos": 4,
+          "comentariosRepetidos": 12
+        }
       },
       "comparavel": true,
       "faixas": [
@@ -538,6 +2035,406 @@ window.RESUMO = {
           }
         ]
       },
+      "pistas": {
+        "frequencia": {
+          "reelsPorDia": 4.56,
+          "dias": 16.7,
+          "reels": 76
+        },
+        "duracao": {
+          "n": 56,
+          "medianaSegundos": 42,
+          "acima60s": 0.304,
+          "correlacao": -0.05,
+          "vpsLongos": 0.11092994907171734,
+          "vpsCurtos": 0.11876565114468791,
+          "pontos": [
+            {
+              "s": 22,
+              "v": 0.1932
+            },
+            {
+              "s": 55,
+              "v": 0.102
+            },
+            {
+              "s": 42,
+              "v": 0.1459
+            },
+            {
+              "s": 25,
+              "v": 0.4377
+            },
+            {
+              "s": 34,
+              "v": 0.0598
+            },
+            {
+              "s": 79,
+              "v": 0.0751
+            },
+            {
+              "s": 59,
+              "v": 0.5213
+            },
+            {
+              "s": 29,
+              "v": 0.0496
+            },
+            {
+              "s": 38,
+              "v": 0.1184
+            },
+            {
+              "s": 174,
+              "v": 0.1716
+            },
+            {
+              "s": 19,
+              "v": 0.129
+            },
+            {
+              "s": 61,
+              "v": 0.3436
+            },
+            {
+              "s": 17,
+              "v": 0.0146
+            },
+            {
+              "s": 56,
+              "v": 0.4529
+            },
+            {
+              "s": 12,
+              "v": 0.0901
+            },
+            {
+              "s": 104,
+              "v": 0.349
+            },
+            {
+              "s": 63,
+              "v": 0.0965
+            },
+            {
+              "s": 35,
+              "v": 0.0571
+            },
+            {
+              "s": 42,
+              "v": 0.0222
+            },
+            {
+              "s": 52,
+              "v": 0.066
+            },
+            {
+              "s": 41,
+              "v": 0.0241
+            },
+            {
+              "s": 91,
+              "v": 0.0439
+            },
+            {
+              "s": 46,
+              "v": 0.0861
+            },
+            {
+              "s": 49,
+              "v": 0.1192
+            },
+            {
+              "s": 20,
+              "v": 0.1192
+            },
+            {
+              "s": 74,
+              "v": 0.112
+            },
+            {
+              "s": 26,
+              "v": 0.2564
+            },
+            {
+              "s": 10,
+              "v": 0.5501
+            },
+            {
+              "s": 62,
+              "v": 0.0531
+            },
+            {
+              "s": 21,
+              "v": 0.1569
+            },
+            {
+              "s": 77,
+              "v": 0.0895
+            },
+            {
+              "s": 33,
+              "v": 0.0333
+            },
+            {
+              "s": 19,
+              "v": 0.0476
+            },
+            {
+              "s": 41,
+              "v": 0.1216
+            },
+            {
+              "s": 75,
+              "v": 0.1102
+            },
+            {
+              "s": 11,
+              "v": 0.0474
+            },
+            {
+              "s": 123,
+              "v": 0.5622
+            },
+            {
+              "s": 24,
+              "v": 0.0985
+            },
+            {
+              "s": 27,
+              "v": 0.1021
+            },
+            {
+              "s": 65,
+              "v": 0.062
+            },
+            {
+              "s": 53,
+              "v": 0.071
+            },
+            {
+              "s": 40,
+              "v": 0.1454
+            },
+            {
+              "s": 5,
+              "v": 0.9261
+            },
+            {
+              "s": 151,
+              "v": 0.1116
+            },
+            {
+              "s": 60,
+              "v": 0.0764
+            },
+            {
+              "s": 14,
+              "v": 0.1155
+            },
+            {
+              "s": 83,
+              "v": 0.4375
+            },
+            {
+              "s": 17,
+              "v": 0.2622
+            },
+            {
+              "s": 89,
+              "v": 0.0794
+            },
+            {
+              "s": 49,
+              "v": 1.1025
+            },
+            {
+              "s": 73,
+              "v": 0.207
+            },
+            {
+              "s": 22,
+              "v": 0.1526
+            },
+            {
+              "s": 17,
+              "v": 0.4406
+            },
+            {
+              "s": 48,
+              "v": 0.3265
+            },
+            {
+              "s": 124,
+              "v": 0.0544
+            },
+            {
+              "s": 14,
+              "v": 0.1273
+            }
+          ]
+        },
+        "horario": {
+          "periodos": [
+            {
+              "periodo": "madrugada",
+              "pctPosts": 0.013,
+              "n": 1,
+              "medianaVps": 1.102528836913075
+            },
+            {
+              "periodo": "manhã",
+              "pctPosts": 0.197,
+              "n": 13,
+              "medianaVps": 0.11923604151876312
+            },
+            {
+              "periodo": "tarde",
+              "pctPosts": 0.408,
+              "n": 21,
+              "medianaVps": 0.11164245423645242
+            },
+            {
+              "periodo": "noite",
+              "pctPosts": 0.382,
+              "n": 21,
+              "medianaVps": 0.1120348028954475
+            }
+          ],
+          "dias": [
+            {
+              "dia": "dom",
+              "pctPosts": 0.237
+            },
+            {
+              "dia": "seg",
+              "pctPosts": 0.118
+            },
+            {
+              "dia": "ter",
+              "pctPosts": 0.118
+            },
+            {
+              "dia": "qua",
+              "pctPosts": 0.145
+            },
+            {
+              "dia": "qui",
+              "pctPosts": 0.105
+            },
+            {
+              "dia": "sex",
+              "pctPosts": 0.145
+            },
+            {
+              "dia": "sáb",
+              "pctPosts": 0.132
+            }
+          ],
+          "horaMediana": 15
+        },
+        "legenda": {
+          "n": 76,
+          "medianaCaracteres": 73,
+          "medianaHashtags": 0,
+          "pctComMencao": 0.092,
+          "medianaEmojis": 0,
+          "palavras": [
+            {
+              "p": "bolsonaro",
+              "n": 21
+            },
+            {
+              "p": "flávio",
+              "n": 13
+            },
+            {
+              "p": "lula",
+              "n": 12
+            },
+            {
+              "p": "cima",
+              "n": 11
+            },
+            {
+              "p": "flavio",
+              "n": 11
+            },
+            {
+              "p": "virar",
+              "n": 11
+            },
+            {
+              "p": "brasil",
+              "n": 10
+            },
+            {
+              "p": "virada",
+              "n": 10
+            }
+          ]
+        },
+        "temas": {
+          "n": 56,
+          "temas": [
+            {
+              "tema": "economia",
+              "n": 1,
+              "pct": 0.018,
+              "medianaVps": 0.11837002102418123
+            },
+            {
+              "tema": "religião e família",
+              "n": 1,
+              "pct": 0.018,
+              "medianaVps": 0.5212687214512849
+            },
+            {
+              "tema": "segurança",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "corrupção",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "adversários e governo",
+              "n": 23,
+              "pct": 0.411,
+              "medianaVps": 0.11923604151876312
+            },
+            {
+              "tema": "eleição e voto",
+              "n": 18,
+              "pct": 0.321,
+              "medianaVps": 0.10689460744589298
+            },
+            {
+              "tema": "sem tema identificado",
+              "n": 21,
+              "pct": 0.375,
+              "medianaVps": 0.1191612812651946
+            }
+          ]
+        },
+        "tom": {
+          "n": 892,
+          "pct": {
+            "apoio": 0.361,
+            "crítica": 0.016,
+            "pergunta": 0.008,
+            "neutro": 0.452,
+            "repetitivo": 0.164
+          },
+          "textosRepetidos": 29,
+          "comentariosRepetidos": 146
+        }
+      },
       "comparavel": true,
       "faixas": [
         {
@@ -591,6 +2488,7 @@ window.RESUMO = {
         "todosMaduros": null
       },
       "foraDaCurva": null,
+      "pistas": null,
       "comparavel": false,
       "faixas": [
         {
@@ -645,6 +2543,186 @@ window.RESUMO = {
         "todosMaduros": null
       },
       "foraDaCurva": null,
+      "pistas": {
+        "frequencia": {
+          "reelsPorDia": 2.57,
+          "dias": 30,
+          "reels": 77
+        },
+        "duracao": {
+          "n": 1,
+          "medianaSegundos": 9,
+          "acima60s": 0,
+          "correlacao": null,
+          "vpsLongos": 2.072492146400165,
+          "vpsCurtos": null,
+          "pontos": [
+            {
+              "s": 9,
+              "v": 2.0725
+            }
+          ]
+        },
+        "horario": {
+          "periodos": [
+            {
+              "periodo": "madrugada",
+              "pctPosts": 0.103,
+              "n": 0,
+              "medianaVps": null
+            },
+            {
+              "periodo": "manhã",
+              "pctPosts": 0.269,
+              "n": 1,
+              "medianaVps": 2.072492146400165
+            },
+            {
+              "periodo": "tarde",
+              "pctPosts": 0.256,
+              "n": 0,
+              "medianaVps": null
+            },
+            {
+              "periodo": "noite",
+              "pctPosts": 0.372,
+              "n": 0,
+              "medianaVps": null
+            }
+          ],
+          "dias": [
+            {
+              "dia": "dom",
+              "pctPosts": 0.205
+            },
+            {
+              "dia": "seg",
+              "pctPosts": 0.679
+            },
+            {
+              "dia": "ter",
+              "pctPosts": 0.115
+            },
+            {
+              "dia": "qua",
+              "pctPosts": 0
+            },
+            {
+              "dia": "qui",
+              "pctPosts": 0
+            },
+            {
+              "dia": "sex",
+              "pctPosts": 0
+            },
+            {
+              "dia": "sáb",
+              "pctPosts": 0
+            }
+          ],
+          "horaMediana": 14
+        },
+        "legenda": {
+          "n": 78,
+          "medianaCaracteres": 35,
+          "medianaHashtags": 0,
+          "pctComMencao": 0.013,
+          "medianaEmojis": 0,
+          "palavras": [
+            {
+              "p": "lula",
+              "n": 9
+            },
+            {
+              "p": "flávio",
+              "n": 5
+            },
+            {
+              "p": "brasil",
+              "n": 4
+            },
+            {
+              "p": "debate",
+              "n": 4
+            },
+            {
+              "p": "nine",
+              "n": 4
+            },
+            {
+              "p": "nome",
+              "n": 4
+            },
+            {
+              "p": "vocês",
+              "n": 4
+            },
+            {
+              "p": "compartilhe",
+              "n": 3
+            }
+          ]
+        },
+        "temas": {
+          "n": 1,
+          "temas": [
+            {
+              "tema": "economia",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "religião e família",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "segurança",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "corrupção",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "adversários e governo",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "eleição e voto",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "sem tema identificado",
+              "n": 1,
+              "pct": 1,
+              "medianaVps": 2.072492146400165
+            }
+          ]
+        },
+        "tom": {
+          "n": 870,
+          "pct": {
+            "apoio": 0.408,
+            "crítica": 0.022,
+            "pergunta": 0.016,
+            "neutro": 0.497,
+            "repetitivo": 0.057
+          },
+          "textosRepetidos": 15,
+          "comentariosRepetidos": 50
+        }
+      },
       "comparavel": false,
       "faixas": [
         {
@@ -699,6 +2777,7 @@ window.RESUMO = {
         "todosMaduros": null
       },
       "foraDaCurva": null,
+      "pistas": null,
       "comparavel": false,
       "faixas": [
         {
@@ -777,6 +2856,156 @@ window.RESUMO = {
             "razaoComentarios": 0.657
           }
         ]
+      },
+      "pistas": {
+        "frequencia": {
+          "reelsPorDia": 0.07,
+          "dias": 30,
+          "reels": 2
+        },
+        "duracao": {
+          "n": 5,
+          "medianaSegundos": 31,
+          "acima60s": 0.2,
+          "correlacao": -0.6,
+          "vpsLongos": 0.09775266575987163,
+          "vpsCurtos": 0.344207667350532,
+          "pontos": [
+            {
+              "s": 30,
+              "v": 0.2423
+            },
+            {
+              "s": 31,
+              "v": 0.062
+            },
+            {
+              "s": 20,
+              "v": 0.4461
+            },
+            {
+              "s": 72,
+              "v": 0.1451
+            },
+            {
+              "s": 48,
+              "v": 0.0978
+            }
+          ]
+        },
+        "horario": {
+          "periodos": [
+            {
+              "periodo": "madrugada",
+              "pctPosts": 0,
+              "n": 0,
+              "medianaVps": null
+            },
+            {
+              "periodo": "manhã",
+              "pctPosts": 0,
+              "n": 0,
+              "medianaVps": null
+            },
+            {
+              "periodo": "tarde",
+              "pctPosts": 0.6,
+              "n": 3,
+              "medianaVps": 0.14510329542488082
+            },
+            {
+              "periodo": "noite",
+              "pctPosts": 0.4,
+              "n": 2,
+              "medianaVps": 0.25407958594691094
+            }
+          ],
+          "dias": [
+            {
+              "dia": "dom",
+              "pctPosts": 0
+            },
+            {
+              "dia": "seg",
+              "pctPosts": 0.4
+            },
+            {
+              "dia": "ter",
+              "pctPosts": 0
+            },
+            {
+              "dia": "qua",
+              "pctPosts": 0.2
+            },
+            {
+              "dia": "qui",
+              "pctPosts": 0
+            },
+            {
+              "dia": "sex",
+              "pctPosts": 0.2
+            },
+            {
+              "dia": "sáb",
+              "pctPosts": 0.2
+            }
+          ],
+          "horaMediana": 16
+        },
+        "legenda": {
+          "n": 5,
+          "medianaCaracteres": 25,
+          "medianaHashtags": 0,
+          "pctComMencao": 0.2,
+          "medianaEmojis": 1,
+          "palavras": [
+            {
+              "p": "jogar",
+              "n": 2
+            },
+            {
+              "p": "lil",
+              "n": 2
+            },
+            {
+              "p": "ney",
+              "n": 2
+            },
+            {
+              "p": "apaixonado",
+              "n": 1
+            },
+            {
+              "p": "assistindo",
+              "n": 1
+            },
+            {
+              "p": "cadeira",
+              "n": 1
+            },
+            {
+              "p": "cadeiras",
+              "n": 1
+            },
+            {
+              "p": "camisa",
+              "n": 1
+            }
+          ]
+        },
+        "temas": null,
+        "tom": {
+          "n": 74,
+          "pct": {
+            "apoio": 0.703,
+            "crítica": 0.014,
+            "pergunta": 0,
+            "neutro": 0.284,
+            "repetitivo": 0
+          },
+          "textosRepetidos": 0,
+          "comentariosRepetidos": 0
+        }
       },
       "comparavel": true,
       "faixas": [
@@ -865,6 +3094,248 @@ window.RESUMO = {
             "razaoComentarios": 0.034
           }
         ]
+      },
+      "pistas": {
+        "frequencia": {
+          "reelsPorDia": 0.23,
+          "dias": 30,
+          "reels": 7
+        },
+        "duracao": {
+          "n": 28,
+          "medianaSegundos": 69,
+          "acima60s": 0.679,
+          "correlacao": -0.2,
+          "vpsLongos": 0.06216277449426334,
+          "vpsCurtos": 0.07420350465442546,
+          "pontos": [
+            {
+              "s": 305,
+              "v": 0.6474
+            },
+            {
+              "s": 69,
+              "v": 0.0752
+            },
+            {
+              "s": 58,
+              "v": 0.1143
+            },
+            {
+              "s": 17,
+              "v": 0.0455
+            },
+            {
+              "s": 119,
+              "v": 0.0436
+            },
+            {
+              "s": 128,
+              "v": 0.0962
+            },
+            {
+              "s": 92,
+              "v": 0.044
+            },
+            {
+              "s": 33,
+              "v": 0.4315
+            },
+            {
+              "s": 125,
+              "v": 0.0689
+            },
+            {
+              "s": 68,
+              "v": 0.1716
+            },
+            {
+              "s": 55,
+              "v": 0.0817
+            },
+            {
+              "s": 90,
+              "v": 0.1069
+            },
+            {
+              "s": 62,
+              "v": 0.0319
+            },
+            {
+              "s": 60,
+              "v": 0.7373
+            },
+            {
+              "s": 89,
+              "v": 0.0494
+            },
+            {
+              "s": 64,
+              "v": 0.0451
+            },
+            {
+              "s": 90,
+              "v": 0.0371
+            },
+            {
+              "s": 42,
+              "v": 0.0699
+            },
+            {
+              "s": 104,
+              "v": 0.1089
+            },
+            {
+              "s": 139,
+              "v": 0.0781
+            },
+            {
+              "s": 100,
+              "v": 0.0331
+            },
+            {
+              "s": 58,
+              "v": 0.0785
+            },
+            {
+              "s": 51,
+              "v": 0.0546
+            },
+            {
+              "s": 20,
+              "v": 0.8919
+            },
+            {
+              "s": 59,
+              "v": 0.0643
+            },
+            {
+              "s": 62,
+              "v": 0.055
+            },
+            {
+              "s": 91,
+              "v": 0.0554
+            },
+            {
+              "s": 153,
+              "v": 0.0358
+            }
+          ]
+        },
+        "horario": {
+          "periodos": [
+            {
+              "periodo": "madrugada",
+              "pctPosts": 0,
+              "n": 0,
+              "medianaVps": null
+            },
+            {
+              "periodo": "manhã",
+              "pctPosts": 0.207,
+              "n": 6,
+              "medianaVps": 0.07087222242956459
+            },
+            {
+              "periodo": "tarde",
+              "pctPosts": 0.621,
+              "n": 17,
+              "medianaVps": 0.06893932363858575
+            },
+            {
+              "periodo": "noite",
+              "pctPosts": 0.172,
+              "n": 5,
+              "medianaVps": 0.07814320952311826
+            }
+          ],
+          "dias": [
+            {
+              "dia": "dom",
+              "pctPosts": 0.172
+            },
+            {
+              "dia": "seg",
+              "pctPosts": 0.138
+            },
+            {
+              "dia": "ter",
+              "pctPosts": 0.103
+            },
+            {
+              "dia": "qua",
+              "pctPosts": 0.138
+            },
+            {
+              "dia": "qui",
+              "pctPosts": 0.172
+            },
+            {
+              "dia": "sex",
+              "pctPosts": 0.069
+            },
+            {
+              "dia": "sáb",
+              "pctPosts": 0.207
+            }
+          ],
+          "horaMediana": 13
+        },
+        "legenda": {
+          "n": 29,
+          "medianaCaracteres": 92,
+          "medianaHashtags": 0,
+          "pctComMencao": 0.621,
+          "medianaEmojis": 2,
+          "palavras": [
+            {
+              "p": "noite",
+              "n": 7
+            },
+            {
+              "p": "obrigada",
+              "n": 6
+            },
+            {
+              "p": "especial",
+              "n": 5
+            },
+            {
+              "p": "tour",
+              "n": 5
+            },
+            {
+              "p": "vocês",
+              "n": 5
+            },
+            {
+              "p": "brasil",
+              "n": 4
+            },
+            {
+              "p": "equilibrivm",
+              "n": 4
+            },
+            {
+              "p": "estar",
+              "n": 4
+            }
+          ]
+        },
+        "temas": null,
+        "tom": {
+          "n": 345,
+          "pct": {
+            "apoio": 0.623,
+            "crítica": 0.003,
+            "pergunta": 0.012,
+            "neutro": 0.18,
+            "repetitivo": 0.183
+          },
+          "textosRepetidos": 14,
+          "comentariosRepetidos": 63
+        }
       },
       "comparavel": true,
       "faixas": [
@@ -971,6 +3442,224 @@ window.RESUMO = {
           }
         ]
       },
+      "pistas": {
+        "frequencia": {
+          "reelsPorDia": 0.2,
+          "dias": 30,
+          "reels": 6
+        },
+        "duracao": {
+          "n": 22,
+          "medianaSegundos": 31,
+          "acima60s": 0.318,
+          "correlacao": -0.53,
+          "vpsLongos": 0.60500398979925,
+          "vpsCurtos": 0.8217041414630664,
+          "pontos": [
+            {
+              "s": 11,
+              "v": 0.8204
+            },
+            {
+              "s": 47,
+              "v": 0.6244
+            },
+            {
+              "s": 68,
+              "v": 0.4351
+            },
+            {
+              "s": 13,
+              "v": 0.9516
+            },
+            {
+              "s": 14,
+              "v": 0.9303
+            },
+            {
+              "s": 14,
+              "v": 0.7645
+            },
+            {
+              "s": 18,
+              "v": 0.464
+            },
+            {
+              "s": 23,
+              "v": 0.4294
+            },
+            {
+              "s": 20,
+              "v": 0.8217
+            },
+            {
+              "s": 1019,
+              "v": 0.427
+            },
+            {
+              "s": 33,
+              "v": 0.4793
+            },
+            {
+              "s": 81,
+              "v": 0.3536
+            },
+            {
+              "s": 94,
+              "v": 0.4027
+            },
+            {
+              "s": 28,
+              "v": 0.8299
+            },
+            {
+              "s": 17,
+              "v": 0.9329
+            },
+            {
+              "s": 41,
+              "v": 1.3097
+            },
+            {
+              "s": 243,
+              "v": 0.605
+            },
+            {
+              "s": 48,
+              "v": 0.8816
+            },
+            {
+              "s": 17,
+              "v": 0.9047
+            },
+            {
+              "s": 64,
+              "v": 0.6367
+            },
+            {
+              "s": 191,
+              "v": 0.8333
+            },
+            {
+              "s": 19,
+              "v": 0.7423
+            }
+          ]
+        },
+        "horario": {
+          "periodos": [
+            {
+              "periodo": "madrugada",
+              "pctPosts": 0,
+              "n": 0,
+              "medianaVps": null
+            },
+            {
+              "periodo": "manhã",
+              "pctPosts": 0.087,
+              "n": 2,
+              "medianaVps": 1.1199796376826763
+            },
+            {
+              "periodo": "tarde",
+              "pctPosts": 0.565,
+              "n": 12,
+              "medianaVps": 0.7930880172336212
+            },
+            {
+              "periodo": "noite",
+              "pctPosts": 0.348,
+              "n": 8,
+              "medianaVps": 0.6146788741909143
+            }
+          ],
+          "dias": [
+            {
+              "dia": "dom",
+              "pctPosts": 0.174
+            },
+            {
+              "dia": "seg",
+              "pctPosts": 0.087
+            },
+            {
+              "dia": "ter",
+              "pctPosts": 0.174
+            },
+            {
+              "dia": "qua",
+              "pctPosts": 0.174
+            },
+            {
+              "dia": "qui",
+              "pctPosts": 0.087
+            },
+            {
+              "dia": "sex",
+              "pctPosts": 0.087
+            },
+            {
+              "dia": "sáb",
+              "pctPosts": 0.217
+            }
+          ],
+          "horaMediana": 16
+        },
+        "legenda": {
+          "n": 23,
+          "medianaCaracteres": 75,
+          "medianaHashtags": 0,
+          "pctComMencao": 0.174,
+          "medianaEmojis": 3,
+          "palavras": [
+            {
+              "p": "deus",
+              "n": 5
+            },
+            {
+              "p": "obrigada",
+              "n": 4
+            },
+            {
+              "p": "ontem",
+              "n": 3
+            },
+            {
+              "p": "vcs",
+              "n": 3
+            },
+            {
+              "p": "vocês",
+              "n": 3
+            },
+            {
+              "p": "wepink",
+              "n": 3
+            },
+            {
+              "p": "acontecer",
+              "n": 2
+            },
+            {
+              "p": "amo",
+              "n": 2
+            }
+          ]
+        },
+        "temas": null,
+        "tom": {
+          "n": 332,
+          "pct": {
+            "apoio": 0.648,
+            "crítica": 0.009,
+            "pergunta": 0.012,
+            "neutro": 0.193,
+            "repetitivo": 0.139
+          },
+          "textosRepetidos": 11,
+          "comentariosRepetidos": 46
+        }
+      },
       "comparavel": true,
       "faixas": [
         {
@@ -1058,6 +3747,193 @@ window.RESUMO = {
           }
         ]
       },
+      "pistas": {
+        "frequencia": {
+          "reelsPorDia": 0.03,
+          "dias": 30,
+          "reels": 1
+        },
+        "duracao": {
+          "n": 17,
+          "medianaSegundos": 37,
+          "acima60s": 0.353,
+          "correlacao": 0.13,
+          "vpsLongos": 0.12327579056211575,
+          "vpsCurtos": 0.08900992829270182,
+          "pontos": [
+            {
+              "s": 46,
+              "v": 0.3247
+            },
+            {
+              "s": 84,
+              "v": 0.1233
+            },
+            {
+              "s": 7,
+              "v": 0.0743
+            },
+            {
+              "s": 20,
+              "v": 0.0738
+            },
+            {
+              "s": 360,
+              "v": 0.1634
+            },
+            {
+              "s": 17,
+              "v": 0.3045
+            },
+            {
+              "s": 80,
+              "v": 0.2896
+            },
+            {
+              "s": 80,
+              "v": 0.1133
+            },
+            {
+              "s": 10,
+              "v": 0.2364
+            },
+            {
+              "s": 30,
+              "v": 0.1018
+            },
+            {
+              "s": 15,
+              "v": 0.1052
+            },
+            {
+              "s": 107,
+              "v": 0.1591
+            },
+            {
+              "s": 25,
+              "v": 0.0569
+            },
+            {
+              "s": 49,
+              "v": 0.0493
+            },
+            {
+              "s": 36,
+              "v": 0.0763
+            },
+            {
+              "s": 37,
+              "v": 0.1026
+            },
+            {
+              "s": 90,
+              "v": 0.067
+            }
+          ]
+        },
+        "horario": {
+          "periodos": [
+            {
+              "periodo": "madrugada",
+              "pctPosts": 0,
+              "n": 0,
+              "medianaVps": null
+            },
+            {
+              "periodo": "manhã",
+              "pctPosts": 0.529,
+              "n": 9,
+              "medianaVps": 0.10258492505414027
+            },
+            {
+              "periodo": "tarde",
+              "pctPosts": 0.353,
+              "n": 6,
+              "medianaVps": 0.09380116898375032
+            },
+            {
+              "periodo": "noite",
+              "pctPosts": 0.118,
+              "n": 2,
+              "medianaVps": 0.1973871591241066
+            }
+          ],
+          "dias": [
+            {
+              "dia": "dom",
+              "pctPosts": 0
+            },
+            {
+              "dia": "seg",
+              "pctPosts": 0.118
+            },
+            {
+              "dia": "ter",
+              "pctPosts": 0.059
+            },
+            {
+              "dia": "qua",
+              "pctPosts": 0.059
+            },
+            {
+              "dia": "qui",
+              "pctPosts": 0.471
+            },
+            {
+              "dia": "sex",
+              "pctPosts": 0.235
+            },
+            {
+              "dia": "sáb",
+              "pctPosts": 0.059
+            }
+          ],
+          "horaMediana": 11
+        },
+        "legenda": {
+          "n": 17,
+          "medianaCaracteres": 95,
+          "medianaHashtags": 0,
+          "pctComMencao": 0.647,
+          "medianaEmojis": 0,
+          "palavras": [
+            {
+              "p": "now",
+              "n": 3
+            },
+            {
+              "p": "available",
+              "n": 2
+            },
+            {
+              "p": "link",
+              "n": 2
+            },
+            {
+              "p": "live",
+              "n": 2
+            },
+            {
+              "p": "nassr",
+              "n": 2
+            },
+            {
+              "p": "never",
+              "n": 2
+            },
+            {
+              "p": "new",
+              "n": 2
+            },
+            {
+              "p": "next",
+              "n": 2
+            }
+          ]
+        },
+        "temas": null,
+        "tom": null
+      },
       "comparavel": true,
       "faixas": [
         {
@@ -1144,6 +4020,221 @@ window.RESUMO = {
             "razaoComentarios": 0.331
           }
         ]
+      },
+      "pistas": {
+        "frequencia": {
+          "reelsPorDia": 0.07,
+          "dias": 30,
+          "reels": 2
+        },
+        "duracao": {
+          "n": 24,
+          "medianaSegundos": 43,
+          "acima60s": 0.375,
+          "correlacao": 0.17,
+          "vpsLongos": 0.09027846269981027,
+          "vpsCurtos": 0.06611212863905079,
+          "pontos": [
+            {
+              "s": 121,
+              "v": 0.8879
+            },
+            {
+              "s": 27,
+              "v": 0.0999
+            },
+            {
+              "s": 17,
+              "v": 0.0555
+            },
+            {
+              "s": 15,
+              "v": 0.2243
+            },
+            {
+              "s": 60,
+              "v": 0.0878
+            },
+            {
+              "s": 186,
+              "v": 0.1614
+            },
+            {
+              "s": 66,
+              "v": 0.0928
+            },
+            {
+              "s": 14,
+              "v": 1.9183
+            },
+            {
+              "s": 147,
+              "v": 0.2623
+            },
+            {
+              "s": 120,
+              "v": 0.0736
+            },
+            {
+              "s": 14,
+              "v": 0.07
+            },
+            {
+              "s": 42,
+              "v": 0.0994
+            },
+            {
+              "s": 36,
+              "v": 0.0648
+            },
+            {
+              "s": 17,
+              "v": 0.0377
+            },
+            {
+              "s": 184,
+              "v": 0.0784
+            },
+            {
+              "s": 17,
+              "v": 0.0474
+            },
+            {
+              "s": 77,
+              "v": 0.0356
+            },
+            {
+              "s": 63,
+              "v": 0.029
+            },
+            {
+              "s": 30,
+              "v": 0.0339
+            },
+            {
+              "s": 44,
+              "v": 0.0568
+            },
+            {
+              "s": 53,
+              "v": 0.2226
+            },
+            {
+              "s": 60,
+              "v": 0.6277
+            },
+            {
+              "s": 41,
+              "v": 0.0437
+            },
+            {
+              "s": 29,
+              "v": 0.0674
+            }
+          ]
+        },
+        "horario": {
+          "periodos": [
+            {
+              "periodo": "madrugada",
+              "pctPosts": 0,
+              "n": 0,
+              "medianaVps": null
+            },
+            {
+              "periodo": "manhã",
+              "pctPosts": 0.333,
+              "n": 8,
+              "medianaVps": 0.07289431008084246
+            },
+            {
+              "periodo": "tarde",
+              "pctPosts": 0.542,
+              "n": 13,
+              "medianaVps": 0.07004633860477484
+            },
+            {
+              "periodo": "noite",
+              "pctPosts": 0.125,
+              "n": 3,
+              "medianaVps": 0.16136013496389992
+            }
+          ],
+          "dias": [
+            {
+              "dia": "dom",
+              "pctPosts": 0
+            },
+            {
+              "dia": "seg",
+              "pctPosts": 0.208
+            },
+            {
+              "dia": "ter",
+              "pctPosts": 0.208
+            },
+            {
+              "dia": "qua",
+              "pctPosts": 0.167
+            },
+            {
+              "dia": "qui",
+              "pctPosts": 0.167
+            },
+            {
+              "dia": "sex",
+              "pctPosts": 0.208
+            },
+            {
+              "dia": "sáb",
+              "pctPosts": 0.042
+            }
+          ],
+          "horaMediana": 12
+        },
+        "legenda": {
+          "n": 24,
+          "medianaCaracteres": 228,
+          "medianaHashtags": 0,
+          "pctComMencao": 0.5,
+          "medianaEmojis": 0,
+          "palavras": [
+            {
+              "p": "más",
+              "n": 6
+            },
+            {
+              "p": "messi",
+              "n": 6
+            },
+            {
+              "p": "one",
+              "n": 6
+            },
+            {
+              "p": "mis",
+              "n": 5
+            },
+            {
+              "p": "world",
+              "n": 5
+            },
+            {
+              "p": "all",
+              "n": 4
+            },
+            {
+              "p": "more",
+              "n": 4
+            },
+            {
+              "p": "colección",
+              "n": 3
+            }
+          ]
+        },
+        "temas": null,
+        "tom": null
       },
       "comparavel": true,
       "faixas": [

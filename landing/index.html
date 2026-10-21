@@ -36,6 +36,7 @@
         <a href="#regularidade">Regularidade</a>
         <a href="#famosos">Famosos</a>
         <a href="#secIdade">Idade do post</a>
+        <a href="#pistas">Pistas</a>
         <a href="#interpretar">Como interpretar</a>
         <a href="#metodologia">Metodologia</a>
       </nav>
@@ -148,6 +149,48 @@
       <div class="grafico"><canvas id="gComentarios" aria-label="Gráfico de barras: comentários por curtida"></canvas></div>
     </section>
 
+    <h2 class="grupo-titulo" id="pistas">Por que tanto alcance? Pistas nos dados</h2>
+    <p class="sub pistas-intro">Seis comparações feitas só com os dados públicos já coletados. Elas mostram <strong>padrões</strong>, não causas: servem para levantar hipóteses, não para concluir.</p>
+
+    <section class="painel" id="pFrequencia">
+      <h2>1. Quantos vídeos por dia</h2>
+      <p class="sub" id="txtFrequencia"></p>
+      <div class="grafico"><canvas id="gFrequencia" aria-label="Gráfico de dispersão: vídeos por dia versus views por seguidor"></canvas></div>
+    </section>
+
+    <section class="painel" id="pDuracao">
+      <h2>2. Duração dos vídeos</h2>
+      <p class="sub" id="txtDuracao"></p>
+      <div class="grafico"><canvas id="gDuracao" aria-label="Gráfico de barras: duração mediana dos vídeos"></canvas></div>
+    </section>
+
+    <section class="painel" id="pHorario">
+      <h2>3. Horário de publicação</h2>
+      <p class="sub" id="txtHorario"></p>
+      <div class="tabela-wrap"><table class="tabela tabela-media" id="tabelaHorario"></table></div>
+    </section>
+
+    <section class="painel" id="pLegenda">
+      <h2>4. Estilo de legenda</h2>
+      <p class="sub" id="txtLegenda"></p>
+      <div class="tabela-wrap"><table class="tabela tabela-media" id="tabelaLegenda"></table></div>
+    </section>
+
+    <section class="painel" id="pTemas">
+      <h2>5. Temas das legendas (políticos)</h2>
+      <p class="sub" id="txtTemas"></p>
+      <div class="tabela-wrap"><table class="tabela tabela-media" id="tabelaTemas"></table></div>
+      <details class="regras"><summary>Como os temas foram classificados</summary><ul id="regrasTemas"></ul></details>
+    </section>
+
+    <section class="painel" id="pTom">
+      <h2>6. Tom dos comentários (amostra)</h2>
+      <p class="sub" id="txtTom"></p>
+      <div class="tom-lista" id="tomLista"></div>
+      <p class="tom-legenda" id="tomLegenda"></p>
+      <details class="regras"><summary>Como o tom foi classificado</summary><p>Classificação automática por palavras-chave e emojis, na ordem: <strong>crítica</strong> (linguagem negativa ou ofensiva, nem sempre dirigida ao dono do perfil) → <strong>apoio</strong> (elogios, agradecimentos, emojis como 🙏👏❤️🇧🇷) → <strong>pergunta</strong> (tem “?”) → <strong>neutro</strong>. Comentários com 20+ caracteres que aparecem idênticos 2 ou mais vezes na amostra do perfil contam como <strong>repetitivos</strong> (copia-e-cola). A amostra são os ~15 comentários mais recentes de cada vídeo que vieram na coleta. Ironia e sarcasmo não são detectados, então a crítica tende a ficar subestimada. Nenhum nome de usuário ou texto de comentário é publicado: só as porcentagens. Perfis com comentários majoritariamente em outros idiomas (Cristiano e Messi) ficaram de fora.</p></details>
+    </section>
+
     <section class="painel interpretar" id="interpretar">
       <h2>Como interpretar</h2>
       <p class="sub">Ter muito mais views do que seguidores é uma anomalia estatística em relação aos outros perfis, não uma prova de nada. Há várias explicações comuns e legítimas, e elas podem atuar juntas:</p>
@@ -204,6 +247,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <script src="dados.js"></script>
   <script src="app.js"></script>
+  <script src="pistas.js"></script>
   <script src="nav.js"></script>
 </body>
 </html>
