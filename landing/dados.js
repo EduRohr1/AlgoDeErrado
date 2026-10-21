@@ -148,6 +148,11 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 24685097,
       "reelsColetados": 30,
+      "marcacoes": {
+        "proprios": 30,
+        "parceriaPaga": 0,
+        "comCoautor": 0
+      },
       "reels": 12,
       "medianaViews": 38245917.5,
       "mediaViews": 38777916.75,
@@ -501,6 +506,11 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 18166647,
       "reelsColetados": 64,
+      "marcacoes": {
+        "proprios": 64,
+        "parceriaPaga": 0,
+        "comCoautor": 22
+      },
       "reels": 12,
       "medianaViews": 4496460.5,
       "mediaViews": 5441350,
@@ -868,6 +878,11 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 26619836,
       "reelsColetados": 28,
+      "marcacoes": {
+        "proprios": 28,
+        "parceriaPaga": 0,
+        "comCoautor": 0
+      },
       "reels": 12,
       "medianaViews": 5597742,
       "mediaViews": 7474935,
@@ -1237,6 +1252,11 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 7854012,
       "reelsColetados": 26,
+      "marcacoes": {
+        "proprios": 26,
+        "parceriaPaga": 0,
+        "comCoautor": 0
+      },
       "reels": 12,
       "medianaViews": 2228308.5,
       "mediaViews": 2648332.3333333335,
@@ -1608,6 +1628,11 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 2378892,
       "reelsColetados": 28,
+      "marcacoes": {
+        "proprios": 28,
+        "parceriaPaga": 0,
+        "comCoautor": 4
+      },
       "reels": 12,
       "medianaViews": 806358.5,
       "mediaViews": 1194758.0833333333,
@@ -1996,6 +2021,11 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 3504536,
       "reelsColetados": 76,
+      "marcacoes": {
+        "proprios": 76,
+        "parceriaPaga": 0,
+        "comCoautor": 1
+      },
       "reels": 12,
       "medianaViews": 433410,
       "mediaViews": 639617.25,
@@ -2539,6 +2569,11 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 14320503,
       "reelsColetados": 78,
+      "marcacoes": {
+        "proprios": 78,
+        "parceriaPaga": 0,
+        "comCoautor": 1
+      },
       "reels": 1,
       "medianaViews": 29679130,
       "mediaViews": 29679130,
@@ -2784,6 +2819,11 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 241751801,
       "reelsColetados": 5,
+      "marcacoes": {
+        "proprios": 5,
+        "parceriaPaga": 0,
+        "comCoautor": 1
+      },
       "reels": 5,
       "medianaViews": 35078983,
       "mediaViews": 48026798.8,
@@ -3024,6 +3064,11 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 61144174,
       "reelsColetados": 29,
+      "marcacoes": {
+        "proprios": 29,
+        "parceriaPaga": 0,
+        "comCoautor": 4
+      },
       "reels": 12,
       "medianaViews": 6212049,
       "mediaViews": 13158930,
@@ -3364,6 +3409,11 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 56759748,
       "reelsColetados": 23,
+      "marcacoes": {
+        "proprios": 23,
+        "parceriaPaga": 1,
+        "comCoautor": 7
+      },
       "reels": 12,
       "medianaViews": 30888293.5,
       "mediaViews": 35118221.5,
@@ -3698,6 +3748,11 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 679908339,
       "reelsColetados": 17,
+      "marcacoes": {
+        "proprios": 17,
+        "parceriaPaga": 7,
+        "comCoautor": 9
+      },
       "reels": 12,
       "medianaViews": 74302282,
       "mediaViews": 103444279.91666667,
@@ -3983,6 +4038,11 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 517779940,
       "reelsColetados": 24,
+      "marcacoes": {
+        "proprios": 24,
+        "parceriaPaga": 17,
+        "comCoautor": 14
+      },
       "reels": 12,
       "medianaViews": 51606914.5,
       "mediaViews": 100478988.41666667,

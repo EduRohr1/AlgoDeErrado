@@ -309,6 +309,24 @@
       t: `${curtoNome(duelo)} tem ${fmtX(duelo.seguidores / nik.seguidores)} mais seguidores, mas ${duelo.medianaViews < nik.medianaViews ? 'menos' : 'mais'} visualizações por vídeo que Nikolas`,
       d: `Vídeo típico: ${curtoNome(duelo)} ${fmtMi(duelo.medianaViews)}, Nikolas ${fmtMi(nik.medianaViews)}`,
       i: `${curtoNome(duelo)} tem ${fmtMi(duelo.seguidores)} de seguidores; Nikolas, ${fmtMi(nik.seguidores)}. Mesmo assim, o vídeo típico (a mediana dos vídeos analisados) dos dois tem um número parecido de visualizações.` },
+    // Parceria paga e collab: só aparece se nenhum vídeo próprio do Nikolas tiver essas marcações.
+    (() => {
+      const m = nik.marcacoes;
+      if (!m || !m.proprios || m.parceriaPaga || m.comCoautor) return null;
+      const por = u => R.perfis.find(p => p.perfil === u)?.marcacoes;
+      const messi = por('leomessi'), cr7m = por('cristiano'), lula = por('lulaoficial');
+      const comp = [
+        messi?.parceriaPaga && `Messi: ${messi.parceriaPaga} de ${messi.proprios} marcados como parceria paga`,
+        cr7m?.parceriaPaga && `Cristiano: ${cr7m.parceriaPaga} de ${cr7m.proprios}`,
+        lula?.comCoautor && `Lula: ${lula.comCoautor} collabs em ${lula.proprios} vídeos`,
+      ].filter(Boolean);
+      return {
+        n: `0 de ${m.proprios}`,
+        t: `Nenhum dos ${m.proprios} vídeos do Nikolas está marcado como parceria paga ou collab`,
+        d: comp.join('; '),
+        i: 'Contamos os vídeos publicados pelo próprio perfil. Parceria paga é o rótulo “Parceria paga com…” que o Instagram mostra quando o criador declara a parceria; collab é o vídeo assinado em conjunto com outra conta (coautor). As duas informações vêm nos dados públicos de cada vídeo. O rótulo só aparece quando o criador declara: um vídeo pode ter patrocínio não declarado, e isso não aparece aqui. Também não inclui anúncios pagos (impulsionamento), que são outra coisa.',
+      };
+    })(),
     regN && rankCv === 1 && {
       n: fmtDec(regN.cv),
       t: 'O alcance do Nikolas é o mais constante entre os políticos: os vídeos variam pouco entre si',

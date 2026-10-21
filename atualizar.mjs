@@ -298,6 +298,12 @@ function resumir(perfis, reels) {
       encontrado,
       seguidores: seg,
       reelsColetados: todos.length,
+      // Vídeos próprios marcados pelo Instagram como parceria paga ou com coautores (collab).
+      marcacoes: {
+        proprios: todos.length,
+        parceriaPaga: todos.filter(x => x.paidPartnership).length,
+        comCoautor: todos.filter(x => (Array.isArray(x.coauthorProducers) ? x.coauthorProducers.length : x.coautores || 0) > 0).length,
+      },
       reels: rs.length,
       medianaViews: medV,
       mediaViews: media(views),
