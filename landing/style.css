@@ -593,3 +593,7 @@ button.info:hover, button.info:focus-visible, button.info[aria-expanded="true"] 
 .hero-escuro .hero-linha .titulo-x { font-style: normal; }
 .hg-cards li .hc-num { flex: none; }
 .hero-escuro .hero-sub strong { color: #fff; font-weight: 700; }
+
+/* Introdução da seção de idade */
+.idade-intro { font-size: 1.05rem; line-height: 1.55; margin: 0 0 .6rem; max-width: 72ch; }
+.idade-intro.idade-fato { font-size: .98rem; border-left: 3px solid var(--accent); padding-left: .75rem; }

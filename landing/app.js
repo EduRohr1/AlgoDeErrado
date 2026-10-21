@@ -268,6 +268,18 @@
 
   // Tabela de faixas de idade.
   const faixas = R.faixasIdade || [];
+  // Linha da introdução: só aparece se, na faixa com mais vídeos do Nikolas, ele ficar acima de todos os outros perfis com 2+ vídeos nela.
+  if (nik.faixas) {
+    const k = nik.faixas.reduce((m, f, j) => (f.n || 0) > (nik.faixas[m].n || 0) ? j : m, 0);
+    const fNik = nik.faixas[k];
+    const rivais = R.perfis.filter(p => p.encontrado && p.perfil !== NIK && p.faixas && p.faixas[k] && p.faixas[k].n >= 2)
+      .sort((x, y) => y.faixas[k].medianaViewsPorSeguidor - x.faixas[k].medianaViewsPorSeguidor);
+    if (fNik.n >= 5 && rivais.length >= 3 && fNik.medianaViewsPorSeguidor > rivais[0].faixas[k].medianaViewsPorSeguidor) {
+      const el = document.getElementById('idadeFato');
+      el.innerHTML = `Entre os vídeos com ${faixas[k].endsWith('+') ? 'mais de ' + faixas[k].replace('d+', ' dias') : faixas[k].replace('–', ' a ').replace('d', ' dias')} de idade, faixa onde estão mais vídeos dele (${fNik.n}), a mediana do Nikolas é de <strong>${fmtDec(fNik.medianaViewsPorSeguidor, 2)} visualização por seguidor</strong>; o maior valor entre os outros ${rivais.length} perfis com vídeos dessa idade é ${fmtDec(rivais[0].faixas[k].medianaViewsPorSeguidor, 2)} (${nome(rivais[0].perfil)}).`;
+      el.hidden = false;
+    }
+  }
   function tabelaFaixas(grupo) {
     const lista = R.perfis.filter(p => p.encontrado && p.faixas && (grupo === 'todos' || grupoDe(p) === grupo));
     document.getElementById('tabelaFaixas').innerHTML =
