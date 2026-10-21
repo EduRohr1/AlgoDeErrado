@@ -16,7 +16,7 @@
   // Comparação com o vídeo típico dos famosos que ele supera com um vídeo só.
   const famosos = R.perfis.filter(p => (p.grupo || 'politicos') !== 'politicos' && p.comparavel && p.medianaViews < v.views)
     .sort((a, b) => b.medianaViews - a.medianaViews);
-  const nomes = { cristiano: 'Cristiano Ronaldo', leomessi: 'Messi', neymarjr: 'Neymar', anitta: 'Anitta', virginia: 'Virginia' };
+  const nomes = { cristiano: 'Cristiano Ronaldo', leomessi: 'Messi', neymarjr: 'Neymar', anitta: 'Anitta', virginia: 'Virginia', kimkardashian: 'Kim Kardashian' };
 
   document.getElementById('dvViews').innerHTML = milhoes(v.views) + (window.infoBtn ? window.infoBtn(`É o vídeo com mais visualizações entre os coletados do Nikolas: ${milhoes(v.views)} de visualizações. Dividido pelo número de seguidores dele, dá ${vezes(v.vezesSeguidores)}. Ou seja, o vídeo foi visto mais vezes do que ele tem de seguidores (uma mesma pessoa assistir mais de uma vez também conta). Como tinha menos de 3 dias na coleta, ele fica fora das médias da página.`, 'O que significa este número?') : '');
   // Comparação com a população do Brasil (IBGE, estimativa 2025: 213,4 milhões), só se os números sustentarem a frase.
@@ -39,7 +39,8 @@
   document.getElementById('dvLegenda').innerHTML =
     `“${esc(v.legenda || 'sem legenda')}” · publicado em ${data(v.data)}, às ${hora(v.data)} · <a href="${esc(v.url)}" target="_blank" rel="noopener">ver no Instagram ↗</a>`;
   document.getElementById('dvCresc').innerHTML = [
-    famosos.length ? `Sozinho, passa do vídeo típico de ${famosos.map(p => `${nomes[p.perfil] || p.perfil} (${mi(p.medianaViews)})`).join(', ')}.` : '',
+    famosos.length ? `Sozinho, teve mais visualizações que o vídeo típico de ${famosos.length === 1 ? nomes[famosos[0].perfil] : `todas as ${famosos.length} celebridades analisadas`}.` +
+      (window.infoBtn ? ' ' + window.infoBtn(`Vídeo típico de cada celebridade: ${famosos.map(p => `${nomes[p.perfil] || p.perfil}, ${mi(p.medianaViews)}`).join('; ')}.`, 'Quais são os números?') : '') : '',
   ].filter(Boolean).join(' ');
   document.getElementById('dvNota').textContent =
     `Vídeo com menos de 3 dias na data da coleta (${data(v.coletadoEm)}, ${hora(v.coletadoEm)}): fica fora das médias da página, que usam só vídeos com 3 dias ou mais. Um vídeo isolado não representa o padrão do perfil.`;

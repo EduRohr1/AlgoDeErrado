@@ -3,7 +3,7 @@
 (function () {
   const R = window.RESUMO;
   const NIK = 'nikolasferreiradm';
-  const NOMES = { nikolasferreiradm: 'Nikolas Ferreira', lulaoficial: 'Lula', jairmessiasbolsonaro: 'Jair Bolsonaro', bolsonarosp: 'Eduardo Bolsonaro', tabataamaralsp: 'Tabata Amaral', 'guilhermeboulos.oficial': 'Guilherme Boulos', neymarjr: 'Neymar Jr', anitta: 'Anitta', virginia: 'Virginia', cristiano: 'Cristiano Ronaldo', leomessi: 'Lionel Messi' };
+  const NOMES = { renansantosmbl: 'Renan Santos', kimkataguiri: 'Kim Kataguiri', kimkardashian: 'Kim Kardashian', nikolasferreiradm: 'Nikolas Ferreira', lulaoficial: 'Lula', jairmessiasbolsonaro: 'Jair Bolsonaro', bolsonarosp: 'Eduardo Bolsonaro', tabataamaralsp: 'Tabata Amaral', 'guilhermeboulos.oficial': 'Guilherme Boulos', neymarjr: 'Neymar Jr', anitta: 'Anitta', virginia: 'Virginia', cristiano: 'Cristiano Ronaldo', leomessi: 'Lionel Messi' };
   const nome = p => NOMES[p] || '@' + p;
   const grupo = p => p.grupo || 'politicos';
   const comp = R.perfis.filter(p => p.comparavel && p.pistas);
@@ -86,12 +86,12 @@
   const CATS = [['apoio', 'apoio'], ['neutro', 'neutro'], ['pergunta', 'pergunta'], ['crítica', 'critica'], ['repetitivo', 'repetitivo']];
   const comTom = comp.filter(p => p.pistas.tom);
   const tomN = nik.pistas.tom;
-  const repOutros = comTom.filter(p => p.perfil !== NIK).map(p => p.pistas.tom.pct['repetitivo']);
+  const repOutros = comTom.filter(p => grupo(p) === 'politicos' && p.perfil !== NIK).map(p => p.pistas.tom.pct['repetitivo']);
   const maxRep = [...comTom].sort((a, b) => b.pistas.tom.pct['repetitivo'] - a.pistas.tom.pct['repetitivo'])[0];
   if (tomN) {
     set('txtTom', `Amostra dos comentários mais recentes de cada vídeo (${tomN.n} comentários no perfil do Nikolas). ` +
       `No Nikolas, <strong>${pct(tomN.pct.apoio)}</strong> são de apoio, ${pct(tomN.pct['crítica'])} têm linguagem crítica e <strong>${pct(tomN.pct['repetitivo'])}</strong> são textos repetidos (copia-e-cola), ` +
-      `${tomN.pct['repetitivo'] < mediana(repOutros) / 2 ? 'abaixo do' : 'perto do'} típico dos outros perfis (${pct(mediana(repOutros))}). O maior índice de repetição é de ${nome(maxRep.perfil)} (${pct(maxRep.pistas.tom.pct['repetitivo'])}). ` +
+      `${tomN.pct['repetitivo'] < mediana(repOutros) / 2 ? 'abaixo do' : 'perto do'} típico dos outros políticos (${pct(mediana(repOutros))}). O maior índice de repetição é de ${nome(maxRep.perfil)} (${pct(maxRep.pistas.tom.pct['repetitivo'])}). ` +
       `Nesta amostra, o perfil de comentários do Nikolas não destoa dos demais.`);
   }
   set('tomLista', comTom.map(p => `<div class="tom-linha${p.perfil === NIK ? ' nik' : ''}"><span class="tom-nome">${nome(p.perfil)} <small>${p.pistas.tom.n}</small></span><span class="tom-barra">${CATS.map(([k, c]) => `<i class="t-${c}" style="width:${(p.pistas.tom.pct[k] * 100).toFixed(1)}%" title="${k}: ${pct(p.pistas.tom.pct[k])}"></i>`).join('')}</span></div>`).join(''));
@@ -126,9 +126,11 @@
   // ===== Resumo em 3 padrões ("Então, por que tanto alcance?") =====
   {
     const itens = [], ch = [];
-    if (posDur === 1) { itens.push('Os vídeos dele são os mais longos entre os perfis analisados.'); ch.push([fmtSeg(dN.medianaSegundos), 'duração típica (a maior)']); }
-    if (legPol.length && lN.medianaCaracteres < Math.min(...legPol)) { itens.push(`As legendas são curtas: os outros políticos usam de ${Math.round(Math.min(...legPol))} a ${Math.round(Math.max(...legPol))} caracteres.`); ch.push([String(Math.round(lN.medianaCaracteres)), 'caracteres na legenda']); }
-    if (comTema.length && semTema) { itens.push(`Vídeos sobre “${comTema[0].tema}” foram melhor (${vps(semTema.medianaVps)} nos sem tema). São poucos: é só uma pista.`); ch.push([vps(comTema[0].medianaVps), `alcance em “${comTema[0].tema}”`]); }
+    if (posDur === 1) { itens.push('Os vídeos dele são os mais longos entre os perfis analisados.'); ch.push([fmtSeg(dN.medianaSegundos), 'duração típica, a maior']); }
+    if (legPol.length && lN.medianaCaracteres < Math.min(...legPol)) { itens.push(`As legendas são as mais curtas: os outros políticos usam de ${Math.round(Math.min(...legPol))} a ${Math.round(Math.max(...legPol))} caracteres.`); ch.push([String(Math.round(lN.medianaCaracteres)), 'caracteres na legenda']); }
+    if (comTema.length && semTema) { itens.push(`Vídeos sobre ${comTema[0].tema} foram melhor que os sem tema identificado, que ficaram em ${vps(semTema.medianaVps)}. São poucos vídeos: é só uma pista.`); ch.push([vps(comTema[0].medianaVps), `alcance em ${comTema[0].tema}`]); }
+    const NUM = ['', 'um padrão', 'dois padrões', 'três padrões'];
+    set('respPorque', `Os dados não mostram a causa, mas mostram ${NUM[itens.length] || 'alguns padrões'}.`);
     set('pistasResumo', itens.map(t => `<li>${t}</li>`).join(''));
     set('chipsPistas', ch.map(([n, t], k) => `<div class="chip${k === 0 ? ' nik' : ''}"><b>${n}</b><span>${t}</span></div>`).join(''));
   }

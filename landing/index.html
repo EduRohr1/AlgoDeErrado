@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800&display=swap">
-  <link rel="stylesheet" href="style.css?v=202610210825">
+  <link rel="stylesheet" href="style.css?v=202610210845">
 </head>
 <body>
   <header class="cabecalho" id="cabecalho">
@@ -85,7 +85,6 @@
           <button type="button" class="carrossel-pausa" id="carrPausa" aria-label="Pausar troca automática" aria-pressed="false">❚❚</button>
         </div>
       </div>
-      <p class="lead-secao">Esta parte compara o Nikolas, um a um, com celebridades e com outros políticos.</p>
       <div class="carrossel-trilho" id="carrTrilho" tabindex="0" aria-live="off"></div>
       <div class="carrossel-pontos" id="carrPontos" role="tablist" aria-label="Escolher comparação"></div>
       <p class="carrossel-nota">Vídeo típico: o do meio entre os 12 vídeos mais recentes com 3 dias ou mais (metade teve mais visualizações, metade teve menos). Visualizações por seguidor: visualizações do vídeo típico divididas pelo número de seguidores.</p>
@@ -93,8 +92,6 @@
   </section>
 
   <div class="wrap prova-dados" id="provaDados">
-    <div class="cards-linha" id="cardsProva"></div>
-    <p class="lede resumo" id="lede"></p>
     <div id="outrosGrupos"></div>
   </div>
 
@@ -102,7 +99,6 @@
     <div class="wrap dv-grid">
       <div class="dv-numero"><span class="dv-big" id="dvViews"></span><span class="dv-unid">de visualizações</span></div>
       <div class="dv-texto">
-        <p class="lead-secao">Esta parte mostra o vídeo mais visto do Nikolas na nossa coleta.</p>
         <h2 class="dv-titulo" id="dvTitulo"></h2>
         <p class="dv-legenda" id="dvLegenda"></p>
         <p class="dv-cresc" id="dvCresc"></p>
@@ -114,18 +110,18 @@
   <main class="wrap">
     <section class="duvidas" id="duvidas" aria-labelledby="tituloDuvidas">
       <h2 class="secao-titulo" id="tituloDuvidas">Mas e se…?</h2>
-      <p class="lead-secao">As dúvidas mais comuns, uma por uma.</p>
+      <p class="lead-secao">As objeções mais comuns, e o que os dados dizem sobre cada uma.</p>
 
     <section class="painel duvida" id="secIdade">
       <h2>Os vídeos dele são mais antigos?</h2>
-      <p class="resposta">Não. Na mesma idade, ele continua muito acima.</p>
+      <p class="resposta">Não. Na mesma idade, ele continua acima de todos.</p>
       <div class="chips" id="chipsIdade"></div>
       <p class="curto">Cada ponto do gráfico é um vídeo, medido no dia da coleta.</p>
       <div class="filtros" id="filtrosIdade" hidden></div>
       <div class="grafico alto"><canvas id="gIdade" aria-label="Gráfico de dispersão: idade do vídeo em dias versus visualizações por seguidor"></canvas></div>
       <details class="ver-detalhes"><summary>Ver detalhes</summary>
-      <p class="idade-intro idade-fato" id="idadeFato" hidden></p>
-      <p class="sub">Cada ponto é <strong>um vídeo diferente</strong>, medido no mesmo momento (a coleta). O gráfico é um retrato: não mostra um mesmo vídeo crescendo ao longo do tempo. Vídeos mais à esquerda são mais novos e ainda podem ganhar visualizações. Aqui entram todos os vídeos coletados, inclusive os com menos de 3 dias. Os eixos usam uma escala em que cada marca vale 10 vezes a anterior, para caber números muito diferentes.</p>
+      <p class="sub" id="idadeFato" hidden></p>
+      <p class="sub">O gráfico é um retrato: não mostra o mesmo vídeo crescendo. Vídeos à esquerda são mais novos e ainda podem ganhar visualizações. Entram todos os vídeos coletados, inclusive os com menos de 3 dias. Os eixos usam escala logarítmica: cada marca vale 10 vezes a anterior.</p>
       <h3>Visualizações por seguidor do vídeo típico, por idade do vídeo</h3>
       <p class="sub">Entre parênteses, quantos vídeos caem em cada faixa. Faixas com poucos vídeos dizem pouco; “—” indica que não houve vídeo naquela faixa.</p>
       <div class="tabela-wrap"><table class="tabela" id="tabelaFaixas"></table></div>
@@ -138,7 +134,6 @@
       <div class="chips" id="chipsPerspectiva"></div>
       <div class="duelo-bloco" id="duelo"></div>
       <details class="ver-detalhes"><summary>Ver detalhes</summary>
-      <div class="cards-linha" id="cardPerspectiva"></div>
       <h3>E se os outros políticos tivessem a taxa do Nikolas?</h3>
       <p class="sub">Quantas visualizações por vídeo cada político teria com os seguidores que já tem, mas com as mesmas visualizações por seguidor do Nikolas (<span id="taxaNik"></span>). É um cálculo hipotético, só para dar escala à diferença.</p>
       <div class="contra-lista" id="contraLista"></div>
@@ -152,9 +147,8 @@
       <p class="curto" id="curtoRegularidade"></p>
       <div class="grafico"><canvas id="gRegularidade" aria-label="Gráfico de barras: índice de variação das visualizações por perfil"></canvas></div>
       <details class="ver-detalhes"><summary>Ver detalhes</summary>
-      <p class="sub"><strong>Esta parte mostra se o alcance muda muito de um vídeo para outro.</strong> Um índice baixo quer dizer vídeos com alcance parecido; um índice alto quer dizer que poucos vídeos concentram as visualizações. Também comparamos um vídeo “bom” com um “fraco” do mesmo perfil. <span id="txtRegularidade"></span></p>
+      <p class="sub">O índice de variação mede o quanto as visualizações mudam entre os vídeos de um mesmo perfil. Perto de 0, os vídeos são parecidos. Acima de 1, poucos vídeos concentram as visualizações. <span id="txtRegularidade"></span></p>
       <div class="tabela-wrap"><table class="tabela tabela-media" id="tabelaRegularidade"></table></div>
-      <div class="cards-linha" id="cardRegularidade"></div>
       </details>
     </section>
 
@@ -165,9 +159,8 @@
       <p class="curto" id="curtoInteracao"></p>
       <div class="grafico"><canvas id="gCurt" aria-label="Gráfico de barras: curtidas por seguidor"></canvas></div>
       <details class="ver-detalhes"><summary>Ver detalhes</summary>
-      <p class="sub"><strong>Esta parte confere se há gente de verdade reagindo aos vídeos.</strong> Se as visualizações viessem de exibições sem ninguém interagindo, haveria poucas curtidas e comentários. Para checar, comparamos as curtidas e os comentários do vídeo típico com o número de seguidores, nos mesmos 12 vídeos. <span id="txtInteracao"></span></p>
+      <p class="sub">Se as visualizações viessem de exibições sem ninguém assistindo, haveria poucas curtidas e comentários. Por isso comparamos curtidas e comentários com o número de seguidores, nos mesmos 12 vídeos. <span id="txtInteracao"></span></p>
       <div class="tabela-wrap"><table class="tabela" id="tabelaInteracao"></table></div>
-      <div class="cards-linha" id="cardRobosDet"></div>
       </details>
     </section>
 
@@ -177,10 +170,9 @@
       <div class="chips" id="chipsRobos"></div>
       <p class="curto" id="curtoRobos"></p>
       <details class="ver-detalhes"><summary>Ver detalhes</summary>
-      <p class="sub"><strong>Esta parte procura vídeos com muitas visualizações e poucas curtidas.</strong> Cada vídeo com 3 dias ou mais é comparado com o padrão do próprio perfil. Um vídeo é marcado quando tem <strong>menos da metade das curtidas por visualização</strong> que o perfil costuma ter. Os comentários aparecem só como informação extra, porque são poucos e variam mais. <span id="txtForaDaCurva"></span></p>
+      <p class="sub">Cada vídeo com 3 dias ou mais é comparado com o padrão do próprio perfil. Ele é marcado se tiver menos da metade das curtidas por visualização que o perfil costuma ter. <span id="txtForaDaCurva"></span></p>
       <div class="tabela-wrap"><table class="tabela tabela-media" id="tabelaForaDaCurva"></table></div>
       <div id="listaForaDaCurva"></div>
-      <div class="cards-linha" id="cardRobos"></div>
       </details>
     </section>
 
@@ -237,14 +229,14 @@
       <p class="resposta" id="respParceria"></p>
       <div class="chips" id="chipsParceria"></div>
       <details class="ver-detalhes"><summary>Ver detalhes</summary>
-      <div class="cards-linha" id="cardParceria"></div>
+      <p class="sub" id="detParceria"></p>
       </details>
     </section>
     </section>
 
     <section class="porque" id="porque" aria-labelledby="tituloPorque">
       <h2 class="secao-titulo" id="tituloPorque">Então, por que tanto alcance?</h2>
-      <p class="resposta">Os dados não mostram a causa. Mostram três padrões.</p>
+      <p class="resposta" id="respPorque">Os dados não mostram a causa, mas mostram alguns padrões.</p>
       <div class="chips" id="chipsPistas"></div>
       <ul class="pistas-resumo" id="pistasResumo"></ul>
       <details class="ver-detalhes ver-pistas" id="pistas"><summary>Ver todas as pistas</summary>
@@ -302,7 +294,6 @@
       <h2 class="secao-titulo" id="tituloVerMais">Ver mais</h2>
       <details class="ver-detalhes"><summary>Contexto: notícias sobre o algoritmo e as eleições</summary>
     <section class="painel contexto" id="contexto">
-      <h2>Contexto</h2>
       <p class="resposta">Essas notícias não falam do Nikolas. Mostram por que o algoritmo está em debate.</p>
       <ul class="curto-lista">
         <li>20/10: o Conselho da Meta cobrou mais transparência na moderação eleitoral (<a href="https://www.estadao.com.br/politica/conselho-da-meta-aponta-falhas-recorrentes-em-moderacao-eleitoral-no-brasil/" target="_blank" rel="noopener">Estadão</a>).</li>
@@ -317,9 +308,8 @@
       </details>
       <details class="ver-detalhes"><summary>Como interpretar</summary>
     <section class="painel interpretar" id="interpretar">
-      <h2>Como interpretar</h2>
-      <p class="sub">O resumo do que sabemos e do que não sabemos está na <a href="#conclusao">Conclusão</a>.</p>
-      <p class="sub">Ter muito mais visualizações do que seguidores é raro na comparação com os outros perfis, mas não prova nada sozinho. Há várias explicações comuns e legítimas, e elas podem atuar juntas:</p>
+      <p class="resposta">Há explicações comuns e legítimas para um alcance alto. Elas podem atuar juntas.</p>
+      <p class="sub">Ter muito mais visualizações do que seguidores é raro na comparação com os outros perfis, mas não prova nada sozinho.</p>
       <ul>
         <li><strong>Distribuição do algoritmo para não seguidores:</strong> o Instagram recomenda vídeos na aba Reels e no Explorar para quem não segue o perfil. Quando um vídeo retém bem a atenção, ele pode alcançar várias vezes a base de seguidores.</li>
         <li><strong>Compartilhamentos e reposts:</strong> vídeos enviados por DM, postados nos stories ou republicados por outras contas e grupos trazem visualizações de fora da base de seguidores.</li>
@@ -347,13 +337,12 @@
 
     <section class="painel" id="comentarios">
       <h2>Comentários por curtida</h2>
-      <p class="sub"><strong>Esta parte mostra se o público mais comenta ou mais curte.</strong> Um número alto indica mais conversa (apoio, perguntas, debate ou críticas); um número baixo indica que o público mais curte do que comenta. Nenhum dos dois é bom ou ruim em si. <span id="txtComentarios"></span></p>
+      <p class="sub"><strong>O público mais comenta ou mais curte?</strong> Um número alto indica mais conversa (apoio, perguntas, debate ou críticas); um número baixo indica que o público mais curte do que comenta. Nenhum dos dois é bom ou ruim em si. <span id="txtComentarios"></span></p>
       <div class="grafico"><canvas id="gComentarios" aria-label="Gráfico de barras: comentários por curtida"></canvas></div>
     </section>
       </details>
       <details class="ver-detalhes"><summary>Metodologia</summary>
     <section class="painel metodo" id="metodologia">
-      <h2>Metodologia</h2>
       <ul>
         <li><strong>Fonte:</strong> dados públicos do Instagram coletados via Apify (atores <code>instagram-profile-scraper</code> e <code>instagram-reel-scraper</code>) em <span id="dataColeta"></span>.</li>
         <li><strong>Amostra:</strong> até 12 vídeos mais recentes de cada perfil com <strong>pelo menos 3 dias</strong> de publicados. Vídeos com menos de 3 dias ficaram fora porque ainda estão acumulando visualizações. A exceção é a seção “Idade da publicação × visualizações”, que usa todos os vídeos coletados.</li>
@@ -385,9 +374,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <script src="dados.js?v=202610210757"></script>
   <script src="info.js?v=202610210741"></script>
-  <script src="destaque.js?v=202610202333"></script>
-  <script src="app.js?v=202610210828"></script>
-  <script src="pistas.js?v=202610210825"></script>
+  <script src="destaque.js?v=202610210845"></script>
+  <script src="app.js?v=202610210847"></script>
+  <script src="pistas.js?v=202610210847"></script>
   <script src="nav.js?v=202610210821"></script>
 </body>
 </html>

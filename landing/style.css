@@ -764,3 +764,10 @@ button.info:hover, button.info:focus-visible, button.info[aria-expanded="true"] 
   .chip b { font-size: 24px; }
   .duvida .sub, .ver-detalhes .sub { font-size: 16px; }
 }
+
+/* Revisão do texto: cartões do topo em 2 colunas; nota do carrossel; scroll exato */
+.hg-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 900px) { .hg-cards { grid-template-columns: 1fr; } }
+.carrossel-trilho { scroll-padding: 0; }
+.slide { scroll-snap-stop: always; }
+.ver-mais .interpretar > .resposta { font-size: clamp(19px, 2.4vw, 22px); }
