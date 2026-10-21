@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800&display=swap">
-  <link rel="stylesheet" href="style.css?v=202610210806">
+  <link rel="stylesheet" href="style.css?v=202610210825">
 </head>
 <body>
   <header class="cabecalho" id="cabecalho">
@@ -33,17 +33,11 @@
       <a class="marca" href="#"><i aria-hidden="true"></i>Alcance dos Reels</a>
       <button class="menu-botao" id="menuBotao" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
       <nav class="menu" id="menu" aria-label="Seções">
-        <a href="#achadosSecao">Resultados</a>
-        <a href="#interacao">Interação</a>
-        <a href="#regularidade">Regularidade</a>
-        <a href="#secIdade">Idade</a>
-        <a href="#famosos">Famosos</a>
-        <a href="#pistas">Pistas</a>
-        <a href="#anuncios">Anúncios</a>
-        <a href="#contexto">Contexto</a>
-        <a href="#interpretar">Interpretar</a>
+        <a href="#prova">A prova</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#porque">Por quê?</a>
         <a href="#conclusao">Conclusão</a>
-        <a href="#metodologia">Metodologia</a>
+        <a href="#vermais">Ver mais</a>
       </nav>
     </div>
     <p class="cabecalho-aviso"><span class="wrap">Análise independente, sem ligação com o Governo ou órgãos públicos.</span></p>
@@ -79,10 +73,11 @@
     </div>
   </section>
 
+  <span id="prova" class="ancora"></span>
   <section class="carrossel" id="carrossel" aria-roledescription="carrossel" aria-label="Comparações: Nikolas e outros perfis">
     <div class="wrap">
       <div class="carrossel-topo">
-        <p class="eyebrow">Compare</p>
+        <p class="eyebrow">A prova</p>
         <h2 class="carrossel-titulo">Nikolas × celebridades e políticos</h2>
         <div class="carrossel-controles">
           <button type="button" class="carrossel-seta" id="carrAnterior" aria-label="Comparação anterior">‹</button>
@@ -96,6 +91,12 @@
       <p class="carrossel-nota">Vídeo típico: o do meio entre os 12 vídeos mais recentes com 3 dias ou mais (metade teve mais visualizações, metade teve menos). Visualizações por seguidor: visualizações do vídeo típico divididas pelo número de seguidores.</p>
     </div>
   </section>
+
+  <div class="wrap prova-dados" id="provaDados">
+    <div class="cards-linha" id="cardsProva"></div>
+    <p class="lede resumo" id="lede"></p>
+    <div id="outrosGrupos"></div>
+  </div>
 
   <section class="destaque-video" id="destaqueVideo" aria-labelledby="dvTitulo" hidden>
     <div class="wrap dv-grid">
@@ -111,88 +112,143 @@
   </section>
 
   <main class="wrap">
-    <span id="resultados" class="ancora"></span>
-    <section class="achados" id="achadosSecao" aria-labelledby="tituloAchados">
-      <h2 class="secao-titulo revelar" id="tituloAchados">O que os dados mostram</h2>
-      <p class="lead-secao">Esta parte resume os principais números da análise.</p>
-      <ol class="achados-lista" id="achados"></ol>
-      <p class="lede resumo revelar" id="lede"></p>
-    </section>
+    <section class="duvidas" id="duvidas" aria-labelledby="tituloDuvidas">
+      <h2 class="secao-titulo" id="tituloDuvidas">Mas e se…?</h2>
+      <p class="lead-secao">As dúvidas mais comuns, uma por uma.</p>
 
-    <section class="perspectiva" id="perspectiva" aria-labelledby="tituloPerspectiva">
-      <h2 class="secao-titulo revelar" id="tituloPerspectiva">Em perspectiva</h2>
-      <p class="lead-secao">Esta parte traduz a diferença em exemplos concretos.</p>
-
-      <div class="painel revelar" id="duelo"></div>
-
-      <div class="painel revelar">
-        <h2>E se os outros políticos tivessem a taxa do Nikolas?</h2>
-        <p class="sub">Quantas visualizações por vídeo cada político teria com os seguidores que já tem, mas com as mesmas visualizações por seguidor do Nikolas (<span id="taxaNik"></span>). É um cálculo hipotético, só para dar escala à diferença.</p>
-        <div class="contra-lista" id="contraLista"></div>
-      </div>
-    </section>
-
-    <section class="painel" id="secIdade">
-      <h2>Idade da publicação × visualizações</h2>
-      <p class="lead-secao">Esta parte confere se a idade dos vídeos explica a diferença.</p>
-      <p class="idade-intro">Será que os números do Nikolas são maiores só porque os vídeos dele ficaram mais tempo no ar? Aqui cada vídeo aparece com a idade que tinha no dia da coleta, então dá para comparar vídeos da mesma idade.</p>
-      <p class="idade-intro idade-fato" id="idadeFato" hidden></p>
-      <p class="sub">Cada ponto é <strong>um vídeo diferente</strong>, medido no mesmo momento (a coleta). O gráfico é um retrato: não mostra um mesmo vídeo crescendo ao longo do tempo. Vídeos mais à esquerda são mais novos e ainda podem ganhar visualizações. Aqui entram todos os vídeos coletados, inclusive os com menos de 3 dias. Os eixos usam uma escala em que cada marca vale 10 vezes a anterior, para caber números muito diferentes.</p>
+    <section class="painel duvida" id="secIdade">
+      <h2>Os vídeos dele são mais antigos?</h2>
+      <p class="resposta">Não. Na mesma idade, ele continua muito acima.</p>
+      <div class="chips" id="chipsIdade"></div>
+      <p class="curto">Cada ponto do gráfico é um vídeo, medido no dia da coleta.</p>
       <div class="filtros" id="filtrosIdade" hidden></div>
       <div class="grafico alto"><canvas id="gIdade" aria-label="Gráfico de dispersão: idade do vídeo em dias versus visualizações por seguidor"></canvas></div>
+      <details class="ver-detalhes"><summary>Ver detalhes</summary>
+      <p class="idade-intro idade-fato" id="idadeFato" hidden></p>
+      <p class="sub">Cada ponto é <strong>um vídeo diferente</strong>, medido no mesmo momento (a coleta). O gráfico é um retrato: não mostra um mesmo vídeo crescendo ao longo do tempo. Vídeos mais à esquerda são mais novos e ainda podem ganhar visualizações. Aqui entram todos os vídeos coletados, inclusive os com menos de 3 dias. Os eixos usam uma escala em que cada marca vale 10 vezes a anterior, para caber números muito diferentes.</p>
       <h3>Visualizações por seguidor do vídeo típico, por idade do vídeo</h3>
       <p class="sub">Entre parênteses, quantos vídeos caem em cada faixa. Faixas com poucos vídeos dizem pouco; “—” indica que não houve vídeo naquela faixa.</p>
       <div class="tabela-wrap"><table class="tabela" id="tabelaFaixas"></table></div>
+      </details>
     </section>
 
-    <div id="outrosGrupos"></div>
-
-    <h2 class="grupo-titulo" id="tituloPoliticos">Políticos</h2>
-    <p class="lead-secao">Esta parte compara o Nikolas com outros políticos: alcance, curtidas, comentários e regularidade.</p>
-    <section class="painel" id="politicosGrafico">
-      <h2>Visualizações por seguidor entre políticos</h2>
-      <p class="sub"><strong>Quantas visualizações cada político tem para cada seguidor.</strong> Acima de 1, o vídeo típico tem mais visualizações do que o perfil tem de seguidores.</p>
-      <p class="sub nota-media" id="notaMediaPol" hidden></p>
-      <div class="grafico hero-canvas"><canvas id="gViews" aria-label="Gráfico de barras: mediana de visualizações por seguidor de cada político"></canvas></div>
+    <section class="painel duvida" id="perspectiva">
+      <h2>É só por ter muitos seguidores?</h2>
+      <p class="resposta" id="respPerspectiva"></p>
+      <div class="chips" id="chipsPerspectiva"></div>
+      <div class="duelo-bloco" id="duelo"></div>
+      <details class="ver-detalhes"><summary>Ver detalhes</summary>
+      <div class="cards-linha" id="cardPerspectiva"></div>
+      <h3>E se os outros políticos tivessem a taxa do Nikolas?</h3>
+      <p class="sub">Quantas visualizações por vídeo cada político teria com os seguidores que já tem, mas com as mesmas visualizações por seguidor do Nikolas (<span id="taxaNik"></span>). É um cálculo hipotético, só para dar escala à diferença.</p>
+      <div class="contra-lista" id="contraLista"></div>
+      </details>
     </section>
 
-    <section class="painel">
-      <h2>Curtidas e comentários por visualização</h2>
-      <p class="sub"><strong>De cada 100 visualizações, quantas viram curtida ou comentário.</strong> Aqui o Nikolas <strong id="posEng"></strong>: os vídeos dele alcançam muita gente, mas, proporcionalmente, menos pessoas curtem ou comentam.</p>
-      <div class="grafico"><canvas id="gEng" aria-label="Gráfico de barras: engajamento por visualização"></canvas></div>
-    </section>
-
-    <section class="painel" id="interacao">
-      <h2>Interação em relação aos seguidores</h2>
-      <p class="sub"><strong>Esta parte confere se há gente de verdade reagindo aos vídeos.</strong> Se as visualizações viessem de exibições sem ninguém interagindo, haveria poucas curtidas e comentários. Para checar, comparamos as curtidas e os comentários do vídeo típico com o número de seguidores, nos mesmos 12 vídeos. <span id="txtInteracao"></span></p>
-      <div class="grafico"><canvas id="gCurt" aria-label="Gráfico de barras: mediana de curtidas por seguidor"></canvas></div>
-      <div class="tabela-wrap"><table class="tabela" id="tabelaInteracao"></table></div>
-    </section>
-
-    <section class="painel" id="regularidade">
-      <h2>Regularidade das visualizações</h2>
+    <section class="painel duvida" id="regularidade">
+      <h2>Foi sorte de um vídeo só?</h2>
+      <p class="resposta" id="respRegularidade"></p>
+      <div class="chips" id="chipsRegularidade"></div>
+      <p class="curto" id="curtoRegularidade"></p>
+      <div class="grafico"><canvas id="gRegularidade" aria-label="Gráfico de barras: índice de variação das visualizações por perfil"></canvas></div>
+      <details class="ver-detalhes"><summary>Ver detalhes</summary>
       <p class="sub"><strong>Esta parte mostra se o alcance muda muito de um vídeo para outro.</strong> Um índice baixo quer dizer vídeos com alcance parecido; um índice alto quer dizer que poucos vídeos concentram as visualizações. Também comparamos um vídeo “bom” com um “fraco” do mesmo perfil. <span id="txtRegularidade"></span></p>
-      <div class="grafico"><canvas id="gRegularidade" aria-label="Gráfico de barras: coeficiente de variação das visualizações por perfil"></canvas></div>
       <div class="tabela-wrap"><table class="tabela tabela-media" id="tabelaRegularidade"></table></div>
+      <div class="cards-linha" id="cardRegularidade"></div>
+      </details>
     </section>
 
-    <section class="painel" id="foraDaCurva">
-      <h2>Vídeos fora da curva</h2>
+    <section class="painel duvida" id="interacao">
+      <h2>Tem gente de verdade reagindo?</h2>
+      <p class="resposta" id="respInteracao"></p>
+      <div class="chips" id="chipsInteracao"></div>
+      <p class="curto" id="curtoInteracao"></p>
+      <div class="grafico"><canvas id="gCurt" aria-label="Gráfico de barras: curtidas por seguidor"></canvas></div>
+      <details class="ver-detalhes"><summary>Ver detalhes</summary>
+      <p class="sub"><strong>Esta parte confere se há gente de verdade reagindo aos vídeos.</strong> Se as visualizações viessem de exibições sem ninguém interagindo, haveria poucas curtidas e comentários. Para checar, comparamos as curtidas e os comentários do vídeo típico com o número de seguidores, nos mesmos 12 vídeos. <span id="txtInteracao"></span></p>
+      <div class="tabela-wrap"><table class="tabela" id="tabelaInteracao"></table></div>
+      <div class="cards-linha" id="cardRobosDet"></div>
+      </details>
+    </section>
+
+    <section class="painel duvida" id="foraDaCurva">
+      <h2>São robôs?</h2>
+      <p class="resposta" id="respRobos"></p>
+      <div class="chips" id="chipsRobos"></div>
+      <p class="curto" id="curtoRobos"></p>
+      <details class="ver-detalhes"><summary>Ver detalhes</summary>
       <p class="sub"><strong>Esta parte procura vídeos com muitas visualizações e poucas curtidas.</strong> Cada vídeo com 3 dias ou mais é comparado com o padrão do próprio perfil. Um vídeo é marcado quando tem <strong>menos da metade das curtidas por visualização</strong> que o perfil costuma ter. Os comentários aparecem só como informação extra, porque são poucos e variam mais. <span id="txtForaDaCurva"></span></p>
       <div class="tabela-wrap"><table class="tabela tabela-media" id="tabelaForaDaCurva"></table></div>
       <div id="listaForaDaCurva"></div>
+      <div class="cards-linha" id="cardRobos"></div>
+      </details>
     </section>
 
-    <section class="painel" id="comentarios">
-      <h2>Comentários por curtida</h2>
-      <p class="sub"><strong>Esta parte mostra se o público mais comenta ou mais curte.</strong> Um número alto indica mais conversa (apoio, perguntas, debate ou críticas); um número baixo indica que o público mais curte do que comenta. Nenhum dos dois é bom ou ruim em si. <span id="txtComentarios"></span></p>
-      <div class="grafico"><canvas id="gComentarios" aria-label="Gráfico de barras: comentários por curtida"></canvas></div>
+    <section class="painel duvida anuncios" id="anuncios">
+      <h2>Ele paga anúncio?</h2>
+      <p class="resposta">Em parte: a campanha pagou anúncios, mas por outra página.</p>
+      <div class="anuncios-grid">
+        <div class="anuncio-card">
+          <p class="anuncio-num">R$ 309,9 mil<button type="button" class="info" aria-label="O que significa R$ 309,9 mil?" aria-expanded="false" data-info="Na aba “Sobre” da página Nikolas Ferreira BR, a Biblioteca de Anúncios mostra R$ 309.868 gastos com o rótulo da campanha (“ELEICAO 2026 NIKOLAS FERREIRA DE OLIVEIRA DEPUTADO FEDERAL - PL”). É uma estimativa da própria Meta. O último anúncio com esse rótulo terminou em 3/10/2026.">i</button></p>
+          <p class="anuncio-tit">Campanha 2026 na Meta</p>
+          <p class="anuncio-det">Anúncios na página Nikolas Ferreira BR pagos pela campanha, de agosto a 3/10/2026.</p>
+        </div>
+        <div class="anuncio-card">
+          <p class="anuncio-num">R$ 0<button type="button" class="info" aria-label="O que significa R$ 0?" aria-expanded="false" data-info="A Biblioteca mostra o gasto dos últimos 7 dias com dados: na consulta de 20/10, de 11 a 17/10. Nenhum anúncio das duas páginas foi veiculado depois de 3/10. Anúncios novos levam até 24 horas para aparecer na Biblioteca.">i</button></p>
+          <p class="anuncio-tit">Gasto de 11 a 17/10</p>
+          <p class="anuncio-det">Nas duas páginas, na última semana disponível na consulta de 20/10.</p>
+        </div>
+        <div class="anuncio-card">
+          <p class="anuncio-num">R$ 123 mil<button type="button" class="info" aria-label="O que significa R$ 123 mil?" aria-expanded="false" data-info="Na prestação de contas da campanha no DivulgaCandContas (TSE), a “Despesa com Impulsionamento de Conteúdos” soma R$ 123.000 em 5 despesas, com última atualização em 5/10/2026. Entre os fornecedores, a Facebook Serviços Online do Brasil soma R$ 103.000. A prestação final ainda não foi entregue, por isso o valor pode ser diferente do mostrado pela Meta.">i</button></p>
+          <p class="anuncio-tit">Impulsionamento declarado ao TSE</p>
+          <p class="anuncio-det">Até 5/10/2026, sendo R$ 103 mil para o Facebook. As contas de 2026 ainda são parciais.</p>
+        </div>
+        <div class="anuncio-card">
+          <p class="anuncio-num">0 anúncios<button type="button" class="info" aria-label="O que significa 0 anúncios?" aria-expanded="false" data-info="Na aba “Sobre” da página Nikolas Ferreira: R$ 33.158 gastos desde 2020, sendo R$ 29.083 com o rótulo da eleição de 2022 e R$ 3.030 com o da eleição de 2020. O último anúncio terminou em 1/10/2022.">i</button></p>
+          <p class="anuncio-tit">Em 2026, na página principal</p>
+          <p class="anuncio-det">A página Nikolas Ferreira, ligada ao @nikolasferreiradm, tem cerca de 89 anúncios antigos, de 2020 e 2022, somando R$ 33,2 mil.</p>
+        </div>
+      </div>
+      <p class="curto">A conta analisada não tem anúncios em 2026. O vídeo de 108 milhões saiu depois do último anúncio.</p>
+      <details class="ver-detalhes"><summary>Ver detalhes</summary>
+      <p class="anuncios-nota">A página Nikolas Ferreira BR também teve R$ 286,8 mil em anúncios pagos pela empresa Destra Cursos, em 2024 e 2025, e R$ 17,6 mil pagos pela própria página, segundo a Biblioteca.</p>
+      <h3>O que não dá para saber</h3>
+      <ul>
+        <li>Se algum desses anúncios impulsionou os vídeos do @nikolasferreiradm analisados aqui. A Biblioteca mostra a página que anunciou, e o detalhe de cada anúncio não abre sem login.</li>
+        <li>Se as visualizações vindas de anúncios entram no contador público de visualizações do Reel.</li>
+      </ul>
+      <p class="anuncios-fontes">Fontes: <a href="https://www.facebook.com/ads/library/?active_status=all&amp;ad_type=political_and_issue_ads&amp;country=BR&amp;media_type=all&amp;search_type=page&amp;view_all_page_id=1278052118934015" target="_blank" rel="noopener">Biblioteca de Anúncios: Nikolas Ferreira ↗</a> · <a href="https://www.facebook.com/ads/library/?active_status=all&amp;ad_type=political_and_issue_ads&amp;country=BR&amp;media_type=all&amp;search_type=page&amp;view_all_page_id=415180445018146" target="_blank" rel="noopener">Biblioteca de Anúncios: NIkolas Ferreira BR ↗</a> · <a href="https://divulgacandcontas.tse.jus.br/divulga/#/candidato/SUDESTE/MG/20322002026/130002542026/2026/MG" target="_blank" rel="noopener">TSE, DivulgaCandContas ↗</a></p>
+      <details class="regras"><summary>Como pesquisamos</summary>
+        <ol class="passos">
+          <li>Abra <a href="https://www.facebook.com/ads/library/" target="_blank" rel="noopener">facebook.com/ads/library</a> (não precisa de login).</li>
+          <li>País: <strong>Brasil</strong>. Categoria: <strong>Temas sociais, eleições ou política</strong>.</li>
+          <li>Digite “Nikolas Ferreira” e escolha o anunciante na lista: primeiro <strong>Nikolas Ferreira</strong> (@nikolasferreiradm), depois <strong>NIkolas Ferreira BR</strong> (@nikolasferreirabr).</li>
+          <li>Em <strong>Filtros</strong>, mude <strong>Status online</strong> para <strong>Anúncios ativos e inativos</strong> e aplique. Atenção: o padrão é “Anúncios ativos”, e como nenhum anúncio está rodando agora, a Biblioteca mostra “Nenhum anúncio corresponde aos seus critérios de pesquisa”.</li>
+          <li>Na aba <strong>Sobre</strong> de cada página estão o “Valor total gasto”, o “Gasto por rótulo” (quem pagou) e o “Gasto da semana passada”. Para ver as datas dos anúncios, use o filtro <strong>Impressões por data</strong>.</li>
+          <li>No TSE: <a href="https://divulgacandcontas.tse.jus.br/" target="_blank" rel="noopener">divulgacandcontas.tse.jus.br</a> → Eleição Geral Federal 2026 → Minas Gerais → Deputado Federal → Nikolas Ferreira → prestação de contas → despesas → “Despesa com Impulsionamento de Conteúdos”.</li>
+        </ol>
+        <p class="sub">Consulta feita em 20/10/2026, entre 23h10 e 23h40 (horário de Brasília). Os valores da Meta são estimativas da própria Biblioteca, e anúncios novos aparecem nela em até 24 horas.</p>
+      </details>
+      </details>
     </section>
 
-    <h2 class="grupo-titulo" id="pistas">Por que tanto alcance? Pistas nos dados</h2>
-    <p class="lead-secao">Esta parte testa explicações simples: quantos vídeos ele posta, duração, horário, legenda, temas e comentários.</p>
-    <p class="sub pistas-intro">São seis comparações feitas só com os dados públicos já coletados. Elas mostram <strong>padrões</strong>, não causas: servem para levantar hipóteses, não para concluir.</p>
+    <section class="painel duvida" id="parceria">
+      <h2>É parceria paga ou collab?</h2>
+      <p class="resposta" id="respParceria"></p>
+      <div class="chips" id="chipsParceria"></div>
+      <details class="ver-detalhes"><summary>Ver detalhes</summary>
+      <div class="cards-linha" id="cardParceria"></div>
+      </details>
+    </section>
+    </section>
 
+    <section class="porque" id="porque" aria-labelledby="tituloPorque">
+      <h2 class="secao-titulo" id="tituloPorque">Então, por que tanto alcance?</h2>
+      <p class="resposta">Os dados não mostram a causa. Mostram três padrões.</p>
+      <div class="chips" id="chipsPistas"></div>
+      <ul class="pistas-resumo" id="pistasResumo"></ul>
+      <details class="ver-detalhes ver-pistas" id="pistas"><summary>Ver todas as pistas</summary>
+        <p class="sub pistas-intro">São seis comparações feitas só com os dados públicos já coletados. Elas mostram <strong>padrões</strong>, não causas: servem para levantar hipóteses, não para concluir.</p>
     <section class="painel" id="pFrequencia">
       <h2>1. Quantos vídeos por dia</h2>
       <p class="sub" id="txtFrequencia"></p>
@@ -232,63 +288,36 @@
       <details class="regras"><summary>Como o tom foi classificado</summary><p>Classificação automática por palavras-chave e emojis, na ordem: <strong>crítica</strong> (linguagem negativa ou ofensiva, nem sempre dirigida ao dono do perfil) → <strong>apoio</strong> (elogios, agradecimentos, emojis como 🙏👏❤️🇧🇷) → <strong>pergunta</strong> (tem “?”) → <strong>neutro</strong>. Comentários com 20+ caracteres que aparecem idênticos 2 ou mais vezes na amostra do perfil contam como <strong>repetitivos</strong> (copia-e-cola). A amostra são os ~15 comentários mais recentes de cada vídeo que vieram na coleta. Ironia e sarcasmo não são detectados, então a crítica tende a ficar subestimada. Nenhum nome de usuário ou texto de comentário é publicado: só as porcentagens. Perfis com comentários majoritariamente em outros idiomas (Cristiano e Messi) ficaram de fora.</p></details>
     </section>
 
-    <section class="painel anuncios" id="anuncios">
-      <h2>Ele paga para aparecer?</h2>
-      <p class="lead-secao">Esta parte mostra o que os registros públicos dizem sobre anúncios pagos.</p>
-      <p class="resposta-curta"><strong>Resposta curta:</strong> em parte, sim, mas não nesta conta e não neste momento. A campanha de 2026 dele pagou R$ 309,9 mil em anúncios na Meta entre agosto e 3/10/2026, por outra página (Nikolas Ferreira BR). A conta que analisamos (@nikolasferreiradm) não tem anúncios em 2026. O vídeo de 108 milhões saiu em 20/10, depois do último anúncio, e a última semana com dados (11 a 17/10) teve gasto zero nas duas páginas.</p>
-      <div class="anuncios-grid">
-        <div class="anuncio-card">
-          <p class="anuncio-num">R$ 309,9 mil<button type="button" class="info" aria-label="O que significa R$ 309,9 mil?" aria-expanded="false" data-info="Na aba “Sobre” da página Nikolas Ferreira BR, a Biblioteca de Anúncios mostra R$ 309.868 gastos com o rótulo da campanha (“ELEICAO 2026 NIKOLAS FERREIRA DE OLIVEIRA DEPUTADO FEDERAL - PL”). É uma estimativa da própria Meta. O último anúncio com esse rótulo terminou em 3/10/2026.">i</button></p>
-          <p class="anuncio-tit">Campanha 2026 na Meta</p>
-          <p class="anuncio-det">Anúncios na página Nikolas Ferreira BR pagos pela campanha, de agosto a 3/10/2026.</p>
-        </div>
-        <div class="anuncio-card">
-          <p class="anuncio-num">R$ 0<button type="button" class="info" aria-label="O que significa R$ 0?" aria-expanded="false" data-info="A Biblioteca mostra o gasto dos últimos 7 dias com dados: na consulta de 20/10, de 11 a 17/10. Nenhum anúncio das duas páginas foi veiculado depois de 3/10. Anúncios novos levam até 24 horas para aparecer na Biblioteca.">i</button></p>
-          <p class="anuncio-tit">Gasto de 11 a 17/10</p>
-          <p class="anuncio-det">Nas duas páginas, na última semana disponível na consulta de 20/10.</p>
-        </div>
-        <div class="anuncio-card">
-          <p class="anuncio-num">R$ 123 mil<button type="button" class="info" aria-label="O que significa R$ 123 mil?" aria-expanded="false" data-info="Na prestação de contas da campanha no DivulgaCandContas (TSE), a “Despesa com Impulsionamento de Conteúdos” soma R$ 123.000 em 5 despesas, com última atualização em 5/10/2026. Entre os fornecedores, a Facebook Serviços Online do Brasil soma R$ 103.000. A prestação final ainda não foi entregue, por isso o valor pode ser diferente do mostrado pela Meta.">i</button></p>
-          <p class="anuncio-tit">Impulsionamento declarado ao TSE</p>
-          <p class="anuncio-det">Até 5/10/2026, sendo R$ 103 mil para o Facebook. As contas de 2026 ainda são parciais.</p>
-        </div>
-        <div class="anuncio-card">
-          <p class="anuncio-num">0 anúncios<button type="button" class="info" aria-label="O que significa 0 anúncios?" aria-expanded="false" data-info="Na aba “Sobre” da página Nikolas Ferreira: R$ 33.158 gastos desde 2020, sendo R$ 29.083 com o rótulo da eleição de 2022 e R$ 3.030 com o da eleição de 2020. O último anúncio terminou em 1/10/2022.">i</button></p>
-          <p class="anuncio-tit">Em 2026, na página principal</p>
-          <p class="anuncio-det">A página Nikolas Ferreira, ligada ao @nikolasferreiradm, tem cerca de 89 anúncios antigos, de 2020 e 2022, somando R$ 33,2 mil.</p>
-        </div>
-      </div>
-      <p class="anuncios-nota">A página Nikolas Ferreira BR também teve R$ 286,8 mil em anúncios pagos pela empresa Destra Cursos, em 2024 e 2025, e R$ 17,6 mil pagos pela própria página, segundo a Biblioteca.</p>
-      <h3>O que não dá para saber</h3>
-      <ul>
-        <li>Se algum desses anúncios impulsionou os vídeos do @nikolasferreiradm analisados aqui. A Biblioteca mostra a página que anunciou, e o detalhe de cada anúncio não abre sem login.</li>
-        <li>Se as visualizações vindas de anúncios entram no contador público de visualizações do Reel.</li>
-      </ul>
-      <p class="anuncios-fontes">Fontes: <a href="https://www.facebook.com/ads/library/?active_status=all&amp;ad_type=political_and_issue_ads&amp;country=BR&amp;media_type=all&amp;search_type=page&amp;view_all_page_id=1278052118934015" target="_blank" rel="noopener">Biblioteca de Anúncios: Nikolas Ferreira ↗</a> · <a href="https://www.facebook.com/ads/library/?active_status=all&amp;ad_type=political_and_issue_ads&amp;country=BR&amp;media_type=all&amp;search_type=page&amp;view_all_page_id=415180445018146" target="_blank" rel="noopener">Biblioteca de Anúncios: NIkolas Ferreira BR ↗</a> · <a href="https://divulgacandcontas.tse.jus.br/divulga/#/candidato/SUDESTE/MG/20322002026/130002542026/2026/MG" target="_blank" rel="noopener">TSE, DivulgaCandContas ↗</a></p>
-      <details class="regras"><summary>Como pesquisamos</summary>
-        <ol class="passos">
-          <li>Abra <a href="https://www.facebook.com/ads/library/" target="_blank" rel="noopener">facebook.com/ads/library</a> (não precisa de login).</li>
-          <li>País: <strong>Brasil</strong>. Categoria: <strong>Temas sociais, eleições ou política</strong>.</li>
-          <li>Digite “Nikolas Ferreira” e escolha o anunciante na lista: primeiro <strong>Nikolas Ferreira</strong> (@nikolasferreiradm), depois <strong>NIkolas Ferreira BR</strong> (@nikolasferreirabr).</li>
-          <li>Em <strong>Filtros</strong>, mude <strong>Status online</strong> para <strong>Anúncios ativos e inativos</strong> e aplique. Atenção: o padrão é “Anúncios ativos”, e como nenhum anúncio está rodando agora, a Biblioteca mostra “Nenhum anúncio corresponde aos seus critérios de pesquisa”.</li>
-          <li>Na aba <strong>Sobre</strong> de cada página estão o “Valor total gasto”, o “Gasto por rótulo” (quem pagou) e o “Gasto da semana passada”. Para ver as datas dos anúncios, use o filtro <strong>Impressões por data</strong>.</li>
-          <li>No TSE: <a href="https://divulgacandcontas.tse.jus.br/" target="_blank" rel="noopener">divulgacandcontas.tse.jus.br</a> → Eleição Geral Federal 2026 → Minas Gerais → Deputado Federal → Nikolas Ferreira → prestação de contas → despesas → “Despesa com Impulsionamento de Conteúdos”.</li>
-        </ol>
-        <p class="sub">Consulta feita em 20/10/2026, entre 23h10 e 23h40 (horário de Brasília). Os valores da Meta são estimativas da própria Biblioteca, e anúncios novos aparecem nela em até 24 horas.</p>
       </details>
     </section>
 
-    <section class="painel contexto" id="contexto">
-      <h2>Contexto</h2>
-      <p class="lead-secao">Esta parte resume notícias recentes sobre o algoritmo e as eleições.</p>
-      <p>Em 20/10/2026, o Conselho de Supervisão da Meta disse estar preocupado com “falhas recorrentes” na moderação de conteúdo eleitoral no Brasil e cobrou mais transparência da empresa. Na mesma reportagem, a Meta reconhece um “incidente técnico de alcance global” que bloqueou a contagem de visualizações em 7 de outubro, das 1h50 às 19h49, e nega ter favorecido qualquer candidatura (<a href="https://www.estadao.com.br/politica/conselho-da-meta-aponta-falhas-recorrentes-em-moderacao-eleitoral-no-brasil/" target="_blank" rel="noopener">Estadão</a>).</p>
-      <p>Em 19/10/2026, o ministro Marco Aurélio Bellizze, do TSE, deu 24 horas para a Meta comprovar que cumpriu a decisão que exige igualdade na distribuição de conteúdos políticos e de anúncios no segundo turno, incluindo esclarecimentos sobre os sistemas de recomendação. Tanto Lula quanto Flávio Bolsonaro acionaram a Justiça Eleitoral alegando que seus conteúdos foram prejudicados (<a href="https://g1.globo.com/politica/eleicoes/2026/noticia/2026/10/19/tse-da-24h-para-meta-comprovar-medidas-tomadas-para-garantir-igualdade-entre-campanhas.ghtml" target="_blank" rel="noopener">g1</a>).</p>
-      <p><strong>Essas notícias não tratam do Nikolas Ferreira. Elas mostram por que a forma como o algoritmo distribui conteúdo político está em debate agora.</strong></p>
+    <section class="painel conclusao" id="conclusao" aria-labelledby="tituloConclusao">
+      <h2 id="tituloConclusao">Conclusão</h2>
+      <p class="resposta">O alcance é real e muito fora do comum. Com dados públicos, não dá para provar o porquê.</p>
+      <div class="chips" id="chipsConclusao"></div>
+      <div class="conclusao-blocos" id="conclusaoBlocos"></div>
     </section>
 
+    <section class="ver-mais" id="vermais" aria-labelledby="tituloVerMais">
+      <h2 class="secao-titulo" id="tituloVerMais">Ver mais</h2>
+      <details class="ver-detalhes"><summary>Contexto: notícias sobre o algoritmo e as eleições</summary>
+    <section class="painel contexto" id="contexto">
+      <h2>Contexto</h2>
+      <p class="resposta">Essas notícias não falam do Nikolas. Mostram por que o algoritmo está em debate.</p>
+      <ul class="curto-lista">
+        <li>20/10: o Conselho da Meta cobrou mais transparência na moderação eleitoral (<a href="https://www.estadao.com.br/politica/conselho-da-meta-aponta-falhas-recorrentes-em-moderacao-eleitoral-no-brasil/" target="_blank" rel="noopener">Estadão</a>).</li>
+        <li>A Meta admitiu uma falha que travou a contagem de visualizações em 7/10.</li>
+        <li>19/10: o TSE deu 24 horas para a Meta provar igualdade na distribuição (<a href="https://g1.globo.com/politica/eleicoes/2026/noticia/2026/10/19/tse-da-24h-para-meta-comprovar-medidas-tomadas-para-garantir-igualdade-entre-campanhas.ghtml" target="_blank" rel="noopener">g1</a>).</li>
+      </ul>
+      <details class="ver-detalhes"><summary>Ver detalhes</summary>
+      <p class="sub">O Conselho de Supervisão da Meta disse estar preocupado com “falhas recorrentes” na moderação de conteúdo eleitoral no Brasil. A Meta reconhece um “incidente técnico de alcance global” que bloqueou a contagem de visualizações em 7 de outubro, das 1h50 às 19h49, e nega ter favorecido qualquer candidatura.</p>
+      <p class="sub">O ministro Marco Aurélio Bellizze, do TSE, cobrou da Meta a decisão que exige igualdade na distribuição de conteúdos políticos e de anúncios no segundo turno, incluindo esclarecimentos sobre os sistemas de recomendação. Lula e Flávio Bolsonaro acionaram a Justiça Eleitoral alegando que seus conteúdos foram prejudicados.</p>
+      </details>
+    </section>
+      </details>
+      <details class="ver-detalhes"><summary>Como interpretar</summary>
     <section class="painel interpretar" id="interpretar">
       <h2>Como interpretar</h2>
-      <p class="lead-secao">Esta parte lista explicações possíveis para um alcance tão alto.</p>
       <p class="sub">O resumo do que sabemos e do que não sabemos está na <a href="#conclusao">Conclusão</a>.</p>
       <p class="sub">Ter muito mais visualizações do que seguidores é raro na comparação com os outros perfis, mas não prova nada sozinho. Há várias explicações comuns e legítimas, e elas podem atuar juntas:</p>
       <ul>
@@ -300,18 +329,31 @@
       </ul>
       <p class="sub">Os dados públicos coletados aqui não permitem distinguir entre essas explicações nem atribuir o alcance a uma causa específica.</p>
     </section>
-
-
-
-    <section class="painel conclusao" id="conclusao" aria-labelledby="tituloConclusao">
-      <h2 id="tituloConclusao">Conclusão</h2>
-      <div class="conclusao-blocos" id="conclusaoBlocos"></div>
-      <p class="conclusao-final"><strong>Em resumo: o alcance é real e muito fora do comum. Com dados públicos, não dá para provar o porquê.</strong></p>
+      </details>
+      <details class="ver-detalhes" id="graficosPoliticos"><summary>Gráficos detalhados dos políticos</summary>
+    <section class="painel" id="politicosGrafico">
+      <h2>Visualizações por seguidor entre políticos</h2>
+      <p class="sub"><strong>Quantas visualizações cada político tem para cada seguidor.</strong> Acima de 1, o vídeo típico tem mais visualizações do que o perfil tem de seguidores.</p>
+      <p class="sub nota-media" id="notaMediaPol" hidden></p>
+      <div class="grafico hero-canvas"><canvas id="gViews" aria-label="Gráfico de barras: mediana de visualizações por seguidor de cada político"></canvas></div>
     </section>
 
+    <section class="painel">
+      <h2>Curtidas e comentários por visualização</h2>
+      <p class="sub"><strong>De cada 100 visualizações, quantas viram curtida ou comentário.</strong> Aqui o Nikolas <strong id="posEng"></strong>: os vídeos dele alcançam muita gente, mas, proporcionalmente, menos pessoas curtem ou comentam.</p>
+      <div class="grafico"><canvas id="gEng" aria-label="Gráfico de barras: engajamento por visualização"></canvas></div>
+    </section>
+
+
+    <section class="painel" id="comentarios">
+      <h2>Comentários por curtida</h2>
+      <p class="sub"><strong>Esta parte mostra se o público mais comenta ou mais curte.</strong> Um número alto indica mais conversa (apoio, perguntas, debate ou críticas); um número baixo indica que o público mais curte do que comenta. Nenhum dos dois é bom ou ruim em si. <span id="txtComentarios"></span></p>
+      <div class="grafico"><canvas id="gComentarios" aria-label="Gráfico de barras: comentários por curtida"></canvas></div>
+    </section>
+      </details>
+      <details class="ver-detalhes"><summary>Metodologia</summary>
     <section class="painel metodo" id="metodologia">
       <h2>Metodologia</h2>
-      <p class="lead-secao">Esta parte explica como os dados foram coletados e calculados.</p>
       <ul>
         <li><strong>Fonte:</strong> dados públicos do Instagram coletados via Apify (atores <code>instagram-profile-scraper</code> e <code>instagram-reel-scraper</code>) em <span id="dataColeta"></span>.</li>
         <li><strong>Amostra:</strong> até 12 vídeos mais recentes de cada perfil com <strong>pelo menos 3 dias</strong> de publicados. Vídeos com menos de 3 dias ficaram fora porque ainda estão acumulando visualizações. A exceção é a seção “Idade da publicação × visualizações”, que usa todos os vídeos coletados.</li>
@@ -324,6 +366,8 @@
         <li><strong>Anúncios pagos:</strong> consulta à <a href="https://www.facebook.com/ads/library/" target="_blank" rel="noopener">Biblioteca de Anúncios da Meta</a> em 20/10/2026, entre 23h10 e 23h40, sem login. País Brasil, categoria “Temas sociais, eleições ou política”, status “Anúncios ativos e inativos” (o padrão, “Anúncios ativos”, não mostra nada porque não há anúncios rodando agora), anunciantes “Nikolas Ferreira” e “NIkolas Ferreira BR”. Totais e gasto por rótulo na aba “Sobre” de cada página; datas com o filtro “Impressões por data”. No TSE, DivulgaCandContas → Eleição Geral Federal 2026 → MG → Deputado Federal → Nikolas Ferreira → prestação de contas → despesas → “Despesa com Impulsionamento de Conteúdos” (atualização de 5/10/2026). Passo a passo na seção <a href="#anuncios">Ele paga para aparecer?</a>.</li>
         <li><strong>Limitações:</strong> a amostra é pequena (12 vídeos), a coleta foi em período eleitoral (alta atividade) e as visualizações são as reportadas pelo próprio Instagram. Para os perfis que postam dezenas de vídeos por dia, foi preciso coletar mais vídeos até chegar a 12 com 3 dias ou mais.</li>
       </ul>
+    </section>
+      </details>
     </section>
   </main>
 
@@ -342,8 +386,8 @@
   <script src="dados.js?v=202610210757"></script>
   <script src="info.js?v=202610210741"></script>
   <script src="destaque.js?v=202610202333"></script>
-  <script src="app.js?v=202610210805"></script>
-  <script src="pistas.js?v=202610210741"></script>
-  <script src="nav.js?v=202610202330"></script>
+  <script src="app.js?v=202610210828"></script>
+  <script src="pistas.js?v=202610210825"></script>
+  <script src="nav.js?v=202610210821"></script>
 </body>
 </html>

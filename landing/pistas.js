@@ -123,4 +123,13 @@
     });
   };
   (document.fonts ? document.fonts.ready : Promise.resolve()).then(criar);
+  // ===== Resumo em 3 padrões ("Então, por que tanto alcance?") =====
+  {
+    const itens = [], ch = [];
+    if (posDur === 1) { itens.push('Os vídeos dele são os mais longos entre os perfis analisados.'); ch.push([fmtSeg(dN.medianaSegundos), 'duração típica (a maior)']); }
+    if (legPol.length && lN.medianaCaracteres < Math.min(...legPol)) { itens.push(`As legendas são curtas: os outros políticos usam de ${Math.round(Math.min(...legPol))} a ${Math.round(Math.max(...legPol))} caracteres.`); ch.push([String(Math.round(lN.medianaCaracteres)), 'caracteres na legenda']); }
+    if (comTema.length && semTema) { itens.push(`Vídeos sobre “${comTema[0].tema}” foram melhor (${vps(semTema.medianaVps)} nos sem tema). São poucos: é só uma pista.`); ch.push([vps(comTema[0].medianaVps), `alcance em “${comTema[0].tema}”`]); }
+    set('pistasResumo', itens.map(t => `<li>${t}</li>`).join(''));
+    set('chipsPistas', ch.map(([n, t], k) => `<div class="chip${k === 0 ? ' nik' : ''}"><b>${n}</b><span>${t}</span></div>`).join(''));
+  }
 })();

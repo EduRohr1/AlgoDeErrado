@@ -723,3 +723,44 @@ button.info:hover, button.info:focus-visible, button.info[aria-expanded="true"] 
 .tabela-todos th, .tabela-todos td.obs { white-space: normal; }
 .tabela-todos th { min-width: 84px; vertical-align: bottom; }
 .tabela-todos td.obs { min-width: 260px; text-align: left; font-size: 13px; }
+
+/* ===== Página em história: A prova, Dúvidas, Por quê?, Conclusão, Ver mais ===== */
+.prova-dados { padding-top: 28px; }
+.cards-linha { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 12px 0 16px; }
+.cards-linha:empty { display: none; }
+.cards-linha .achado { padding: 16px 18px; }
+.duvidas > .secao-titulo, .porque > .secao-titulo, .ver-mais > .secao-titulo { margin-top: 48px; }
+.duvida > h2 { font-size: clamp(20px, 2.4vw, 26px); }
+.resposta { margin: 0 0 14px; font-size: 17px; line-height: 1.5; max-width: 70ch; }
+.duelo-bloco h3 { margin: 18px 0 6px; }
+.ver-detalhes { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 10px; }
+.ver-detalhes > summary { cursor: pointer; font-weight: 700; color: var(--accent); padding: 6px 0; }
+.ver-detalhes[open] > summary { margin-bottom: 8px; }
+.ver-mais .ver-detalhes > summary { font-family: var(--fonte-titulo); font-size: 18px; color: var(--text); }
+.ver-mais .ver-detalhes > .painel { margin-top: 8px; }
+.pistas-resumo { margin: 0 0 8px; padding-left: 20px; max-width: 75ch; }
+.pistas-resumo li { margin: 0 0 10px; line-height: 1.55; font-size: 16px; }
+.ver-pistas > .painel { margin-top: 12px; }
+
+/* ===== Padrão mobile-first: pergunta, resposta grande, chips, frases curtas ===== */
+.resposta { font-family: var(--fonte-titulo); font-weight: 800; font-size: clamp(22px, 3vw, 28px); line-height: 1.25; margin: 4px 0 16px; max-width: 30ch; color: var(--text); }
+.chips { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 0 0 16px; }
+.chips:empty { display: none; }
+.chip { background: var(--bg-alt); border-radius: 10px; padding: 12px 14px; min-width: 0; }
+.chip b { display: flex; align-items: center; gap: 6px; font-family: var(--fonte-titulo); font-weight: 800; font-size: clamp(24px, 3vw, 30px); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.chip span { display: block; margin-top: 4px; font-size: 14px; line-height: 1.35; color: var(--muted, #555); }
+.chip.nik b { color: var(--accent); }
+.curto { font-size: 17px; line-height: 1.5; margin: 0 0 14px; max-width: 60ch; }
+.curto:empty { display: none; }
+.curto-lista { margin: 0 0 12px; padding-left: 20px; font-size: 17px; line-height: 1.5; max-width: 65ch; }
+.curto-lista li { margin-bottom: 8px; }
+.duvida { padding-top: 26px; padding-bottom: 26px; }
+.duvida > h2, #famosos > h2 { font-size: clamp(19px, 2.2vw, 22px); color: var(--muted, #555); font-weight: 700; margin-bottom: 6px; }
+.porque > .resposta, .conclusao > .resposta { max-width: 36ch; }
+.lede.resumo { font-size: 17px; }
+@media (max-width: 600px) {
+  .resposta { font-size: 24px; }
+  .chips { grid-template-columns: 1fr 1fr; }
+  .chip b { font-size: 24px; }
+  .duvida .sub, .ver-detalhes .sub { font-size: 16px; }
+}

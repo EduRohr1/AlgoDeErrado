@@ -24,6 +24,11 @@
     }
   });
 
+  // Âncoras dentro de blocos recolhidos (<details>): abre o bloco antes de rolar.
+  const abrirAte = id => { let el = id && document.getElementById(id); for (let d = el && el.closest('details'); d; d = d.parentElement.closest('details')) d.open = true; };
+  document.addEventListener('click', e => { const l = e.target.closest('a[href^="#"]'); if (l) abrirAte(l.getAttribute('href').slice(1)); });
+  if (location.hash) abrirAte(location.hash.slice(1));
+
   // Barra de progresso de leitura.
   const barra = document.getElementById('progresso');
   let pendente = false;
