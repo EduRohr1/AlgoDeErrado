@@ -6,7 +6,9 @@ Análise independente de dados públicos do Instagram que compara o alcance dos 
 
 ## Ver online
 
-**https://edurohr1.github.io/AlgoDeErrado/** (redireciona para a página em `landing/`), publicada pelo GitHub Pages a partir da branch `main`.
+**https://comoeleconsegue.pages.dev/**, publicada pelo Cloudflare Pages a partir da branch `main` (pasta de saída `landing`).
+
+O endereço antigo no GitHub Pages (https://edurohr1.github.io/AlgoDeErrado/) continua no ar com a mesma página.
 
 ## Abrir a página localmente
 

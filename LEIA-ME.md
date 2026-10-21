@@ -36,3 +36,7 @@ node atualizar.mjs --offline
 ## Editar os perfis
 
 Os perfis ficam na lista `PERFIS`, no topo do `atualizar.mjs`. Os parâmetros ficam logo abaixo dela: quantos reels entram na análise, dias mínimos, limites de coleta.
+
+## Onde a página fica no ar
+
+Endereço principal: https://comoeleconsegue.pages.dev/ (Cloudflare Pages, branch `main`, pasta de saída `landing`). Depois de rodar o script, faça commit e push na `main`: o Cloudflare Pages publica sozinho em cerca de 1 minuto.
