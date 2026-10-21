@@ -47,3 +47,12 @@
   const observar = () => porId.forEach((a, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
   if (document.readyState === 'complete') setTimeout(observar, 300); else addEventListener('load', () => setTimeout(observar, 300));
 })();
+
+// E-mail de correções montado no carregamento (dificulta a coleta por robôs de spam).
+(function () {
+  const a = document.getElementById('emailCorrecao');
+  if (!a) return;
+  const end = a.dataset.u + '@' + a.dataset.d;
+  a.href = 'mailto:' + end;
+  a.textContent = end;
+})();
