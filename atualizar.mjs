@@ -381,6 +381,12 @@ const resumo = {
 };
 gravarJson('resumo.json', resumo);
 fs.mkdirSync(LANDING, { recursive: true });
+// Versiona dados.js no index.html para o navegador não usar uma cópia antiga em cache.
+const indexLanding = path.join(LANDING, 'index.html');
+if (fs.existsSync(indexLanding)) {
+  const v = Date.parse(resumo.geradoEm).toString(36);
+  fs.writeFileSync(indexLanding, fs.readFileSync(indexLanding, 'utf8').replace(/src="dados\.js(\?v=[^"]*)?"/, `src="dados.js?v=${v}"`));
+}
 fs.writeFileSync(path.join(LANDING, 'dados.js'),
   '// Gerado por atualizar.mjs a partir de dados/resumo.json — dados fixos, sem chamadas externas.\nwindow.RESUMO = ' + JSON.stringify(resumo, null, 2) + ';\n');
 
