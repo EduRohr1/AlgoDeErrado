@@ -461,7 +461,7 @@
   const iniciais = p => nome(p).split(' ').map(s => s[0]).slice(0, 2).join('');
   // Aceita o objeto do perfil ou o nome de usuário; sem foto livre, mostra as iniciais.
   const foto = (q, avatar) => { const p = q.perfil || q; return FOTOS[p]
-    ? (avatar ? `<img src="img/avatar/${p}.jpg" alt="${nome(p)}" width="72" height="72" loading="lazy">` : `<img src="img/${FOTOS[p].arq}" alt="${nome(p)}" loading="lazy">`)
+    ? (avatar ? `<img src="img/avatar/${p}.jpg?v=2" alt="${nome(p)}" width="72" height="72" loading="lazy">` : `<img src="img/${FOTOS[p].arq}" alt="${nome(p)}" loading="lazy">`)
     : `<span class="avatar-iniciais" aria-hidden="true">${iniciais(p)}</span>`; };
 
   // ===== Carrossel de comparações (famosos primeiro, depois resumo dos políticos) =====
@@ -538,7 +538,7 @@
   // Abas com foto redonda (as mesmas fotos licenciadas dos slides); Políticos usa um ícone de grupo.
   const ICONE_GRUPO = '<svg class="aba-icone" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="3.2"/><circle cx="16" cy="9" r="3.2"/><path d="M2.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5zM10.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5z"/></svg>';
   pontosCarr.innerHTML = slides.map((s, i) => `<button type="button" role="tab" aria-label="${s.rotulo}" aria-selected="${i === 0}">` +
-    (s.perfil && FOTOS[s.perfil] ? `<img class="aba-foto" src="img/avatar/${s.perfil}.jpg" alt="" width="88" height="88">` : `<span class="aba-foto aba-grupo">${ICONE_GRUPO}</span>`) +
+    (s.perfil && FOTOS[s.perfil] ? `<img class="aba-foto" src="img/avatar/${s.perfil}.jpg?v=2" alt="" width="88" height="88">` : `<span class="aba-foto aba-grupo">${ICONE_GRUPO}</span>`) +
     `<span class="aba-nome">${s.perfil ? (CURTO_NOME[s.perfil] || s.rotulo) : s.rotulo}</span></button>`).join('');
   const reduzirCarr = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let atual = 0, pausado = reduzirCarr, timer = null;
