@@ -708,3 +708,18 @@ button.info:hover, button.info:focus-visible, button.info[aria-expanded="true"] 
 /* Carrossel: altura do slide visível (o trilho anima a mudança) */
 .carrossel-trilho { align-items: flex-start; overflow-y: hidden; transition: height .35s ease; }
 @media (prefers-reduced-motion: reduce) { .carrossel-trilho { transition: none; } }
+
+/* Tabela completa em "Ver todos os dados" */
+.todos-dados > summary { cursor: pointer; font-family: var(--fonte-titulo); font-weight: 800; font-size: 20px; padding: 4px 0; }
+.todos-dados[open] > summary { margin-bottom: 10px; }
+.tabela-todos th button { all: unset; cursor: pointer; font: inherit; color: inherit; text-transform: inherit; letter-spacing: inherit; }
+.tabela-todos th button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.tabela-todos td:first-child { min-width: 190px; }
+.todos-perfil { display: flex; align-items: center; gap: 10px; }
+.todos-avatar { flex: none; width: 28px; height: 28px; border-radius: 50%; overflow: hidden; background: #333; display: block; }
+.todos-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.todos-avatar .avatar-iniciais { font-size: 11px; }
+.todos-avatar.nik-anel { box-shadow: 0 0 0 2px #e3121b; }
+.tabela-todos th, .tabela-todos td.obs { white-space: normal; }
+.tabela-todos th { min-width: 84px; vertical-align: bottom; }
+.tabela-todos td.obs { min-width: 260px; text-align: left; font-size: 13px; }

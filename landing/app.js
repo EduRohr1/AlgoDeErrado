@@ -162,23 +162,7 @@
     : `${diaBr(R.geradoEm)} (horário de Brasília)`;
 
   // ===== Tabelas =====
-  const cabecalho = '<thead><tr><th>Perfil</th><th>Seguidores</th><th>Vídeos</th><th>Visualizações do vídeo típico</th><th>Média de visualizações</th>' +
-    '<th>Visualizações por seguidor</th><th>Curtidas e comentários por visualização</th><th>Curtidas (média)</th><th>Comentários (média)</th></tr></thead>';
   const celulaPerfil = p => `<td>${nome(p.perfil)}<small>@${p.perfil}${p.idioma && p.idioma !== 'pt' ? ' · ' + p.idioma : ''}</small></td>`;
-
-  function tabelaPerfis(el, lista) {
-    const ordem = [...lista].sort((a, b) => (b.comparavel - a.comparavel) || ((b.medianaViewsPorSeguidor ?? -1) - (a.medianaViewsPorSeguidor ?? -1)));
-    el.innerHTML = cabecalho + '<tbody>' + ordem.map(p => {
-      const cls = p.perfil === NIK ? 'nikolas' : (!p.comparavel ? 'fora' : '');
-      if (!p.comparavel) {
-        return `<tr class="${cls}">${celulaPerfil(p)}<td>${fmtInt(p.seguidores)}</td><td colspan="7" class="obs">${p.observacao || 'Sem dados suficientes'}</td></tr>`;
-      }
-      return `<tr class="${cls}">${celulaPerfil(p)}` +
-        `<td>${fmtInt(p.seguidores)}</td><td>${p.reels}</td><td>${fmtInt(p.medianaViews)}</td><td>${fmtInt(p.mediaViews)}</td>` +
-        `<td>${fmtDec(p.medianaViewsPorSeguidor, 3)}</td><td>${fmtPct(p.engajamentoMedio)}</td>` +
-        `<td>${fmtInt(p.mediaCurtidas)}</td><td>${fmtInt(p.mediaComentarios)}</td></tr>`;
-    }).join('') + '</tbody>';
-  }
   const notas = lista => lista.filter(p => p.observacao && p.comparavel)
     .map(p => `<li><strong>${nome(p.perfil)}:</strong> ${p.observacao}</li>`).join('');
 
@@ -255,8 +239,6 @@
     `Resultado: o Nikolas tem cerca de 1 comentário a cada ${Math.round(1 / nik._ccRatio)} curtidas (${fmtDec(nik._ccRatio, 3)} por curtida; ${rankCC}º de ${compCC.length}). ` +
     `Nos outros políticos, o típico é 1 a cada ${Math.round(1 / medOutrosCC)} (${fmtDec(medOutrosCC, 3)}). ${nome(porCC[0].perfil)} lidera, com 1 a cada ${Math.round(1 / porCC[0]._ccRatio)} (${fmtDec(porCC[0]._ccRatio, 3)}).`;
 
-  tabelaPerfis(document.getElementById('tabela'), politicos);
-  document.getElementById('notas').innerHTML = notas(politicos);
 
   // Outros grupos (famosos_br, famosos_globais): só aparecem se houver perfis.
   const outrosGrupos = Object.keys(GRUPOS).filter(g => g !== 'politicos' && R.perfis.some(p => grupoDe(p) === g));
@@ -279,17 +261,10 @@
       '<p class="sub nota-comparacao"><strong>Atenção ao comparar:</strong> Cristiano Ronaldo, Messi e Kim Kardashian têm centenas de milhões de seguidores espalhados pelo mundo, e com bases tão grandes a conta visualizações ÷ seguidores tende a dar um número menor (boa parte dos seguidores fica inativa ou não vê cada publicação). O Nikolas fala para um público em português, concentrado no Brasil. Os famosos brasileiros (Neymar, Anitta, Virginia) são a referência mais próxima em idioma e público, embora também tenham bases bem maiores. Celebridades postam com outro objetivo (entretenimento, publicidade), então a comparação mostra uma ordem de grandeza, não um “jogo justo”.</p>' +
       '</section>';
   }
-  document.getElementById('outrosGrupos').innerHTML = htmlFamosos + outrosGrupos.map(g =>
-    `<h2 class="grupo-titulo">${GRUPOS[g]}</h2><p class="lead-secao">Esta parte mostra os números de cada famoso deste grupo.</p>` +
-    `<section class="painel"><h2>Visualizações por seguidor</h2><p class="sub">Visualizações do vídeo típico divididas pelo número de seguidores, comparando só dentro deste grupo.</p>` +
-    `<div class="grafico"><canvas id="gViews_${g}"></canvas></div></section>` +
-    `<section class="painel"><h2>Todos os perfis</h2><div class="tabela-wrap"><table class="tabela" id="tabela_${g}"></table></div>` +
-    `<ul class="notas" id="notas_${g}"></ul></section>`).join('');
-  for (const g of outrosGrupos) {
-    const lista = R.perfis.filter(p => grupoDe(p) === g);
-    tabelaPerfis(document.getElementById('tabela_' + g), lista);
-    document.getElementById('notas_' + g).innerHTML = notas(lista);
-  }
+  document.getElementById('outrosGrupos').innerHTML = htmlFamosos +
+    '<section class="painel" id="todosDados"><details class="todos-dados"><summary>Ver todos os dados</summary>' +
+    '<p class="sub">Todos os perfis analisados, políticos e famosos. Clique no título de uma coluna para ordenar.</p>' +
+    '<div class="tabela-wrap"><table class="tabela tabela-todos" id="tabelaTodos"></table></div><ul class="notas" id="notasTodos"></ul></details></section>';
   if (outrosGrupos.length) document.getElementById('tituloPoliticos').hidden = false;
   else document.getElementById('tituloPoliticos').hidden = true;
 
@@ -658,7 +633,48 @@
   barras('gRegularidade', politicos.filter(p => p._cv != null), '_cv', v => fmtDec(v), false, true);
   barras('gComentarios', politicos.filter(p => p._ccRatio != null), '_ccRatio', v => fmtDec(v, 2));
   if (famosos.length) barras('gFamosos', [nik, ...famosos], 'medianaViewsPorSeguidor', v => fmtDec(v));
-  for (const g of outrosGrupos) barras('gViews_' + g, R.perfis.filter(p => grupoDe(p) === g), 'medianaViewsPorSeguidor', v => fmtDec(v));
+
+  // ===== Tabela completa ("Ver todos os dados"), ordenável =====
+  {
+    const ROT_GRUPO = { politicos: 'Político', famosos_br: 'Famoso (Brasil)', famosos_globais: 'Famoso (global)' };
+    const avatar = p => FOTOS[p.perfil] ? `<img src="img/avatar/${p.perfil}.jpg?v=2" alt="" width="56" height="56" loading="lazy">` : `<span class="avatar-iniciais" aria-hidden="true">${iniciais(p.perfil)}</span>`;
+    const COLS = [
+      { t: 'Perfil', v: p => nome(p.perfil), txt: true },
+      { t: 'Grupo', v: p => ROT_GRUPO[grupoDe(p)] || grupoDe(p), txt: true },
+      { t: 'Seguidores', v: p => p.seguidores },
+      { t: 'Vídeo típico (visualizações)', v: p => p.medianaViews },
+      { t: 'Visualizações por seguidor', v: p => p.medianaViewsPorSeguidor },
+      { t: 'Vídeos acima dos seguidores', v: p => p.reels ? p.reelsAcimaSeguidores / p.reels : null },
+      { t: 'Curtidas e comentários por visualização', v: p => p.engajamentoMedio },
+    ];
+    const lista = R.perfis.filter(p => p.encontrado);
+    let col = 4, desc = true;
+    const tab = document.getElementById('tabelaTodos');
+    const desenhar = () => {
+      const ordem = [...lista].sort((x, y) => (y.comparavel - x.comparavel) || (() => {
+        const a1 = COLS[col].v(x), b1 = COLS[col].v(y);
+        const r = COLS[col].txt ? String(a1).localeCompare(String(b1), 'pt-BR') : (a1 ?? -1) - (b1 ?? -1);
+        return desc ? -r : r;
+      })());
+      tab.innerHTML = '<thead><tr>' + COLS.map((k, j) => `<th aria-sort="${j === col ? (desc ? 'descending' : 'ascending') : 'none'}"><button type="button" data-col="${j}">${k.t}${j === col ? (desc ? ' ↓' : ' ↑') : ''}</button></th>`).join('') + '</tr></thead><tbody>' +
+        ordem.map(p => {
+          const cls = p.perfil === NIK ? 'nikolas' : (!p.comparavel ? 'fora' : '');
+          const perfil = `<td><span class="todos-perfil"><span class="todos-avatar${p.perfil === NIK ? ' nik-anel' : ''}">${avatar(p)}</span><span>${nome(p.perfil)}<small>@${p.perfil}</small></span></span></td>`;
+          if (!p.comparavel) return `<tr class="${cls}">${perfil}<td>${COLS[1].v(p)}</td><td>${fmtInt(p.seguidores)}</td><td colspan="4" class="obs">${p.observacao || 'Sem dados suficientes'}</td></tr>`;
+          return `<tr class="${cls}">${perfil}<td>${COLS[1].v(p)}</td><td>${fmtInt(p.seguidores)}</td><td>${fmtInt(p.medianaViews)}</td>` +
+            `<td>${fmtDec(p.medianaViewsPorSeguidor)}</td><td>${p.reelsAcimaSeguidores} de ${p.reels}</td><td>${fmtPct(p.engajamentoMedio)}</td></tr>`;
+        }).join('') + '</tbody>';
+    };
+    tab.addEventListener('click', e => {
+      const b = e.target.closest('button[data-col]'); if (!b) return;
+      const j = +b.dataset.col;
+      if (j === col) desc = !desc; else { col = j; desc = !COLS[j].txt; }
+      desenhar();
+      tab.querySelector(`button[data-col="${j}"]`).focus();
+    });
+    desenhar();
+    document.getElementById('notasTodos').innerHTML = notas(lista);
+  }
 
   // Dispersão idade × visualizações ÷ seguidores, uma série por perfil.
   // Demais perfis em tons de cinza, diferenciados também pelo formato do ponto.
