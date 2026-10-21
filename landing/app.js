@@ -49,6 +49,8 @@
   const cr7 = R.perfis.find(p => p.perfil === 'cristiano' && p.comparavel);
   const milhoesTxt = n => { const v = n / 1e6; return (v >= 100 ? Math.round(v) : Math.round(v * 10) / 10).toLocaleString('pt-BR') + ' milhões'; };
   const milhoesRedondo = n => Math.round(n / 1e6).toLocaleString('pt-BR') + ' milhões';
+  const i = (t, r) => window.infoBtn ? window.infoBtn(t, r) : '';
+  const vpsTxt = n => fmtDec(n) + (n >= 1.995 ? ' visualizações' : ' visualização');
   if (cr7) {
     const vezesCr7 = Math.floor(nik.medianaViewsPorSeguidor / cr7.medianaViewsPorSeguidor);
     document.getElementById('titulo').innerHTML =
@@ -57,10 +59,29 @@
       `Cristiano Ronaldo tem ${milhoesRedondo(cr7.seguidores)} de seguidores, e o vídeo típico dele chega a ${milhoesRedondo(cr7.medianaViews)} de visualizações. ` +
       `Nikolas tem ${milhoesTxt(nik.seguidores)} e chega a ${milhoesRedondo(nik.medianaViews)}.`;
     const maxB = Math.max(nik.medianaViewsPorSeguidor, cr7.medianaViewsPorSeguidor);
+    const textoBarra = p => p.perfil === NIK
+      ? `Em média, cada vídeo do Nikolas tem ${vpsTxt(p.medianaViewsPorSeguidor)} para cada seguidor do perfil. Ou seja, um vídeo típico chega a ${milhoesRedondo(p.medianaViews)} de visualizações com ${milhoesTxt(p.seguidores)} de seguidores. Como o número passa de 1, o conteúdo costuma alcançar também quem não segue a conta (uma mesma pessoa assistir mais de uma vez também conta).`
+      : `Um vídeo típico de Cristiano Ronaldo tem ${vpsTxt(p.medianaViewsPorSeguidor)} para cada seguidor: ${milhoesRedondo(p.medianaViews)} de visualizações para ${milhoesRedondo(p.seguidores)} de seguidores. É como se o vídeo fosse visto por uma quantidade equivalente a cerca de ${Math.round(p.medianaViewsPorSeguidor * 100)}% da base de seguidores dele.`;
     document.getElementById('heroBarras').innerHTML = [nik, cr7].map(p => `<div class="hi-barra${p.perfil === NIK ? ' nik' : ''}">
         <span class="hi-nome">${nome(p.perfil)}</span>
-        <span class="hi-trilho"><i style="--w:${Math.max(2, p.medianaViewsPorSeguidor / maxB * 100).toFixed(1)}%"></i><b>${fmtDec(p.medianaViewsPorSeguidor)}</b></span>
+        <span class="hi-trilho"><i style="--w:${Math.max(2, p.medianaViewsPorSeguidor / maxB * 100).toFixed(1)}%"></i><b>${fmtDec(p.medianaViewsPorSeguidor)}</b>${i(textoBarra(p), `O que significa ${fmtDec(p.medianaViewsPorSeguidor)}?`)}</span>
       </div>`).join('');
+    document.querySelector('.hi-titulo')?.insertAdjacentHTML('beforeend', ' ' + i('“Vídeo típico” é a mediana: ordenamos os 12 vídeos mais recentes com pelo menos 3 dias pelo número de visualizações e pegamos o valor do meio. Assim, um único vídeo que viralizou muito (ou que foi muito mal) não distorce o resultado.', 'O que é vídeo típico?'));
+  }
+  // Gancho e frase das barras: só aparecem se os dados sustentarem o texto.
+  if (cr7) {
+    const menosSeg = Math.floor(cr7.seguidores / nik.seguidores), fracao = nik.medianaViews / cr7.medianaViews;
+    document.getElementById('heroGancho').textContent = fracao >= 0.45 && fracao <= 0.55
+      ? `Com ${menosSeg} vezes menos seguidores, ele chega à metade das visualizações de Cristiano Ronaldo.`
+      : `${nik.reelsAcimaSeguidores} de cada ${nik.reels} vídeos dele passam do número de seguidores que ele tem.`;
+  }
+  {
+    const outrosPerfis = R.perfis.filter(p => p.comparavel && p.perfil !== NIK);
+    const todosAbaixo = outrosPerfis.every(p => p.medianaViewsPorSeguidor < 1);
+    const excesso = Math.round((nik.medianaViewsPorSeguidor - 1) * 100);
+    document.getElementById('heroFrase').textContent = nik.medianaViewsPorSeguidor > 1 && todosAbaixo
+      ? `Com ${fmtDec(nik.medianaViewsPorSeguidor)} visualização por seguidor, Nikolas passa em ${excesso}% o tamanho da própria base de seguidores no vídeo típico, enquanto todos os outros ${outrosPerfis.length} perfis comparados ficam abaixo de 100%.`
+      : '';
   }
   const dataColetaCurta = new Date(R.geradoEm).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', year: 'numeric' });
   document.getElementById('heroNota').textContent =
@@ -68,13 +89,17 @@
   {
     const acimaOutros = outros.reduce((s, p) => s + (p.reelsAcimaSeguidores || 0), 0);
     const totalOutros = outros.reduce((s, p) => s + (p.reels || 0), 0);
+    const comAcima = outros.filter(p => p.reelsAcimaSeguidores > 0);
     const mr = nik.maiorReel;
     const cards = [
-      { n: `${nik.reelsAcimaSeguidores} de ${nik.reels}`, t: `vídeos dele passaram do número de seguidores (os outros políticos somados: ${acimaOutros} de ${totalOutros})` },
-      { n: fmtX(razaoVps), t: 'mais alcance por seguidor que a média dos outros políticos analisados' },
-      mr && { n: `${Math.round(mr.views / 1e6)} mi`, t: `visualizações do vídeo “${(mr.legenda || '').replace(/[.!]$/, '')}”, ${mr.vezesSeguidores.toLocaleString('pt-BR', { maximumFractionDigits: 1 })}× os seguidores dele` },
+      { n: `${nik.reelsAcimaSeguidores} de ${nik.reels}`, t: `vídeos dele passaram do número de seguidores (os outros políticos somados: ${acimaOutros} de ${totalOutros})`,
+        i: `Dos ${nik.reels} vídeos analisados do Nikolas (os mais recentes com pelo menos 3 dias), ${nik.reelsAcimaSeguidores} tiveram mais visualizações do que ele tem de seguidores (${milhoesTxt(nik.seguidores)}). Entre os outros ${outros.length} políticos, isso aconteceu em ${acimaOutros} de ${totalOutros} vídeos${comAcima.length ? `, ${comAcima.length === 1 ? 'todos' : 'somando'} de ${comAcima.map(p => nome(p.perfil)).join(' e ')}` : ''}.` },
+      { n: fmtX(razaoVps), t: 'mais alcance por seguidor que a média dos outros políticos analisados',
+        i: `Média dos outros ${outros.length} políticos analisados: ${vpsTxt(mediaOutrosVps)} por seguidor. Nikolas: ${fmtDec(nik.medianaViewsPorSeguidor)}. Dividindo um pelo outro, dá ${fmtX(razaoVps)}. Exemplo: se todos tivessem 1 milhão de seguidores, o vídeo típico dos outros teria cerca de ${Math.round(mediaOutrosVps * 1000)} mil visualizações, e o do Nikolas, cerca de ${fmtDec(nik.medianaViewsPorSeguidor)} milhão.` },
+      mr && { n: `${Math.round(mr.views / 1e6)} mi`, t: `visualizações do vídeo “${(mr.legenda || '').replace(/[.!]$/, '')}”, ${mr.vezesSeguidores.toLocaleString('pt-BR', { maximumFractionDigits: 1 })}× os seguidores dele`,
+        i: `É o vídeo com mais visualizações entre os coletados do Nikolas: ${milhoesTxt(mr.views)}. Dividido pelos ${milhoesTxt(nik.seguidores)} de seguidores, dá ${mr.vezesSeguidores.toLocaleString('pt-BR', { maximumFractionDigits: 1 })} visualizações por seguidor. Como tinha menos de 3 dias na coleta, ele não entra nas médias da página.` },
     ].filter(Boolean);
-    document.getElementById('heroCards').innerHTML = cards.map(c => `<li><span class="hc-num">${c.n}</span><span class="hc-txt">${c.t}</span></li>`).join('');
+    document.getElementById('heroCards').innerHTML = cards.map(c => `<li><span class="hc-num">${c.n}${i(c.i, `O que significa ${c.n}?`)}</span><span class="hc-txt">${c.t}</span></li>`).join('');
   }
   const credito = document.getElementById('creditoFoto');
   if (credito) credito.innerHTML =
@@ -208,7 +233,7 @@
     const medFam = mediana(famosos.map(p => p.medianaViewsPorSeguidor));
     const maiorViews = [...famosos].sort((a, b) => b.medianaViews - a.medianaViews)[0];
     htmlFamosos = '<h2 class="grupo-titulo" id="famosos">Nikolas × famosos</h2><section class="painel">' +
-      '<h2>Visualizações por seguidor: Nikolas e celebridades</h2>' +
+      `<h2>Visualizações por seguidor: Nikolas e celebridades ${i('Cada barra é o vídeo típico do perfil dividido pelo número de seguidores. Celebridades globais têm bases enormes, espalhadas pelo mundo, e por isso a razão tende a ser menor; os famosos brasileiros são a comparação mais próxima.', 'Como ler este gráfico')}</h2>` +
       `<p class="sub">Mesma métrica do topo da página (mediana de visualizações ÷ seguidores dos 12 vídeos mais recentes com 3 dias ou mais), agora com celebridades brasileiras e globais como referência. ` +
       (acima.length
         ? `Resultado: ${acima.map(p => nome(p.perfil)).join(', ')} ${acima.length > 1 ? 'superam' : 'supera'} o Nikolas nesta métrica. `
@@ -248,38 +273,61 @@
   const duelo = famososComp.filter(p => p.seguidores > nik.seguidores * 3)
     .sort((a, b) => Math.abs(Math.log(a.medianaViews / nik.medianaViews)) - Math.abs(Math.log(b.medianaViews / nik.medianaViews)))[0];
   const faixaSeg = famososComp.map(p => p.seguidores / nik.seguidores);
+  const CURTO_NOME = { cristiano: 'Cristiano', leomessi: 'Messi', neymarjr: 'Neymar', anitta: 'Anitta', virginia: 'Virginia' };
+  const curtoNome = p => CURTO_NOME[p.perfil] || nome(p.perfil);
+  const nomesPol = outros.map(p => nome(p.perfil)).join(', ').replace(/, ([^,]*)$/, ' e $1');
+  const segFam = famososComp.map(p => p.seguidores / nik.seguidores), vpsFam = famososComp.map(p => p.medianaViewsPorSeguidor);
   const achados = [
-    false && { n: fmtX(razaoVps), t: `mais visualizações por seguidor que a média de outros ${outros.length} políticos.`, d: `Um vídeo típico do Nikolas é visto por ${fmtDec(nik.medianaViewsPorSeguidor)} pessoas para cada seguidor; nos outros, por ${fmtDec(mediaOutrosVps)}.` },
-    famososComp.length && { n: `${famososAbaixo.length} de ${famososComp.length}`, t: 'celebridades ficam abaixo dele nessa métrica.', d: `Comparação com ${famososComp.map(p => nome(p.perfil)).join(', ')}, que têm de ${Math.floor(Math.min(...faixaSeg))} a ${Math.round(Math.max(...faixaSeg))} vezes mais seguidores.` },
-    duelo && { n: fmtX(duelo.seguidores / nik.seguidores), t: `mais seguidores tem ${nome(duelo.perfil)}, para um alcance parecido por vídeo.`, d: `${fmtMi(duelo.medianaViews)} de visualizações por vídeo contra ${fmtMi(nik.medianaViews)} do Nikolas.` },
-    regN && rankCv === 1 && { n: fmtDec(regN.cv), t: 'de coeficiente de variação: o alcance mais constante entre os políticos.', d: `Um vídeo “bom” tem só ${fmtDec(regN.p90p10, 1)}× as visualizações de um “fraco”. O alcance não depende de poucos virais.` },
-    fN && { n: `${fN.curtidasBaixas} de ${fN.avaliados}`, t: 'vídeos com interação fora do padrão do próprio perfil.', d: fN.curtidasBaixas === 0 ? 'As curtidas acompanham as visualizações de forma consistente: nesta métrica não aparece anomalia.' : 'Detalhes na seção “Vídeos fora da curva”.' },
-    { n: `${rankEng}º de ${comp.length}`, t: 'em engajamento por visualização entre os políticos.', d: `Por visualização, os vídeos dele recebem proporcionalmente menos curtidas e comentários que a maioria (${fmtPct(nik.engajamentoMedio)}, contra ${fmtPct(lider.engajamentoMedio)} de ${nome(lider.perfil)}).` },
+    famososComp.length && famososAbaixo.length === famososComp.length && {
+      n: `${famososAbaixo.length} de ${famososComp.length}`,
+      t: `Nikolas supera as ${famososComp.length} celebridades analisadas em visualizações por seguidor`,
+      d: `${famososComp.map(p => curtoNome(p)).join(', ').replace(/, ([^,]*)$/, ' e $1')} têm de ${fmtX(Math.min(...segFam))} a ${fmtX(Math.max(...segFam))} mais seguidores, e mesmo assim ficam atrás (de ${fmtDec(Math.min(...vpsFam))} a ${fmtDec(Math.max(...vpsFam))} contra ${fmtDec(nik.medianaViewsPorSeguidor)})`,
+      i: 'Visualizações por seguidor = visualizações do vídeo típico ÷ número de seguidores. Mesmo com bases muito maiores, nenhuma das celebridades chega perto do valor do Nikolas.' },
+    duelo && {
+      n: fmtX(duelo.seguidores / nik.seguidores),
+      t: `${curtoNome(duelo)} tem ${fmtX(duelo.seguidores / nik.seguidores)} mais seguidores, mas ${duelo.medianaViews < nik.medianaViews ? 'menos' : 'mais'} visualizações por vídeo que Nikolas`,
+      d: `Vídeo típico: ${curtoNome(duelo)} ${fmtMi(duelo.medianaViews)}, Nikolas ${fmtMi(nik.medianaViews)}`,
+      i: `${curtoNome(duelo)} tem ${fmtMi(duelo.seguidores)} de seguidores; Nikolas, ${fmtMi(nik.seguidores)}. Mesmo assim, o vídeo típico (a mediana dos vídeos analisados) dos dois tem um número parecido de visualizações.` },
+    regN && rankCv === 1 && {
+      n: fmtDec(regN.cv),
+      t: 'O alcance do Nikolas é o mais constante entre os políticos: os vídeos variam pouco entre si',
+      d: `Um vídeo “bom” dele tem ${fmtDec(regN.p90p10, 1)}× as visualizações de um “fraco”; nos outros políticos, de ${fmtDec(Math.min(...outros.map(p => p.regularidade?.amostra12?.p90p10).filter(Boolean)), 1)}× a ${fmtDec(Math.max(...outros.map(p => p.regularidade?.amostra12?.p90p10).filter(Boolean)), 1)}×`,
+      i: `O número ${fmtDec(regN.cv)} é o coeficiente de variação: o desvio padrão das visualizações dividido pela média. Quanto mais perto de 0, mais parecidos são os vídeos entre si. O vídeo “bom” é o percentil 90 (melhor que 90% dos outros) e o “fraco”, o percentil 10.` },
+    fN && {
+      n: `${fN.curtidasBaixas} de ${fN.avaliados}`,
+      t: fN.curtidasBaixas === 0 ? `Nenhum dos ${fN.avaliados} vídeos tem curtidas fora do padrão para as visualizações que teve` : `${fN.curtidasBaixas} dos ${fN.avaliados} vídeos têm curtidas abaixo do padrão para as visualizações que tiveram`,
+      d: `Curtidas por visualização típicas do perfil: ${(fN.medianaCurtidasPorView * 100).toLocaleString('pt-BR', { maximumFractionDigits: 1 })}%`,
+      i: 'Para cada vídeo com pelo menos 3 dias, comparamos curtidas ÷ visualizações com a mediana do próprio perfil. Um vídeo seria marcado se ficasse abaixo da metade dessa mediana (muitas visualizações para poucas curtidas).' },
+    {
+      n: `${rankEng}º de ${comp.length}`,
+      t: `Em engajamento por visualização, Nikolas fica em ${rankEng}º de ${comp.length} políticos`,
+      d: `${fmtPct(nik.engajamentoMedio)} contra ${fmtPct(lider.engajamentoMedio)} de ${nome(lider.perfil)}, o 1º`,
+      i: 'Engajamento = (curtidas + comentários) ÷ visualizações. Os vídeos do Nikolas alcançam muita gente, mas proporcionalmente menos pessoas curtem ou comentam do que nos outros políticos.' },
   ].filter(Boolean);
-  document.getElementById('achados').innerHTML = achados.map((x, i) =>
-    `<li class="achado revelar" style="--i:${i % 3}"><span class="achado-n">${String(i + 1).padStart(2, '0')}</span><div><p class="achado-num">${x.n}</p><p class="achado-txt">${x.t}</p><p class="achado-det">${x.d}</p></div></li>`).join('');
+  document.getElementById('achados').innerHTML = achados.map((x, k) =>
+    `<li class="achado revelar" style="--i:${k % 3}"><span class="achado-n">${String(k + 1).padStart(2, '0')}</span><div><p class="achado-num">${x.n}${i(x.i, `O que significa ${x.n}?`)}</p><p class="achado-txt">${x.t}</p><p class="achado-det">${x.d}</p></div></li>`).join('');
 
   // ===== Em perspectiva =====
   if (duelo) {
     const maxSeg = Math.max(duelo.seguidores, nik.seguidores), maxV = Math.max(duelo.medianaViews, nik.medianaViews);
-    const coluna = (p, ehNik) => `<div class="duelo-col${ehNik ? ' nik' : ''}">
+    const circulo = (p, ehNik) => `<div class="duelo-col${ehNik ? ' nik' : ''}">
       <p class="duelo-nome">${nome(p.perfil)}</p>
       <div class="duelo-circulo-area"><span class="duelo-circulo" style="--d:${Math.sqrt(p.seguidores / maxSeg).toFixed(3)}"></span></div>
-      <p class="duelo-rot"><strong>${fmtMi(p.seguidores)}</strong> de seguidores</p>
-      <div class="duelo-barra"><span style="--w:${(p.medianaViews / maxV * 100).toFixed(1)}%"></span></div>
-      <p class="duelo-rot"><strong>${fmtMi(p.medianaViews)}</strong> de visualizações por vídeo</p></div>`;
+      <p class="duelo-rot"><strong>${fmtMi(p.seguidores)}</strong> de seguidores</p></div>`;
+    const barraV = (p, ehNik) => `<div class="vb-col${ehNik ? ' nik' : ''}">
+      <span class="vb-valor">${fmtMi(p.medianaViews)}</span>
+      <span class="vb-trilho"><i style="--h:${(p.medianaViews / maxV * 100).toFixed(1)}%"></i></span>
+      <span class="vb-nome">${ehNik ? 'Nikolas' : curtoNome(p)}</span></div>`;
     document.getElementById('duelo').innerHTML =
       `<h2>Alcance parecido, ${fmtX(duelo.seguidores / nik.seguidores)} menos seguidores</h2>` +
-      '<p class="sub">A área de cada círculo é proporcional ao número de seguidores; a barra mostra as visualizações de um vídeo típico (mediana).</p>' +
-      `<div class="duelo-grid">${coluna(nik, true)}${coluna(duelo, false)}</div>`;
+      '<p class="sub">A área de cada círculo é proporcional ao número de seguidores. No meio, as barras mostram as visualizações de um vídeo típico (mediana) de cada um.</p>' +
+      `<div class="duelo-grid duelo-3">${circulo(nik, true)}
+        <div class="duelo-barras" role="img" aria-label="Visualizações no vídeo típico: Nikolas ${fmtMi(nik.medianaViews)}, ${curtoNome(duelo)} ${fmtMi(duelo.medianaViews)}">
+          <p class="vb-tit">Visualizações no vídeo típico</p>
+          <div class="vb-par">${barraV(nik, true)}${barraV(duelo, false)}</div>
+        </div>
+        ${circulo(duelo, false)}</div>`;
   } else document.getElementById('duelo').remove();
-
-  const listaPontos = [...comp, ...famososComp].sort((a, b) => b.medianaViewsPorSeguidor - a.medianaViewsPorSeguidor);
-  document.getElementById('pontosLista').innerHTML = listaPontos.map(p => {
-    const n = Math.round(p.medianaViewsPorSeguidor * 100);
-    return `<div class="pontos-linha${p.perfil === NIK ? ' nik' : ''}"><p class="pontos-nome">${nome(p.perfil)} <span>${n} visualizações</span></p>` +
-      `<div class="pontos" role="img" aria-label="${n} visualizações a cada 100 seguidores">${Array.from({ length: n }, (_, j) => '<i style="--k:' + j * 8 + '"></i>').join('')}</div></div>`;
-  }).join('');
 
   document.getElementById('taxaNik').textContent = fmtDec(nik.medianaViewsPorSeguidor);
   const contra = outros.map(p => ({ p, real: p.medianaViews, hip: p.seguidores * nik.medianaViewsPorSeguidor })).sort((a, b) => b.hip - a.hip);
@@ -324,47 +372,59 @@
     const max = Math.max(nik[chave], f[chave]);
     return `<div class="cmp-grupo"><p class="cmp-grupo-titulo">${titulo}</p>${linhaBarra(nik, nik[chave], max, fmt)}${linhaBarra(f, f[chave], max, fmt)}</div>`;
   };
-  // Cartões com frase completa e números crus; o 3º (alcance por seguidor) é o destaque.
-  const stat = (num, rot, cls = '', cabeca = '') => `<div class="big-stat ${cls}">${cabeca ? `<span class="big-cabeca">${cabeca}</span>` : ''}<span class="big-num">${num}</span><span class="big-rot">${rot}</span></div>`;
-  const CURTO = { cristiano: 'Cristiano', leomessi: 'Messi', neymarjr: 'Neymar', anitta: 'Anitta', virginia: 'Virginia' };
-  const curto = p => CURTO[p.perfil] || nome(p.perfil);
+  // Cartões com cabeçalho, número grande, frase completa e "i"; o 3º (alcance por seguidor) é o destaque.
+  const stat = (num, rot, cls = '', cabeca = '', ajuda = '') => `<div class="big-stat ${cls}">${cabeca ? `<span class="big-cabeca">${cabeca}</span>` : ''}<span class="big-num">${num}${ajuda ? i(ajuda, `O que significa ${num}?`) : ''}</span><span class="big-rot">${rot}</span></div>`;
+  const curto = curtoNome;
   const dec2 = n => fmtDec(n, 2);
+  const nVideos = p => `${p.reels} vídeo${p.reels === 1 ? '' : 's'}`;
   const slides = famososOrd.map(f => {
     const rSeg = f.seguidores / nik.seguidores, rV = nik.medianaViews / f.medianaViews;
     const rVps = nik.medianaViewsPorSeguidor / f.medianaViewsPorSeguidor;
     const quem = curto(f), deQuem = pron(f.perfil);
     const segTxt = rSeg >= 3 ? `${fmtX(rSeg)} mais seguidores` : rSeg >= 2 ? 'mais que o dobro de seguidores' : 'mais seguidores';
+    const absTipico = `(vídeo típico: Nikolas ${fmtMi(nik.medianaViews)}, ${quem} ${fmtMi(f.medianaViews)} de visualizações)`;
     const resumo = rV >= 1.1
-      ? `${quem} tem ${segTxt}, mas o vídeo típico do Nikolas tem mais visualizações.`
+      ? `${quem} tem ${segTxt}, mas o vídeo típico do Nikolas tem mais visualizações ${absTipico}.`
       : rV > 0.9
-        ? `${quem} tem ${segTxt}, mas os vídeos típicos dos dois têm praticamente as mesmas visualizações.`
-        : `${quem} tem ${segTxt} e o vídeo típico ${deQuem} tem mais visualizações. Por seguidor, porém, o Nikolas alcança ${fmtX(rVps)} mais.`;
+        ? `${quem} tem ${segTxt}, mas os vídeos típicos dos dois têm praticamente as mesmas visualizações ${absTipico}.`
+        : `${quem} tem ${segTxt} e o vídeo típico ${deQuem} tem mais visualizações ${absTipico}. Por seguidor, porém, o Nikolas alcança ${fmtX(rVps)} mais.`;
+    const somas = f.reels === nik.reels
+      ? `Somando os ${nik.reels} vídeos analisados de cada um: Nikolas ${fmtMi(nik.somaViews)}, ${quem} ${fmtMi(f.somaViews)} de visualizações.`
+      : `Somando os vídeos analisados (${nVideos(nik)} do Nikolas, ${nVideos(f)} ${deQuem === 'dela' ? 'da' : 'do'} ${quem}): Nikolas ${fmtMi(nik.somaViews)}, ${quem} ${fmtMi(f.somaViews)} de visualizações.`;
     const cardViews = rV >= 1
-      ? stat(fmtX(rV), `O vídeo típico do Nikolas tem ${fmtX(rV)} mais visualizações que o ${deQuem} (${fmtMi(nik.medianaViews)} contra ${fmtMi(f.medianaViews)})`)
-      : stat(fmtX(1 / rV), `O vídeo típico de ${quem} tem ${fmtX(1 / rV)} mais visualizações (${fmtMi(f.medianaViews)} contra ${fmtMi(nik.medianaViews)})`, 'cinza');
+      ? stat(fmtX(rV), `O vídeo típico do Nikolas tem ${fmtX(rV)} mais visualizações que o ${deQuem} (${fmtMi(nik.medianaViews)} contra ${fmtMi(f.medianaViews)})`, '', 'Visualizações por vídeo',
+          `Comparação em números absolutos, sem levar em conta o tamanho de cada base. Vídeo típico (mediana dos vídeos analisados): Nikolas ${fmtMi(nik.medianaViews)}, ${quem} ${fmtMi(f.medianaViews)}.`)
+      : stat(fmtX(1 / rV), `O vídeo típico de ${quem} tem ${fmtX(1 / rV)} mais visualizações (${fmtMi(f.medianaViews)} contra ${fmtMi(nik.medianaViews)})`, 'cinza', 'Visualizações por vídeo',
+          `Comparação em números absolutos, sem levar em conta o tamanho de cada base. Vídeo típico (mediana dos vídeos analisados): ${quem} ${fmtMi(f.medianaViews)}, Nikolas ${fmtMi(nik.medianaViews)}. Em números absolutos, o vídeo ${deQuem} tem mais visualizações.`);
     return { rotulo: nome(f.perfil), html: `<p class="cmp-frase">Nikolas × <em>${nome(f.perfil)}</em></p>
       <p class="cmp-resumo">${resumo}</p>
       <div class="big-stats">
-        ${stat(fmtX(rSeg), `${quem} tem ${fmtX(rSeg)} mais seguidores que Nikolas (${fmtMi(f.seguidores)} contra ${fmtMi(nik.seguidores)})`, 'cinza')}
+        ${stat(fmtX(rSeg), `${quem} tem ${fmtX(rSeg)} mais seguidores que Nikolas (${fmtMi(f.seguidores)} contra ${fmtMi(nik.seguidores)})`, 'cinza', 'Seguidores',
+          `Seguidores são o tamanho da base: quantas contas acompanham o perfil. ${quem}: ${fmtMi(f.seguidores)}. Nikolas: ${fmtMi(nik.seguidores)}. Dividindo um pelo outro, dá ${fmtX(rSeg)}.`)}
         ${cardViews}
-        ${stat(fmtX(rVps), `Para cada seguidor, Nikolas tem ${fmtX(rVps)} mais visualizações que ${quem} (${dec2(nik.medianaViewsPorSeguidor)} contra ${dec2(f.medianaViewsPorSeguidor)} por seguidor)`, 'destaque', 'Alcance por seguidor')}
+        ${stat(fmtX(rVps), `Para cada seguidor, Nikolas tem ${fmtX(rVps)} mais visualizações que ${quem} (${dec2(nik.medianaViewsPorSeguidor)} contra ${dec2(f.medianaViewsPorSeguidor)} por seguidor)`, 'destaque', 'Alcance por seguidor',
+          `Visualizações por seguidor = visualizações do vídeo típico ÷ seguidores. Nikolas: ${fmtMi(nik.medianaViews)} ÷ ${fmtMi(nik.seguidores)} = ${dec2(nik.medianaViewsPorSeguidor)}. ${quem}: ${fmtMi(f.medianaViews)} ÷ ${fmtMi(f.seguidores)} = ${dec2(f.medianaViewsPorSeguidor)}. Dividindo um pelo outro, dá ${fmtX(rVps)}: é quantas vezes mais o vídeo do Nikolas alcança em relação ao tamanho da própria base.`)}
       </div>
       <div class="cmp-grupos">
         ${grupoBarras('Seguidores', f, 'seguidores', fmtMi)}
         ${grupoBarras('Visualizações no vídeo típico', f, 'medianaViews', fmtMi)}
-      </div>` };
+      </div>
+      <p class="cmp-somas">${somas}</p>` };
   });
   const maxVps = Math.max(...comp.map(p => p.medianaViewsPorSeguidor));
   const nomesOutros = outros.map(p => nome(p.perfil)).join(', ').replace(/, ([^,]*)$/, ' e $1');
   slides.push({ rotulo: 'Políticos', html: `<p class="cmp-frase">Nikolas × <em>outros políticos</em></p>
     <p class="cmp-resumo">Comparado à média dos outros ${outros.length} políticos analisados (${nomesOutros}), o Nikolas alcança ${fmtX(razaoVps)} mais visualizações por seguidor.</p>
     <div class="big-stats">
-      ${stat(dec2(nik.medianaViewsPorSeguidor), `visualizações por seguidor do Nikolas (${fmtMi(nik.medianaViews)} de visualizações no vídeo típico ÷ ${fmtMi(nik.seguidores)} de seguidores)`)}
-      ${stat(dec2(mediaOutrosVps), `visualizações por seguidor, média dos outros ${outros.length} políticos`, 'cinza')}
-      ${stat(fmtX(razaoVps), `Para cada seguidor, Nikolas tem ${fmtX(razaoVps)} mais visualizações que a média dos outros políticos (${dec2(nik.medianaViewsPorSeguidor)} contra ${dec2(mediaOutrosVps)} por seguidor)`, 'destaque', 'Alcance por seguidor')}
+      ${stat(dec2(nik.medianaViewsPorSeguidor), `Visualizações por seguidor do Nikolas (${fmtMi(nik.medianaViews)} no vídeo típico ÷ ${fmtMi(nik.seguidores)} de seguidores)`, '', 'Nikolas',
+        `Um vídeo típico do Nikolas tem ${fmtMi(nik.medianaViews)} de visualizações. Dividido pelos ${fmtMi(nik.seguidores)} de seguidores, dá ${dec2(nik.medianaViewsPorSeguidor)} visualização por seguidor.`)}
+      ${stat(dec2(mediaOutrosVps), `Visualizações por seguidor, média dos outros ${outros.length} políticos`, 'cinza', 'Outros políticos',
+        `Média simples das visualizações por seguidor de ${nomesOutros}: ${outros.map(p => `${curto(p)} ${dec2(p.medianaViewsPorSeguidor)}`).join('; ')}.`)}
+      ${stat(fmtX(razaoVps), `Para cada seguidor, Nikolas tem ${fmtX(razaoVps)} mais visualizações que a média dos outros políticos (${dec2(nik.medianaViewsPorSeguidor)} contra ${dec2(mediaOutrosVps)} por seguidor)`, 'destaque', 'Alcance por seguidor',
+        `${dec2(nik.medianaViewsPorSeguidor)} ÷ ${dec2(mediaOutrosVps)} = ${fmtX(razaoVps)}. Exemplo: com 1 milhão de seguidores, o vídeo típico dos outros teria cerca de ${Math.round(mediaOutrosVps * 1000)} mil visualizações, e o do Nikolas, cerca de ${fmtDec(nik.medianaViewsPorSeguidor)} milhão.`)}
     </div>
-    <p class="cmp-grupo-titulo">Visualizações por seguidor no vídeo típico</p>
-    <ol class="cmp-barras">${[...comp].sort((x, y) => y.medianaViewsPorSeguidor - x.medianaViewsPorSeguidor).map(p => `<li class="${p.perfil === NIK ? 'nik' : ''}"><span class="cmp-barra-nome">${nome(p.perfil)}</span><span class="cmp-barra"><i style="--w:${(p.medianaViewsPorSeguidor / maxVps * 100).toFixed(1)}%"></i></span><span class="cmp-barra-valor">${dec2(p.medianaViewsPorSeguidor)}</span></li>`).join('')}</ol>` });
+    <p class="cmp-grupo-titulo">Visualizações por seguidor e visualizações do vídeo típico</p>
+    <ol class="cmp-barras">${[...comp].sort((x, y) => y.medianaViewsPorSeguidor - x.medianaViewsPorSeguidor).map(p => `<li class="${p.perfil === NIK ? 'nik' : ''}"><span class="cmp-barra-nome">${nome(p.perfil)}<small>${fmtMi(p.medianaViews)} por vídeo</small></span><span class="cmp-barra"><i style="--w:${(p.medianaViewsPorSeguidor / maxVps * 100).toFixed(1)}%"></i></span><span class="cmp-barra-valor">${dec2(p.medianaViewsPorSeguidor)}</span></li>`).join('')}</ol>` });
   trilho.innerHTML = slides.map((s, i) => `<article class="slide" role="group" aria-roledescription="slide" aria-label="${i + 1} de ${slides.length}: ${s.rotulo}">${s.html}</article>`).join('');
   const pontosCarr = document.getElementById('carrPontos');
   pontosCarr.innerHTML = slides.map((s, i) => `<button type="button" role="tab" aria-label="${s.rotulo}" aria-selected="${i === 0}"><span>${s.rotulo}</span></button>`).join('');

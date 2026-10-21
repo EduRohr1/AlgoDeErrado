@@ -301,6 +301,7 @@ function resumir(perfis, reels) {
       reels: rs.length,
       medianaViews: medV,
       mediaViews: media(views),
+      somaViews: views.reduce((a, b) => a + b, 0), // soma das visualizações dos vídeos analisados
       medianaViewsPorSeguidor: seg && medV != null ? medV / seg : null,
       // Interação relativa à base de seguidores (mediana por reel). Reels com curtidas ocultas ficam fora das curtidas.
       medianaCurtidasPorSeguidor: seg && rs.length ? mediana(rs.filter(x => (x.likesCount ?? 0) >= 0).map(x => (x.likesCount ?? 0) / seg)) : null,
@@ -371,7 +372,7 @@ if (OFFLINE) {
 
 const resumo = {
   geradoEm: new Date(AGORA).toISOString(),
-  filtro: `até ${REELS_POR_PERFIL} reels mais recentes com >= ${DIAS_MINIMOS} dias, de autoria do próprio perfil (resultsLimit ${LIMITE_INICIAL}; ${LIMITE_EXTRA} para quem posta muito)`,
+  filtro: `até ${REELS_POR_PERFIL} vídeos mais recentes com ${DIAS_MINIMOS} dias ou mais, publicados pelo próprio perfil (resultsLimit ${LIMITE_INICIAL}; ${LIMITE_EXTRA} para quem publica muito)`,
   ...(custo && { custoUsd: custo }),
   grupos: GRUPOS,
   faixasIdade: FAIXAS.map(f => f.rotulo),

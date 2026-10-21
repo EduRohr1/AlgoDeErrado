@@ -18,7 +18,7 @@
     .sort((a, b) => b.medianaViews - a.medianaViews);
   const nomes = { cristiano: 'Cristiano Ronaldo', leomessi: 'Messi', neymarjr: 'Neymar', anitta: 'Anitta', virginia: 'Virginia' };
 
-  document.getElementById('dvViews').textContent = milhoes(v.views);
+  document.getElementById('dvViews').innerHTML = milhoes(v.views) + (window.infoBtn ? window.infoBtn(`É o vídeo com mais visualizações entre os coletados do Nikolas: ${milhoes(v.views)} de visualizações. Dividido pelo número de seguidores dele, dá ${vezes(v.vezesSeguidores)}. Ou seja, o vídeo foi visto mais vezes do que ele tem de seguidores (uma mesma pessoa assistir mais de uma vez também conta). Como tinha menos de 3 dias na coleta, ele fica fora das médias da página.`, 'O que significa este número?') : '');
   document.getElementById('dvTitulo').innerHTML = `Um único vídeo: <em>${vezes(v.vezesSeguidores)}</em> os seguidores dele.`;
   document.getElementById('dvLegenda').innerHTML =
     `“${esc(v.legenda || 'sem legenda')}” · publicado em ${data(v.data)}, às ${hora(v.data)} · <a href="${esc(v.url)}" target="_blank" rel="noopener">ver no Instagram ↗</a>`;

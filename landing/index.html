@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800&display=swap">
-  <link rel="stylesheet" href="style.css?v=202610202211">
+  <link rel="stylesheet" href="style.css?v=202610202223">
 </head>
 <body>
   <header class="cabecalho" id="cabecalho">
@@ -37,7 +37,7 @@
         <a href="#interacao">Interação</a>
         <a href="#regularidade">Regularidade</a>
         <a href="#famosos">Famosos</a>
-        <a href="#secIdade">Idade da publicação</a>
+        <a href="#secIdade">Idade dos vídeos</a>
         <a href="#pistas">Pistas</a>
         <a href="#interpretar">Como interpretar</a>
         <a href="#metodologia">Metodologia</a>
@@ -52,11 +52,13 @@
       <div class="hg-titulo">
         <p class="eyebrow">Análise de dados · Instagram · out/2026</p>
         <h1 id="titulo">Nikolas Ferreira tem 14× mais alcance por seguidor que a maior conta pessoal do Instagram.</h1>
+        <p class="hero-gancho" id="heroGancho"></p>
         <p class="hero-sub" id="heroSub"></p>
       </div>
       <div class="hg-info" id="heroInfo" aria-label="Visualizações por seguidor, vídeo típico">
         <p class="hi-titulo">Visualizações por seguidor, vídeo típico</p>
         <div id="heroBarras"></div>
+        <p class="hi-frase" id="heroFrase"></p>
         <p class="hi-nota" id="heroNota"></p>
       </div>
       <ul class="hg-cards" id="heroCards"></ul>
@@ -87,7 +89,6 @@
     <div class="wrap dv-grid">
       <div class="dv-numero"><span class="dv-big" id="dvViews"></span><span class="dv-unid">de visualizações</span></div>
       <div class="dv-texto">
-        <p class="eyebrow">Destaque à parte</p>
         <h2 class="dv-titulo" id="dvTitulo"></h2>
         <p class="dv-legenda" id="dvLegenda"></p>
         <p class="dv-cresc" id="dvCresc"></p>
@@ -108,12 +109,6 @@
       <h2 class="secao-titulo revelar" id="tituloPerspectiva">Em perspectiva</h2>
 
       <div class="painel revelar" id="duelo"></div>
-
-      <div class="painel revelar">
-        <h2>A cada 100 seguidores, quantas visualizações?</h2>
-        <p class="sub">Cada ponto equivale a 1 visualização para cada 100 seguidores do perfil, num vídeo típico (mediana). Uma linha com 100 pontos significaria um vídeo visto por tantas pessoas quantas o perfil tem de seguidores.</p>
-        <div class="pontos-lista" id="pontosLista"></div>
-      </div>
 
       <div class="painel revelar">
         <h2>E se os outros políticos tivessem a taxa do Nikolas?</h2>
@@ -261,9 +256,10 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <script src="dados.js?v=mvhd5lqb"></script>
-  <script src="app.js?v=202610202211"></script>
-  <script src="destaque.js?v=202610202211"></script>
-  <script src="pistas.js?v=202610202211"></script>
-  <script src="nav.js?v=202610202211"></script>
+  <script src="info.js?v=202610202223"></script>
+  <script src="app.js?v=202610202223"></script>
+  <script src="destaque.js?v=202610202223"></script>
+  <script src="pistas.js?v=202610202223"></script>
+  <script src="nav.js?v=202610202223"></script>
 </body>
 </html>
