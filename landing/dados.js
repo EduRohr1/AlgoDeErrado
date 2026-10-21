@@ -1,19 +1,21 @@
 // Gerado por atualizar.mjs a partir de dados/resumo.json — dados fixos, sem chamadas externas.
 window.RESUMO = {
-  "geradoEm": "2026-10-21T00:18:03.971Z",
+  "geradoEm": "2026-10-21T10:52:00.849Z",
   "filtro": "até 12 vídeos mais recentes com 3 dias ou mais, publicados pelo próprio perfil (resultsLimit 30; 100 para quem publica muito)",
   "custoUsd": {
     "perfis": 0.026000000000000002,
-    "reels": 1.5822,
+    "reels": 1.8172000000000001,
     "ultimaColeta": {
       "grupos": [
-        "nikolasferreiradm"
+        "renansantosmbl",
+        "kimkataguiri",
+        "kimkardashian"
       ],
-      "perfis": 0.0026,
-      "reels": 0.0712,
-      "total": 0.0738
+      "perfis": 0,
+      "reels": 0.235,
+      "total": 0.235
     },
-    "total": 1.6082
+    "total": 1.8432000000000002
   },
   "grupos": {
     "politicos": "Políticos",
@@ -2812,6 +2814,714 @@ window.RESUMO = {
       "observacao": "Amostra insuficiente: 1 de 78 vídeos coletados com 3 dias ou mais. Excluído da comparação."
     },
     {
+      "perfil": "renansantosmbl",
+      "grupo": "politicos",
+      "idioma": "pt",
+      "coletadoEm": "2026-10-21T10:52:00.852Z",
+      "encontrado": true,
+      "seguidores": 2972990,
+      "reelsColetados": 30,
+      "marcacoes": {
+        "proprios": 30,
+        "parceriaPaga": 0,
+        "comCoautor": 2
+      },
+      "reels": 12,
+      "medianaViews": 2902441,
+      "mediaViews": 2963512.1666666665,
+      "somaViews": 35562146,
+      "medianaViewsPorSeguidor": 0.9762700177262621,
+      "medianaCurtidasPorSeguidor": 0.05865542770073226,
+      "medianaComentariosPorSeguidor": 0.005276169781936704,
+      "engajamentoMedio": 0.06678419002226015,
+      "mediaCurtidas": 187248.58333333334,
+      "mediaComentarios": 16315.333333333334,
+      "curtidasOcultas": 0,
+      "reelsAcimaSeguidores": 6,
+      "maiorReel": {
+        "url": "https://www.instagram.com/p/DXIQunmEQ9O/",
+        "data": "2026-04-14T22:40:45.000Z",
+        "views": 14974182,
+        "vezesSeguidores": 5.04,
+        "legenda": "Vamos FUNDIR MUNICÍPIOS\n\nSiga @renansantosmbl",
+        "idadeDias": 189.51,
+        "coletadoEm": "2026-10-21T10:52:00.852Z"
+      },
+      "medianaComentariosPorCurtida": 0.07957841849381897,
+      "regularidade": {
+        "amostra12": {
+          "n": 12,
+          "cv": 0.3786595881541069,
+          "p90p10": 2.698248324580013
+        },
+        "todosMaduros": {
+          "n": 24,
+          "cv": 0.7861939995804756,
+          "p90p10": 2.95315899484044
+        }
+      },
+      "foraDaCurva": {
+        "avaliados": 24,
+        "medianaCurtidasPorView": 0.06690344157671752,
+        "medianaComentariosPorView": 0.0046039187105624355,
+        "curtidasBaixas": 0,
+        "comentariosBaixos": 3,
+        "reels": []
+      },
+      "pistas": {
+        "frequencia": {
+          "reelsPorDia": 0.93,
+          "dias": 30,
+          "reels": 28
+        },
+        "duracao": {
+          "n": 24,
+          "medianaSegundos": 128,
+          "acima60s": 0.792,
+          "correlacao": 0.38,
+          "vpsLongos": 1.0275917510654258,
+          "vpsCurtos": 0.9192400579887587,
+          "pontos": [
+            {
+              "s": 57,
+              "v": 1.0723
+            },
+            {
+              "s": 87,
+              "v": 5.0367
+            },
+            {
+              "s": 98,
+              "v": 1.1607
+            },
+            {
+              "s": 78,
+              "v": 0.9031
+            },
+            {
+              "s": 150,
+              "v": 0.5987
+            },
+            {
+              "s": 177,
+              "v": 1.1369
+            },
+            {
+              "s": 180,
+              "v": 0.9511
+            },
+            {
+              "s": 157,
+              "v": 1.0014
+            },
+            {
+              "s": 146,
+              "v": 1.0142
+            },
+            {
+              "s": 106,
+              "v": 0.9354
+            },
+            {
+              "s": 168,
+              "v": 1.6319
+            },
+            {
+              "s": 136,
+              "v": 0.7502
+            },
+            {
+              "s": 179,
+              "v": 1.4994
+            },
+            {
+              "s": 143,
+              "v": 1.041
+            },
+            {
+              "s": 31,
+              "v": 0.455
+            },
+            {
+              "s": 157,
+              "v": 1.4592
+            },
+            {
+              "s": 43,
+              "v": 0.5851
+            },
+            {
+              "s": 48,
+              "v": 0.7978
+            },
+            {
+              "s": 37,
+              "v": 0.5644
+            },
+            {
+              "s": 87,
+              "v": 0.5938
+            },
+            {
+              "s": 110,
+              "v": 3.0533
+            },
+            {
+              "s": 172,
+              "v": 0.4782
+            },
+            {
+              "s": 120,
+              "v": 1.4796
+            },
+            {
+              "s": 156,
+              "v": 1.7079
+            }
+          ]
+        },
+        "horario": {
+          "periodos": [
+            {
+              "periodo": "madrugada",
+              "pctPosts": 0,
+              "n": 0,
+              "medianaVps": null
+            },
+            {
+              "periodo": "manhã",
+              "pctPosts": 0.167,
+              "n": 4,
+              "medianaVps": 0.8797220979552571
+            },
+            {
+              "periodo": "tarde",
+              "pctPosts": 0.5,
+              "n": 11,
+              "medianaVps": 1.0014399644802034
+            },
+            {
+              "periodo": "noite",
+              "pctPosts": 0.333,
+              "n": 9,
+              "medianaVps": 1.0410068651424997
+            }
+          ],
+          "dias": [
+            {
+              "dia": "dom",
+              "pctPosts": 0.2
+            },
+            {
+              "dia": "seg",
+              "pctPosts": 0.067
+            },
+            {
+              "dia": "ter",
+              "pctPosts": 0.233
+            },
+            {
+              "dia": "qua",
+              "pctPosts": 0.1
+            },
+            {
+              "dia": "qui",
+              "pctPosts": 0.167
+            },
+            {
+              "dia": "sex",
+              "pctPosts": 0.1
+            },
+            {
+              "dia": "sáb",
+              "pctPosts": 0.133
+            }
+          ],
+          "horaMediana": 14.5
+        },
+        "legenda": {
+          "n": 30,
+          "medianaCaracteres": 41.5,
+          "medianaHashtags": 0,
+          "pctComMencao": 0.267,
+          "medianaEmojis": 0,
+          "palavras": [
+            {
+              "p": "siga",
+              "n": 6
+            },
+            {
+              "p": "show",
+              "n": 3
+            },
+            {
+              "p": "amanhã",
+              "n": 2
+            },
+            {
+              "p": "brasil",
+              "n": 2
+            },
+            {
+              "p": "debate",
+              "n": 2
+            },
+            {
+              "p": "entrar",
+              "n": 2
+            },
+            {
+              "p": "fim",
+              "n": 2
+            },
+            {
+              "p": "história",
+              "n": 2
+            }
+          ]
+        },
+        "temas": {
+          "n": 24,
+          "temas": [
+            {
+              "tema": "economia",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "religião e família",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "segurança",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "corrupção",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "adversários e governo",
+              "n": 1,
+              "pct": 0.042,
+              "medianaVps": 0.9353563247774126
+            },
+            {
+              "tema": "eleição e voto",
+              "n": 5,
+              "pct": 0.208,
+              "medianaVps": 0.9511000709723207
+            },
+            {
+              "tema": "sem tema identificado",
+              "n": 18,
+              "pct": 0.75,
+              "medianaVps": 1.0275917510654258
+            }
+          ]
+        },
+        "tom": {
+          "n": 423,
+          "pct": {
+            "apoio": 0.343,
+            "crítica": 0.033,
+            "pergunta": 0.038,
+            "neutro": 0.418,
+            "repetitivo": 0.168
+          },
+          "textosRepetidos": 22,
+          "comentariosRepetidos": 71
+        }
+      },
+      "comparavel": true,
+      "faixas": [
+        {
+          "faixa": "0–1d",
+          "n": 2,
+          "medianaViewsPorSeguidor": 0.532203438289399
+        },
+        {
+          "faixa": "1–3d",
+          "n": 4,
+          "medianaViewsPorSeguidor": 0.7805490432191161
+        },
+        {
+          "faixa": "3–7d",
+          "n": 5,
+          "medianaViewsPorSeguidor": 0.9353563247774126
+        },
+        {
+          "faixa": "7–30d",
+          "n": 17,
+          "medianaViewsPorSeguidor": 1.0141766369883518
+        },
+        {
+          "faixa": "30d+",
+          "n": 2,
+          "medianaViewsPorSeguidor": 3.098731411811005
+        }
+      ]
+    },
+    {
+      "perfil": "kimkataguiri",
+      "grupo": "politicos",
+      "idioma": "pt",
+      "coletadoEm": "2026-10-21T10:52:00.852Z",
+      "encontrado": true,
+      "seguidores": 2607661,
+      "reelsColetados": 30,
+      "marcacoes": {
+        "proprios": 30,
+        "parceriaPaga": 0,
+        "comCoautor": 4
+      },
+      "reels": 12,
+      "medianaViews": 1324109,
+      "mediaViews": 1437568.5833333333,
+      "somaViews": 17250823,
+      "medianaViewsPorSeguidor": 0.5077765092931942,
+      "medianaCurtidasPorSeguidor": 0.028459604220027065,
+      "medianaComentariosPorSeguidor": 0.0007991836362165174,
+      "engajamentoMedio": 0.05992873223124328,
+      "mediaCurtidas": 85785.91666666667,
+      "mediaComentarios": 2607,
+      "curtidasOcultas": 0,
+      "reelsAcimaSeguidores": 1,
+      "maiorReel": {
+        "url": "https://www.instagram.com/p/DY206RyDzXX/",
+        "data": "2026-05-27T21:10:07.000Z",
+        "views": 13036413,
+        "vezesSeguidores": 5,
+        "legenda": "EU NÃO VOU ENGANAR O TRABALHADOR BRASILEIRO!\n\nA irresponsabilidade dos deputados não tem limites. Agora tanto governo qu",
+        "idadeDias": 146.57,
+        "coletadoEm": "2026-10-21T10:52:00.852Z"
+      },
+      "medianaComentariosPorCurtida": 0.029434919543304787,
+      "regularidade": {
+        "amostra12": {
+          "n": 12,
+          "cv": 0.8000946236762766,
+          "p90p10": 8.933043047415488
+        },
+        "todosMaduros": {
+          "n": 23,
+          "cv": 1.311499494372979,
+          "p90p10": 8.216958782072593
+        }
+      },
+      "foraDaCurva": {
+        "avaliados": 23,
+        "medianaCurtidasPorView": 0.06282952944037291,
+        "medianaComentariosPorView": 0.0016329241441092027,
+        "curtidasBaixas": 0,
+        "comentariosBaixos": 3,
+        "reels": []
+      },
+      "pistas": {
+        "frequencia": {
+          "reelsPorDia": 0.9,
+          "dias": 30,
+          "reels": 27
+        },
+        "duracao": {
+          "n": 23,
+          "medianaSegundos": 125,
+          "acima60s": 0.739,
+          "correlacao": 0.11,
+          "vpsLongos": 0.6689803620946128,
+          "vpsCurtos": 0.5058303207357091,
+          "pontos": [
+            {
+              "s": 106,
+              "v": 0.4667
+            },
+            {
+              "s": 243,
+              "v": 0.8938
+            },
+            {
+              "s": 137,
+              "v": 4.9993
+            },
+            {
+              "s": 125,
+              "v": 0.3234
+            },
+            {
+              "s": 77,
+              "v": 0.0575
+            },
+            {
+              "s": 118,
+              "v": 0.8062
+            },
+            {
+              "s": 87,
+              "v": 0.6727
+            },
+            {
+              "s": 38,
+              "v": 0.4539
+            },
+            {
+              "s": 160,
+              "v": 1.618
+            },
+            {
+              "s": 138,
+              "v": 0.1243
+            },
+            {
+              "s": 101,
+              "v": 0.568
+            },
+            {
+              "s": 161,
+              "v": 1.1796
+            },
+            {
+              "s": 134,
+              "v": 0.7763
+            },
+            {
+              "s": 43,
+              "v": 0.511
+            },
+            {
+              "s": 174,
+              "v": 0.5616
+            },
+            {
+              "s": 41,
+              "v": 0.5058
+            },
+            {
+              "s": 8,
+              "v": 0.9875
+            },
+            {
+              "s": 179,
+              "v": 0.1068
+            },
+            {
+              "s": 198,
+              "v": 0.3355
+            },
+            {
+              "s": 212,
+              "v": 0.1974
+            },
+            {
+              "s": 35,
+              "v": 0.2257
+            },
+            {
+              "s": 163,
+              "v": 0.87
+            },
+            {
+              "s": 40,
+              "v": 0.2588
+            }
+          ]
+        },
+        "horario": {
+          "periodos": [
+            {
+              "periodo": "madrugada",
+              "pctPosts": 0,
+              "n": 0,
+              "medianaVps": null
+            },
+            {
+              "periodo": "manhã",
+              "pctPosts": 0.033,
+              "n": 1,
+              "medianaVps": 0.510987816284402
+            },
+            {
+              "periodo": "tarde",
+              "pctPosts": 0.533,
+              "n": 11,
+              "medianaVps": 0.5616163297299764
+            },
+            {
+              "periodo": "noite",
+              "pctPosts": 0.433,
+              "n": 11,
+              "medianaVps": 0.5058303207357091
+            }
+          ],
+          "dias": [
+            {
+              "dia": "dom",
+              "pctPosts": 0.167
+            },
+            {
+              "dia": "seg",
+              "pctPosts": 0.067
+            },
+            {
+              "dia": "ter",
+              "pctPosts": 0.067
+            },
+            {
+              "dia": "qua",
+              "pctPosts": 0.233
+            },
+            {
+              "dia": "qui",
+              "pctPosts": 0.267
+            },
+            {
+              "dia": "sex",
+              "pctPosts": 0.1
+            },
+            {
+              "dia": "sáb",
+              "pctPosts": 0.1
+            }
+          ],
+          "horaMediana": 17
+        },
+        "legenda": {
+          "n": 30,
+          "medianaCaracteres": 65.5,
+          "medianaHashtags": 0,
+          "pctComMencao": 0.1,
+          "medianaEmojis": 0,
+          "palavras": [
+            {
+              "p": "lula",
+              "n": 8
+            },
+            {
+              "p": "flávio",
+              "n": 6
+            },
+            {
+              "p": "bolsonaro",
+              "n": 5
+            },
+            {
+              "p": "governo",
+              "n": 5
+            },
+            {
+              "p": "impeachment",
+              "n": 4
+            },
+            {
+              "p": "moraes",
+              "n": 3
+            },
+            {
+              "p": "alexandre",
+              "n": 2
+            },
+            {
+              "p": "aos",
+              "n": 2
+            }
+          ]
+        },
+        "temas": {
+          "n": 23,
+          "temas": [
+            {
+              "tema": "economia",
+              "n": 4,
+              "pct": 0.174,
+              "medianaVps": 0.8231493664245467
+            },
+            {
+              "tema": "religião e família",
+              "n": 0,
+              "pct": 0,
+              "medianaVps": null
+            },
+            {
+              "tema": "segurança",
+              "n": 1,
+              "pct": 0.043,
+              "medianaVps": 0.893823238526787
+            },
+            {
+              "tema": "corrupção",
+              "n": 3,
+              "pct": 0.13,
+              "medianaVps": 0.5058303207357091
+            },
+            {
+              "tema": "adversários e governo",
+              "n": 14,
+              "pct": 0.609,
+              "medianaVps": 0.7245443330248832
+            },
+            {
+              "tema": "eleição e voto",
+              "n": 5,
+              "pct": 0.217,
+              "medianaVps": 0.4666699390756697
+            },
+            {
+              "tema": "sem tema identificado",
+              "n": 4,
+              "pct": 0.174,
+              "medianaVps": 0.4485500607632664
+            }
+          ]
+        },
+        "tom": {
+          "n": 378,
+          "pct": {
+            "apoio": 0.257,
+            "crítica": 0.05,
+            "pergunta": 0.074,
+            "neutro": 0.503,
+            "repetitivo": 0.116
+          },
+          "textosRepetidos": 8,
+          "comentariosRepetidos": 44
+        }
+      },
+      "comparavel": true,
+      "faixas": [
+        {
+          "faixa": "0–1d",
+          "n": 2,
+          "medianaViewsPorSeguidor": 0.2156984746100049
+        },
+        {
+          "faixa": "1–3d",
+          "n": 5,
+          "medianaViewsPorSeguidor": 0.43882582897086697
+        },
+        {
+          "faixa": "3–7d",
+          "n": 18,
+          "medianaViewsPorSeguidor": 0.5363020730071892
+        },
+        {
+          "faixa": "7–30d",
+          "n": 2,
+          "medianaViewsPorSeguidor": 0.24223969296622527
+        },
+        {
+          "faixa": "30d+",
+          "n": 3,
+          "medianaViewsPorSeguidor": 0.893823238526787
+        }
+      ]
+    },
+    {
       "perfil": "neymarjr",
       "grupo": "famosos_br",
       "idioma": "pt",
@@ -4345,6 +5055,344 @@ window.RESUMO = {
           "faixa": "30d+",
           "n": 22,
           "medianaViewsPorSeguidor": 0.07182130887496337
+        }
+      ]
+    },
+    {
+      "perfil": "kimkardashian",
+      "grupo": "famosos_globais",
+      "idioma": "en",
+      "coletadoEm": "2026-10-21T10:52:00.852Z",
+      "encontrado": true,
+      "seguidores": 343741559,
+      "reelsColetados": 29,
+      "marcacoes": {
+        "proprios": 29,
+        "parceriaPaga": 1,
+        "comCoautor": 4
+      },
+      "reels": 12,
+      "medianaViews": 13293015.5,
+      "mediaViews": 13977554.5,
+      "somaViews": 167730654,
+      "medianaViewsPorSeguidor": 0.038671540149732085,
+      "medianaCurtidasPorSeguidor": 0.0010895511182574232,
+      "medianaComentariosPorSeguidor": 0.000019268836794913122,
+      "engajamentoMedio": 0.02753893973278536,
+      "mediaCurtidas": 403671.0833333333,
+      "mediaComentarios": 7197,
+      "curtidasOcultas": 0,
+      "reelsAcimaSeguidores": 0,
+      "maiorReel": {
+        "url": "https://www.instagram.com/p/DUkBdg9ESNq/",
+        "data": "2026-02-10T03:48:25.000Z",
+        "views": 26681484,
+        "vezesSeguidores": 0.08,
+        "legenda": "I love us",
+        "idadeDias": 253.29,
+        "coletadoEm": "2026-10-21T10:52:00.852Z"
+      },
+      "medianaComentariosPorCurtida": 0.017175332185628396,
+      "regularidade": {
+        "amostra12": {
+          "n": 12,
+          "cv": 0.3766241832232621,
+          "p90p10": 2.5560181579618977
+        },
+        "todosMaduros": {
+          "n": 29,
+          "cv": 0.34835216953247217,
+          "p90p10": 2.40456237375709
+        }
+      },
+      "foraDaCurva": {
+        "avaliados": 29,
+        "medianaCurtidasPorView": 0.02987378640045137,
+        "medianaComentariosPorView": 0.0003768905954994539,
+        "curtidasBaixas": 2,
+        "comentariosBaixos": 2,
+        "reels": [
+          {
+            "url": "https://www.instagram.com/p/Ddrl0b2vIce/",
+            "data": "2026-09-24T19:04:35.000Z",
+            "views": 6269845,
+            "curtidasPorView": 0.00933,
+            "razaoCurtidas": 0.312,
+            "comentariosPorView": 0.000103,
+            "razaoComentarios": 0.273
+          },
+          {
+            "url": "https://www.instagram.com/p/DT0o6MDEnPY/",
+            "data": "2026-01-22T18:19:48.000Z",
+            "views": 13962697,
+            "curtidasPorView": 0.01401,
+            "razaoCurtidas": 0.469,
+            "comentariosPorView": 0.000287,
+            "razaoComentarios": 0.762
+          }
+        ]
+      },
+      "pistas": {
+        "frequencia": {
+          "reelsPorDia": 0.13,
+          "dias": 30,
+          "reels": 4
+        },
+        "duracao": {
+          "n": 29,
+          "medianaSegundos": 64,
+          "acima60s": 0.552,
+          "correlacao": 0.13,
+          "vpsLongos": 0.03863494725117017,
+          "vpsCurtos": 0.039214839308970496,
+          "pontos": [
+            {
+              "s": 38,
+              "v": 0.0231
+            },
+            {
+              "s": 135,
+              "v": 0.0386
+            },
+            {
+              "s": 89,
+              "v": 0.0427
+            },
+            {
+              "s": 10,
+              "v": 0.0289
+            },
+            {
+              "s": 201,
+              "v": 0.0526
+            },
+            {
+              "s": 49,
+              "v": 0.0182
+            },
+            {
+              "s": 70,
+              "v": 0.0334
+            },
+            {
+              "s": 43,
+              "v": 0.0614
+            },
+            {
+              "s": 80,
+              "v": 0.0301
+            },
+            {
+              "s": 49,
+              "v": 0.0681
+            },
+            {
+              "s": 121,
+              "v": 0.036
+            },
+            {
+              "s": 187,
+              "v": 0.0561
+            },
+            {
+              "s": 360,
+              "v": 0.0457
+            },
+            {
+              "s": 64,
+              "v": 0.0387
+            },
+            {
+              "s": 35,
+              "v": 0.0554
+            },
+            {
+              "s": 34,
+              "v": 0.0213
+            },
+            {
+              "s": 52,
+              "v": 0.052
+            },
+            {
+              "s": 54,
+              "v": 0.0378
+            },
+            {
+              "s": 270,
+              "v": 0.0263
+            },
+            {
+              "s": 184,
+              "v": 0.0347
+            },
+            {
+              "s": 54,
+              "v": 0.0776
+            },
+            {
+              "s": 13,
+              "v": 0.0341
+            },
+            {
+              "s": 91,
+              "v": 0.0318
+            },
+            {
+              "s": 81,
+              "v": 0.0433
+            },
+            {
+              "s": 37,
+              "v": 0.0406
+            },
+            {
+              "s": 312,
+              "v": 0.0505
+            },
+            {
+              "s": 29,
+              "v": 0.0371
+            },
+            {
+              "s": 60,
+              "v": 0.0626
+            },
+            {
+              "s": 178,
+              "v": 0.0291
+            }
+          ]
+        },
+        "horario": {
+          "periodos": [
+            {
+              "periodo": "madrugada",
+              "pctPosts": 0.069,
+              "n": 2,
+              "medianaVps": 0.07010489383391666
+            },
+            {
+              "periodo": "manhã",
+              "pctPosts": 0.172,
+              "n": 5,
+              "medianaVps": 0.03870813304829399
+            },
+            {
+              "periodo": "tarde",
+              "pctPosts": 0.655,
+              "n": 19,
+              "medianaVps": 0.037067211299870784
+            },
+            {
+              "periodo": "noite",
+              "pctPosts": 0.103,
+              "n": 3,
+              "medianaVps": 0.03414573447023902
+            }
+          ],
+          "dias": [
+            {
+              "dia": "dom",
+              "pctPosts": 0.103
+            },
+            {
+              "dia": "seg",
+              "pctPosts": 0.138
+            },
+            {
+              "dia": "ter",
+              "pctPosts": 0.276
+            },
+            {
+              "dia": "qua",
+              "pctPosts": 0.103
+            },
+            {
+              "dia": "qui",
+              "pctPosts": 0.172
+            },
+            {
+              "dia": "sex",
+              "pctPosts": 0.103
+            },
+            {
+              "dia": "sáb",
+              "pctPosts": 0.103
+            }
+          ],
+          "horaMediana": 13
+        },
+        "legenda": {
+          "n": 29,
+          "medianaCaracteres": 32,
+          "medianaHashtags": 0,
+          "pctComMencao": 0.345,
+          "medianaEmojis": 0,
+          "palavras": [
+            {
+              "p": "nikeskims",
+              "n": 4
+            },
+            {
+              "p": "now",
+              "n": 3
+            },
+            {
+              "p": "thank",
+              "n": 3
+            },
+            {
+              "p": "birthday",
+              "n": 2
+            },
+            {
+              "p": "can",
+              "n": 2
+            },
+            {
+              "p": "family",
+              "n": 2
+            },
+            {
+              "p": "happy",
+              "n": 2
+            },
+            {
+              "p": "love",
+              "n": 2
+            }
+          ]
+        },
+        "temas": null,
+        "tom": null
+      },
+      "comparavel": true,
+      "faixas": [
+        {
+          "faixa": "0–1d",
+          "n": 0,
+          "medianaViewsPorSeguidor": null
+        },
+        {
+          "faixa": "1–3d",
+          "n": 0,
+          "medianaViewsPorSeguidor": null
+        },
+        {
+          "faixa": "3–7d",
+          "n": 0,
+          "medianaViewsPorSeguidor": null
+        },
+        {
+          "faixa": "7–30d",
+          "n": 4,
+          "medianaViewsPorSeguidor": 0.02602305210351362
+        },
+        {
+          "faixa": "30d+",
+          "n": 25,
+          "medianaViewsPorSeguidor": 0.04061975235295887
         }
       ]
     }
@@ -6489,6 +7537,451 @@ window.RESUMO = {
       "perfil": "nikolasferreiradm",
       "idadeDias": 35.336,
       "viewsPorSeguidor": 0.5589
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 19.415,
+      "viewsPorSeguidor": 1.0723
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 1.889,
+      "viewsPorSeguidor": 0.53015
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 2.396,
+      "viewsPorSeguidor": 0.97188
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 189.508,
+      "viewsPorSeguidor": 5.03674
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 2.431,
+      "viewsPorSeguidor": 1.92029
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 2.603,
+      "viewsPorSeguidor": 0.43883
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 2.706,
+      "viewsPorSeguidor": 1.75472
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 0.652,
+      "viewsPorSeguidor": 0.06686
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 225.735,
+      "viewsPorSeguidor": 0.46667
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 1.684,
+      "viewsPorSeguidor": 0.14808
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 48.767,
+      "viewsPorSeguidor": 0.89382
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 0.477,
+      "viewsPorSeguidor": 0.36454
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 0.594,
+      "viewsPorSeguidor": 0.62326
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 32.956,
+      "viewsPorSeguidor": 1.16072
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 0.721,
+      "viewsPorSeguidor": 0.44115
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 1.806,
+      "viewsPorSeguidor": 0.70405
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 146.571,
+      "viewsPorSeguidor": 4.99927
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 16.661,
+      "viewsPorSeguidor": 0.0231
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 33.827,
+      "viewsPorSeguidor": 0.03863
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 89.911,
+      "viewsPorSeguidor": 0.0427
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 8.717,
+      "viewsPorSeguidor": 0.02894
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 53.391,
+      "viewsPorSeguidor": 0.05258
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 26.658,
+      "viewsPorSeguidor": 0.01824
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 7.786,
+      "viewsPorSeguidor": 0.03337
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 81.663,
+      "viewsPorSeguidor": 0.06143
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 69.824,
+      "viewsPorSeguidor": 0.03014
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 115.769,
+      "viewsPorSeguidor": 0.06813
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 164.869,
+      "viewsPorSeguidor": 0.03598
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 168.59,
+      "viewsPorSeguidor": 0.05607
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 137.753,
+      "viewsPorSeguidor": 0.04568
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 117.842,
+      "viewsPorSeguidor": 0.03871
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 129.869,
+      "viewsPorSeguidor": 0.05539
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 155.74,
+      "viewsPorSeguidor": 0.02132
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 126.827,
+      "viewsPorSeguidor": 0.05198
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 163.869,
+      "viewsPorSeguidor": 0.03781
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 258.646,
+      "viewsPorSeguidor": 0.02628
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 225.792,
+      "viewsPorSeguidor": 0.03475
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 253.294,
+      "viewsPorSeguidor": 0.07762
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 240.442,
+      "viewsPorSeguidor": 0.03415
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 251.447,
+      "viewsPorSeguidor": 0.03182
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 273.584,
+      "viewsPorSeguidor": 0.04331
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 3.816,
+      "viewsPorSeguidor": 0.90312
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 271.689,
+      "viewsPorSeguidor": 0.04062
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 5.965,
+      "viewsPorSeguidor": 0.59872
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 7.783,
+      "viewsPorSeguidor": 1.1369
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 6.718,
+      "viewsPorSeguidor": 0.9511
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 7.612,
+      "viewsPorSeguidor": 1.00144
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 9.672,
+      "viewsPorSeguidor": 1.01418
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 5.569,
+      "viewsPorSeguidor": 0.93536
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 295.597,
+      "viewsPorSeguidor": 0.05049
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 301.828,
+      "viewsPorSeguidor": 0.03707
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 2.682,
+      "viewsPorSeguidor": 0.85705
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 267.12,
+      "viewsPorSeguidor": 0.06259
+    },
+    {
+      "perfil": "kimkardashian",
+      "idadeDias": 238.743,
+      "viewsPorSeguidor": 0.02907
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 11.784,
+      "viewsPorSeguidor": 1.63193
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 12.514,
+      "viewsPorSeguidor": 0.75023
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 13.761,
+      "viewsPorSeguidor": 1.49939
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 11.519,
+      "viewsPorSeguidor": 1.04101
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 9.861,
+      "viewsPorSeguidor": 0.45497
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 14.828,
+      "viewsPorSeguidor": 1.45921
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 9.819,
+      "viewsPorSeguidor": 0.5851
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 14.742,
+      "viewsPorSeguidor": 0.79784
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 12.808,
+      "viewsPorSeguidor": 0.56441
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 17.507,
+      "viewsPorSeguidor": 0.59376
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 16.4,
+      "viewsPorSeguidor": 3.05326
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 17.453,
+      "viewsPorSeguidor": 0.47817
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 17.415,
+      "viewsPorSeguidor": 1.47961
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 4.558,
+      "viewsPorSeguidor": 0.32336
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 5.52,
+      "viewsPorSeguidor": 0.05752
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 5.476,
+      "viewsPorSeguidor": 0.80621
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 4.721,
+      "viewsPorSeguidor": 0.67274
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 3.634,
+      "viewsPorSeguidor": 0.45394
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 4.775,
+      "viewsPorSeguidor": 1.61803
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 3.415,
+      "viewsPorSeguidor": 0.12425
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 5.507,
+      "viewsPorSeguidor": 0.56804
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 2.786,
+      "viewsPorSeguidor": 0.38742
+    },
+    {
+      "perfil": "renansantosmbl",
+      "idadeDias": 6.593,
+      "viewsPorSeguidor": 1.70793
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 6.469,
+      "viewsPorSeguidor": 1.17964
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 6.515,
+      "viewsPorSeguidor": 0.77634
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 5.832,
+      "viewsPorSeguidor": 0.51099
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 5.604,
+      "viewsPorSeguidor": 0.56162
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 6.431,
+      "viewsPorSeguidor": 0.50583
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 5.749,
+      "viewsPorSeguidor": 0.98747
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 5.72,
+      "viewsPorSeguidor": 0.10676
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 5.561,
+      "viewsPorSeguidor": 0.33548
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 6.619,
+      "viewsPorSeguidor": 0.19741
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 10.704,
+      "viewsPorSeguidor": 0.22569
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 6.753,
+      "viewsPorSeguidor": 0.86995
+    },
+    {
+      "perfil": "kimkataguiri",
+      "idadeDias": 9.54,
+      "viewsPorSeguidor": 0.25879
     }
   ]
 };

@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800&display=swap">
-  <link rel="stylesheet" href="style.css?v=202610210744">
+  <link rel="stylesheet" href="style.css?v=202610210757">
 </head>
 <body>
   <header class="cabecalho" id="cabecalho">
@@ -152,6 +152,7 @@
     <section class="painel" id="politicosGrafico">
       <h2>Visualizações por seguidor entre políticos</h2>
       <p class="sub"><strong>Quantas visualizações cada político tem para cada seguidor.</strong> Acima de 1, o vídeo típico tem mais visualizações do que o perfil tem de seguidores.</p>
+      <p class="sub nota-media" id="notaMediaPol" hidden></p>
       <div class="grafico hero-canvas"><canvas id="gViews" aria-label="Gráfico de barras: mediana de visualizações por seguidor de cada político"></canvas></div>
     </section>
 
@@ -343,10 +344,10 @@
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-  <script src="dados.js?v=202610202308"></script>
+  <script src="dados.js?v=202610210757"></script>
   <script src="info.js?v=202610210741"></script>
   <script src="destaque.js?v=202610202333"></script>
-  <script src="app.js?v=202610210744"></script>
+  <script src="app.js?v=202610210757"></script>
   <script src="pistas.js?v=202610210741"></script>
   <script src="nav.js?v=202610202330"></script>
 </body>

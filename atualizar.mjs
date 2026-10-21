@@ -19,6 +19,8 @@ const PERFIS = [
   'tabataamaralsp',
   'guilhermeboulos.oficial',
   'pablomarcal1',
+  'renansantosmbl',
+  'kimkataguiri',
 ];
 
 // Outros grupos (vazio por enquanto). Cada item: { username, grupo, idioma }.
@@ -30,6 +32,7 @@ const PERFIS_FAMOSOS = [
   { username: 'virginia', grupo: 'famosos_br', idioma: 'pt' },
   { username: 'cristiano', grupo: 'famosos_globais', idioma: 'pt' },
   { username: 'leomessi', grupo: 'famosos_globais', idioma: 'es' },
+  { username: 'kimkardashian', grupo: 'famosos_globais', idioma: 'en' },
 ];
 
 const GRUPOS = { politicos: 'Políticos', famosos_br: 'Famosos brasileiros', famosos_globais: 'Famosos globais' };

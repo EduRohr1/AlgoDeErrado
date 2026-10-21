@@ -696,3 +696,11 @@ button.info:hover, button.info:focus-visible, button.info[aria-expanded="true"] 
   .aba-foto { width: 32px; height: 32px; }
   .aba-icone { width: 18px; height: 18px; }
 }
+
+/* Avatares com rosto recortado (img/avatar/, 256 px) */
+.cmp-mini { width: 36px; height: 36px; }
+.cmp-mini img { object-position: 50% 50%; }
+.cmp-mini.nik-anel { box-shadow: 0 0 0 2px #e3121b; }
+.aba-foto { width: 44px; height: 44px; object-position: 50% 50%; }
+.cmp-nota-media { margin: 6px 0 0; font-size: 13px; line-height: 1.5; color: #bdbdbd; max-width: 75ch; }
+@media (max-width: 600px) { .cmp-mini { width: 30px; height: 30px; } .aba-foto { width: 32px; height: 32px; } }

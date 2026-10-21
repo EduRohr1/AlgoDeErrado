@@ -189,5 +189,52 @@
     "private": false,
     "verified": true,
     "_coletadoEm": "2026-10-21T00:18:03.974Z"
+  },
+  {
+    "inputUrl": "https://www.instagram.com/kimkataguiri",
+    "id": "1671768728",
+    "username": "kimkataguiri",
+    "url": "https://www.instagram.com/kimkataguiri",
+    "fullName": "Kim Kataguiri",
+    "biography": "• Deputado Federal de SP @partidomissao \n• Coordenador do @mblivre\n• 30+ influentes do planeta pela @time e @forbes Under 30",
+    "followersCount": 2607661,
+    "followsCount": 1381,
+    "postsCount": 15921,
+    "isBusinessAccount": false,
+    "businessCategoryName": "Politician",
+    "private": false,
+    "verified": true,
+    "_coletadoEm": "2026-10-21T10:52:00.852Z"
+  },
+  {
+    "inputUrl": "https://www.instagram.com/renansantosmbl",
+    "id": "2334727603",
+    "username": "renansantosmbl",
+    "url": "https://www.instagram.com/renansantosmbl",
+    "fullName": "Renan Santos | VOTE 14",
+    "biography": "Fundador do @mblivre do @partidomissao e guitarrista na banda Limão Rosa.",
+    "followersCount": 2972990,
+    "followsCount": 848,
+    "postsCount": 3807,
+    "isBusinessAccount": false,
+    "businessCategoryName": null,
+    "private": false,
+    "verified": true,
+    "_coletadoEm": "2026-10-21T10:52:00.852Z"
+  },
+  {
+    "inputUrl": "https://www.instagram.com/kimkardashian",
+    "id": "18428658",
+    "username": "kimkardashian",
+    "url": "https://www.instagram.com/kimkardashian",
+    "fullName": "Kim Kardashian",
+    "biography": "@SKIMS\n@drinkupdate",
+    "followersCount": 343741559,
+    "followsCount": 217,
+    "isBusinessAccount": true,
+    "businessCategoryName": "None",
+    "private": false,
+    "verified": true,
+    "_coletadoEm": "2026-10-21T10:52:00.852Z"
   }
 ]
