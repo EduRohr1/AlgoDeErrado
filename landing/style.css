@@ -611,3 +611,9 @@ button.info:hover, button.info:focus-visible, button.info[aria-expanded="true"] 
 .anuncios .passos li { margin-bottom: 6px; }
 @media (max-width: 900px) { .anuncios-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 520px) { .anuncios-grid { grid-template-columns: 1fr; } }
+
+/* Assinatura no rodapé */
+.rodape-autor { color: #fff; }
+.rodape-autor strong { color: #fff; }
+.rodape-correcao { margin-bottom: 16px !important; }
+.rodape-correcao a { color: #fff; }
