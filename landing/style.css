@@ -576,3 +576,19 @@ button.info:hover, button.info:focus-visible, button.info[aria-expanded="true"] 
   .vb-par { height: 190px; }
   .vb-trilho { height: 130px; }
 }
+
+/* ===== Manchete em pergunta + linha fina com o 14× ===== */
+.hero-escuro .hero-linha { margin: 14px 0 0; font-family: var(--fonte-titulo); font-weight: 800; font-size: clamp(20px, 2.4vw, 30px); line-height: 1.25; color: #fff; max-width: 32ch; }
+.hero-escuro .hero-linha .titulo-x { font-size: 1.6em; line-height: .8; color: #ff2525; text-shadow: 0 0 30px rgba(255, 37, 37, .35); letter-spacing: -.03em; }
+.hero-escuro .hero-gancho { font-weight: 600; color: #e6e6e6; }
+
+/* ===== Contexto e resposta curta ===== */
+.contexto { border-left: 4px solid #0b0b0b; }
+.contexto p { margin: 0 0 12px; max-width: 75ch; line-height: 1.6; }
+.contexto p:last-child { margin-bottom: 0; }
+.resposta-curta { margin: 12px 0 18px; padding: 14px 16px; background: var(--bg-alt); border-left: 4px solid var(--accent); border-radius: 4px; font-size: 16px; line-height: 1.6; max-width: 75ch; }
+@media (max-width: 600px) { .hero-escuro .hero-linha { font-size: 20px; } }
+.hero-escuro h1 { font-size: clamp(30px, 5vw, 58px); line-height: 1.08; }
+@media (max-width: 600px) { .hero-escuro h1 { font-size: 30px; } }
+.hero-escuro .hero-linha .titulo-x { font-style: normal; }
+.hg-cards li .hc-num { flex: none; }

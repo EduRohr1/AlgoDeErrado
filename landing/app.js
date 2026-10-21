@@ -53,8 +53,8 @@
   const vpsTxt = n => fmtDec(n) + (n >= 1.995 ? ' visualizações' : ' visualização');
   if (cr7) {
     const vezesCr7 = Math.floor(nik.medianaViewsPorSeguidor / cr7.medianaViewsPorSeguidor);
-    document.getElementById('titulo').innerHTML =
-      `Nikolas Ferreira tem <em class="titulo-x">${vezesCr7}×</em> mais alcance por seguidor que a maior conta pessoal do Instagram.`;
+    document.getElementById('heroLinha').innerHTML =
+      `Ele tem <em class="titulo-x">${vezesCr7}×</em> mais visualizações por seguidor que a maior conta pessoal do Instagram.`;
     document.getElementById('heroSub').textContent =
       `Cristiano Ronaldo tem ${milhoesRedondo(cr7.seguidores)} de seguidores, e o vídeo típico dele chega a ${milhoesRedondo(cr7.medianaViews)} de visualizações. ` +
       `Nikolas tem ${milhoesTxt(nik.seguidores)} e chega a ${milhoesRedondo(nik.medianaViews)}.`;
