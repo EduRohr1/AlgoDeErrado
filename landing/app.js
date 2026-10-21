@@ -56,6 +56,17 @@
     document.getElementById('heroLinha').innerHTML =
       `Ele tem <em class="titulo-x">${vezesCr7}×</em> mais visualizações por seguidor que a maior conta pessoal do Instagram.`;
     const c108 = window.comparacao108;
+    // Selos sobre a foto e marca-d'água do topo.
+    document.getElementById('heroMarca').textContent = `${vezesCr7}×`;
+    document.getElementById('heroSeloNum').textContent = fmtDec(nik.medianaViewsPorSeguidor);
+    document.getElementById('heroSeloCmp').textContent = `Cristiano: ${fmtDec(cr7.medianaViewsPorSeguidor)}`;
+    document.getElementById('heroSelo').hidden = false;
+    if (nik.maiorReel && c108 && c108.ok) {
+      const hrs = (Date.parse(nik.maiorReel.coletadoEm) - Date.parse(nik.maiorReel.data)) / 3600e3;
+      const s108 = document.getElementById('heroSelo108');
+      s108.textContent = `${Math.floor(nik.maiorReel.views / 1e6)} mi em ${Math.floor(hrs)}h${String(Math.round((hrs % 1) * 60)).padStart(2, '0')}`;
+      s108.hidden = false;
+    }
     const milhoes108 = nik.maiorReel ? `${Math.floor(nik.maiorReel.views / 1e6)} milhões` : '';
     document.getElementById('heroSub').innerHTML =
       `Cristiano Ronaldo tem ${milhoesRedondo(cr7.seguidores)} de seguidores, e o vídeo típico dele chega a ${milhoesRedondo(cr7.medianaViews)} de visualizações. ` +
