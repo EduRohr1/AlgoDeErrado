@@ -57,7 +57,10 @@
       `Ele tem <em class="titulo-x">${vezesCr7}×</em> mais visualizações por seguidor que a maior conta pessoal do Instagram.`;
     document.getElementById('heroSub').textContent =
       `Cristiano Ronaldo tem ${milhoesRedondo(cr7.seguidores)} de seguidores, e o vídeo típico dele chega a ${milhoesRedondo(cr7.medianaViews)} de visualizações. ` +
-      `Nikolas tem ${milhoesTxt(nik.seguidores)} e chega a ${milhoesRedondo(nik.medianaViews)}.`;
+      `Nikolas tem ${milhoesTxt(nik.seguidores)}: o vídeo típico dele chega a ${milhoesRedondo(nik.medianaViews)}` +
+      (nik.maiorReel ? `, e um deles passou de ${Math.floor(nik.maiorReel.views / 1e6)} milhões` +
+        // Só compara com o recorde do Cristiano se o vídeo do Nikolas for maior que ele na nossa amostra.
+        (cr7.maiorReel && cr7.maiorReel.views < nik.maiorReel.views ? ` (mais que o vídeo mais visto de Cristiano na nossa amostra, ${fmtMi(cr7.maiorReel.views)})` : '') : '') + '.';
     const maxB = Math.max(nik.medianaViewsPorSeguidor, cr7.medianaViewsPorSeguidor);
     const textoBarra = p => p.perfil === NIK
       ? `Em média, cada vídeo do Nikolas tem ${vpsTxt(p.medianaViewsPorSeguidor)} para cada seguidor do perfil. Ou seja, um vídeo típico chega a ${milhoesRedondo(p.medianaViews)} de visualizações com ${milhoesTxt(p.seguidores)} de seguidores. Como o número passa de 1, o conteúdo costuma alcançar também quem não segue a conta (uma mesma pessoa assistir mais de uma vez também conta).`
