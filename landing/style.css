@@ -592,3 +592,4 @@ button.info:hover, button.info:focus-visible, button.info[aria-expanded="true"] 
 @media (max-width: 600px) { .hero-escuro h1 { font-size: 30px; } }
 .hero-escuro .hero-linha .titulo-x { font-style: normal; }
 .hg-cards li .hc-num { flex: none; }
+.hero-escuro .hero-sub strong { color: #fff; font-weight: 700; }

@@ -20,19 +20,25 @@
 
   document.getElementById('dvViews').innerHTML = milhoes(v.views) + (window.infoBtn ? window.infoBtn(`É o vídeo com mais visualizações entre os coletados do Nikolas: ${milhoes(v.views)} de visualizações. Dividido pelo número de seguidores dele, dá ${vezes(v.vezesSeguidores)}. Ou seja, o vídeo foi visto mais vezes do que ele tem de seguidores (uma mesma pessoa assistir mais de uma vez também conta). Como tinha menos de 3 dias na coleta, ele fica fora das médias da página.`, 'O que significa este número?') : '');
   // Comparação com a população do Brasil (IBGE, estimativa 2025: 213,4 milhões), só se os números sustentarem a frase.
+  // Também usada no topo (app.js), por isso fica em window.comparacao108.
   const POP_BR = 213.4e6;
   const horasDesdePub = (Date.parse(v.coletadoEm) - Date.parse(v.data)) / 3600e3;
   const fracaoPop = v.views / POP_BR;
   const horaTxt = h => `${Math.floor(h)}h${String(Math.round((h % 1) * 60 / 10) * 10).padStart(2, '0')}`;
-  document.getElementById('dvTitulo').innerHTML = horasDesdePub < 10 && fracaoPop >= 0.45 && fracaoPop <= 0.55
-    ? `Em menos de 10 horas, um único vídeo teve visualizações equivalentes a <em>metade da população do Brasil</em>.` +
-      (window.infoBtn ? window.infoBtn(`${(v.views / 1e6).toLocaleString('pt-BR', { maximumFractionDigits: 1 })} milhões de visualizações em cerca de ${horaTxt(horasDesdePub)} (publicado às ${hora(v.data)} de ${data(v.data).slice(0, 5)}, contado às ${hora(v.coletadoEm)}). A população do Brasil é de cerca de 213 milhões (IBGE, estimativa 2025: 213,4 milhões). Visualização não é pessoa única: quem assiste de novo conta outra vez.`, 'De onde vem essa comparação?') : '')
+  const duracao = h => `${Math.floor(h)}h${String(Math.round((h % 1) * 60)).padStart(2, '0')}`;
+  window.comparacao108 = {
+    ok: horasDesdePub < 10 && fracaoPop >= 0.45 && fracaoPop <= 0.55,
+    info: `${(v.views / 1e6).toLocaleString('pt-BR', { maximumFractionDigits: 1 })} milhões de visualizações em cerca de ${horaTxt(horasDesdePub)} (publicado às ${hora(v.data)} de ${data(v.data).slice(0, 5)}, contado às ${hora(v.coletadoEm)}). A população do Brasil é de cerca de 213 milhões (IBGE, estimativa 2025: 213,4 milhões). Visualização não é pessoa única: quem assiste de novo conta outra vez.`,
+  };
+  // Linha principal complementar ao topo: o crescimento entre as duas leituras.
+  const hPrimeira = v.viewsAnterior && v.coletaAnterior ? (Date.parse(v.coletaAnterior) - Date.parse(v.data)) / 3600e3 : null;
+  document.getElementById('dvTitulo').innerHTML = hPrimeira && hPrimeira > 0
+    ? `Foram <em>${mi(v.viewsAnterior).replace(' mi', ' milhões')}</em> nas primeiras ~${horaTxt(hPrimeira)} e <em>${(v.views / 1e6).toLocaleString('pt-BR', { maximumFractionDigits: 1 })} milhões</em> em ${duracao(horasDesdePub)}.` +
+      (window.infoBtn ? window.infoBtn(`Horários de Brasília. Publicado às ${hora(v.data)} de ${data(v.data).slice(0, 5)}. Primeira leitura às ${hora(v.coletaAnterior)} (${mi(v.viewsAnterior)}), segunda às ${hora(v.coletadoEm)} (${mi(v.views)}). Visualização não é pessoa única: quem assiste de novo conta outra vez.`, 'Como foram feitas as leituras?') : '')
     : `Um único vídeo: <em>${vezes(v.vezesSeguidores)}</em> os seguidores dele.`;
   document.getElementById('dvLegenda').innerHTML =
     `“${esc(v.legenda || 'sem legenda')}” · publicado em ${data(v.data)}, às ${hora(v.data)} · <a href="${esc(v.url)}" target="_blank" rel="noopener">ver no Instagram ↗</a>`;
-  const horas = v.viewsAnterior && v.coletaAnterior ? (Date.parse(v.coletadoEm) - Date.parse(v.coletaAnterior)) / 3600e3 : null;
   document.getElementById('dvCresc').innerHTML = [
-    horas ? `Na nossa primeira coleta, às ${hora(v.coletaAnterior)}, tinha <strong>${mi(v.viewsAnterior)}</strong>; ${Math.round(horas)} horas depois, <strong>${mi(v.views)}</strong> (${vezes(v.views / v.viewsAnterior)}).` : '',
     famosos.length ? `Sozinho, passa do vídeo típico de ${famosos.map(p => `${nomes[p.perfil] || p.perfil} (${mi(p.medianaViews)})`).join(', ')}.` : '',
   ].filter(Boolean).join(' ');
   document.getElementById('dvNota').textContent =

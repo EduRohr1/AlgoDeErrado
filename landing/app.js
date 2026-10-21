@@ -55,12 +55,18 @@
     const vezesCr7 = Math.floor(nik.medianaViewsPorSeguidor / cr7.medianaViewsPorSeguidor);
     document.getElementById('heroLinha').innerHTML =
       `Ele tem <em class="titulo-x">${vezesCr7}×</em> mais visualizações por seguidor que a maior conta pessoal do Instagram.`;
-    document.getElementById('heroSub').textContent =
+    const c108 = window.comparacao108;
+    const milhoes108 = nik.maiorReel ? `${Math.floor(nik.maiorReel.views / 1e6)} milhões` : '';
+    document.getElementById('heroSub').innerHTML =
       `Cristiano Ronaldo tem ${milhoesRedondo(cr7.seguidores)} de seguidores, e o vídeo típico dele chega a ${milhoesRedondo(cr7.medianaViews)} de visualizações. ` +
       `Nikolas tem ${milhoesTxt(nik.seguidores)}: o vídeo típico dele chega a ${milhoesRedondo(nik.medianaViews)}` +
-      (nik.maiorReel ? `, e um deles passou de ${Math.floor(nik.maiorReel.views / 1e6)} milhões` +
-        // Só compara com o recorde do Cristiano se o vídeo do Nikolas for maior que ele na nossa amostra.
-        (cr7.maiorReel && cr7.maiorReel.views < nik.maiorReel.views ? ` (mais que o vídeo mais visto de Cristiano na nossa amostra, ${fmtMi(cr7.maiorReel.views)})` : '') : '') + '.';
+      (nik.maiorReel
+        ? (c108 && c108.ok
+          ? `, e um deles passou de <strong>${milhoes108} em menos de 10 horas</strong>, o equivalente a metade da população do Brasil`
+          : `, e um deles passou de ${milhoes108}`) +
+          // Só compara com o recorde do Cristiano se o vídeo do Nikolas for maior que ele na nossa amostra.
+          (cr7.maiorReel && cr7.maiorReel.views < nik.maiorReel.views ? ` (mais que o vídeo mais visto de Cristiano na nossa amostra, ${fmtMi(cr7.maiorReel.views)})` : '')
+        : '') + '.' + (nik.maiorReel && c108 && c108.ok ? ' ' + i(c108.info, 'De onde vem essa comparação?') : '');
     const maxB = Math.max(nik.medianaViewsPorSeguidor, cr7.medianaViewsPorSeguidor);
     const textoBarra = p => p.perfil === NIK
       ? `Em média, cada vídeo do Nikolas tem ${vpsTxt(p.medianaViewsPorSeguidor)} para cada seguidor do perfil. Ou seja, um vídeo típico chega a ${milhoesRedondo(p.medianaViews)} de visualizações com ${milhoesTxt(p.seguidores)} de seguidores. Como o número passa de 1, o conteúdo costuma alcançar também quem não segue a conta (uma mesma pessoa assistir mais de uma vez também conta).`
