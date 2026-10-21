@@ -542,8 +542,11 @@
     `<span class="aba-nome">${s.perfil ? (CURTO_NOME[s.perfil] || s.rotulo) : s.rotulo}</span></button>`).join('');
   const reduzirCarr = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let atual = 0, pausado = reduzirCarr, timer = null;
+  // Cada slide tem a própria altura: o trilho acompanha a altura do slide visível.
+  const ajustarAltura = () => { const s = trilho.children[atual]; if (s) trilho.style.height = s.offsetHeight + 'px'; };
   const irPara = (i, foco) => {
     atual = (i + slides.length) % slides.length;
+    ajustarAltura();
     trilho.scrollTo({ left: trilho.children[atual].offsetLeft - trilho.offsetLeft, behavior: reduzirCarr ? 'auto' : 'smooth' });
     [...pontosCarr.children].forEach((b, k) => b.setAttribute('aria-selected', String(k === atual)));
     if (foco) pontosCarr.children[atual].focus();
@@ -554,9 +557,12 @@
     clearTimeout(rolando);
     rolando = setTimeout(() => {
       const i = Math.round(trilho.scrollLeft / trilho.clientWidth);
-      if (i !== atual) { atual = i; [...pontosCarr.children].forEach((b, k) => b.setAttribute('aria-selected', String(k === atual))); }
+      if (i !== atual) { atual = i; [...pontosCarr.children].forEach((b, k) => b.setAttribute('aria-selected', String(k === atual))); ajustarAltura(); }
     }, 120);
   }, { passive: true });
+  ajustarAltura();
+  addEventListener('resize', ajustarAltura);
+  if (document.fonts) document.fonts.ready.then(ajustarAltura);
   document.getElementById('carrAnterior').addEventListener('click', () => { irPara(atual - 1); reiniciar(); });
   document.getElementById('carrProximo').addEventListener('click', () => { irPara(atual + 1); reiniciar(); });
   pontosCarr.addEventListener('click', e => { const b = e.target.closest('button'); if (b) { irPara([...pontosCarr.children].indexOf(b)); reiniciar(); } });

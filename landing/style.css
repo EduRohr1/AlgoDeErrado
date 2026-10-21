@@ -704,3 +704,7 @@ button.info:hover, button.info:focus-visible, button.info[aria-expanded="true"] 
 .aba-foto { width: 44px; height: 44px; object-position: 50% 50%; }
 .cmp-nota-media { margin: 6px 0 0; font-size: 13px; line-height: 1.5; color: #bdbdbd; max-width: 75ch; }
 @media (max-width: 600px) { .cmp-mini { width: 30px; height: 30px; } .aba-foto { width: 32px; height: 32px; } }
+
+/* Carrossel: altura do slide visível (o trilho anima a mudança) */
+.carrossel-trilho { align-items: flex-start; overflow-y: hidden; transition: height .35s ease; }
+@media (prefers-reduced-motion: reduce) { .carrossel-trilho { transition: none; } }
