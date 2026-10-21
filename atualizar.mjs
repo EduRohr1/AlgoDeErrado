@@ -7,7 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { frequencia, duracao, horario, legenda, temas, tom, TEMAS } from './analises.mjs';
+import { frequencia, duracao, horario, legenda, temas, tom, TEMAS, limparLegenda } from './analises.mjs';
 
 // ===== Perfis analisados (edite aqui) =====
 // Políticos: grupo "politicos", idioma "pt".
@@ -81,7 +81,7 @@ const CAMPOS_PERFIL = ['inputUrl', 'id', 'username', 'url', 'fullName', 'biograp
   'isBusinessAccount', 'businessCategoryName', 'private', 'verified', 'error', 'errorDescription', '_coletadoEm'];
 const CAMPOS_REEL = ['id', 'type', 'productType', 'shortCode', 'url', 'inputUrl', 'timestamp', 'ownerUsername', 'ownerFullName', 'ownerId',
   'caption', 'hashtags', 'mentions', 'videoPlayCount', 'videoViewCount', 'likesCount', 'commentsCount', 'videoDuration',
-  'isPinned', 'paidPartnership', 'isCommentsDisabled', '_coletadoEm'];
+  'isPinned', 'paidPartnership', 'isCommentsDisabled', '_coletadoEm', '_viewsAnterior', '_coletaAnterior'];
 const escolher = (x, campos) => Object.fromEntries(campos.filter(k => x[k] !== undefined).map(k => [k, x[k]]));
 const limparPerfil = p => escolher(p, CAMPOS_PERFIL);
 const limparReel = x => {
@@ -178,7 +178,14 @@ async function coletar() {
     const marcar = x => ({ ...x, _coletadoEm: x._coletadoEm || COLETA_ANTERIOR });
     const lerBruto = f => fs.existsSync(path.join(BRUTOS, f)) ? JSON.parse(fs.readFileSync(path.join(BRUTOS, f), 'utf8')) : lerJson(f);
     const antigosPerfis = lerBruto('perfis.json').filter(p => !novos.has((p.username || '').toLowerCase())).map(marcar);
-    const antigosReels = lerBruto('reels.json').filter(x => !novos.has(dono(x))).map(marcar);
+    const todosAntigos = lerBruto('reels.json').map(marcar);
+    const antigosReels = todosAntigos.filter(x => !novos.has(dono(x)));
+    // Guarda a leitura anterior de cada reel recoletado, para mostrar quanto ele cresceu entre as coletas.
+    const anteriorPorId = new Map(todosAntigos.filter(x => novos.has(dono(x)) && x.videoPlayCount > 0).map(x => [x.id, x]));
+    for (const x of reels) {
+      const ant = anteriorPorId.get(x.id);
+      if (ant) { x._viewsAnterior = ant.videoPlayCount; x._coletaAnterior = ant._coletadoEm; }
+    }
     const ids = new Set(reels.map(x => x.id));
     todosPerfis = [...antigosPerfis, ...perfis.items];
     todosReels = [...antigosReels.filter(x => !ids.has(x.id)), ...reels];
@@ -228,6 +235,19 @@ function foraDaCurva(reelsPerfil) {
 }
 
 const idadeDias = x => Math.max(0.01, (coletadoEm(x) - Date.parse(x.timestamp)) / 86400e3);
+
+// Maior vídeo coletado do perfil (pode ter menos de 3 dias; fica fora das médias).
+function maiorReel(reelsComViews, seg) {
+  const x = [...reelsComViews].sort((a, b) => b.videoPlayCount - a.videoPlayCount)[0];
+  if (!x || !seg) return null;
+  return {
+    url: x.url, data: x.timestamp, views: x.videoPlayCount, vezesSeguidores: +(x.videoPlayCount / seg).toFixed(2),
+    legenda: limparLegenda(x.caption).slice(0, 120),
+    idadeDias: +((coletadoEm(x) - Date.parse(x.timestamp)) / 86400e3).toFixed(2),
+    coletadoEm: x._coletadoEm || null,
+    ...(x._viewsAnterior ? { viewsAnterior: x._viewsAnterior, coletaAnterior: x._coletaAnterior } : {}),
+  };
+}
 
 function resumir(perfis, reels) {
   // Tom dos comentários: só com o bruto local (dados/brutos/). Sem ele (ex.: clone do repositório),
@@ -290,6 +310,7 @@ function resumir(perfis, reels) {
       mediaComentarios: media(com),
       curtidasOcultas: rs.filter(x => (x.likesCount ?? 0) < 0).length,
       reelsAcimaSeguidores: seg ? rs.filter(x => x.videoPlayCount > seg).length : null, // vídeos com mais views que seguidores
+      maiorReel: maiorReel(comViews, seg), // o vídeo com mais views entre os coletados (qualquer idade)
       medianaComentariosPorCurtida: mediana(rs.filter(x => x.likesCount > 0).map(x => (x.commentsCount ?? 0) / x.likesCount)),
       regularidade: { amostra12: regularidade(views), todosMaduros: regularidade(maduros.map(x => x.videoPlayCount)) },
       foraDaCurva: foraDaCurva(maduros),
@@ -335,8 +356,11 @@ function imprimir(resumo, custo) {
 
 let perfis, reels, custo;
 if (OFFLINE) {
-  perfis = lerJson('perfis.json');
-  reels = lerJson('reels.json');
+  // Usa o bruto local quando existe (mais completo); num clone do repositório, usa a versão limpa.
+  const temBruto = fs.existsSync(path.join(BRUTOS, 'reels.json')) && fs.existsSync(path.join(BRUTOS, 'perfis.json'));
+  const ler = f => temBruto ? JSON.parse(fs.readFileSync(path.join(BRUTOS, f), 'utf8')) : lerJson(f);
+  perfis = ler('perfis.json');
+  reels = ler('reels.json');
   gravarDados(perfis, reels);
   custo = resumoAnterior?.custoUsd;
   console.log(`Modo offline: usando ${perfis.length} perfis e ${reels.length} reels já salvos em dados/.`);

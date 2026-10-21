@@ -159,6 +159,17 @@ window.RESUMO = {
       "mediaComentarios": 161680.66666666666,
       "curtidasOcultas": 0,
       "reelsAcimaSeguidores": 11,
+      "maiorReel": {
+        "url": "https://www.instagram.com/p/DeuEvFlRfuH/",
+        "data": "2026-10-20T14:59:57.000Z",
+        "views": 108340014,
+        "vezesSeguidores": 4.39,
+        "legenda": "O Nordeste que foi esquecido.",
+        "idadeDias": 0.39,
+        "coletadoEm": "2026-10-21T00:18:03.974Z",
+        "viewsAnterior": 56532823,
+        "coletaAnterior": "2026-10-20T18:32:05.172Z"
+      },
       "medianaComentariosPorCurtida": 0.046229004843203206,
       "regularidade": {
         "amostra12": {
@@ -500,6 +511,15 @@ window.RESUMO = {
       "mediaComentarios": 104296.5,
       "curtidasOcultas": 0,
       "reelsAcimaSeguidores": 0,
+      "maiorReel": {
+        "url": "https://www.instagram.com/p/DefwqGiNvzQ/",
+        "data": "2026-10-15T01:19:38.000Z",
+        "views": 36429413,
+        "vezesSeguidores": 2.01,
+        "legenda": "✊🇧🇷 O FIM DA 6X1 AGORA É REALIDADE!\n\nLutamos, discutimos e pressionamos para garantir que o Congresso Nacional votasse",
+        "idadeDias": 5.72,
+        "coletadoEm": "2026-10-20T18:32:05.172Z"
+      },
       "medianaComentariosPorCurtida": 0.21205489865448596,
       "regularidade": {
         "amostra12": {
@@ -857,6 +877,15 @@ window.RESUMO = {
       "mediaComentarios": 36466.833333333336,
       "curtidasOcultas": 0,
       "reelsAcimaSeguidores": 0,
+      "maiorReel": {
+        "url": "https://www.instagram.com/p/DMOzVjgCk2H/",
+        "data": "2025-07-18T01:50:42.000Z",
+        "views": 25749641,
+        "vezesSeguidores": 0.97,
+        "legenda": "- Jair Bolsonaro responde à carta de @realdonaldtrump .",
+        "idadeDias": 459.7,
+        "coletadoEm": "2026-10-20T18:32:05.172Z"
+      },
       "medianaComentariosPorCurtida": 0.04973735229548348,
       "regularidade": {
         "amostra12": {
@@ -1216,6 +1245,15 @@ window.RESUMO = {
       "mediaComentarios": 18008.666666666668,
       "curtidasOcultas": 0,
       "reelsAcimaSeguidores": 0,
+      "maiorReel": {
+        "url": "https://www.instagram.com/p/DeXAqjtRZN2/",
+        "data": "2026-10-11T15:45:26.000Z",
+        "views": 7483349,
+        "vezesSeguidores": 0.95,
+        "legenda": "O que você falaria para Moraes? 👇Comenta aqui👇",
+        "idadeDias": 9.12,
+        "coletadoEm": "2026-10-20T18:32:05.172Z"
+      },
       "medianaComentariosPorCurtida": 0.06923265315744857,
       "regularidade": {
         "amostra12": {
@@ -1577,6 +1615,15 @@ window.RESUMO = {
       "mediaComentarios": 12450,
       "curtidasOcultas": 0,
       "reelsAcimaSeguidores": 2,
+      "maiorReel": {
+        "url": "https://www.instagram.com/p/DeqMT1FjCCf/",
+        "data": "2026-10-19T02:35:01.000Z",
+        "views": 9236327,
+        "vezesSeguidores": 3.88,
+        "legenda": "Sobre o debate presidencial da Band, que infelizmente foi transformado num grande circo. #abreosigiloflavio",
+        "idadeDias": 1.66,
+        "coletadoEm": "2026-10-20T18:32:05.172Z"
+      },
       "medianaComentariosPorCurtida": 0.08401453816156057,
       "regularidade": {
         "amostra12": {
@@ -1955,6 +2002,15 @@ window.RESUMO = {
       "mediaComentarios": 11338.083333333334,
       "curtidasOcultas": 0,
       "reelsAcimaSeguidores": 0,
+      "maiorReel": {
+        "url": "https://www.instagram.com/p/DepRLquofIj/",
+        "data": "2026-10-18T17:56:48.000Z",
+        "views": 10040159,
+        "vezesSeguidores": 2.86,
+        "legenda": "Compartilhe esse vídeo ao máximo; todos os brasileiros precisam saber o que defende a turma de Flavio Bolsonaro.",
+        "idadeDias": 2.02,
+        "coletadoEm": "2026-10-20T18:32:05.172Z"
+      },
       "medianaComentariosPorCurtida": 0.14800901294606952,
       "regularidade": {
         "amostra12": {
@@ -2488,6 +2544,7 @@ window.RESUMO = {
       "mediaComentarios": null,
       "curtidasOcultas": 0,
       "reelsAcimaSeguidores": null,
+      "maiorReel": null,
       "medianaComentariosPorCurtida": null,
       "regularidade": {
         "amostra12": null,
@@ -2544,6 +2601,15 @@ window.RESUMO = {
       "mediaComentarios": 23252,
       "curtidasOcultas": 0,
       "reelsAcimaSeguidores": 1,
+      "maiorReel": {
+        "url": "https://www.instagram.com/p/DFF1nzAAuyq/",
+        "data": "2025-01-21T14:40:41.000Z",
+        "views": 29679130,
+        "vezesSeguidores": 2.07,
+        "legenda": "Precisamos de ajuda ou não? @realdonaldtrump obrigado por gostar do Brasil. Vamos fazer o Brasil crescer junto com vocês",
+        "idadeDias": 637.16,
+        "coletadoEm": "2026-10-20T18:32:05.172Z"
+      },
       "medianaComentariosPorCurtida": 0.02379906920378746,
       "regularidade": {
         "amostra12": null,
@@ -2779,6 +2845,7 @@ window.RESUMO = {
       "mediaComentarios": null,
       "curtidasOcultas": 0,
       "reelsAcimaSeguidores": null,
+      "maiorReel": null,
       "medianaComentariosPorCurtida": null,
       "regularidade": {
         "amostra12": null,
@@ -2835,6 +2902,15 @@ window.RESUMO = {
       "mediaComentarios": 65,
       "curtidasOcultas": 0,
       "reelsAcimaSeguidores": 0,
+      "maiorReel": {
+        "url": "https://www.instagram.com/p/DeC-pwTppE1/",
+        "data": "2026-10-03T21:02:59.000Z",
+        "views": 107850914,
+        "vezesSeguidores": 0.45,
+        "legenda": "4 fantástico 🇧🇷 LIL NEY",
+        "idadeDias": 16.94,
+        "coletadoEm": "2026-10-20T19:36:47.030Z"
+      },
       "medianaComentariosPorCurtida": 0.000024016170888398188,
       "regularidade": {
         "amostra12": {
@@ -3065,6 +3141,15 @@ window.RESUMO = {
       "mediaComentarios": 24397.833333333332,
       "curtidasOcultas": 0,
       "reelsAcimaSeguidores": 0,
+      "maiorReel": {
+        "url": "https://www.instagram.com/p/DcjQ5GZxFBg/",
+        "data": "2026-08-27T16:59:44.000Z",
+        "views": 54535904,
+        "vezesSeguidores": 0.89,
+        "legenda": "É sempre bom lembrar…",
+        "idadeDias": 54.11,
+        "coletadoEm": "2026-10-20T19:36:47.030Z"
+      },
       "medianaComentariosPorCurtida": 0.047913426079653945,
       "regularidade": {
         "amostra12": {
@@ -3395,6 +3480,15 @@ window.RESUMO = {
       "mediaComentarios": 14799.666666666666,
       "curtidasOcultas": 0,
       "reelsAcimaSeguidores": 0,
+      "maiorReel": {
+        "url": "https://www.instagram.com/p/DYZoTdBxflN/",
+        "data": "2026-05-16T13:02:05.000Z",
+        "views": 74335834,
+        "vezesSeguidores": 1.31,
+        "legenda": "Bom dia grupo!! Por aqui funcionou ✅🤣",
+        "idadeDias": 157.27,
+        "coletadoEm": "2026-10-20T19:36:47.030Z"
+      },
       "medianaComentariosPorCurtida": 0.008372795773291029,
       "regularidade": {
         "amostra12": {
@@ -3719,6 +3813,15 @@ window.RESUMO = {
       "mediaComentarios": 103163.91666666667,
       "curtidasOcultas": 0,
       "reelsAcimaSeguidores": 0,
+      "maiorReel": {
+        "url": "https://www.instagram.com/p/DaU63nnAkoo/",
+        "data": "2026-07-03T10:18:59.000Z",
+        "views": 220743270,
+        "vezesSeguidores": 0.32,
+        "legenda": "Toronto ❤️",
+        "idadeDias": 109.39,
+        "coletadoEm": "2026-10-20T19:36:47.030Z"
+      },
       "medianaComentariosPorCurtida": 0.011904542033720484,
       "regularidade": {
         "amostra12": {
@@ -3994,6 +4097,15 @@ window.RESUMO = {
       "mediaComentarios": 152577,
       "curtidasOcultas": 1,
       "reelsAcimaSeguidores": 0,
+      "maiorReel": {
+        "url": "https://www.instagram.com/p/DZaO__gO0rz/",
+        "data": "2026-06-10T15:13:07.000Z",
+        "views": 993239090,
+        "vezesSeguidores": 1.92,
+        "legenda": "Tenía curiosidad por verlo y pensé que iba a ser más complicado.\n Al final fue mucho más fácil de lo que imaginaba\nMe hi",
+        "idadeDias": 132.18,
+        "coletadoEm": "2026-10-20T19:36:47.030Z"
+      },
       "medianaComentariosPorCurtida": 0.013276010863858906,
       "regularidade": {
         "amostra12": {

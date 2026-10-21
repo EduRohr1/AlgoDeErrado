@@ -4,7 +4,11 @@ Análise independente de dados públicos do Instagram que compara o alcance dos 
 
 > **Análise independente, sem vínculo com o governo ou órgãos públicos.** Os números descrevem anomalias estatísticas e não indicam, por si só, a causa do alcance. A seção "Como interpretar" da página discute as explicações possíveis.
 
-## Abrir a página
+## Ver online
+
+**https://edurohr1.github.io/AlgoDeErrado/** (redireciona para a página em `landing/`), publicada pelo GitHub Pages a partir da branch `main`.
+
+## Abrir a página localmente
 
 A landing fica em `landing/` e é estática (HTML, CSS e JS). O único recurso externo é o Chart.js (via cdnjs), e as fontes vêm do Google Fonts.
 
