@@ -39,8 +39,12 @@
   document.getElementById('dvLegenda').innerHTML =
     `“${esc(v.legenda || 'sem legenda')}” · publicado em ${data(v.data)}, às ${hora(v.data)} · <a href="${esc(v.url)}" target="_blank" rel="noopener">ver no Instagram ↗</a>`;
   document.getElementById('dvCresc').innerHTML = [
-    famosos.length ? `Sozinho, teve mais visualizações que o vídeo típico de ${famosos.length === 1 ? nomes[famosos[0].perfil] : `todas as ${famosos.length} celebridades analisadas`}.` +
-      (window.infoBtn ? ' ' + window.infoBtn(`Vídeo típico de cada celebridade: ${famosos.map(p => `${nomes[p.perfil] || p.perfil}, ${mi(p.medianaViews)}`).join('; ')}.`, 'Quais são os números?') : '') : '',
+    famosos.length ? (() => {
+      const alvo = famosos.length === 1 ? nomes[famosos[0].perfil] : `todas as ${famosos.length} celebridades analisadas`;
+      const ult = alvo.split(' ').pop(), resto = alvo.slice(0, -ult.length);
+      const btn = window.infoBtn ? ' ' + window.infoBtn(`Vídeo típico de cada celebridade: ${famosos.map(p => `${nomes[p.perfil] || p.perfil}, ${mi(p.medianaViews)}`).join('; ')}.`, 'Quais são os números?') : '';
+      return `Sozinho, teve mais visualizações que o vídeo típico de ${resto}<span class="cola">${ult}.${btn}</span>`;
+    })() : '',
   ].filter(Boolean).join(' ');
   document.getElementById('dvNota').textContent =
     `Vídeo com menos de 3 dias na data da coleta (${data(v.coletadoEm)}, ${hora(v.coletadoEm)}): fica fora das médias da página, que usam só vídeos com 3 dias ou mais. Um vídeo isolado não representa o padrão do perfil.`;

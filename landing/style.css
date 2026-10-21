@@ -771,3 +771,19 @@ button.info:hover, button.info:focus-visible, button.info[aria-expanded="true"] 
 .carrossel-trilho { scroll-padding: 0; }
 .slide { scroll-snap-stop: always; }
 .ver-mais .interpretar > .resposta { font-size: clamp(19px, 2.4vw, 22px); }
+
+/* ===== Ícones "i": menores, no canto superior direito dos cartões e no fim da linha dos títulos ===== */
+button.info { width: 20px; height: 20px; margin-left: 6px; border-width: 1px; font-size: 11px; color: #a3a3a3; opacity: .85; }
+button.info::after { inset: -7px; } /* área de toque de 34px */
+@media (max-width: 600px) { button.info { width: 18px; height: 18px; font-size: 10px; } button.info::after { inset: -8px; } }
+/* Cartões, chips, caixas do carrossel e cartões vermelhos: canto superior direito */
+.chip, .big-stat, .hg-cards li, .anuncio-card, .achado, .dv-numero { position: relative; }
+.chip > b > button.info, .big-num > button.info, .hc-num > button.info, .anuncio-num > button.info, .achado-num > button.info, .dv-big > button.info {
+  position: absolute; top: 10px; right: 10px; margin: 0; width: 20px; height: 20px; font-size: 11px; }
+@media (max-width: 600px) { .chip > b > button.info, .big-num > button.info, .hc-num > button.info, .anuncio-num > button.info, .achado-num > button.info, .dv-big > button.info { width: 18px; height: 18px; font-size: 10px; } }
+.chip:has(button.info), .big-stat:has(button.info), .hg-cards li:has(button.info), .anuncio-card:has(button.info), .achado:has(button.info) { padding-right: 36px; }
+.dv-numero:has(button.info) { padding-right: 30px; }
+/* Títulos: o ícone fica no fim da linha, alinhado ao topo, sem quebrar sozinho */
+h2:has(> button.info):not(.dv-titulo), h3:has(> button.info), .hi-titulo:has(> button.info) { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+h2:not(.dv-titulo) > button.info, h3 > button.info, .hi-titulo > button.info { margin: .2em 0 0 auto; flex: none; }
+.cola { white-space: nowrap; }

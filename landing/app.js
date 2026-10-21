@@ -89,7 +89,7 @@
       `Nikolas tem ${milhoesTxt(nik.seguidores)} de seguidores; Cristiano Ronaldo, ${milhoesRedondo(cr7.seguidores)}.` +
       (nik.maiorReel
         ? (c108 && c108.ok
-          ? ` Um dos vídeos do Nikolas passou de <strong>${milhoes108} de visualizações em menos de 10 horas</strong>, o equivalente a metade da população do Brasil. ${i(c108.info, 'De onde vem essa comparação?')}`
+          ? ` Um dos vídeos do Nikolas passou de <strong>${milhoes108} de visualizações em menos de 10 horas</strong>, o equivalente a metade da população do <span class="cola">Brasil.&nbsp;${i(c108.info, 'De onde vem essa comparação?')}</span>`
           : ` Um dos vídeos do Nikolas passou de ${milhoes108} de visualizações.`)
         : '');
     const maxB = Math.max(nik.medianaViewsPorSeguidor, cr7.medianaViewsPorSeguidor);

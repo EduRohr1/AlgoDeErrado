@@ -40,7 +40,7 @@
   const efeito = dN.vpsLongos != null && dN.vpsCurtos != null ? dN.vpsLongos / dN.vpsCurtos : null;
   set('txtDuracao', `Duração típica dos vídeos com 3 dias ou mais. Os do Nikolas têm <strong>${fmtSeg(dN.medianaSegundos)}</strong>, ` +
     `${posDur === 1 ? 'os mais longos' : `o ${posDur}º mais longo`} entre os ${durOrd.length} perfis (${durOrd.slice(0, 3).filter(p => p.perfil !== NIK).map(p => `${nome(p.perfil)}: ${fmtSeg(p.pistas.duracao.medianaSegundos)}`).join('; ')}). ` +
-    (efeito ? `Dentro do próprio perfil, os vídeos mais longos dele têm ${vps(dN.vpsLongos)} de visualizações por seguidor, contra ${vps(dN.vpsCurtos)} dos mais curtos${window.infoBtn ? ' ' + window.infoBtn(`A correlação entre duração e visualizações por seguidor nos vídeos dele é ${dec(dN.correlacao, 2)}. Ela vai de -1 a 1: perto de 0 quer dizer pouca relação entre as duas coisas.`, 'O que é correlação?') : ''}. ` +
+    (efeito ? `Dentro do próprio perfil, os vídeos mais longos dele têm ${vps(dN.vpsLongos)} de visualizações por seguidor, contra ${vps(dN.vpsCurtos)} dos mais <span class="cola">curtos${window.infoBtn ?' ' + window.infoBtn(`A correlação entre duração e visualizações por seguidor nos vídeos dele é ${dec(dN.correlacao, 2)}. Ela vai de -1 a 1: perto de 0 quer dizer pouca relação entre as duas coisas.`, 'O que é correlação?') : ''}</span>. ` +
       (Math.abs(efeito - 1) < 0.15 ? 'A diferença é pequena: a duração não parece explicar sozinha o alcance dele.' : efeito > 1 ? 'Vídeos mais longos vão um pouco melhor para ele.' : 'Vídeos mais curtos vão um pouco melhor para ele.') : ''));
 
   // ===== 3. Horário =====
