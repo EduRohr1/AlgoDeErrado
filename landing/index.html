@@ -3,27 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alcance dos Reels</title>
-  <meta name="description" content="Cristiano Ronaldo, a pessoa mais seguida do Instagram, tem 680 milhões de seguidores; Nikolas Ferreira, 24,7 milhões. Por seguidor, os vídeos do Nikolas alcançam 14× mais. Análise independente de dados públicos do Instagram.">
+  <title>Nikolas Ferreira tem 14× mais alcance por seguidor que a maior conta pessoal do Instagram.</title>
+  <meta name="description" content="Cristiano Ronaldo tem 680 milhões de seguidores, e o vídeo típico dele chega a 74 milhões de visualizações. Nikolas tem 24,7 milhões e chega a 38 milhões.">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="14× mais alcance por seguidor que o mais seguido do mundo.">
-  <meta property="og:description" content="Cristiano Ronaldo, a pessoa mais seguida do Instagram, tem 680 milhões de seguidores; Nikolas Ferreira, 24,7 milhões. Por seguidor, os vídeos do Nikolas alcançam 14× mais. Análise independente de dados públicos do Instagram.">
+  <meta property="og:title" content="Nikolas Ferreira tem 14× mais alcance por seguidor que a maior conta pessoal do Instagram.">
+  <meta property="og:description" content="Cristiano Ronaldo tem 680 milhões de seguidores, e o vídeo típico dele chega a 74 milhões de visualizações. Nikolas tem 24,7 milhões e chega a 38 milhões.">
   <meta property="og:url" content="https://edurohr1.github.io/AlgoDeErrado/landing/">
   <meta property="og:image" content="https://edurohr1.github.io/AlgoDeErrado/landing/img/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="14× mais alcance por seguidor que o mais seguido do mundo.">
+  <meta property="og:image:alt" content="Nikolas Ferreira tem 14× mais alcance por seguidor que a maior conta pessoal do Instagram.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="14× mais alcance por seguidor que o mais seguido do mundo.">
-  <meta name="twitter:description" content="Análise independente de dados públicos do Instagram.">
+  <meta name="twitter:title" content="Nikolas Ferreira tem 14× mais alcance por seguidor que a maior conta pessoal do Instagram.">
+  <meta name="twitter:description" content="Cristiano Ronaldo tem 680 milhões de seguidores, e o vídeo típico dele chega a 74 milhões de visualizações. Nikolas tem 24,7 milhões e chega a 38 milhões.">
   <meta name="twitter:image" content="https://edurohr1.github.io/AlgoDeErrado/landing/img/og.png">
   <link rel="canonical" href="https://edurohr1.github.io/AlgoDeErrado/landing/">
   <meta name="color-scheme" content="light">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800&display=swap">
-  <link rel="stylesheet" href="style.css?v=202610202132">
+  <link rel="stylesheet" href="style.css?v=202610202211">
 </head>
 <body>
   <header class="cabecalho" id="cabecalho">
@@ -37,33 +37,32 @@
         <a href="#interacao">Interação</a>
         <a href="#regularidade">Regularidade</a>
         <a href="#famosos">Famosos</a>
-        <a href="#secIdade">Idade do post</a>
+        <a href="#secIdade">Idade da publicação</a>
         <a href="#pistas">Pistas</a>
         <a href="#interpretar">Como interpretar</a>
         <a href="#metodologia">Metodologia</a>
       </nav>
     </div>
-    <p class="cabecalho-aviso"><span class="wrap">Análise independente, sem vínculo com o governo ou órgãos públicos.</span></p>
+    <p class="cabecalho-aviso"><span class="wrap">Análise independente, sem ligação com o Governo ou órgãos públicos.</span></p>
   </header>
 
 
   <section class="hero hero-escuro">
-    <div class="wrap">
-      <nav class="trilha" aria-label="Você está aqui"><span>Início</span><span>Análises</span><span aria-current="page">Reels de políticos</span></nav>
-      <div class="hero-palco">
-        <div class="hero-texto">
-          <p class="eyebrow">Reportagem de dados · Instagram · outubro de 2026</p>
-          <h1 id="titulo">Views por seguidor nos reels de políticos</h1>
-          <p class="hero-sub" id="heroSub"></p>
-          <ul class="hero-chips revelar" id="heroChips"></ul>
-        </div>
-        <figure class="retrato revelar">
-          <div class="retrato-moldura">
-            <div class="retrato-foto"><img src="img/nikolas.jpg" alt="Retrato de Nikolas Ferreira em duotone preto e vermelho" width="500" height="663"></div>
-            <div class="retrato-numero"><span class="numero-gigante" id="numeroGigante">1,46</span><span class="numero-rotulo">views por seguidor num reel típico</span></div>
-          </div>
-        </figure>
+    <div class="wrap hero-grade">
+      <div class="hg-titulo">
+        <p class="eyebrow">Análise de dados · Instagram · out/2026</p>
+        <h1 id="titulo">Nikolas Ferreira tem 14× mais alcance por seguidor que a maior conta pessoal do Instagram.</h1>
+        <p class="hero-sub" id="heroSub"></p>
       </div>
+      <div class="hg-info" id="heroInfo" aria-label="Visualizações por seguidor, vídeo típico">
+        <p class="hi-titulo">Visualizações por seguidor, vídeo típico</p>
+        <div id="heroBarras"></div>
+        <p class="hi-nota" id="heroNota"></p>
+      </div>
+      <ul class="hg-cards" id="heroCards"></ul>
+      <figure class="hg-foto">
+        <div class="retrato-foto"><img src="img/nikolas.jpg" alt="Retrato de Nikolas Ferreira em duotone preto e vermelho" width="500" height="663"></div>
+      </figure>
     </div>
   </section>
 
@@ -80,12 +79,13 @@
       </div>
       <div class="carrossel-trilho" id="carrTrilho" tabindex="0" aria-live="off"></div>
       <div class="carrossel-pontos" id="carrPontos" role="tablist" aria-label="Escolher comparação"></div>
+      <p class="carrossel-nota">Vídeo típico = mediana dos 12 vídeos mais recentes com 3+ dias de publicação. Visualizações por seguidor = visualizações do vídeo típico ÷ seguidores.</p>
     </div>
   </section>
 
   <section class="destaque-video" id="destaqueVideo" aria-labelledby="dvTitulo" hidden>
     <div class="wrap dv-grid">
-      <div class="dv-numero"><span class="dv-big" id="dvViews"></span><span class="dv-unid">de views</span></div>
+      <div class="dv-numero"><span class="dv-big" id="dvViews"></span><span class="dv-unid">de visualizações</span></div>
       <div class="dv-texto">
         <p class="eyebrow">Destaque à parte</p>
         <h2 class="dv-titulo" id="dvTitulo"></h2>
@@ -110,14 +110,14 @@
       <div class="painel revelar" id="duelo"></div>
 
       <div class="painel revelar">
-        <h2>A cada 100 seguidores, quantas views?</h2>
-        <p class="sub">Cada ponto equivale a 1 view para cada 100 seguidores do perfil, num reel típico (mediana). Uma linha com 100 pontos significaria um reel visto por tantas pessoas quantas o perfil tem de seguidores.</p>
+        <h2>A cada 100 seguidores, quantas visualizações?</h2>
+        <p class="sub">Cada ponto equivale a 1 visualização para cada 100 seguidores do perfil, num vídeo típico (mediana). Uma linha com 100 pontos significaria um vídeo visto por tantas pessoas quantas o perfil tem de seguidores.</p>
         <div class="pontos-lista" id="pontosLista"></div>
       </div>
 
       <div class="painel revelar">
         <h2>E se os outros políticos tivessem a taxa do Nikolas?</h2>
-        <p class="sub">Views por reel que cada político teria se mantivesse a própria base de seguidores, mas com a mesma razão views ÷ seguidores do Nikolas (<span id="taxaNik"></span>). É um cálculo hipotético, só para dar escala à diferença.</p>
+        <p class="sub">Visualizações por vídeo que cada político teria se mantivesse a própria base de seguidores, mas com a mesma razão visualizações ÷ seguidores do Nikolas (<span id="taxaNik"></span>). É um cálculo hipotético, só para dar escala à diferença.</p>
         <div class="contra-lista" id="contraLista"></div>
       </div>
     </section>
@@ -126,41 +126,41 @@
 
     <h2 class="grupo-titulo" id="tituloPoliticos">Políticos</h2>
     <section class="painel" id="politicosGrafico">
-      <h2>Views por seguidor entre políticos</h2>
-      <p class="sub">Mediana de views dos reels ÷ número de seguidores. Acima de 1 significa que um reel típico é visto por mais gente do que o perfil tem de seguidores.</p>
-      <div class="grafico hero-canvas"><canvas id="gViews" aria-label="Gráfico de barras: mediana de views por seguidor de cada político"></canvas></div>
+      <h2>Visualizações por seguidor entre políticos</h2>
+      <p class="sub">Mediana de visualizações dos vídeos ÷ número de seguidores. Acima de 1 significa que um vídeo típico é visto por mais gente do que o perfil tem de seguidores.</p>
+      <div class="grafico hero-canvas"><canvas id="gViews" aria-label="Gráfico de barras: mediana de visualizações por seguidor de cada político"></canvas></div>
     </section>
 
     <section class="painel">
-      <h2>Engajamento por view</h2>
-      <p class="sub">Média de (curtidas + comentários) ÷ views por reel. Aqui o Nikolas <strong id="posEng"></strong>: os reels dele alcançam muita gente, mas proporcionalmente menos pessoas interagem.</p>
-      <div class="grafico"><canvas id="gEng" aria-label="Gráfico de barras: engajamento por view"></canvas></div>
+      <h2>Engajamento por visualização</h2>
+      <p class="sub">Média de (curtidas + comentários) ÷ visualizações por vídeo. Aqui o Nikolas <strong id="posEng"></strong>: os vídeos dele alcançam muita gente, mas proporcionalmente menos pessoas interagem.</p>
+      <div class="grafico"><canvas id="gEng" aria-label="Gráfico de barras: engajamento por visualização"></canvas></div>
     </section>
 
     <section class="painel" id="interacao">
       <h2>Interação em relação aos seguidores</h2>
-      <p class="sub">Se as views de um perfil viessem de exibições sem público real interagindo, a expectativa seria ver poucas curtidas e comentários em relação ao alcance. Para checar isso, comparamos a mediana de curtidas ÷ seguidores e de comentários ÷ seguidores por reel, nos mesmos 12 reels. <span id="txtInteracao"></span></p>
+      <p class="sub">Se as visualizações de um perfil viessem de exibições sem público real interagindo, a expectativa seria ver poucas curtidas e comentários em relação ao alcance. Para checar isso, comparamos a mediana de curtidas ÷ seguidores e de comentários ÷ seguidores por vídeo, nos mesmos 12 vídeos. <span id="txtInteracao"></span></p>
       <div class="grafico"><canvas id="gCurt" aria-label="Gráfico de barras: mediana de curtidas por seguidor"></canvas></div>
       <div class="tabela-wrap"><table class="tabela" id="tabelaInteracao"></table></div>
     </section>
 
     <section class="painel" id="regularidade">
-      <h2>Regularidade das views</h2>
-      <p class="sub">Mede o quanto as views variam de um reel para outro no mesmo perfil. O <strong>coeficiente de variação</strong> (desvio padrão ÷ média) é baixo quando os reels têm alcance parecido e alto quando poucos reels concentram as views. A <strong>razão p90/p10</strong> compara um reel “bom” (percentil 90) com um “fraco” (percentil 10) do mesmo perfil. <span id="txtRegularidade"></span></p>
-      <div class="grafico"><canvas id="gRegularidade" aria-label="Gráfico de barras: coeficiente de variação das views por perfil"></canvas></div>
+      <h2>Regularidade das visualizações</h2>
+      <p class="sub">Mede o quanto as visualizações variam de um vídeo para outro no mesmo perfil. O <strong>coeficiente de variação</strong> (desvio padrão ÷ média) é baixo quando os vídeos têm alcance parecido e alto quando poucos vídeos concentram as visualizações. A <strong>razão p90/p10</strong> compara um vídeo “bom” (percentil 90) com um “fraco” (percentil 10) do mesmo perfil. <span id="txtRegularidade"></span></p>
+      <div class="grafico"><canvas id="gRegularidade" aria-label="Gráfico de barras: coeficiente de variação das visualizações por perfil"></canvas></div>
       <div class="tabela-wrap"><table class="tabela tabela-media" id="tabelaRegularidade"></table></div>
     </section>
 
     <section class="painel" id="foraDaCurva">
-      <h2>Reels fora da curva</h2>
-      <p class="sub">Para cada reel com 3 dias ou mais, comparamos curtidas ÷ views com a mediana do próprio perfil. Um reel é marcado quando essa taxa fica <strong>abaixo de 50% da mediana do perfil</strong>, ou seja, muitas views para pouca interação, em comparação com o padrão daquele perfil. Comentários ÷ views aparecem como informação complementar, já que os números de comentários são menores e oscilam mais. <span id="txtForaDaCurva"></span></p>
+      <h2>Vídeos fora da curva</h2>
+      <p class="sub">Para cada vídeo com 3 dias ou mais, comparamos curtidas ÷ visualizações com a mediana do próprio perfil. Um vídeo é marcado quando essa taxa fica <strong>abaixo de 50% da mediana do perfil</strong>, ou seja, muitas visualizações para pouca interação, em comparação com o padrão daquele perfil. Comentários ÷ visualizações aparecem como informação complementar, já que os números de comentários são menores e oscilam mais. <span id="txtForaDaCurva"></span></p>
       <div class="tabela-wrap"><table class="tabela tabela-media" id="tabelaForaDaCurva"></table></div>
       <div id="listaForaDaCurva"></div>
     </section>
 
     <section class="painel" id="comentarios">
       <h2>Comentários por curtida</h2>
-      <p class="sub">Mediana de comentários ÷ curtidas por reel, nos 12 reels analisados. Uma razão alta indica mais conversa (apoio, perguntas, debate ou críticas) em relação à aprovação silenciosa da curtida. Uma razão baixa indica que a interação é mais de curtir do que de comentar. Nenhum dos dois padrões é bom ou ruim em si. <span id="txtComentarios"></span></p>
+      <p class="sub">Mediana de comentários ÷ curtidas por vídeo, nos 12 vídeos analisados. Uma razão alta indica mais conversa (apoio, perguntas, debate ou críticas) em relação à aprovação silenciosa da curtida. Uma razão baixa indica que a interação é mais de curtir do que de comentar. Nenhum dos dois padrões é bom ou ruim em si. <span id="txtComentarios"></span></p>
       <div class="grafico"><canvas id="gComentarios" aria-label="Gráfico de barras: comentários por curtida"></canvas></div>
     </section>
 
@@ -170,7 +170,7 @@
     <section class="painel" id="pFrequencia">
       <h2>1. Quantos vídeos por dia</h2>
       <p class="sub" id="txtFrequencia"></p>
-      <div class="grafico"><canvas id="gFrequencia" aria-label="Gráfico de dispersão: vídeos por dia versus views por seguidor"></canvas></div>
+      <div class="grafico"><canvas id="gFrequencia" aria-label="Gráfico de dispersão: vídeos por dia versus visualizações por seguidor"></canvas></div>
     </section>
 
     <section class="painel" id="pDuracao">
@@ -208,11 +208,11 @@
 
     <section class="painel interpretar" id="interpretar">
       <h2>Como interpretar</h2>
-      <p class="sub">Ter muito mais views do que seguidores é uma anomalia estatística em relação aos outros perfis, não uma prova de nada. Há várias explicações comuns e legítimas, e elas podem atuar juntas:</p>
+      <p class="sub">Ter muito mais visualizações do que seguidores é uma anomalia estatística em relação aos outros perfis, não uma prova de nada. Há várias explicações comuns e legítimas, e elas podem atuar juntas:</p>
       <ul>
-        <li><strong>Distribuição do algoritmo para não seguidores:</strong> o Instagram recomenda reels na aba Reels e no Explorar para quem não segue o perfil. Quando um reel retém bem a atenção, ele pode alcançar várias vezes a base de seguidores.</li>
-        <li><strong>Compartilhamentos e reposts:</strong> reels enviados por DM, postados nos stories ou republicados por outras contas e grupos trazem views de fora da base de seguidores.</li>
-        <li><strong>Impulsionamento pago:</strong> posts impulsionados também somam views de pessoas que não seguem o perfil. Esta análise não consegue separar o alcance pago do orgânico. A Biblioteca de Anúncios da Meta permite consultar anúncios de temas políticos.</li>
+        <li><strong>Distribuição do algoritmo para não seguidores:</strong> o Instagram recomenda vídeos na aba Reels e no Explorar para quem não segue o perfil. Quando um vídeo retém bem a atenção, ele pode alcançar várias vezes a base de seguidores.</li>
+        <li><strong>Compartilhamentos e reposts:</strong> vídeos enviados por DM, postados nos stories ou republicados por outras contas e grupos trazem visualizações de fora da base de seguidores.</li>
+        <li><strong>Impulsionamento pago:</strong> publicações impulsionadas também somam visualizações de pessoas que não seguem o perfil. Esta análise não consegue separar o alcance pago do orgânico. A Biblioteca de Anúncios da Meta permite consultar anúncios de temas políticos.</li>
         <li><strong>Temas polêmicos ou de grande repercussão:</strong> conteúdos que provocam reação forte, a favor ou contra, tendem a circular mais, inclusive entre quem discorda e comenta ou compartilha para criticar.</li>
         <li><strong>Formato e frequência:</strong> duração, edição, ritmo de postagem e o momento do ciclo de notícias (período eleitoral) também mudam o alcance.</li>
       </ul>
@@ -227,12 +227,12 @@
 
 
     <section class="painel" id="secIdade">
-      <h2>Idade do post × views</h2>
-      <p class="sub">Cada ponto é <strong>um reel diferente</strong>, medido no mesmo momento (a coleta). O gráfico é um retrato: não mostra um mesmo reel crescendo ao longo do tempo. Reels mais à esquerda são mais novos e ainda podem ganhar views. Aqui entram todos os reels coletados, inclusive os com menos de 3 dias. Os dois eixos estão em escala logarítmica.</p>
+      <h2>Idade da publicação × visualizações</h2>
+      <p class="sub">Cada ponto é <strong>um vídeo diferente</strong>, medido no mesmo momento (a coleta). O gráfico é um retrato: não mostra um mesmo vídeo crescendo ao longo do tempo. Vídeos mais à esquerda são mais novos e ainda podem ganhar visualizações. Aqui entram todos os vídeos coletados, inclusive os com menos de 3 dias. Os dois eixos estão em escala logarítmica.</p>
       <div class="filtros" id="filtrosIdade" hidden></div>
-      <div class="grafico alto"><canvas id="gIdade" aria-label="Gráfico de dispersão: idade do reel em dias versus views por seguidor"></canvas></div>
-      <h3>Mediana de views ÷ seguidores por faixa de idade</h3>
-      <p class="sub">Entre parênteses, quantos reels caem em cada faixa. Faixas com poucos reels são frágeis; “—” indica que não houve reel naquela faixa.</p>
+      <div class="grafico alto"><canvas id="gIdade" aria-label="Gráfico de dispersão: idade do vídeo em dias versus visualizações por seguidor"></canvas></div>
+      <h3>Mediana de visualizações ÷ seguidores por faixa de idade</h3>
+      <p class="sub">Entre parênteses, quantos vídeos caem em cada faixa. Faixas com poucos vídeos são frágeis; “—” indica que não houve vídeo naquela faixa.</p>
       <div class="tabela-wrap"><table class="tabela" id="tabelaFaixas"></table></div>
     </section>
 
@@ -240,19 +240,19 @@
       <h2>Metodologia</h2>
       <ul>
         <li><strong>Fonte:</strong> dados públicos do Instagram coletados via Apify (atores <code>instagram-profile-scraper</code> e <code>instagram-reel-scraper</code>) em <span id="dataColeta"></span>.</li>
-        <li><strong>Amostra:</strong> até 12 reels mais recentes de cada perfil com <strong>pelo menos 3 dias</strong> de publicados. Reels com menos de 3 dias ficaram fora porque ainda estão acumulando views. A exceção é a seção “Idade do post × views”, que usa todos os reels coletados.</li>
-        <li><strong>Só reels do próprio perfil:</strong> collabs publicados por outras contas que aparecem no perfil foram descartados.</li>
-        <li><strong>Mediana em vez de média</strong> para views: um único viral distorce a média, e a mediana mostra o desempenho de um reel típico. A média também aparece na tabela.</li>
-        <li><strong>Engajamento</strong> = (curtidas + comentários) ÷ views, calculado reel a reel e depois tirada a média. Reels com curtidas ocultas contam como 0 curtidas.</li>
+        <li><strong>Amostra:</strong> até 12 vídeos mais recentes de cada perfil com <strong>pelo menos 3 dias</strong> de publicados. Vídeos com menos de 3 dias ficaram fora porque ainda estão acumulando visualizações. A exceção é a seção “Idade da publicação × visualizações”, que usa todos os vídeos coletados.</li>
+        <li><strong>Só vídeos do próprio perfil:</strong> parcerias (collabs) publicadas por outras contas que aparecem no perfil foram descartadas.</li>
+        <li><strong>Mediana em vez de média</strong> para visualizações: um único viral distorce a média, e a mediana mostra o desempenho de um vídeo típico. A média também aparece na tabela.</li>
+        <li><strong>Engajamento</strong> = (curtidas + comentários) ÷ visualizações, calculado vídeo a vídeo e depois tirada a média. Vídeos com curtidas ocultas contam como 0 curtidas.</li>
         <li><strong>Grupos:</strong> as comparações e médias são feitas dentro de cada grupo (políticos, famosos brasileiros, famosos globais), nunca misturando grupos.</li>
-        <li><strong>Limitações:</strong> a amostra é pequena (12 reels), a coleta foi em período eleitoral (alta atividade) e as views são as reportadas pelo próprio Instagram. Para os perfis que postam dezenas de reels por dia, foi preciso coletar mais reels até chegar a 12 com 3 dias ou mais.</li>
+        <li><strong>Limitações:</strong> a amostra é pequena (12 vídeos), a coleta foi em período eleitoral (alta atividade) e as visualizações são as reportadas pelo próprio Instagram. Para os perfis que postam dezenas de vídeos por dia, foi preciso coletar mais vídeos até chegar a 12 com 3 dias ou mais.</li>
       </ul>
     </section>
   </main>
 
   <footer class="rodape">
     <div class="wrap">
-      <p class="rodape-aviso">Análise independente, sem vínculo com o governo ou órgãos públicos.</p>
+      <p class="rodape-aviso">Análise independente, sem ligação com o Governo ou órgãos públicos.</p>
       <div class="rodape-creditos"><p id="creditos"><strong>Créditos das fotos</strong> (Wikimedia Commons):</p><ul id="creditosFotos"></ul></div>
       <p>Alcance dos Reels: comparação de dados públicos do Instagram coletados via Apify. Os números são anomalias estatísticas descritivas e não indicam por si só a causa do alcance.</p>
       <p>Dados fixos, coletados uma única vez. Esta página só carrega recursos externos do Chart.js e do Google Fonts.</p>
@@ -261,9 +261,9 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <script src="dados.js?v=mvhd5lqb"></script>
-  <script src="app.js?v=202610202153"></script>
-  <script src="destaque.js?v=202610202132"></script>
-  <script src="pistas.js?v=202610202132"></script>
-  <script src="nav.js?v=202610202132"></script>
+  <script src="app.js?v=202610202211"></script>
+  <script src="destaque.js?v=202610202211"></script>
+  <script src="pistas.js?v=202610202211"></script>
+  <script src="nav.js?v=202610202211"></script>
 </body>
 </html>

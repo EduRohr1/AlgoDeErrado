@@ -268,17 +268,17 @@ function resumir(perfis, reels) {
 
     let observacao;
     if (!encontrado) observacao = 'Handle não encontrado no Instagram.';
-    else if (!comparavel) observacao = `Amostra insuficiente: ${rs.length} de ${todos.length} reels coletados com >= ${DIAS_MINIMOS} dias. Excluído da comparação.`;
+    else if (!comparavel) observacao = `Amostra insuficiente: ${rs.length} de ${todos.length} vídeos coletados com ${DIAS_MINIMOS} dias ou mais. Excluído da comparação.`;
     else if (rs.length < REELS_POR_PERFIL) {
       const doPerfil = reels.filter(x => (x.inputUrl || '').toLowerCase().replace(/\/$/, '').endsWith('/' + u));
       const deOutros = doPerfil.filter(x => dono(x) !== u).length;
-      observacao = `Amostra menor: só ${rs.length} reels próprios com >= ${DIAS_MINIMOS} dias` +
-        (deOutros ? `; ${deOutros} dos ${doPerfil.length} reels que aparecem no perfil são collabs publicados por outras contas (marcas, parceiros) e ficaram de fora.` : '.');
+      observacao = `Amostra menor: só ${rs.length} vídeos próprios com ${DIAS_MINIMOS} dias ou mais` +
+        (deOutros ? `; ${deOutros} dos ${doPerfil.length} vídeos que aparecem no perfil são parcerias (collabs) publicadas por outras contas (marcas, parceiros) e ficaram de fora.` : '.');
     } else {
       const maisRecente = Math.max(...todos.map(x => Date.parse(x.timestamp)).filter(Number.isFinite));
       if (AGORA - maisRecente > DIAS_INATIVO * 86400e3) {
         const quando = new Date(maisRecente).toLocaleDateString('pt-BR', { month: 'short', year: 'numeric' });
-        observacao = `Perfil sem reels novos desde ${quando}; os reels analisados são antigos.`;
+        observacao = `Perfil sem vídeos novos desde ${quando}; os vídeos analisados são antigos.`;
       }
     }
 

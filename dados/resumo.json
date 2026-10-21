@@ -1223,7 +1223,7 @@
           "medianaViewsPorSeguidor": 0.16704561966497466
         }
       ],
-      "observacao": "Perfil sem reels novos desde jul. de 2025; os reels analisados são antigos."
+      "observacao": "Perfil sem vídeos novos desde jul. de 2025; os vídeos analisados são antigos."
     },
     {
       "perfil": "bolsonarosp",
@@ -2766,7 +2766,7 @@
           "medianaViewsPorSeguidor": 2.072492146400165
         }
       ],
-      "observacao": "Amostra insuficiente: 1 de 78 reels coletados com >= 3 dias. Excluído da comparação."
+      "observacao": "Amostra insuficiente: 1 de 78 vídeos coletados com 3 dias ou mais. Excluído da comparação."
     },
     {
       "perfil": "neymarjr",
@@ -3005,7 +3005,7 @@
           "medianaViewsPorSeguidor": 0.09775266575987163
         }
       ],
-      "observacao": "Amostra menor: só 5 reels próprios com >= 3 dias; 25 dos 30 reels que aparecem no perfil são collabs publicados por outras contas (marcas, parceiros) e ficaram de fora."
+      "observacao": "Amostra menor: só 5 vídeos próprios com 3 dias ou mais; 25 dos 30 vídeos que aparecem no perfil são parcerias (collabs) publicadas por outras contas (marcas, parceiros) e ficaram de fora."
     },
     {
       "perfil": "anitta",

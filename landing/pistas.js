@@ -13,7 +13,7 @@
   const outrosPol = pol.filter(p => p.perfil !== NIK);
   const dec = (n, d = 1) => n == null ? '—' : n.toLocaleString('pt-BR', { minimumFractionDigits: d, maximumFractionDigits: d });
   const pct = n => n == null ? '—' : Math.round(n * 100) + '%';
-  const vps = n => n == null ? '—' : Math.round(n * 100) + '%'; // views ÷ seguidores, em %
+  const vps = n => n == null ? '—' : Math.round(n * 100) + '%'; // visualizações ÷ seguidores, em %
   const mediana = a => { const s = a.filter(v => v != null).sort((x, y) => x - y); if (!s.length) return null; const m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
   const cel = p => `<td>${nome(p.perfil)}</td>`;
   const linhaCls = p => p.perfil === NIK ? ' class="nikolas"' : '';
@@ -25,12 +25,12 @@
   const ativos = comp.filter(p => p.pistas.frequencia && p.pistas.frequencia.reelsPorDia > 0);
   const maisFrequentes = ativos.filter(p => p.pistas.frequencia.reelsPorDia > fN.reelsPorDia * 3).sort((a, b) => b.pistas.frequencia.reelsPorDia - a.pistas.frequencia.reelsPorDia);
   const inativo = comp.find(p => p.pistas.frequencia && p.pistas.frequencia.reelsPorDia === 0);
-  set('txtFrequencia', `Vídeos por dia nos 30 dias antes da coleta (ou no período coberto, para quem posta muito) e views de um vídeo típico em % dos seguidores. ` +
+  set('txtFrequencia', `Vídeos por dia nos 30 dias antes da coleta (ou no período coberto, para quem posta muito) e visualizações de um vídeo típico em % dos seguidores. ` +
     `O Nikolas posta cerca de <strong>${dec(fN.reelsPorDia)} vídeo por dia</strong>. ` +
     (maisFrequentes.length ? `${maisFrequentes.map(p => `${nome(p.perfil)} posta ${dec(p.pistas.frequencia.reelsPorDia)}`).join(', ')} por dia, e ${maisFrequentes.length > 1 ? 'nenhum deles' : 'não'} chega perto do alcance por seguidor dele. ` : '') +
-    `As celebridades postam bem menos reels (de ${dec(Math.min(...ativos.filter(p => grupo(p) !== 'politicos').map(p => p.pistas.frequencia.reelsPorDia)), 2)} a ${dec(Math.max(...ativos.filter(p => grupo(p) !== 'politicos').map(p => p.pistas.frequencia.reelsPorDia)), 2)} por dia) e também ficam muito abaixo. ` +
+    `As celebridades postam bem menos vídeos (de ${dec(Math.min(...ativos.filter(p => grupo(p) !== 'politicos').map(p => p.pistas.frequencia.reelsPorDia)), 2)} a ${dec(Math.max(...ativos.filter(p => grupo(p) !== 'politicos').map(p => p.pistas.frequencia.reelsPorDia)), 2)} por dia) e também ficam muito abaixo. ` +
     `Ou seja, postar pouco ou muito, sozinho, não explica a diferença: há perfis dos dois lados com alcance baixo.` +
-    (inativo ? ` (${nome(inativo.perfil)} não publicou reels nos 30 dias antes da coleta e ficou fora do gráfico.)` : ''));
+    (inativo ? ` (${nome(inativo.perfil)} não publicou vídeos nos 30 dias antes da coleta e ficou fora do gráfico.)` : ''));
 
   // ===== 2. Duração =====
   const dN = nik.pistas.duracao;
@@ -40,7 +40,7 @@
   const efeito = dN.vpsLongos != null && dN.vpsCurtos != null ? dN.vpsLongos / dN.vpsCurtos : null;
   set('txtDuracao', `Duração mediana dos vídeos com 3 dias ou mais. Os do Nikolas têm <strong>${fmtSeg(dN.medianaSegundos)}</strong>, ` +
     `${posDur === 1 ? 'os mais longos' : `o ${posDur}º mais longo`} entre os ${durOrd.length} perfis (${durOrd.slice(0, 3).filter(p => p.perfil !== NIK).map(p => `${nome(p.perfil)}: ${fmtSeg(p.pistas.duracao.medianaSegundos)}`).join('; ')}). ` +
-    (efeito ? `Dentro do próprio perfil, os vídeos mais longos dele têm ${vps(dN.vpsLongos)} de views por seguidor, contra ${vps(dN.vpsCurtos)} dos mais curtos (correlação ${dec(dN.correlacao, 2)}). ` +
+    (efeito ? `Dentro do próprio perfil, os vídeos mais longos dele têm ${vps(dN.vpsLongos)} de visualizações por seguidor, contra ${vps(dN.vpsCurtos)} dos mais curtos (correlação ${dec(dN.correlacao, 2)}). ` +
       (Math.abs(efeito - 1) < 0.15 ? 'A diferença é pequena: a duração não parece explicar sozinha o alcance dele.' : efeito > 1 ? 'Vídeos mais longos vão um pouco melhor para ele.' : 'Vídeos mais curtos vão um pouco melhor para ele.') : ''));
 
   // ===== 3. Horário =====
@@ -76,7 +76,7 @@
   set('txtTemas', `Classificação aproximada por palavras-chave nas legendas (um vídeo pode ter mais de um tema). ` +
     `Como as legendas do Nikolas são muito curtas, <strong>${pct(semTema.pct)}</strong> dos vídeos dele não têm tema identificável pela legenda. ` +
     (comTema.length ? `Entre os que têm, o tema mais frequente é “${comTema[0].tema}” (${comTema[0].n} vídeos), com mediana de ${vps(comTema[0].medianaVps)} dos seguidores, contra ${vps(semTema.medianaVps)} nos vídeos sem tema identificado. ` : '') +
-    `Com tão poucos vídeos por tema, isso é uma pista, não uma conclusão. Entre parênteses: views de um vídeo típico em % dos seguidores.`);
+    `Com tão poucos vídeos por tema, isso é uma pista, não uma conclusão. Entre parênteses: visualizações de um vídeo típico em % dos seguidores.`);
   set('tabelaTemas', '<thead><tr><th>Perfil</th>' + temasNomes.map(t => `<th>${t}</th>`).join('') + '</tr></thead><tbody>' +
     pol.map(p => `<tr${linhaCls(p)}>${cel(p)}${temasNomes.map(tm => { const x = p.pistas.temas.temas.find(q => q.tema === tm); return x && x.n ? `<td>${pct(x.pct)} <span class="n">(${vps(x.medianaVps)})</span></td>` : '<td class="vazio">—</td>'; }).join('')}</tr>`).join('') + '</tbody>');
   set('regrasTemas', Object.entries(R.regrasTemas || {}).map(([t, ps]) => `<li><strong>${t}:</strong> ${ps.join(', ')}</li>`).join('') +
@@ -111,7 +111,7 @@
         plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ` ${nome(c.raw.p.perfil)}: ${dec(c.raw.x, 2)} vídeos/dia, ${Math.round(c.raw.y)}% dos seguidores` } } },
         scales: {
           x: { type: 'logarithmic', title: { display: true, text: 'Vídeos por dia (escala log)' }, ticks: { callback: v => [0.03, 0.1, 0.3, 1, 3, 10].includes(+v.toFixed(2)) ? dec(v, v < 1 ? 2 : 0) : '' } },
-          y: { title: { display: true, text: 'Views de um vídeo típico (% dos seguidores)' }, beginAtZero: true, ticks: { callback: v => v + '%' } },
+          y: { title: { display: true, text: 'Visualizações de um vídeo típico (% dos seguidores)' }, beginAtZero: true, ticks: { callback: v => v + '%' } },
         },
       },
       plugins: [{ id: 'rotulos', afterDatasetsDraw(ch) { const { ctx } = ch; ctx.save(); ctx.font = '600 11px ' + (cor('--fonte') || 'sans-serif'); ch.getDatasetMeta(0).data.forEach((pt, i) => { const d = pts[i]; ctx.fillStyle = d.p.perfil === NIK ? vermelho : cor('--muted') || '#666'; ctx.fillText(nome(d.p.perfil).split(' ')[0], pt.x + 9, pt.y + 4); }); ctx.restore(); } }],
