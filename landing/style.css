@@ -663,3 +663,21 @@ button.info:hover, button.info:focus-visible, button.info[aria-expanded="true"] 
   .hf-selo2 { font-size: 11px; padding: 4px 8px; right: -8px; top: 10px; }
 }
 @media (min-width: 1024px) and (max-width: 1279px) { .hf-selo2 { right: -12px; } .hf-selo { left: -20px; } }
+
+/* Linha de abertura de cada seção, Conclusão e link "Pular para a conclusão" */
+.lead-secao { margin: 0 0 14px; font-weight: 700; font-size: 16px; line-height: 1.45; color: var(--text); max-width: 70ch; }
+.grupo-titulo + .lead-secao { margin-top: -4px; margin-bottom: 18px; }
+.carrossel .lead-secao, .destaque-video .lead-secao, .achados .lead-secao, .perspectiva > .lead-secao { color: #fff; }
+.destaque-video .lead-secao { font-size: 14px; letter-spacing: .02em; color: #ffd0d0; margin-bottom: 8px; }
+.hero-pular { grid-column: 1 / -1; margin: 18px 0 0; }
+.hero-pular a { color: #fff; font-weight: 700; font-size: 15px; text-decoration: none; border-bottom: 2px solid #e3121b; padding-bottom: 2px; }
+.hero-pular a:hover, .hero-pular a:focus-visible { color: #ff6b6b; }
+.conclusao { border-top: 4px solid var(--accent); }
+.conclusao-blocos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 12px 0 20px; }
+.conclusao-bloco { background: var(--bg-alt); border-radius: 8px; padding: 18px 20px; min-width: 0; }
+.conclusao-bloco h3 { margin: 0 0 10px; font-family: var(--fonte-titulo); font-size: 22px; line-height: 1.2; }
+.conclusao-bloco.sabemos h3 { color: var(--accent); }
+.conclusao-bloco ul { margin: 0; padding-left: 18px; }
+.conclusao-bloco li { margin: 0 0 10px; line-height: 1.5; font-size: 15px; }
+.conclusao-final { margin: 0; font-size: 19px; line-height: 1.45; max-width: 60ch; }
+@media (max-width: 900px) { .conclusao-blocos { grid-template-columns: 1fr; } }
