@@ -61,8 +61,8 @@
 
   // Botões nos títulos dos gráficos principais (textos fixos, com exemplo).
   const TITULOS = {
-    politicosGrafico: 'Vídeo típico é a mediana: o vídeo do meio entre os 12 mais recentes com 3 dias ou mais. Cada barra é o vídeo típico do perfil dividido pelo número de seguidores. Acima de 1, o vídeo típico tem mais visualizações do que o perfil tem de seguidores. Exemplo: 1,55 quer dizer 155 visualizações para cada 100 seguidores.',
-    interacao: 'Curtidas (ou comentários) de um vídeo típico divididas pelo número de seguidores. Exemplo: 12% quer dizer que um vídeo típico recebe curtidas em quantidade equivalente a 12% da base de seguidores.',
+    politicosGrafico: 'Vídeo comum é a mediana: o vídeo do meio entre os 12 mais recentes com 3 dias ou mais. Cada barra é o vídeo comum do perfil dividido pelo número de seguidores. Acima de 1, o vídeo comum tem mais visualizações do que o perfil tem de seguidores. Exemplo: 1,55 quer dizer 155 visualizações para cada 100 seguidores.',
+    interacao: 'Curtidas (ou comentários) de um vídeo comum divididas pelo número de seguidores. Exemplo: 12% quer dizer que um vídeo comum recebe curtidas em quantidade equivalente a 12% da base de seguidores.',
     regularidade: 'O índice é o coeficiente de variação: o desvio padrão das visualizações dividido pela média. Perto de 0, os vídeos têm alcance parecido; acima de 1, poucos vídeos concentram a maior parte das visualizações. “Bom ÷ fraco” é a razão p90/p10: um vídeo melhor que 90% dos outros (percentil 90) dividido por um melhor que só 10% (percentil 10).',
     foraDaCurva: 'Para cada vídeo, comparamos curtidas ÷ visualizações com a mediana do próprio perfil (o padrão do perfil). Um vídeo é marcado quando essa taxa fica abaixo da metade da mediana. Exemplo: se o perfil costuma ter 8% de curtidas por visualização, um vídeo com menos de 4% é marcado.',
     comentarios: 'Mediana de comentários ÷ curtidas nos 12 vídeos analisados (o valor do vídeo do meio). Exemplo: 0,05 é cerca de 1 comentário a cada 20 curtidas.',

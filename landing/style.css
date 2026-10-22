@@ -820,3 +820,23 @@ h2:not(.dv-titulo) > button.info, h3 > button.info, .hi-titulo > button.info { m
   .cd-vs { font-size: 18px; }
   .cd-linha { font-size: 16px; }
 }
+
+/* Lista de ajustes do Eduardo (out/2026) */
+.hero-escuro .hero-sub { font-size: clamp(17px, 1.9vw, 21px); font-weight: 600; color: #e6e6e6; }
+.hi-explica { margin: -4px 0 12px; font-size: 13px; line-height: 1.45; color: #a9a9a9; max-width: 70ch; }
+.de { font-size: .55em; font-weight: 700; margin: 0 .15em; vertical-align: .15em; }
+button.info.termo { width: auto; height: auto; border: 0; border-bottom: 1px dotted currentColor; border-radius: 0; margin: 0; padding: 0; font: inherit; font-style: normal; color: inherit; background: none; opacity: 1; vertical-align: baseline; display: inline; }
+button.info.termo:hover, button.info.termo:focus-visible, button.info.termo[aria-expanded="true"] { color: #fff; background: none; border-bottom-style: solid; }
+.cmp-frase .vs { color: #ff2525; font-weight: 800; font-size: .8em; letter-spacing: .04em; margin: 0 .2em; }
+.vermelho { color: #ff3b3b; }
+.duvidas { padding-top: 24px; }
+.anuncios-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.anuncio-det { display: none; }
+.anuncio-num { font-size: clamp(22px, 2.6vw, 28px); }
+@media (max-width: 900px) { .anuncios-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .anuncio-num { font-size: 22px; } .anuncio-tit { font-size: 14px; } }
+.carrossel-titulo .vs { color: #ff2525; font-size: .8em; letter-spacing: .04em; }
+#regularidade .grafico { height: 520px; }
+@media (max-width: 600px) { #regularidade .grafico { height: 480px; } }
+.legenda-partidos { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 8px 0 0; font-size: 12px; color: var(--muted, #555); }
+.legenda-partidos i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }

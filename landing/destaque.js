@@ -13,12 +13,12 @@
   const vezes = n => n.toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + '×';
   const esc = t => t.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-  // Comparação com o vídeo típico dos famosos que ele supera com um vídeo só.
+  // Comparação com o vídeo comum dos famosos que ele supera com um vídeo só.
   const famosos = R.perfis.filter(p => (p.grupo || 'politicos') !== 'politicos' && p.comparavel && p.medianaViews < v.views)
     .sort((a, b) => b.medianaViews - a.medianaViews);
   const nomes = { cristiano: 'Cristiano Ronaldo', leomessi: 'Messi', neymarjr: 'Neymar', anitta: 'Anitta', virginia: 'Virginia', kimkardashian: 'Kim Kardashian' };
 
-  document.getElementById('dvViews').innerHTML = milhoes(v.views) + (window.infoBtn ? window.infoBtn(`É o vídeo com mais visualizações entre os coletados do Nikolas: ${milhoes(v.views)} de visualizações. Dividido pelo número de seguidores dele, dá ${vezes(v.vezesSeguidores)}. Ou seja, o vídeo foi visto mais vezes do que ele tem de seguidores (uma mesma pessoa assistir mais de uma vez também conta). Como tinha menos de 3 dias na coleta, ele fica fora das médias da página.`, 'O que significa este número?') : '');
+  document.getElementById('dvViews').innerHTML = milhoes(v.views) + (window.infoBtn ? window.infoBtn(`É o vídeo com mais visualizações entre os coletados do Nikolas: ${milhoes(v.views)} de visualizações. Dividido pelo número de seguidores de Nikolas, dá ${vezes(v.vezesSeguidores)}. Ou seja, o vídeo foi visto mais vezes do que ele tem de seguidores (uma mesma pessoa assistir mais de uma vez também conta). Como tinha menos de 3 dias na coleta, ele fica fora das médias da página.`, 'O que significa este número?') : '');
   // Comparação com a população do Brasil (IBGE, estimativa 2025: 213,4 milhões), só se os números sustentarem a frase.
   // Também usada no topo (app.js), por isso fica em window.comparacao108.
   const POP_BR = 213.4e6;
@@ -33,7 +33,7 @@
   // Linha principal complementar ao topo: o crescimento entre as duas leituras.
   const hPrimeira = v.viewsAnterior && v.coletaAnterior ? (Date.parse(v.coletaAnterior) - Date.parse(v.data)) / 3600e3 : null;
   document.getElementById('dvTitulo').innerHTML = hPrimeira && hPrimeira > 0
-    ? `Foram <em>${mi(v.viewsAnterior).replace(' mi', ' milhões')}</em> nas primeiras ~${horaTxt(hPrimeira)} e <em>${(v.views / 1e6).toLocaleString('pt-BR', { maximumFractionDigits: 1 })} milhões</em> em ${duracao(horasDesdePub)}.` +
+    ? `Foram <em>${mi(v.viewsAnterior).replace(' mi', ' milhões')}</em> nas primeiras ${duracao(hPrimeira)} e <em>${(v.views / 1e6).toLocaleString('pt-BR', { maximumFractionDigits: 1 })} milhões</em> em ${duracao(horasDesdePub)}.` +
       (window.infoBtn ? window.infoBtn(`Horários de Brasília. Publicado às ${hora(v.data)} de ${data(v.data).slice(0, 5)}. Primeira leitura às ${hora(v.coletaAnterior)} (${mi(v.viewsAnterior)}), segunda às ${hora(v.coletadoEm)} (${mi(v.views)}). Visualização não é pessoa única: quem assiste de novo conta outra vez.`, 'Como foram feitas as leituras?') : '')
     : `Um único vídeo: <em>${vezes(v.vezesSeguidores)}</em> os seguidores dele.`;
   document.getElementById('dvLegenda').innerHTML =
@@ -42,8 +42,8 @@
     famosos.length ? (() => {
       const alvo = famosos.length === 1 ? nomes[famosos[0].perfil] : `todas as ${famosos.length} celebridades analisadas`;
       const ult = alvo.split(' ').pop(), resto = alvo.slice(0, -ult.length);
-      const btn = window.infoBtn ? ' ' + window.infoBtn(`Vídeo típico de cada celebridade: ${famosos.map(p => `${nomes[p.perfil] || p.perfil}, ${mi(p.medianaViews)}`).join('; ')}.`, 'Quais são os números?') : '';
-      return `Sozinho, teve mais visualizações que o vídeo típico de ${resto}<span class="cola">${ult}.${btn}</span>`;
+      const btn = window.infoBtn ? ' ' + window.infoBtn(`Vídeo comum de cada celebridade: ${famosos.map(p => `${nomes[p.perfil] || p.perfil}, ${mi(p.medianaViews)}`).join('; ')}.`, 'Quais são os números?') : '';
+      return `Sozinho, teve mais visualizações que o vídeo comum de ${resto}<span class="cola">${ult}.${btn}</span>`;
     })() : '',
   ].filter(Boolean).join(' ');
   document.getElementById('dvNota').textContent =
