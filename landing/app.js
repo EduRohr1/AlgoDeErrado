@@ -110,7 +110,7 @@
     const todosAbaixo = outrosPerfis.every(p => p.medianaViewsPorSeguidor < 1);
     const excesso = Math.round((nik.medianaViewsPorSeguidor - 1) * 100);
     document.getElementById('heroFrase').textContent = nik.medianaViewsPorSeguidor > 1 && todosAbaixo
-      ? `Nikolas é o único dos ${outrosPerfis.length + 1} perfis analisados com mais visualizações do que seguidores no vídeo comum.`
+      ? `Nikolas é o único dos ${outrosPerfis.length + 1} perfis comparados com mais visualizações do que seguidores no vídeo comum.`
       : '';
   }
   const dataColetaCurta = new Date(R.geradoEm).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', year: 'numeric' });
