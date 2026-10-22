@@ -787,3 +787,13 @@ button.info::after { inset: -7px; } /* área de toque de 34px */
 h2:has(> button.info):not(.dv-titulo), h3:has(> button.info), .hi-titulo:has(> button.info) { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
 h2:not(.dv-titulo) > button.info, h3 > button.info, .hi-titulo > button.info { margin: .2em 0 0 auto; flex: none; }
 .cola { white-space: nowrap; }
+
+/* Neymar na Copa: mini-bloco no slide de comparação */
+.cmp-copa { margin-top: 18px; padding-top: 14px; border-top: 1px solid #2a2a2a; }
+.cmp-copa-tit { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin: 0 0 4px; font-family: var(--fonte-titulo); font-weight: 800; font-size: 17px; color: #fff; }
+.cmp-copa-tit > button.info { margin: .15em 0 0 auto; flex: none; }
+.cmp-copa-txt { margin: 0 0 10px; color: #d0d0d0; font-size: 15px; line-height: 1.5; }
+.slide .chip { background: #1c1c1c; border: 1px solid #2a2a2a; }
+.slide .chip b { color: #fff; }
+.slide .chip.nik b { color: #ff3b3b; }
+.slide .chip span { color: #bdbdbd; }

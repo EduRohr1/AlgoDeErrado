@@ -532,6 +532,24 @@
   const curto = curtoNome;
   const dec2 = n => fmtDec(n, 2);
   const nVideos = p => `${p.reels} vídeo${p.reels === 1 ? '' : 's'}`;
+  // Neymar no período da Copa do Mundo 2026 (11/06 a 19/07), só se houver vídeos suficientes nessas datas.
+  const blocoCopa = f => {
+    const c = f.copa2026;
+    if (f.perfil !== 'neymarjr' || !c || c.videos < 5) return '';
+    const vpsCopa = c.medianaViews / f.seguidores, razao = nik.medianaViewsPorSeguidor / vpsCopa;
+    if (razao <= 1) return '';
+    const dataBr = d => new Date(d).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit' });
+    const mr = nik.maiorReel, hrs = mr ? (Date.parse(mr.coletadoEm) - Date.parse(mr.data)) / 3600e3 : null;
+    const parceria = c.proprios === 0 ? 'todos feitos em parceria e publicados por marcas ou parceiros' : `${c.videos - c.proprios} deles feitos em parceria e publicados por marcas ou parceiros`;
+    const info = `Período da Copa do Mundo: 11/06 a 19/07/2026. Nessas datas apareceram ${c.videos} vídeos no perfil do Neymar, ${parceria}, que dividem as visualizações. ` +
+      `As visualizações foram contadas em outubro, meses depois, o que favorece o Neymar. Usamos o número atual de seguidores (${fmtMi(f.seguidores)}). ` +
+      `O maior vídeo do período teve ${fmtMi(c.maiorViews)}, em ${dataBr(c.maiorData)}${c.maiorProprio ? '' : ', também em parceria'}` +
+      (mr && hrs ? `; o maior do Nikolas chegou a ${Math.floor(mr.views / 1e6)} mi em ${Math.floor(hrs)}h${String(Math.round((hrs % 1) * 60)).padStart(2, '0')}.` : '.');
+    return `<div class="cmp-copa"><p class="cmp-copa-tit">E na Copa? ${i(info, 'Como foi feita a comparação da Copa?')}</p>` +
+      '<p class="cmp-copa-txt">Mesmo no período da Copa do Mundo, o Nikolas fica bem à frente por seguidor.</p>' +
+      `<div class="chips"><div class="chip"><b>${fmtMi(c.medianaViews)}</b><span>vídeo típico do Neymar na Copa</span></div>` +
+      `<div class="chip nik"><b>${fmtX(razao)}</b><span>a mais por seguidor para o Nikolas</span></div></div></div>`;
+  };
   const slides = famososOrd.map(f => {
     const rSeg = f.seguidores / nik.seguidores, rV = nik.medianaViews / f.medianaViews;
     const rVps = nik.medianaViewsPorSeguidor / f.medianaViewsPorSeguidor;
@@ -562,7 +580,7 @@
       <div class="cmp-grupos">
         ${grupoBarras('Seguidores', f, 'seguidores', fmtMi)}
         ${grupoBarras('Visualizações no vídeo típico', f, 'medianaViews', fmtMi)}
-      </div>` };
+      </div>${blocoCopa(f)}` };
   });
   const maxVps = Math.max(...comp.map(p => p.medianaViewsPorSeguidor));
   const nomesOutros = outros.map(p => nome(p.perfil)).join(', ').replace(/, ([^,]*)$/, ' e $1');

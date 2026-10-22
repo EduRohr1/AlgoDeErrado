@@ -150,6 +150,7 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 24685097,
       "reelsColetados": 30,
+      "copa2026": null,
       "marcacoes": {
         "proprios": 30,
         "parceriaPaga": 0,
@@ -508,6 +509,7 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 18166647,
       "reelsColetados": 64,
+      "copa2026": null,
       "marcacoes": {
         "proprios": 64,
         "parceriaPaga": 0,
@@ -880,6 +882,7 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 26619836,
       "reelsColetados": 28,
+      "copa2026": null,
       "marcacoes": {
         "proprios": 28,
         "parceriaPaga": 0,
@@ -1254,6 +1257,7 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 7854012,
       "reelsColetados": 26,
+      "copa2026": null,
       "marcacoes": {
         "proprios": 26,
         "parceriaPaga": 0,
@@ -1630,6 +1634,7 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 2378892,
       "reelsColetados": 28,
+      "copa2026": null,
       "marcacoes": {
         "proprios": 28,
         "parceriaPaga": 0,
@@ -2023,6 +2028,7 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 3504536,
       "reelsColetados": 76,
+      "copa2026": null,
       "marcacoes": {
         "proprios": 76,
         "parceriaPaga": 0,
@@ -2571,6 +2577,7 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 14320503,
       "reelsColetados": 78,
+      "copa2026": null,
       "marcacoes": {
         "proprios": 78,
         "parceriaPaga": 0,
@@ -2821,6 +2828,7 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 2972990,
       "reelsColetados": 30,
+      "copa2026": null,
       "marcacoes": {
         "proprios": 30,
         "parceriaPaga": 0,
@@ -3177,6 +3185,7 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 2607661,
       "reelsColetados": 30,
+      "copa2026": null,
       "marcacoes": {
         "proprios": 30,
         "parceriaPaga": 0,
@@ -3529,6 +3538,16 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 241751801,
       "reelsColetados": 5,
+      "copa2026": {
+        "inicio": "2026-06-11",
+        "fim": "2026-07-19",
+        "videos": 9,
+        "proprios": 0,
+        "medianaViews": 32427637,
+        "maiorViews": 132984732,
+        "maiorData": "2026-06-15T23:20:13.000Z",
+        "maiorProprio": false
+      },
       "marcacoes": {
         "proprios": 5,
         "parceriaPaga": 0,
@@ -3774,6 +3793,7 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 61144174,
       "reelsColetados": 29,
+      "copa2026": null,
       "marcacoes": {
         "proprios": 29,
         "parceriaPaga": 0,
@@ -4119,6 +4139,16 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 56759748,
       "reelsColetados": 23,
+      "copa2026": {
+        "inicio": "2026-06-11",
+        "fim": "2026-07-19",
+        "videos": 7,
+        "proprios": 4,
+        "medianaViews": 34459722,
+        "maiorViews": 51350652,
+        "maiorData": "2026-06-13T19:27:43.000Z",
+        "maiorProprio": true
+      },
       "marcacoes": {
         "proprios": 23,
         "parceriaPaga": 1,
@@ -4458,6 +4488,16 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 679908339,
       "reelsColetados": 17,
+      "copa2026": {
+        "inicio": "2026-06-11",
+        "fim": "2026-07-19",
+        "videos": 4,
+        "proprios": 1,
+        "medianaViews": 187379873.5,
+        "maiorViews": 395030117,
+        "maiorData": "2026-07-19T13:30:10.000Z",
+        "maiorProprio": false
+      },
       "marcacoes": {
         "proprios": 17,
         "parceriaPaga": 7,
@@ -4748,6 +4788,16 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 517779940,
       "reelsColetados": 24,
+      "copa2026": {
+        "inicio": "2026-06-11",
+        "fim": "2026-07-19",
+        "videos": 7,
+        "proprios": 6,
+        "medianaViews": 53139490,
+        "maiorViews": 135796686,
+        "maiorData": "2026-06-15T12:59:26.000Z",
+        "maiorProprio": true
+      },
       "marcacoes": {
         "proprios": 24,
         "parceriaPaga": 17,
@@ -5066,6 +5116,16 @@ window.RESUMO = {
       "encontrado": true,
       "seguidores": 343741559,
       "reelsColetados": 29,
+      "copa2026": {
+        "inicio": "2026-06-11",
+        "fim": "2026-07-19",
+        "videos": 4,
+        "proprios": 4,
+        "medianaViews": 18453069.5,
+        "maiorViews": 23418850,
+        "maiorData": "2026-06-27T16:25:10.000Z",
+        "maiorProprio": true
+      },
       "marcacoes": {
         "proprios": 29,
         "parceriaPaga": 1,

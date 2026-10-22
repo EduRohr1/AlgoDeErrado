@@ -301,6 +301,16 @@ function resumir(perfis, reels) {
       encontrado,
       seguidores: seg,
       reelsColetados: todos.length,
+      // Período da Copa do Mundo 2026 (11/06 a 19/07): todos os vídeos que aparecem no perfil, inclusive collabs publicadas por outras contas.
+      copa2026: (() => {
+        const ini = Date.parse('2026-06-11T03:00:00Z'), fim = Date.parse('2026-07-20T03:00:00Z');
+        const lista = reels.filter(x => (x.inputUrl || '').toLowerCase().replace(/\/$/, '').endsWith('/' + u))
+          .filter(x => { const t = Date.parse(x.timestamp); return t >= ini && t < fim && x.videoPlayCount > 0; });
+        if (!lista.length) return null;
+        const maior = [...lista].sort((p, q) => q.videoPlayCount - p.videoPlayCount)[0];
+        return { inicio: '2026-06-11', fim: '2026-07-19', videos: lista.length, proprios: lista.filter(x => dono(x) === u).length,
+          medianaViews: mediana(lista.map(x => x.videoPlayCount)), maiorViews: maior.videoPlayCount, maiorData: maior.timestamp, maiorProprio: dono(maior) === u };
+      })(),
       // Vídeos próprios marcados pelo Instagram como parceria paga ou com coautores (collab).
       marcacoes: {
         proprios: todos.length,
