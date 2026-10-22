@@ -134,7 +134,7 @@
   const credito = document.getElementById('creditoFoto');
   if (credito) credito.innerHTML =
     'Foto: Pablo Valadares/Câmara dos Deputados, via Wikimedia Commons, <a href="https://creativecommons.org/licenses/by/3.0/deed.pt-br" target="_blank" rel="noopener">CC BY 3.0</a> ' +
-    '(<a href="https://commons.wikimedia.org/wiki/File:Nikolas_Ferreira_in_2023_(cropped).jpg" target="_blank" rel="noopener">link</a>) · imagem modificada (duotone)';
+    '(<a href="https://commons.wikimedia.org/wiki/File:Nikolas_Ferreira_in_2023_(cropped).jpg" target="_blank" rel="noopener">link</a>) · imagem modificada (duotone e marcas sobre os olhos)';
 
   const famososComp = R.perfis.filter(p => grupoDe(p) !== 'politicos' && p.comparavel);
   const famososAbaixo = famososComp.filter(p => p.medianaViewsPorSeguidor < nik.medianaViewsPorSeguidor);
@@ -503,7 +503,7 @@
 
   // ===== Fotos (Wikimedia Commons, licenças conferidas nas páginas dos arquivos) =====
   const FOTOS = {
-    nikolasferreiradm: { arq: 'nikolas.jpg', autor: 'Pablo Valadares/Câmara dos Deputados', lic: 'CC BY 3.0', licUrl: 'https://creativecommons.org/licenses/by/3.0/deed.pt-br', pag: 'https://commons.wikimedia.org/wiki/File:Nikolas_Ferreira_in_2023_(cropped).jpg', mod: 'imagem modificada (duotone)' },
+    nikolasferreiradm: { arq: 'nikolas.jpg', autor: 'Pablo Valadares/Câmara dos Deputados', lic: 'CC BY 3.0', licUrl: 'https://creativecommons.org/licenses/by/3.0/deed.pt-br', pag: 'https://commons.wikimedia.org/wiki/File:Nikolas_Ferreira_in_2023_(cropped).jpg', mod: 'imagem modificada (duotone e marcas sobre os olhos)' },
     cristiano: { arq: 'cristiano.jpg', autor: 'Bryan Berlin', lic: 'CC BY-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br', pag: 'https://commons.wikimedia.org/wiki/File:Cristiano_Ronaldo_Croatia_v_Portugal_2_July_2026-075_(cropped).jpg' },
     leomessi: { arq: 'leomessi.jpg', autor: 'Bryan Berlin', lic: 'CC BY-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br', pag: 'https://commons.wikimedia.org/wiki/File:Lionel_Messi_Argentina_v_Egypt_7_July_2026-112(cropped).jpg' },
     neymarjr: { arq: 'neymarjr.jpg', autor: 'Bryan Berlin', lic: 'CC BY-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br', pag: 'https://commons.wikimedia.org/wiki/File:Neymar_Junior_Brazil_V_Morocco_13_June_2026-40.jpg' },
