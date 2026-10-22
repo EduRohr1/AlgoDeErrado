@@ -572,14 +572,15 @@
         (recorde && c.maiorViews > mr.views ? `: mais que o recorde de Nikolas, de ${recorde}.` : recorde ? `; o recorde de Nikolas é de ${recorde}.` : '.');
       const lado = (p, rot, v, seg, ehNik) => `<div class="cd-lado${ehNik ? ' nik' : ''}"><img class="cd-avatar" src="img/avatar/${p}.jpg?v=2" alt="" width="96" height="96">` +
         `<b class="cd-num">${fmtMi(v)}</b><span class="cd-rot">${rot}</span><span class="cd-seg">${fmtMi(seg)} de seguidores</span></div>`;
-      const titulo = 'Nem o maior evento esportivo do mundo bastou.';
+      const titulo = 'Nem a Copa do Mundo foi capaz de superar Nikolas Ferreira.';
       const subtitulo = c.medianaViews < nik.medianaViews
-        ? 'Durante a Copa, um vídeo comum de Neymar, um dos jogadores mais famosos do planeta, teve menos visualizações que um vídeo comum de Nikolas Ferreira hoje.'
+        ? 'Enquanto o mundo acompanhava o maior evento esportivo do planeta, um vídeo comum de Neymar, um dos jogadores mais famosos da história do futebol, teve menos visualizações do que um vídeo comum de Nikolas Ferreira hoje.'
         : 'Durante a Copa, Neymar, um dos jogadores mais famosos do planeta, ficou muito atrás de Nikolas Ferreira em visualizações por seguidor.';
-      el.innerHTML = `<div class="cd-card">${i(info, 'Como foi feita a comparação da Copa?')}<p class="cd-kicker">Nem a Copa do Mundo</p>` +
+      el.innerHTML = `<div class="cd-card">${i(info, 'Como foi feita a comparação da Copa?')}<p class="cd-kicker">Copa do Mundo 2026</p>` +
         `<h2 class="cd-titulo" id="copaTitulo">${titulo}</h2><p class="cd-sub">${subtitulo}</p>` +
         `<div class="cd-lados">${lado('neymarjr', 'Neymar na Copa', c.medianaViews, f.seguidores, false)}<span class="cd-vs" aria-hidden="true">×</span>${lado(NIK, 'Nikolas hoje', nik.medianaViews, nik.seguidores, true)}</div>` +
-        `<p class="cd-linha">Com ${fmtX(f.seguidores / nik.seguidores)} menos seguidores, Nikolas alcança <strong>${fmtX(razao)} mais por seguidor</strong>.</p></div>`;
+        `<p class="cd-linha">Com ${fmtX(f.seguidores / nik.seguidores)} menos seguidores, Nikolas alcança <strong>${fmtX(razao)} mais por seguidor</strong>.</p>` +
+        (c.medianaViews < nik.medianaViews ? '<p class="cd-fecho">Se nem Neymar, com o mundo de olho na Copa, conseguiu superar esse alcance, o que explica o fenômeno Nikolas?</p>' : '') + '</div>';
       el.hidden = false;
     }
   }
@@ -596,6 +597,21 @@
     }
     return t;
   })();
+  // Manchete e texto de cada slide (textos do Eduardo). Cada um só entra se os dados sustentarem; senão fica o resumo calculado.
+  const TEXTO_SLIDE = {
+    anitta: { ok: (r, v) => r >= 2 && v > 1, t: 'Mais que o dobro de seguidores, menos visualizações.',
+      p: 'Anitta tem uma audiência muito maior que a de Nikolas Ferreira. Porém, quando o assunto é visualização por vídeo, a cantora fica atrás. Ter milhões de seguidores é uma coisa. Conseguir fazer essa audiência assistir é outra.' },
+    virginia: { ok: (r, v) => r >= 2 && v > 1, t: 'Virginia vive de alcance nas redes. Porém, Nikolas está alcançando mais.',
+      p: 'Um dos maiores fenômenos brasileiros das redes sociais, Virginia construiu sua presença digital transformando a própria rotina em conteúdo. Ainda assim, mesmo com mais que o dobro de seguidores, um vídeo comum de Nikolas Ferreira consegue mais visualizações.' },
+    cristiano: { ok: (r, v, x) => r > 1 && v < 1 && x > 1, t: 'Cristiano vence em números absolutos. Porém, a proporção conta outra história.',
+      p: 'Cristiano Ronaldo tem muito mais seguidores e mais visualizações por vídeo. A diferença aparece quando se considera o tamanho das audiências: proporcionalmente ao número de seguidores, Nikolas Ferreira alcança uma parcela maior.' },
+    leomessi: { ok: (r, v, x) => r > 1 && v < 1 && x > 1, t: 'Até Messi tem uma vantagem que não conta a história toda.',
+      p: 'O argentino supera Nikolas Ferreira em seguidores e em visualizações por vídeo. Porém, quando a comparação considera o alcance em relação ao número de seguidores, a situação se inverte. O tamanho da audiência não explica tudo.' },
+    kimkardashian: { ok: (r, v) => r > 2 && v > 1, t: 'Uma das maiores celebridades do Instagram, superada em visualizações por um político brasileiro.',
+      p: 'Kim Kardashian tem uma audiência muito maior que a de Nikolas Ferreira. Ainda assim, um vídeo comum de Nikolas consegue mais visualizações. É um contraste que chama a atenção justamente por envolver alguém que transformou sua presença nas redes em uma marca global.' },
+    neymarjr: { ok: (r, v) => r >= 9 && r < 10 && v > 1, t: 'Quase 10 vezes mais seguidores e, ainda assim, menos visualizações.',
+      p: 'Neymar é um dos atletas mais seguidos do mundo e tem quase 10 vezes mais seguidores que Nikolas Ferreira. Porém, um vídeo comum de Neymar tem menos visualizações do que um vídeo comum de Nikolas.' },
+  };
   const slides = famososOrd.map(f => {
     const rSeg = f.seguidores / nik.seguidores, rV = nik.medianaViews / f.medianaViews;
     const rVps = nik.medianaViewsPorSeguidor / f.medianaViewsPorSeguidor;
@@ -606,6 +622,7 @@
       : rV > 0.9
         ? `${quem} tem ${segTxt}; porém, os vídeos comuns dos dois têm visualizações parecidas.`
         : `${quem} tem ${segTxt} e mais visualizações por vídeo. Por seguidor, porém, Nikolas fica à frente.`;
+    const ts = TEXTO_SLIDE[f.perfil], usaTs = ts && ts.ok(rSeg, rV, rVps);
     const somas = f.reels === nik.reels
       ? `Somando os ${nik.reels} vídeos analisados de cada um: Nikolas ${fmtMi(nik.somaViews)}, ${quem} ${fmtMi(f.somaViews)} de visualizações.`
       : `Somando os vídeos analisados (${nVideos(nik)} de Nikolas, ${nVideos(f)} de ${quem}): Nikolas ${fmtMi(nik.somaViews)}, ${quem} ${fmtMi(f.somaViews)} de visualizações.`;
@@ -615,7 +632,7 @@
       : stat(fmtX(1 / rV), `a mais para ${quem}`, 'cinza', 'Visualizações por vídeo',
           `Comparação em números absolutos, sem levar em conta o tamanho de cada base. Vídeo comum (mediana dos vídeos analisados): ${quem} ${fmtMi(f.medianaViews)}, Nikolas ${fmtMi(nik.medianaViews)}. ${somas}`);
     return { perfil: f.perfil, rotulo: nome(f.perfil), html: `<p class="cmp-frase">Nikolas <span class="vs">VS</span> <em>${nome(f.perfil)}</em></p>
-      <p class="cmp-resumo">${resumo}</p>${f.perfil === 'kimkardashian' ? '<p class="cmp-nota-media">O público dela é global e fala principalmente inglês.</p>' : ''}
+      ${usaTs ? `<p class="cmp-manchete">${ts.t}</p><p class="cmp-resumo">${ts.p}</p>` : `<p class="cmp-resumo">${resumo}</p>`}${f.perfil === 'kimkardashian' ? '<p class="cmp-nota-media">O público dela é global e fala principalmente inglês.</p>' : ''}
       <div class="big-stats">
         ${stat(fmtX(rSeg), `a mais para ${quem}`, 'cinza', 'Seguidores',
           `Seguidores são o tamanho da base: quantas contas acompanham o perfil. ${quem}: ${fmtMi(f.seguidores)}. Nikolas: ${fmtMi(nik.seguidores)}. Dividindo um pelo outro, dá ${fmtX(rSeg)}.`)}
@@ -631,7 +648,7 @@
   const maxVps = Math.max(...comp.map(p => p.medianaViewsPorSeguidor));
   const nomesOutros = outros.map(p => nome(p.perfil)).join(', ').replace(/, ([^,]*)$/, ' e $1');
   slides.push({ rotulo: 'Políticos', html: `<p class="cmp-frase">Nikolas <span class="vs">VS</span> <em>outros políticos</em></p>
-    <p class="cmp-resumo">${resumoPoliticos}</p>
+    ${outros.every(p => p.medianaViewsPorSeguidor < nik.medianaViewsPorSeguidor) ? `<p class="cmp-manchete">Entre os outros ${outros.length} políticos comparados, nenhum chega ao alcance de Nikolas.</p>` : ''}<p class="cmp-resumo">${resumoPoliticos}</p>
     <div class="big-stats">
       ${stat(dec2(nik.medianaViewsPorSeguidor), 'visualizações por seguidor', '', 'Nikolas',
         `Um vídeo comum de Nikolas tem ${fmtMi(nik.medianaViews)} de visualizações, mais que os ${fmtMi(nik.seguidores)} de seguidores de Nikolas. Dividindo um pelo outro, dá ${dec2(nik.medianaViewsPorSeguidor)}. Em visualizações por vídeo, Nikolas tem ${fmtX(razaoViews)} o 2º colocado entre os políticos, ${nome(segundoViews.perfil)}.`)}

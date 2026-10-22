@@ -511,6 +511,9 @@ details.regras ul { padding-left: 18px; }
 @media (max-width: 600px) { .hero-escuro h1 { font-size: 21px; } .hc-num { min-width: 92px; font-size: 24px; } }
 
 /* Carrossel: frase-resumo, cartões com frase completa e nota de rodapé */
+.cmp-manchete { margin: -6px 0 10px; font-family: var(--fonte-titulo); font-weight: 800; font-size: clamp(20px, 2.6vw, 26px); line-height: 1.25; color: #fff; max-width: 36ch; }
+.cmp-manchete + .cmp-resumo { margin-top: 0; }
+.cd-fecho { margin: 14px 0 0; font-size: 18px; line-height: 1.45; font-weight: 800; color: #fff; max-width: 60ch; }
 .cmp-resumo { margin: -8px 0 18px; font-size: clamp(16px, 1.8vw, 19px); line-height: 1.45; color: #e6e6e6; max-width: 70ch; }
 .big-rot { font-size: 14px; line-height: 1.4; color: #d0d0d0; }
 .big-num { font-size: clamp(36px, 5vw, 60px); }
