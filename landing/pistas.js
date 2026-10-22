@@ -26,7 +26,7 @@
   const maisFrequentes = ativos.filter(p => p.pistas.frequencia.reelsPorDia > fN.reelsPorDia * 3).sort((a, b) => b.pistas.frequencia.reelsPorDia - a.pistas.frequencia.reelsPorDia);
   const inativo = comp.find(p => p.pistas.frequencia && p.pistas.frequencia.reelsPorDia === 0);
   set('txtFrequencia', `Vídeos por dia nos 30 dias antes da coleta (ou no período coberto, para quem posta muito) e visualizações de um vídeo comum em % dos seguidores. ` +
-    `O Nikolas posta cerca de <strong>${dec(fN.reelsPorDia)} vídeo por dia</strong>. ` +
+    `Nikolas posta <strong>${dec(fN.reelsPorDia)} vídeo por dia</strong>. ` +
     (maisFrequentes.length ? `${maisFrequentes.map(p => `${nome(p.perfil)} posta ${dec(p.pistas.frequencia.reelsPorDia)}`).join(', ')} por dia, e ${maisFrequentes.length > 1 ? 'nenhum deles' : 'não'} chega perto do alcance por seguidor de Nikolas. ` : '') +
     `As celebridades postam bem menos vídeos (de ${dec(Math.min(...ativos.filter(p => grupo(p) !== 'politicos').map(p => p.pistas.frequencia.reelsPorDia)), 2)} a ${dec(Math.max(...ativos.filter(p => grupo(p) !== 'politicos').map(p => p.pistas.frequencia.reelsPorDia)), 2)} por dia) e também ficam muito abaixo. ` +
     `Ou seja, postar pouco ou muito, sozinho, não explica a diferença: há perfis dos dois lados com alcance baixo.` +
@@ -51,7 +51,7 @@
   const piorNik = Math.min(...hN.periodos.filter(p => p.n >= 3).map(p => p.medianaVps));
   const melhorOutros = Math.max(...comp.filter(p => p.perfil !== NIK).flatMap(p => p.pistas.horario.periodos.filter(q => q.n >= 3).map(q => q.medianaVps)));
   const melhorPer = [...hN.periodos].filter(p => p.n >= 3).sort((a, b) => b.medianaVps - a.medianaVps)[0];
-  set('txtHorario', `Horário de Brasília. O Nikolas publica principalmente à <strong>${topPer.periodo}</strong> (${pct(topPer.pctPosts)} dos vídeos; hora típica ${Math.round(hN.horaMediana)}h). ` +
+  set('txtHorario', `Horário de Brasília. Nikolas publica principalmente à <strong>${topPer.periodo}</strong> (${pct(topPer.pctPosts)} dos vídeos; hora típica ${Math.round(hN.horaMediana)}h). ` +
     (melhorPer ? `Entre os vídeos de Nikolas com 3 dias ou mais, os da ${melhorPer.periodo} tiveram o maior alcance típico (${vps(melhorPer.medianaVps)} dos seguidores, ${melhorPer.n} vídeos). ` : '') +
     (piorNik != null && melhorOutros != null && piorNik > melhorOutros
       ? `Mesmo no período mais fraco de Nikolas (${vps(piorNik)}), o alcance por seguidor fica acima do melhor período de qualquer outro perfil (${vps(melhorOutros)}): o horário não explica a diferença.`
@@ -90,7 +90,7 @@
   const maxRep = [...comTom].sort((a, b) => b.pistas.tom.pct['repetitivo'] - a.pistas.tom.pct['repetitivo'])[0];
   if (tomN) {
     set('txtTom', `Amostra dos comentários mais recentes de cada vídeo (${tomN.n} comentários no perfil de Nikolas). ` +
-      `No Nikolas, <strong>${pct(tomN.pct.apoio)}</strong> são de apoio, ${pct(tomN.pct['crítica'])} têm linguagem crítica e <strong>${pct(tomN.pct['repetitivo'])}</strong> são textos repetidos (copia-e-cola), ` +
+      `Entre os comentários de Nikolas, <strong>${pct(tomN.pct.apoio)}</strong> são de apoio, ${pct(tomN.pct['crítica'])} têm linguagem crítica e <strong>${pct(tomN.pct['repetitivo'])}</strong> são textos repetidos (copia-e-cola), ` +
       `${tomN.pct['repetitivo'] < mediana(repOutros) / 2 ? 'abaixo do' : 'perto do'} típico dos outros políticos (${pct(mediana(repOutros))}). O maior índice de repetição é de ${nome(maxRep.perfil)} (${pct(maxRep.pistas.tom.pct['repetitivo'])}). ` +
       `Nesta amostra, o perfil de comentários de Nikolas não destoa dos demais.`);
   }
@@ -128,9 +128,9 @@
     const itens = [], ch = [];
     if (posDur === 1) { itens.push('Os vídeos de Nikolas são os mais longos entre os perfis analisados.'); ch.push([fmtSeg(dN.medianaSegundos), 'duração típica, a maior']); }
     if (legPol.length && lN.medianaCaracteres < Math.min(...legPol)) { itens.push(`As legendas são as mais curtas: os outros políticos usam de ${Math.round(Math.min(...legPol))} a ${Math.round(Math.max(...legPol))} caracteres.`); ch.push([String(Math.round(lN.medianaCaracteres)), 'caracteres na legenda']); }
-    if (comTema.length && semTema) { itens.push(`Vídeos sobre ${comTema[0].tema.replace('governo', 'Governo')} foram melhor que os sem tema identificado, que ficaram em ${vps(semTema.medianaVps)}. São poucos vídeos: é só uma pista.`); ch.push([vps(comTema[0].medianaVps), `alcance em vídeos sobre ${comTema[0].tema.replace('governo', 'Governo')}`]); }
+    if (comTema.length && semTema) { itens.push(`Vídeos sobre ${comTema[0].tema.replace('governo', 'Governo')} tiveram mais alcance que os vídeos sem tema identificado, que ficaram em ${vps(semTema.medianaVps)}. São poucos vídeos: é uma pista, não uma conclusão.`); ch.push([vps(comTema[0].medianaVps), `alcance em vídeos sobre ${comTema[0].tema.replace('governo', 'Governo')}`]); }
     const NUM = ['', 'um padrão', 'dois padrões', 'três padrões'];
-    set('respPorque', `Os dados não mostram a causa, mas mostram ${NUM[itens.length] || 'alguns padrões'}.`);
+    set('respPorque', `Os dados não mostram a causa; porém, apontam ${NUM[itens.length] || 'alguns padrões'}.`);
     set('pistasResumo', itens.map(t => `<li>${t}</li>`).join(''));
     set('chipsPistas', ch.map(([n, t], k) => `<div class="chip${k === 0 ? ' nik' : ''}"><b>${n}</b><span>${t}</span></div>`).join(''));
   }

@@ -63,20 +63,20 @@
   const TITULOS = {
     politicosGrafico: 'Vídeo comum é a mediana: o vídeo do meio entre os 12 mais recentes com 3 dias ou mais. Cada barra é o vídeo comum do perfil dividido pelo número de seguidores. Acima de 1, o vídeo comum tem mais visualizações do que o perfil tem de seguidores. Exemplo: 1,55 quer dizer 155 visualizações para cada 100 seguidores.',
     interacao: 'Curtidas (ou comentários) de um vídeo comum divididas pelo número de seguidores. Exemplo: 12% quer dizer que um vídeo comum recebe curtidas em quantidade equivalente a 12% da base de seguidores.',
-    regularidade: 'O índice é o coeficiente de variação: o desvio padrão das visualizações dividido pela média. Perto de 0, os vídeos têm alcance parecido; acima de 1, poucos vídeos concentram a maior parte das visualizações. “Bom ÷ fraco” é a razão p90/p10: um vídeo melhor que 90% dos outros (percentil 90) dividido por um melhor que só 10% (percentil 10).',
+    regularidade: 'Cada barra mostra o quanto as visualizações variam de um vídeo para outro do mesmo perfil. Quanto menor a barra, mais constante é o alcance. A conta está explicada na Metodologia.',
     foraDaCurva: 'Para cada vídeo, comparamos curtidas ÷ visualizações com a mediana do próprio perfil (o padrão do perfil). Um vídeo é marcado quando essa taxa fica abaixo da metade da mediana. Exemplo: se o perfil costuma ter 8% de curtidas por visualização, um vídeo com menos de 4% é marcado.',
-    comentarios: 'Mediana de comentários ÷ curtidas nos 12 vídeos analisados (o valor do vídeo do meio). Exemplo: 0,05 é cerca de 1 comentário a cada 20 curtidas.',
-    secIdade: 'Os eixos estão em escala logarítmica. Cada ponto é um vídeo. No eixo horizontal, quantos dias ele tinha quando coletamos; no vertical, visualizações ÷ seguidores. Os mais novos (à esquerda) ainda estavam ganhando visualizações, então não é o mesmo vídeo crescendo, e sim vídeos diferentes medidos no mesmo momento.',
+    comentarios: 'Mediana de comentários ÷ curtidas nos 12 vídeos analisados (o valor do vídeo do meio). Exemplo: 0,05 é 1 comentário a cada 20 curtidas.',
+    secIdade: 'Cada ponto é um vídeo. Na horizontal, quantos dias o vídeo tinha no dia da coleta; na vertical, visualizações ÷ seguidores. Assim, dá para comparar vídeos com a mesma idade.',
     pFrequencia: 'Vídeos publicados por dia nos 30 dias antes da coleta. Para quem publica dezenas por dia, usamos o período coberto pelos vídeos coletados.',
     pDuracao: 'Duração mediana dos vídeos com pelo menos 3 dias: metade dos vídeos é mais curta e metade é mais longa do que esse valor.',
   };
   document.addEventListener('DOMContentLoaded', () => {
     for (const [id, txt] of Object.entries(TITULOS)) {
       const h = document.querySelector(`#${id} > h2`);
-      if (h && !h.querySelector('.info')) h.insertAdjacentHTML('beforeend', ' ' + window.infoBtn(txt, `Como ler “${h.textContent.trim()}”`));
+      if (h && !h.querySelector('.info')) h.insertAdjacentHTML('beforeend', ' ' + window.infoBtn(txt, `Como ler “${h.textContent.trim().replace(/^“|”$/g, "")}”`));
     }
     // O primeiro painel sem id do bloco de políticos é o de engajamento.
     const eng = document.getElementById('gEng')?.closest('.painel')?.querySelector('h2');
-    if (eng && !eng.querySelector('.info')) eng.insertAdjacentHTML('beforeend', ' ' + window.infoBtn('Também chamado de engajamento: (curtidas + comentários) ÷ visualizações, calculado vídeo a vídeo e depois em média. Exemplo: um vídeo com 1 milhão de visualizações e 80 mil curtidas e comentários tem engajamento de 8%.', 'Como ler “Curtidas e comentários por visualização”'));
+    if (eng && !eng.querySelector('.info')) eng.insertAdjacentHTML('beforeend', ' ' + window.infoBtn('(Curtidas + comentários) ÷ visualizações, calculado vídeo a vídeo e depois em média. Exemplo: um vídeo com 1 milhão de visualizações e 80 mil curtidas e comentários fica com 8%.', 'Como ler “Curtidas e comentários por visualização”'));
   });
 })();

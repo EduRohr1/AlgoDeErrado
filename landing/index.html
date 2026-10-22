@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800&display=swap">
-  <link rel="stylesheet" href="style.css?v=202610212308">
+  <link rel="stylesheet" href="style.css?v=202610220300">
 </head>
 <body>
   <header class="cabecalho" id="cabecalho">
@@ -135,7 +135,7 @@
       <div class="chips" id="chipsRegularidade"></div>
       <p class="curto" id="curtoRegularidade"></p>
       <div class="grafico"><canvas id="gRegularidade" aria-label="Gráfico de barras: índice de variação das visualizações por perfil"></canvas></div>
-      <p class="sub">O índice de variação mede o quanto as visualizações mudam entre os vídeos de um mesmo perfil. Perto de 0, os vídeos são parecidos. Acima de 1, poucos vídeos concentram as visualizações. <span id="txtRegularidade"></span></p>
+      <p class="sub"><span id="txtRegularidade"></span></p>
       <div class="tabela-wrap"><table class="tabela tabela-media" id="tabelaRegularidade"></table></div>
     </section>
 
@@ -148,7 +148,7 @@
       <p class="sub">Se as visualizações viessem de exibições sem ninguém assistindo, haveria poucas curtidas e comentários. Por isso comparamos curtidas e comentários com o número de seguidores, nos mesmos 12 vídeos. <span id="txtInteracao"></span></p>
       <div class="tabela-wrap"><table class="tabela" id="tabelaInteracao"></table></div>
       <div id="foraDaCurva">
-      <p class="sub">Cada vídeo com 3 dias ou mais é comparado com o padrão do próprio perfil. Ele é marcado se tiver menos da metade das curtidas por visualização que o perfil costuma ter. <span id="txtForaDaCurva"></span></p>
+      <p class="sub">Cada vídeo com 3 dias ou mais é comparado com o padrão do próprio perfil. O vídeo é marcado se tiver menos da metade das curtidas por visualização que o perfil costuma ter. <span id="txtForaDaCurva"></span></p>
       <div class="tabela-wrap"><table class="tabela tabela-media" id="tabelaForaDaCurva"></table></div>
       <div id="listaForaDaCurva"></div>
       </div>
@@ -209,8 +209,8 @@
     </section>
 
     <section class="porque" id="porque" aria-labelledby="tituloPorque">
-      <h2 class="secao-titulo" id="tituloPorque">Então, por que tanto alcance?</h2>
-      <p class="resposta" id="respPorque">Os dados não mostram a causa, mas mostram alguns padrões.</p>
+      <h2 class="secao-titulo" id="tituloPorque">“Então, por que tanto alcance?”</h2>
+      <p class="resposta" id="respPorque">Os dados não mostram a causa; porém, apontam alguns padrões.</p>
       <div class="chips" id="chipsPistas"></div>
       <ul class="pistas-resumo" id="pistasResumo"></ul>
       <details class="ver-detalhes ver-pistas" id="pistas"><summary>Ver todas as pistas</summary>
@@ -274,10 +274,8 @@
         <li>A Meta admitiu uma falha que travou a contagem de visualizações em 7/10.</li>
         <li>19/10: o TSE deu 24 horas para a Meta provar igualdade na distribuição (<a href="https://g1.globo.com/politica/eleicoes/2026/noticia/2026/10/19/tse-da-24h-para-meta-comprovar-medidas-tomadas-para-garantir-igualdade-entre-campanhas.ghtml" target="_blank" rel="noopener">g1</a>).</li>
       </ul>
-      <details class="ver-detalhes"><summary>Ver detalhes</summary>
       <p class="sub">O Conselho de Supervisão da Meta disse estar preocupado com “falhas recorrentes” na moderação de conteúdo eleitoral no Brasil. A Meta reconhece um “incidente técnico de alcance global” que bloqueou a contagem de visualizações em 7 de outubro, das 1h50 às 19h49, e nega ter favorecido qualquer candidatura.</p>
       <p class="sub">O ministro Marco Aurélio Bellizze, do TSE, cobrou da Meta a decisão que exige igualdade na distribuição de conteúdos políticos e de anúncios no segundo turno, incluindo esclarecimentos sobre os sistemas de recomendação. Lula e Flávio Bolsonaro acionaram a Justiça Eleitoral alegando que seus conteúdos foram prejudicados.</p>
-      </details>
     </section>
       </details>
       <details class="ver-detalhes"><summary>Como interpretar</summary>
@@ -287,7 +285,7 @@
       <ul>
         <li><strong>Distribuição do algoritmo para não seguidores:</strong> o Instagram recomenda vídeos na aba Reels e no Explorar para quem não segue o perfil. Quando um vídeo retém bem a atenção, ele pode alcançar várias vezes a base de seguidores.</li>
         <li><strong>Compartilhamentos e reposts:</strong> vídeos enviados por DM, postados nos stories ou republicados por outras contas e grupos trazem visualizações de fora da base de seguidores.</li>
-        <li><strong>Impulsionamento pago:</strong> publicações impulsionadas também somam visualizações de pessoas que não seguem o perfil. Esta análise não consegue separar o alcance pago do orgânico. O que a Biblioteca de Anúncios da Meta mostra no caso de Nikolas está em <a href="#anuncios">Ele paga para aparecer?</a>.</li>
+        <li><strong>Impulsionamento pago:</strong> publicações impulsionadas também somam visualizações de pessoas que não seguem o perfil. Esta análise não consegue separar o alcance pago do orgânico. O que a Biblioteca de Anúncios da Meta mostra no caso de Nikolas está em <a href="#anuncios">“Ele paga anúncio?”</a>.</li>
         <li><strong>Temas polêmicos ou de grande repercussão:</strong> conteúdos que provocam reação forte, a favor ou contra, tendem a circular mais, inclusive entre quem discorda e comenta ou compartilha para criticar.</li>
         <li><strong>Formato e frequência:</strong> duração, edição, ritmo de postagem e o momento do ciclo de notícias (período eleitoral) também mudam o alcance.</li>
       </ul>
@@ -304,7 +302,7 @@
 
     <section class="painel">
       <h2>Curtidas e comentários por visualização</h2>
-      <p class="sub"><strong>De cada 100 visualizações, quantas viram curtida ou comentário.</strong> Aqui o Nikolas <strong id="posEng"></strong>: os vídeos de Nikolas alcançam muita gente, mas, proporcionalmente, menos pessoas curtem ou comentam.</p>
+      <p class="sub"><strong>De cada 100 visualizações, quantas viram curtida ou comentário.</strong> Nikolas <strong id="posEng"></strong>: os vídeos de Nikolas alcançam muita gente; porém, proporcionalmente, menos pessoas curtem ou comentam.</p>
       <div class="grafico"><canvas id="gEng" aria-label="Gráfico de barras: engajamento por visualização"></canvas></div>
     </section>
 
@@ -319,14 +317,16 @@
     <section class="painel metodo" id="metodologia">
       <ul>
         <li><strong>Fonte:</strong> dados públicos do Instagram coletados via Apify (atores <code>instagram-profile-scraper</code> e <code>instagram-reel-scraper</code>) em <span id="dataColeta"></span>.</li>
-        <li><strong>Amostra:</strong> até 12 vídeos mais recentes de cada perfil com <strong>pelo menos 3 dias</strong> de publicados. Vídeos com menos de 3 dias ficaram fora porque ainda estão acumulando visualizações. A exceção é a seção “Idade da publicação × visualizações”, que usa todos os vídeos coletados.</li>
+        <li><strong>Amostra:</strong> até 12 vídeos mais recentes de cada perfil com <strong>pelo menos 3 dias</strong> de publicados. Vídeos com menos de 3 dias ficaram fora porque ainda estão acumulando visualizações. A exceção é o gráfico da pergunta sobre o tempo de publicação, que usa todos os vídeos coletados.</li>
+        <li><strong>Gráfico do tempo de publicação:</strong> os dois eixos estão em escala logarítmica (cada marca vale 10 vezes a anterior), para caber números muito diferentes. Cada ponto é um vídeo diferente, medido no dia da coleta; o gráfico não mostra o mesmo vídeo crescendo.</li>
+        <li><strong>Índice de variação (regularidade):</strong> desvio padrão das visualizações dos 12 vídeos dividido pela média (coeficiente de variação). Perto de 0, os vídeos têm alcance parecido; acima de 1, poucos vídeos concentram as visualizações. “Vídeo bom ÷ vídeo fraco” compara o percentil 90 com o percentil 10.</li>
         <li><strong>Só vídeos do próprio perfil:</strong> parcerias (collabs) publicadas por outras contas que aparecem no perfil foram descartadas.</li>
         <li><strong>Mediana em vez de média</strong> para visualizações: um único viral distorce a média, e a mediana mostra o desempenho de um vídeo comum. A média também aparece na tabela.</li>
-        <li><strong>Engajamento</strong> = (curtidas + comentários) ÷ visualizações, calculado vídeo a vídeo e depois tirada a média. Vídeos com curtidas ocultas contam como 0 curtidas.</li>
+        <li><strong>Curtidas e comentários por visualização</strong> = (curtidas + comentários) ÷ visualizações, calculado vídeo a vídeo e depois tirada a média. Vídeos com curtidas ocultas contam como 0 curtidas.</li>
         <li><strong>Grupos:</strong> as comparações e médias são feitas dentro de cada grupo (políticos, famosos brasileiros, famosos globais), nunca misturando grupos.</li>
         <li><strong>Contadores do Instagram:</strong> em outubro de 2026, a Meta reconheceu um incidente técnico global que bloqueou a contagem de visualizações de publicações em 7 de outubro, das 1h50 às 19h49 (<a href="https://www.estadao.com.br/politica/conselho-da-meta-aponta-falhas-recorrentes-em-moderacao-eleitoral-no-brasil/" target="_blank" rel="noopener">Estadão, 20/10/2026</a>). Falhas desse tipo podem afetar os contadores públicos usados nesta análise.</li>
         <li><strong>População do Brasil</strong> (comparação do vídeo de 108 milhões): IBGE, estimativa 2025, 213,4 milhões de habitantes. Visualizações não são pessoas únicas.</li>
-        <li><strong>Anúncios pagos:</strong> consulta à <a href="https://www.facebook.com/ads/library/" target="_blank" rel="noopener">Biblioteca de Anúncios da Meta</a> em 20/10/2026, entre 23h10 e 23h40, sem login. País Brasil, categoria “Temas sociais, eleições ou política”, status “Anúncios ativos e inativos” (o padrão, “Anúncios ativos”, não mostra nada porque não há anúncios rodando agora), anunciantes “Nikolas Ferreira” e “NIkolas Ferreira BR”. Totais e gasto por rótulo na aba “Sobre” de cada página; datas com o filtro “Impressões por data”. No TSE, DivulgaCandContas → Eleição Geral Federal 2026 → MG → Deputado Federal → Nikolas Ferreira → prestação de contas → despesas → “Despesa com Impulsionamento de Conteúdos” (atualização de 5/10/2026). Passo a passo na seção <a href="#anuncios">Ele paga para aparecer?</a>.</li>
+        <li><strong>Anúncios pagos:</strong> consulta à <a href="https://www.facebook.com/ads/library/" target="_blank" rel="noopener">Biblioteca de Anúncios da Meta</a> em 20/10/2026, entre 23h10 e 23h40, sem login. País Brasil, categoria “Temas sociais, eleições ou política”, status “Anúncios ativos e inativos” (o padrão, “Anúncios ativos”, não mostra nada porque não há anúncios rodando agora), anunciantes “Nikolas Ferreira” e “NIkolas Ferreira BR”. Totais e gasto por rótulo na aba “Sobre” de cada página; datas com o filtro “Impressões por data”. No TSE, DivulgaCandContas → Eleição Geral Federal 2026 → MG → Deputado Federal → Nikolas Ferreira → prestação de contas → despesas → “Despesa com Impulsionamento de Conteúdos” (atualização de 5/10/2026). Passo a passo na seção <a href="#anuncios">“Ele paga anúncio?”</a>.</li>
         <li><strong>Limitações:</strong> a amostra é pequena (12 vídeos), a coleta foi em período eleitoral (alta atividade) e as visualizações são as reportadas pelo próprio Instagram. Para os perfis que postam dezenas de vídeos por dia, foi preciso coletar mais vídeos até chegar a 12 com 3 dias ou mais.</li>
       </ul>
     </section>
@@ -346,11 +346,11 @@
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-  <script src="dados.js?v=202610212228"></script>
-  <script src="info.js?v=202610212245"></script>
-  <script src="destaque.js?v=202610212258"></script>
-  <script src="app.js?v=202610212304"></script>
-  <script src="pistas.js?v=202610212258"></script>
-  <script src="nav.js?v=202610210821"></script>
+  <script src="dados.js?v=202610220300"></script>
+  <script src="info.js?v=202610220300"></script>
+  <script src="destaque.js?v=202610220300"></script>
+  <script src="app.js?v=202610220300"></script>
+  <script src="pistas.js?v=202610220300"></script>
+  <script src="nav.js?v=202610220300"></script>
 </body>
 </html>
