@@ -27,7 +27,15 @@
   // Âncoras dentro de blocos recolhidos (<details>): abre o bloco antes de rolar.
   const abrirAte = id => { let el = id && document.getElementById(id); for (let d = el && el.closest('details'); d; d = d.parentElement.closest('details')) d.open = true; };
   document.addEventListener('click', e => { const l = e.target.closest('a[href^="#"]'); if (l) abrirAte(l.getAttribute('href').slice(1)); });
-  if (location.hash) abrirAte(location.hash.slice(1));
+  // O site sempre abre no topo: sem restaurar a rolagem anterior e sem pular para um #link da URL.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  let mexeu = false; // não puxa de volta quem já começou a rolar
+  ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(t => addEventListener(t, () => { mexeu = true; }, { once: true, passive: true }));
+  const topo = () => { if (!mexeu) scrollTo(0, 0); };
+  topo();
+  addEventListener('load', topo);
+  addEventListener('pageshow', e => { if (e.persisted) scrollTo(0, 0); });
 
   // Barra de progresso de leitura.
   const barra = document.getElementById('progresso');
