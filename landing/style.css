@@ -888,3 +888,6 @@ button.info.termo:hover, button.info.termo:focus-visible, button.info.termo[aria
 }
 .cabecalho-in > .menu-botao, .compartilhar { flex-shrink: 0; }
 @media (max-width: 480px) { .cabecalho-in { gap: 10px; } }
+.comp-menu { min-width: 230px; }
+.comp-menu [hidden] { display: none; }
+.comp-dica { margin: 6px 4px 4px; padding: 10px; border-radius: 6px; background: #1d0507; border: 1px solid #5a0d12; color: #f1f1f1; font: 500 13px/1.4 var(--fonte); max-width: 260px; }

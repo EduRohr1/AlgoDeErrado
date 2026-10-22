@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800&display=swap">
-  <link rel="stylesheet" href="style.css?v=202610221500">
+  <link rel="stylesheet" href="style.css?v=202610221510">
 </head>
 <body>
   <header class="cabecalho" id="cabecalho">
@@ -35,9 +35,12 @@
         <button class="comp-botao" id="compBotao" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="compMenu"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.8l7.4-4.3M8.3 13.2l7.4 4.3"/></svg><span>Compartilhar</span></button>
         <div class="comp-menu" id="compMenu" hidden>
           <a data-rede="whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+          <button type="button" data-rede="stories">Instagram (stories)</button>
           <a data-rede="x" target="_blank" rel="noopener">X (Twitter)</a>
           <a data-rede="facebook" target="_blank" rel="noopener">Facebook</a>
           <button type="button" data-rede="copiar">Copiar link</button>
+          <button type="button" data-rede="mais" hidden>Mais opções…</button>
+          <p class="comp-dica" id="compDica" role="status" hidden></p>
         </div>
       </div>
       <button class="menu-botao" id="menuBotao" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
@@ -361,7 +364,7 @@
   <script src="destaque.js?v=202610220300"></script>
   <script src="app.js?v=202610221200"></script>
   <script src="pistas.js?v=202610220300"></script>
-  <script src="compartilhar.js?v=202610221500"></script>
+  <script src="compartilhar.js?v=202610221510"></script>
   <script src="nav.js?v=202610221130"></script>
 </body>
 </html>
