@@ -605,7 +605,7 @@
       p: 'Um dos maiores fenômenos brasileiros das redes sociais, Virginia construiu sua presença digital transformando a própria rotina em conteúdo. Ainda assim, mesmo com mais que o dobro de seguidores, um vídeo comum de Nikolas Ferreira consegue mais visualizações.' },
     cristiano: { ok: (r, v, x) => r > 1 && v < 1 && x > 1, t: 'Cristiano vence em números absolutos. Porém, a proporção conta outra história.',
       p: 'Cristiano Ronaldo tem muito mais seguidores e mais visualizações por vídeo. A diferença aparece quando se considera o tamanho das audiências: proporcionalmente ao número de seguidores, Nikolas Ferreira alcança uma parcela maior.' },
-    leomessi: { ok: (r, v, x) => r > 1 && v < 1 && x > 1, t: 'Até Messi tem uma vantagem que não conta a história toda.',
+    leomessi: { ok: (r, v, x) => r > 1 && v < 1 && x > 1, t: 'Messi ganha no tamanho. Porém, Nikolas ganha na proporção.',
       p: 'O argentino supera Nikolas Ferreira em seguidores e em visualizações por vídeo. Porém, quando a comparação considera o alcance em relação ao número de seguidores, a situação se inverte. O tamanho da audiência não explica tudo.' },
     kimkardashian: { ok: (r, v) => r > 2 && v > 1, t: 'Uma das maiores celebridades do Instagram, superada em visualizações por um político brasileiro.',
       p: 'Kim Kardashian tem uma audiência muito maior que a de Nikolas Ferreira. Ainda assim, um vídeo comum de Nikolas consegue mais visualizações. É um contraste que chama a atenção justamente por envolver alguém que transformou sua presença nas redes em uma marca global.' },
