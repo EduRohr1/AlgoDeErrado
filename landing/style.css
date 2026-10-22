@@ -838,5 +838,14 @@ button.info.termo:hover, button.info.termo:focus-visible, button.info.termo[aria
 .carrossel-titulo .vs { color: #ff2525; font-size: .8em; letter-spacing: .04em; }
 #regularidade .grafico { height: 520px; }
 @media (max-width: 600px) { #regularidade .grafico { height: 480px; } }
-.legenda-partidos { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 8px 0 0; font-size: 12px; color: var(--muted, #555); }
-.legenda-partidos i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+
+/* Partido: nome sublinhado na cor do partido */
+.partido { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 3px; }
+.partido-pl { text-decoration-color: #2563eb; }
+.partido-pt { text-decoration-color: #d0202a; }
+.partido-missao { text-decoration-color: #e0b100; }
+.nota-partido { margin: 8px 0 0; font-size: 12px; color: var(--muted, #6b6b6b); }
+.slide .nota-partido { color: #9a9a9a; }
+/* Cartão da Copa: subtítulo */
+.cd-titulo { margin-bottom: 8px; }
+.cd-sub { margin: 0 0 20px; font-size: clamp(16px, 1.8vw, 19px); line-height: 1.5; color: #e6e6e6; max-width: 60ch; }

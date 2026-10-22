@@ -1,4 +1,4 @@
-// Destaque à parte: o maior vídeo recente do Nikolas (pode ter menos de 3 dias; fica fora das médias).
+// Destaque à parte: o maior vídeo recente de Nikolas (pode ter menos de 3 dias; fica fora das médias).
 (function () {
   const R = window.RESUMO;
   const nik = R && R.perfis.find(p => p.perfil === 'nikolasferreiradm');
@@ -18,7 +18,7 @@
     .sort((a, b) => b.medianaViews - a.medianaViews);
   const nomes = { cristiano: 'Cristiano Ronaldo', leomessi: 'Messi', neymarjr: 'Neymar', anitta: 'Anitta', virginia: 'Virginia', kimkardashian: 'Kim Kardashian' };
 
-  document.getElementById('dvViews').innerHTML = milhoes(v.views) + (window.infoBtn ? window.infoBtn(`É o vídeo com mais visualizações entre os coletados do Nikolas: ${milhoes(v.views)} de visualizações. Dividido pelo número de seguidores de Nikolas, dá ${vezes(v.vezesSeguidores)}. Ou seja, o vídeo foi visto mais vezes do que ele tem de seguidores (uma mesma pessoa assistir mais de uma vez também conta). Como tinha menos de 3 dias na coleta, ele fica fora das médias da página.`, 'O que significa este número?') : '');
+  document.getElementById('dvViews').innerHTML = milhoes(v.views) + (window.infoBtn ? window.infoBtn(`É o vídeo com mais visualizações entre os coletados de Nikolas: ${milhoes(v.views)} de visualizações. Dividido pelo número de seguidores de Nikolas, dá ${vezes(v.vezesSeguidores)}. Ou seja, o vídeo foi visto mais vezes do que ele tem de seguidores (uma mesma pessoa assistir mais de uma vez também conta). Como tinha menos de 3 dias na coleta, ele fica fora das médias da página.`, 'O que significa este número?') : '');
   // Comparação com a população do Brasil (IBGE, estimativa 2025: 213,4 milhões), só se os números sustentarem a frase.
   // Também usada no topo (app.js), por isso fica em window.comparacao108.
   const POP_BR = 213.4e6;

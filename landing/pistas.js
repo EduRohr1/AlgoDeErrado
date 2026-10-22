@@ -38,7 +38,7 @@
   const posDur = durOrd.findIndex(p => p.perfil === NIK) + 1;
   const fmtSeg = s => s >= 60 ? `${Math.floor(s / 60)}min${String(Math.round(s % 60)).padStart(2, '0')}s` : `${Math.round(s)}s`;
   const efeito = dN.vpsLongos != null && dN.vpsCurtos != null ? dN.vpsLongos / dN.vpsCurtos : null;
-  set('txtDuracao', `Duração típica dos vídeos com 3 dias ou mais. Os do Nikolas têm <strong>${fmtSeg(dN.medianaSegundos)}</strong>, ` +
+  set('txtDuracao', `Duração típica dos vídeos com 3 dias ou mais. Os de Nikolas têm <strong>${fmtSeg(dN.medianaSegundos)}</strong>, ` +
     `${posDur === 1 ? 'os mais longos' : `o ${posDur}º mais longo`} entre os ${durOrd.length} perfis (${durOrd.slice(0, 3).filter(p => p.perfil !== NIK).map(p => `${nome(p.perfil)}: ${fmtSeg(p.pistas.duracao.medianaSegundos)}`).join('; ')}). ` +
     (efeito ? `Dentro do próprio perfil, os vídeos mais longos de Nikolas têm ${vps(dN.vpsLongos)} de visualizações por seguidor, contra ${vps(dN.vpsCurtos)} dos mais <span class="cola">curtos${window.infoBtn ?' ' + window.infoBtn(`A correlação entre duração e visualizações por seguidor nos vídeos de Nikolas é ${dec(dN.correlacao, 2)}. Ela vai de -1 a 1: perto de 0 quer dizer pouca relação entre as duas coisas.`, 'O que é correlação?') : ''}</span>. ` +
       (Math.abs(efeito - 1) < 0.15 ? 'A diferença é pequena: a duração não parece explicar sozinha o alcance de Nikolas.' : efeito > 1 ? 'Vídeos mais longos vão um pouco melhor para ele.' : 'Vídeos mais curtos vão um pouco melhor para ele.') : ''));
@@ -62,7 +62,7 @@
   // ===== 4. Legenda =====
   const lN = nik.pistas.legenda;
   const legPol = outrosPol.map(p => p.pistas.legenda.medianaCaracteres);
-  set('txtLegenda', `Legendas dos vídeos do próprio perfil (sem o texto legal de propaganda eleitoral). As do Nikolas têm, tipicamente, <strong>${Math.round(lN.medianaCaracteres)} caracteres</strong>, ` +
+  set('txtLegenda', `Legendas dos vídeos do próprio perfil (sem o texto legal de propaganda eleitoral). As de Nikolas têm, tipicamente, <strong>${Math.round(lN.medianaCaracteres)} caracteres</strong>, ` +
     `contra ${Math.round(Math.min(...legPol))} a ${Math.round(Math.max(...legPol))} dos outros políticos: frases curtas, de efeito, quase sem hashtags e emojis. ` +
     `As palavras mais frequentes nas legendas de Nikolas: ${lN.palavras.slice(0, 5).map(w => `“${w.p}”`).join(', ')}.`);
   set('tabelaLegenda', '<thead><tr><th>Perfil</th><th>Caracteres</th><th>Emojis</th><th>Hashtags</th><th>Com menção</th><th>Palavras mais usadas</th></tr></thead><tbody>' +
@@ -74,7 +74,7 @@
   const comTema = tN.temas.filter(t => t.tema !== 'sem tema identificado' && t.n >= 3).sort((a, b) => b.n - a.n);
   const semTema = tN.temas.find(t => t.tema === 'sem tema identificado');
   set('txtTemas', `Classificação aproximada por palavras-chave nas legendas (um vídeo pode ter mais de um tema). ` +
-    `Como as legendas do Nikolas são muito curtas, <strong>${pct(semTema.pct)}</strong> dos vídeos de Nikolas não têm tema identificável pela legenda. ` +
+    `Como as legendas de Nikolas são muito curtas, <strong>${pct(semTema.pct)}</strong> dos vídeos de Nikolas não têm tema identificável pela legenda. ` +
     (comTema.length ? `Entre os que têm, o tema mais frequente é “${comTema[0].tema}” (${comTema[0].n} vídeos), com alcance típico de ${vps(comTema[0].medianaVps)} dos seguidores, contra ${vps(semTema.medianaVps)} nos vídeos sem tema identificado. ` : '') +
     `Com tão poucos vídeos por tema, isso é uma pista, não uma conclusão. Entre parênteses: visualizações de um vídeo comum em % dos seguidores.`);
   set('tabelaTemas', '<thead><tr><th>Perfil</th>' + temasNomes.map(t => `<th>${t}</th>`).join('') + '</tr></thead><tbody>' +
@@ -89,10 +89,10 @@
   const repOutros = comTom.filter(p => grupo(p) === 'politicos' && p.perfil !== NIK).map(p => p.pistas.tom.pct['repetitivo']);
   const maxRep = [...comTom].sort((a, b) => b.pistas.tom.pct['repetitivo'] - a.pistas.tom.pct['repetitivo'])[0];
   if (tomN) {
-    set('txtTom', `Amostra dos comentários mais recentes de cada vídeo (${tomN.n} comentários no perfil do Nikolas). ` +
+    set('txtTom', `Amostra dos comentários mais recentes de cada vídeo (${tomN.n} comentários no perfil de Nikolas). ` +
       `No Nikolas, <strong>${pct(tomN.pct.apoio)}</strong> são de apoio, ${pct(tomN.pct['crítica'])} têm linguagem crítica e <strong>${pct(tomN.pct['repetitivo'])}</strong> são textos repetidos (copia-e-cola), ` +
       `${tomN.pct['repetitivo'] < mediana(repOutros) / 2 ? 'abaixo do' : 'perto do'} típico dos outros políticos (${pct(mediana(repOutros))}). O maior índice de repetição é de ${nome(maxRep.perfil)} (${pct(maxRep.pistas.tom.pct['repetitivo'])}). ` +
-      `Nesta amostra, o perfil de comentários do Nikolas não destoa dos demais.`);
+      `Nesta amostra, o perfil de comentários de Nikolas não destoa dos demais.`);
   }
   set('tomLista', comTom.map(p => `<div class="tom-linha${p.perfil === NIK ? ' nik' : ''}"><span class="tom-nome">${nome(p.perfil)} <small>${p.pistas.tom.n}</small></span><span class="tom-barra">${CATS.map(([k, c]) => `<i class="t-${c}" style="width:${(p.pistas.tom.pct[k] * 100).toFixed(1)}%" title="${k}: ${pct(p.pistas.tom.pct[k])}"></i>`).join('')}</span></div>`).join(''));
   set('tomLegenda', CATS.map(([k, c]) => `<span><i class="t-${c}"></i>${k}</span>`).join(''));
