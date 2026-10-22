@@ -152,11 +152,11 @@
     : `${diaBr(R.geradoEm)} (horário de Brasília)`;
 
   // ===== Tabelas =====
-  // Partido em 2026 (DivulgaCandContas/TSE, consultado em 21/10/2026). Sem confirmação: sem sublinhado.
-  const PARTIDO = { nikolasferreiradm: 'PL', lulaoficial: 'PT', renansantosmbl: 'Missão', kimkataguiri: 'Missão' };
-  const CLASSE_PARTIDO = { PL: 'partido-pl', PT: 'partido-pt', 'Missão': 'partido-missao' };
+  // Partido atual (consultado em 21/10/2026): TSE 2026 (Nikolas, Lula, Renan, Kim, Tabata), Câmara dos Deputados (Eduardo Bolsonaro, Boulos, Tabata) e Wikidata (Jair Bolsonaro). Pablo Marçal está sem partido: sem sublinhado.
+  const PARTIDO = { nikolasferreiradm: 'PL', jairmessiasbolsonaro: 'PL', bolsonarosp: 'PL', lulaoficial: 'PT', renansantosmbl: 'Missão', kimkataguiri: 'Missão', 'guilhermeboulos.oficial': 'PSOL', tabataamaralsp: 'PSB' };
+  const CLASSE_PARTIDO = { PL: 'partido-pl', PT: 'partido-pt', 'Missão': 'partido-missao', PSOL: 'partido-psol', PSB: 'partido-psb' };
   const nomeP = perfil => PARTIDO[perfil] ? `<span class="partido ${CLASSE_PARTIDO[PARTIDO[perfil]]}" title="${PARTIDO[perfil]}">${nome(perfil)}</span>` : nome(perfil);
-  const NOTA_PARTIDO = '<p class="nota-partido">Sublinhado: cor do partido (PL azul, PT vermelho, Missão amarelo).</p>';
+  const NOTA_PARTIDO = '<p class="nota-partido">Sublinhado: cor do partido. <span class="partido partido-pl">PL</span> azul · <span class="partido partido-pt">PT</span> vermelho · <span class="partido partido-missao">Missão</span> amarelo · <span class="partido partido-psol">PSOL</span> roxo · <span class="partido partido-psb">PSB</span> laranja.</p>';
   const celulaPerfil = p => `<td>${nomeP(p.perfil)}<small>@${p.perfil}${p.idioma && p.idioma !== 'pt' ? ' · ' + p.idioma : ''}</small></td>`;
   const notas = lista => lista.filter(p => p.observacao && p.comparavel)
     .map(p => `<li><strong>${nome(p.perfil)}:</strong> ${p.observacao}</li>`).join('');

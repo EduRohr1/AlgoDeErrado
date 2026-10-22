@@ -849,3 +849,6 @@ button.info.termo:hover, button.info.termo:focus-visible, button.info.termo[aria
 /* Cartão da Copa: subtítulo */
 .cd-titulo { margin-bottom: 8px; }
 .cd-sub { margin: 0 0 20px; font-size: clamp(16px, 1.8vw, 19px); line-height: 1.5; color: #e6e6e6; max-width: 60ch; }
+.partido-psol { text-decoration-color: #9333ea; }
+.partido-psb { text-decoration-color: #f97316; }
+.nota-partido .partido { text-decoration-thickness: 2px; }
