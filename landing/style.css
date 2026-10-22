@@ -788,12 +788,35 @@ h2:has(> button.info):not(.dv-titulo), h3:has(> button.info), .hi-titulo:has(> b
 h2:not(.dv-titulo) > button.info, h3 > button.info, .hi-titulo > button.info { margin: .2em 0 0 auto; flex: none; }
 .cola { white-space: nowrap; }
 
-/* Neymar na Copa: mini-bloco no slide de comparação */
-.cmp-copa { margin-top: 18px; padding-top: 14px; border-top: 1px solid #2a2a2a; }
-.cmp-copa-tit { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin: 0 0 4px; font-family: var(--fonte-titulo); font-weight: 800; font-size: 17px; color: #fff; }
-.cmp-copa-tit > button.info { margin: .15em 0 0 auto; flex: none; }
-.cmp-copa-txt { margin: 0 0 10px; color: #d0d0d0; font-size: 15px; line-height: 1.5; }
-.slide .chip { background: #1c1c1c; border: 1px solid #2a2a2a; }
-.slide .chip b { color: #fff; }
-.slide .chip.nik b { color: #ff3b3b; }
-.slide .chip span { color: #bdbdbd; }
+
+/* Destaque: Neymar na Copa (logo depois do carrossel) */
+.copa-destaque { margin: 8px 0 28px; }
+.cd-card { position: relative; background: radial-gradient(120% 120% at 100% 0%, #3a070b 0%, #140405 55%, #0b0b0b 100%); color: #f2eded; border: 1px solid #e3121b; border-radius: 14px; padding: 26px 28px 24px; box-shadow: 0 20px 50px rgba(227, 18, 27, .18); }
+.cd-card > button.info { position: absolute; top: 12px; right: 12px; margin: 0; color: #d6d6d6; }
+.cd-kicker { margin: 0 0 8px; font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #ff3b3b; padding-right: 34px; }
+.cd-titulo { margin: 0 0 20px; font-family: var(--fonte-titulo); font-weight: 800; font-size: clamp(22px, 3vw, 32px); line-height: 1.2; color: #fff; max-width: 30ch; border: 0; padding: 0; }
+.cd-lados { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 14px; }
+.cd-lado { display: grid; justify-items: center; text-align: center; gap: 4px; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .1); border-radius: 12px; padding: 16px 10px; min-width: 0; }
+.cd-lado.nik { border-color: #e3121b; background: rgba(227, 18, 27, .1); }
+.cd-avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid #555; margin-bottom: 4px; }
+.cd-lado.nik .cd-avatar { border-color: #e3121b; }
+.cd-num { font-family: var(--fonte-titulo); font-weight: 800; font-size: clamp(30px, 5vw, 48px); line-height: 1; color: #fff; font-variant-numeric: tabular-nums; }
+.cd-lado.nik .cd-num { color: #ff3b3b; }
+.cd-rot { font-weight: 700; font-size: 14px; color: #fff; }
+.cd-seg { font-size: 13px; color: #b8a9a9; }
+.cd-vs { font-family: var(--fonte-titulo); font-weight: 800; font-size: 22px; color: #8a8a8a; }
+.cd-linha { margin: 18px 0 0; font-size: 17px; line-height: 1.5; color: #e6e6e6; }
+.cd-linha strong { color: #ff3b3b; }
+.cmp-copa-link { margin: 14px 0 0; }
+.cmp-copa-link a { color: #ff6b6b; font-weight: 700; text-decoration: none; border-bottom: 1px solid currentColor; }
+@media (max-width: 600px) {
+  .cd-card { padding: 20px 16px 18px; }
+  .cd-lados { gap: 8px; }
+  .cd-lado { padding: 12px 6px; }
+  .cd-avatar { width: 44px; height: 44px; }
+  .cd-num { font-size: 28px; }
+  .cd-rot { font-size: 13px; }
+  .cd-seg { font-size: 12px; }
+  .cd-vs { font-size: 18px; }
+  .cd-linha { font-size: 16px; }
+}
